@@ -4,7 +4,6 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -42,9 +41,10 @@
 @import "spinners";
 @import "utilities";
 @import "print";
+@import "icons";
 
 // fonts
 @import "fonts";
 
 // pages
-@import "pages/main"
+@import "pages/main";

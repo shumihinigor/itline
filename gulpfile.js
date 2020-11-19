@@ -14,11 +14,11 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
 const group_media = require("gulp-group-css-media-queries");
-const svgstore = require('gulp-svgstore');
+// const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
 const fileinclude = require('gulp-file-include');
-const cheerio = require('gulp-cheerio');
+// const cheerio = require('gulp-cheerio');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const ttf2eot = require('gulp-ttf2eot');
@@ -26,6 +26,18 @@ const fonter = require('gulp-fonter');
 const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const webpcss = require('gulp-webp-css');
+const inlinesvg = require("gulp-inline-svg");
+
+function inlineSvg () {
+	return src('app/images/svg/*.svg')
+        .pipe(newer('dist/images/'))
+		.pipe(svgmin())
+		.pipe(inlinesvg({
+            filename: '_icon-variables.sass',
+            template: 'app/sass/mustache/icons.mustache'
+        }))
+		.pipe(dest('app/sass/variables/'));
+}
 
 function browsersync() {
     browserSync.init({
@@ -52,7 +64,6 @@ function htmlrigger() {
 function scripts(cb) {
     src([
         'app/js/**/*.js',
-        '!app/js/svg.js',
         '!app/js/bootstrap.js'
     ])
         .pipe(rename(function (path) {
@@ -64,13 +75,6 @@ function scripts(cb) {
         'node_modules/jquery/dist/jquery.min.js',
     ])
         .pipe(concat('jquery.min.js'))
-        .pipe(uglify())
-        .pipe(dest('dist/js/'))
-    src([
-        'node_modules/svg4everybody/dist/svg4everybody.min.js',
-        'app/js/svg.js'
-    ])
-        .pipe(concat('svg.min.js'))
         .pipe(uglify())
         .pipe(dest('dist/js/'))
     src([
@@ -106,25 +110,30 @@ function images() {
         .pipe(webp({
             quality: 70
         }))
-        .pipe(newer('dist/images/'))
         .pipe(src(['app/images/**/*', '!app/images/svg', '!app/images/svg/*.svg']))
+        .pipe(newer('dist/images/'))
         .pipe(imagemin())
         .pipe(dest('dist/images/'))
 }
 
 function fonts(cb) {
     src('app/fonts/**/*')
+        .pipe(newer('dist/images/'))
         .pipe(dest('dist/fonts/'))
     src('app/fonts/**/*')
+        .pipe(newer('dist/images/'))
         .pipe(ttf2woff())
         .pipe(dest('dist/fonts/'))
     src('app/fonts/**/*')
+        .pipe(newer('dist/images/'))
         .pipe(ttf2eot())
         .pipe(dest('dist/fonts/'))
     src('app/fonts/**/*')
+        .pipe(newer('dist/images/'))
         .pipe(ttf2woff2())
         .pipe(dest('dist/fonts/'))
     src('app/fonts/*.otf')
+        .pipe(newer('dist/images/'))
         .pipe(fonter({
             formats: ['ttf']
         }))
@@ -153,26 +162,26 @@ function fontsStyle(cb) {
     cb();
 }
 
-function sprite() {
-    return src('app/images/svg/*.svg')
-        .pipe(cheerio({
-            run: function ($) {
-                // $('[fill]').removeAttr('fill');
-                // $('[style]').removeAttr('style');
-            },
-            parserOptions: { xmlMode: true }
-        }))
-        .pipe(svgmin({
-			js2svg: {
-				pretty: true
-			}
-		}))
-        .pipe(svgstore())
-        .pipe(rename({
-            basename: 'sprite'
-        }))
-        .pipe(dest('dist/images/'))
-}
+// function sprite() {
+//     return src('app/images/svg/*.svg')
+//         .pipe(cheerio({
+//             run: function ($) {
+//                 // $('[fill]').removeAttr('fill');
+//                 // $('[style]').removeAttr('style');
+//             },
+//             parserOptions: { xmlMode: true }
+//         }))
+//         .pipe(svgmin({
+// 			js2svg: {
+// 				pretty: true
+// 			}
+// 		}))
+//         .pipe(svgstore())
+//         .pipe(rename({
+//             basename: 'sprite'
+//         }))
+//         .pipe(dest('dist/images/'))
+// }
 
 function cleanimages() {
     return del('app/images/**/*', {
@@ -190,12 +199,13 @@ function startwatch() {
 
     watch(['app/' + preprocessor + '/**/*.sass', 'app/' + preprocessor + '/**/*.scss'], styles);
 
-    watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+    watch(['app/**/*.js'], scripts);
 
     watch('app/**/*.html').on('change', browserSync.reload);
     watch('app/**/*.html').on('change', htmlrigger);
     
-    watch('app/images/svg/*.svg', sprite);
+    // watch('app/images/svg/*.svg', sprite);
+    watch('app/images/svg/*.svg', inlineSvg);
 
     watch(['app/images/**/*', '!app/images/svg', '!app/images/svg/*.svg'], images);
 
@@ -209,10 +219,11 @@ exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
 exports.fontsStyle = fontsStyle;
-exports.sprite = sprite;
+// exports.sprite = sprite;
+exports.inlineSvg = inlineSvg;
 
 // starting build (gulp)
-exports.default = parallel(htmlrigger, styles, sprite, images, fonts, fontsStyle, scripts, browsersync, startwatch);
+exports.default = parallel(htmlrigger, inlineSvg, styles, images, fonts, fontsStyle, scripts, browsersync, startwatch);
 
 // cleaning images (gulp cleanimages)
 exports.cleanimages = cleanimages;
