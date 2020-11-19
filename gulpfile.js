@@ -52,6 +52,7 @@ function browsersync() {
 
 function htmlrigger() {
     return src(['app/*.html', '!app/templates'])
+        .pipe(newer('dist/'))
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -66,6 +67,7 @@ function scripts(cb) {
         'app/js/**/*.js',
         '!app/js/bootstrap.js'
     ])
+        .pipe(newer('dist/js/'))
         .pipe(rename(function (path) {
             path.extname = ".min.js";
         }))
@@ -74,12 +76,14 @@ function scripts(cb) {
     src([
         'node_modules/jquery/dist/jquery.min.js',
     ])
+        .pipe(newer('dist/js/'))
         .pipe(concat('jquery.min.js'))
         .pipe(uglify())
         .pipe(dest('dist/js/'))
     src([
         'app/js/bootstrap.js'
     ])
+        .pipe(newer('dist/js/'))
         .pipe(concat('bootstrap.min.js'))
         .pipe(uglify())
         .pipe(dest('dist/js/'))
@@ -107,6 +111,7 @@ function styles() {
 
 function images() {
     return src(['app/images/**/*', '!app/images/svg', '!app/images/svg/*.svg'])
+        .pipe(newer('dist/images/'))
         .pipe(webp({
             quality: 70
         }))
