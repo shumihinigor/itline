@@ -30,7 +30,7 @@ const inlinesvg = require("gulp-inline-svg");
 
 function inlineSvg () {
 	return src('app/images/svg/*.svg')
-        .pipe(newer('dist/images/'))
+        .pipe(newer('app/images/svg'))
 		.pipe(svgmin())
 		.pipe(inlinesvg({
             filename: '_icon-variables.sass',
@@ -67,7 +67,6 @@ function scripts(cb) {
         'app/js/**/*.js',
         '!app/js/bootstrap.js'
     ])
-        .pipe(newer('dist/js/'))
         .pipe(rename(function (path) {
             path.extname = ".min.js";
         }))
@@ -76,14 +75,12 @@ function scripts(cb) {
     src([
         'node_modules/jquery/dist/jquery.min.js',
     ])
-        .pipe(newer('dist/js/'))
         .pipe(concat('jquery.min.js'))
         .pipe(uglify())
         .pipe(dest('dist/js/'))
     src([
         'app/js/bootstrap.js'
     ])
-        .pipe(newer('dist/js/'))
         .pipe(concat('bootstrap.min.js'))
         .pipe(uglify())
         .pipe(dest('dist/js/'))
@@ -222,16 +219,18 @@ exports.scripts = scripts;
 exports.htmlrigger = htmlrigger;
 exports.styles = styles;
 exports.images = images;
-exports.fonts = fonts;
-exports.fontsStyle = fontsStyle;
 // exports.sprite = sprite;
 exports.inlineSvg = inlineSvg;
 
 // starting build (gulp)
-exports.default = parallel(htmlrigger, inlineSvg, styles, images, fonts, fontsStyle, scripts, browsersync, startwatch);
+exports.default = parallel(htmlrigger, inlineSvg, styles, images, scripts, browsersync, startwatch);
 
 // cleaning images (gulp cleanimages)
 exports.cleanimages = cleanimages;
 
 // cleaning dist (gulp cleandist)
 exports.cleandist = cleandist;
+
+// create fonts (gulp fonts, gulp fontsStyle)
+exports.fonts = fonts;
+exports.fontsStyle = fontsStyle;
