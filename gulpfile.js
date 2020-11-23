@@ -30,7 +30,6 @@ const inlinesvg = require("gulp-inline-svg");
 
 function inlineSvg () {
 	return src('app/images/svg/*.svg')
-        .pipe(newer('app/images/svg'))
 		.pipe(svgmin())
 		.pipe(inlinesvg({
             filename: '_icon-variables.sass',
