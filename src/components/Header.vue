@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-2">
                     <div class="header-contact">
-                        <button>Связаться с нами</button>
+                        <button type="button" class="btn">Связаться с нами</button>
                     </div>
                 </div>
             </div>
@@ -106,11 +106,21 @@
                 color: #FFFFFF;
                 background: orange;
                 border: none;
-                border-radius: 5px;
                 outline: none;
-                background: linear-gradient(to bottom, #ff9100, #ff3500);
+                background: transparent;
+                border: 1px solid white;
                 text-transform: uppercase;
                 font-weight: bold;
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+                &:hover{
+                    background: linear-gradient(to bottom, #ff9100, #ff3500);
+                    border-radius: 5px;
+                    border: none;
+                    padding: 16px 11px;
+                }
             }
         }
     }
