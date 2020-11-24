@@ -10,7 +10,13 @@
                                 class="main-banner__images"
                                 v-bind:style="{ 'background-image': `url(${require('../assets/main-banner.png')})` }"
                             ></div>
-                            <p class="main-banner__text">Комплексные системы информирования</p>
+                            <div class="main-banner__text">
+                                <div class="row justify-content-center">
+                                    <div class="col-10">
+                                        <div class="">Комплексные системы информирования</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -19,7 +25,7 @@
 
         <!-- facts -->
         <section class="main">
-            <div class="container">
+            <div class="container bg-white">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="row justify-content-around">
@@ -64,13 +70,13 @@
 
         <!-- options -->
         <section class="main">
-            <div class="container">
+            <div class="container bg-white pb-100">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="main-options__title">Варианты исполнения</div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center main-options__block">
                     <div class="col-10">
                         <div class="row">
                             <div class="col-4">
@@ -111,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center main-options__block">
                     <div class="col-10">
                         <div class="row">
                             <div class="col-4">
@@ -158,6 +164,59 @@
             </div>
         </section>
 
+        <!-- video -->
+        <section class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-video">
+                            <div 
+                                class="main-video__bg"
+                                v-bind:style="{ 'background-image': `url(${require('../assets/main-video.png')})` }"
+                            ></div>
+                            <div 
+                                class="main-video__photo"
+                                v-bind:style="{ 'background-image': `url(${require('../assets/photo.png')})` }"
+                            ></div>
+                            <div class="main-video__block">
+                                <div class="row justify-content-center">
+                                    <div class="col-10">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="main-video__block-title">
+                                                    Информируя пассажиров,  мы помогаем им соориентироваться в городе.
+                                                </div>
+                                                <div class="">
+                                                    <button class="button-gradient">О Компании</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="">
+                                                        <button class="main-video__block-play"></button>
+                                                    </div>
+                                                    <div class="main-video__block-text">Видео о компании</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  -->
+        <section>
+            <div class="container bg-white">
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </template>
 
@@ -169,15 +228,20 @@
 
 <style lang="scss">
     $black: #131313;
+    .bg-white{
+        background-color: #FFFFFF;
+        box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
+        padding-top: 100px;
+    }
     .main {
         position: relative;
-        margin-bottom: 100px;
         &-banner {
             position: relative;
             display: flex;
             align-items: center;
             max-height: 460px;
-            // box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .05);
+            width: calc(100% + 30px);
+            left: -15px;
             &::before {
                 content: '';
                 position: absolute;
@@ -200,7 +264,7 @@
 
             &__text {
                 position: absolute;
-                padding: 0 115px;
+                padding: 0 15px;
                 z-index: 1;
                 width: 100%;
                 margin: auto 0;
@@ -252,10 +316,13 @@
                 color: $black;
                 margin-bottom: 80px;
             }
+            &__block{
+                position: relative;
+                margin-bottom: 50px;
+            }
             &__item{
                 position: relative;
-                height: 100%;
-                margin-bottom: 50px;
+                box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
                 &-image{
                     position: relative;
                     width: 100%;
@@ -286,6 +353,103 @@
                     font-weight: bold;
                     min-height: 88px;
                 }
+            }
+        }
+        &-video{
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-height: 460px;
+            width: calc(100% + 30px);
+            left: -15px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: transparentize(#000000, .6);
+                backdrop-filter: blur(4px);
+            }
+            &__bg{
+                width: 100%;
+                height: 100%;
+                max-height: 460px;
+                min-height: 460px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: left bottom;
+            }
+            &__block{
+                position: absolute;
+                padding: 0 15px;
+                z-index: 1;
+                width: 100%;
+                margin: auto 0;
+                &-title{
+                    text-align: left;
+                    font-size: 36px;
+                    line-height: 40px;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    margin-bottom: 50px;
+                }
+                &-text{
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                }
+                &-play{
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    padding: 15px 10px;
+                    margin: 0;
+                    color: #FFFFFF;
+                    background: linear-gradient(to bottom, #ff9100, #ff3500);
+                    border: none;
+                    outline: none;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    border-radius: 100%;
+                    margin-right: 15px;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 13px;
+                        height: 15px;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        margin: auto;
+                        background-image: url('../assets/play.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                    &:hover{
+                        background: linear-gradient(to bottom, #ff6e00, #de2c00);
+                    }
+                }
+            }
+            &__photo{
+                position: absolute;
+                right: 50px;
+                bottom: 0;
+                width: 360px;
+                height: 530px;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
             }
         }
     }
