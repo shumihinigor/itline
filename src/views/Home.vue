@@ -80,7 +80,7 @@
                     <div class="col-10">
                         <div class="row">
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-1.png')})` }"
@@ -88,10 +88,10 @@
                                     <div class="main-options__item-title">
                                         Снижение уровня  травматизма
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-2.png')})` }"
@@ -100,10 +100,10 @@
                                     <div class="main-options__item-title">
                                         Логистические  светодиодные табло
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-3.png')})` }"
@@ -112,7 +112,7 @@
                                     <div class="main-options__item-title">
                                         Производственные  показатели
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="col-10">
                         <div class="row">
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-4.png')})` }"
@@ -131,10 +131,10 @@
                                     <div class="main-options__item-title">
                                         Информационные светодиодные табло
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-5.png')})` }"
@@ -144,10 +144,10 @@
                                     <div class="main-options__item-title">
                                         Часофикация
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-4">
-                                <div class="main-options__item">
+                                <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-6.png')})` }"
@@ -156,7 +156,7 @@
                                     <div class="main-options__item-title">
                                         Повышение показателей
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
 
         <!--  -->
         <section>
-            <div class="container bg-white">
+            <div class="container pt-100">
                 <div class="row">
                     <div class="col"></div>
                 </div>
@@ -322,7 +322,16 @@
             }
             &__item{
                 position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: $black;
                 box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
+                text-decoration: none !important;
+                transition: all .2s;
+                &:hover{
+                    color: #ff3500;
+                }
                 &-image{
                     position: relative;
                     width: 100%;
@@ -340,14 +349,13 @@
                         height: 100%;
                         background-image: url('../assets/options-bg.png');
                         background-size: cover;
-                        background-position: center -50%;
+                        background-position: center -75%;
                         background-repeat: no-repeat;
                     }
                 }
                 &-title{
                     font-size: 18px;
                     line-height: 24px;
-                    color: $black;
                     padding: 20px 25px;
                     background-color: #FFFFFF;
                     font-weight: bold;
