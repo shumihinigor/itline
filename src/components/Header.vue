@@ -45,7 +45,7 @@
     </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .header{
         position: relative;
         padding: 20px 0;

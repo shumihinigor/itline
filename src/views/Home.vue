@@ -227,7 +227,6 @@
 </script>
 
 <style lang="scss">
-    $black: #131313;
     .bg-white{
         background-color: #FFFFFF;
         box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
