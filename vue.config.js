@@ -2,6 +2,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 // vue.config.js
 module.exports = {
+    assetsDir: 'assets/',
+    publicPath: '/', // Base directory for dev
     css: {
         loaderOptions: {
             sass: {
@@ -9,7 +11,7 @@ module.exports = {
                     @import "@/styles/main.scss";
                 `
             }
-        }
+        },
     },
     configureWebpack: {
         plugins: [

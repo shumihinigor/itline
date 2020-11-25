@@ -1,0 +1,26 @@
+.text{
+    &-s{
+        font-size: 0.7rem !important;
+        line-height: 1rem !important;
+    }
+    &-m{
+        font-size: 0.8rem !important;
+        line-height: 1.2rem !important;
+    }
+    &-l{
+        font-size: 1rem !important;
+        line-height: 1.4rem !important;
+    }
+    &-xl{
+        font-size: 1.1rem !important;
+        line-height: 1.5rem !important;
+    }
+    &-gray{
+        color: $gray !important;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}

@@ -1,0 +1,15 @@
+.link{
+    &-orange{
+        display: inline-block;
+        color: $orange;
+        font-size: 18px;
+        line-height: 22px;
+        &:hover{
+            color: $orange;
+            text-decoration: none;
+            & .icon-arrow{
+                margin-left: 20px;
+            }
+        }
+    }
+}

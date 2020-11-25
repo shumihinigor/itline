@@ -13,7 +13,7 @@
                             <div class="main-banner__text">
                                 <div class="row justify-content-center">
                                     <div class="col-10">
-                                        <div class="">Комплексные системы информирования</div>
+                                        <h1 class="title-h1">Комплексные системы информирования</h1>
                                     </div>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
 
         <!-- facts -->
         <section class="main">
-            <div class="container bg-white">
+            <div class="container bg-white pt-6">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="row justify-content-around">
@@ -36,8 +36,8 @@
                                         v-bind:style="{ 'background-image': `url(${require('../assets/fact-1.svg')})` }"
                                     >
                                     </div>
-                                    <div class="main-facts__title">Опыт реализации</div>
-                                    <div class="main-facts__text">Поставка оборудования на всей территории РФ</div>
+                                    <p class="main-facts__title text-xl mb-3">Опыт реализации</p>
+                                    <p class="main-facts__text text-l">Поставка оборудования на всей территории РФ</p>
                                 </div>
                             </div>
                             <div class="col-3">
@@ -47,8 +47,8 @@
                                         v-bind:style="{ 'background-image': `url(${require('../assets/fact-2.svg')})` }"
                                     >
                                     </div>
-                                    <div class="main-facts__title">Опыт реализации</div>
-                                    <div class="main-facts__text">Поставка оборудования на всей территории РФ</div>
+                                    <p class="main-facts__title text-xl mb-3">Опыт реализации</p>
+                                    <p class="main-facts__text text-l">Поставка оборудования на всей территории РФ</p>
                                 </div>
                             </div>
                             <div class="col-3">
@@ -58,8 +58,8 @@
                                         v-bind:style="{ 'background-image': `url(${require('../assets/fact-3.svg')})` }"
                                     >
                                     </div>
-                                    <div class="main-facts__title">Опыт реализации</div>
-                                    <div class="main-facts__text">Поставка оборудования на всей территории РФ</div>
+                                    <p class="main-facts__title text-xl mb-3">Опыт реализации</p>
+                                    <p class="main-facts__text text-l">Поставка оборудования на всей территории РФ</p>
                                 </div>
                             </div>
                         </div>
@@ -70,56 +70,50 @@
 
         <!-- options -->
         <section class="main">
-            <div class="container bg-white pb-100">
+            <div class="container bg-white pt-6 pb-6">
                 <div class="row justify-content-center">
                     <div class="col-10">
-                        <div class="main-options__title">Варианты исполнения</div>
+                        <h3 class="main-options__title title-h3 mb-5">Варианты исполнения</h3>
                     </div>
                 </div>
-                <div class="row justify-content-center main-options__block">
+                <div class="row justify-content-center main-options__block mb-5">
                     <div class="col-10">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 mb-5">
                                 <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-1.png')})` }"
                                     ></div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xl">
                                         Снижение уровня  травматизма
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 mb-5">
                                 <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-2.png')})` }"
                                     >
                                     </div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xl">
                                         Логистические  светодиодные табло
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 mb-5">
                                 <a href="javascript:;" class="main-options__item">
                                     <div 
                                         class="main-options__item-image"
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-3.png')})` }"
                                     >
                                     </div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xs">
                                         Производственные  показатели
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center main-options__block">
-                    <div class="col-10">
-                        <div class="row">
                             <div class="col-4">
                                 <a href="javascript:;" class="main-options__item">
                                     <div 
@@ -128,9 +122,9 @@
                                     >
                                         
                                     </div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xl">
                                         Информационные светодиодные табло
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
                             <div class="col-4">
@@ -141,9 +135,9 @@
                                     >
                                         
                                     </div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xl">
                                         Часофикация
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
                             <div class="col-4">
@@ -153,9 +147,9 @@
                                         v-bind:style="{ 'background-image': `url(${require('../assets/options-6.png')})` }"
                                     >
                                     </div>
-                                    <div class="main-options__item-title">
+                                    <p class="main-options__item-title text-xl">
                                         Повышение показателей
-                                    </div>
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -183,9 +177,9 @@
                                     <div class="col-10">
                                         <div class="row align-items-center">
                                             <div class="col-8">
-                                                <div class="main-video__block-title">
+                                                <h4 class="main-video__block-title title-h4 mb-5">
                                                     Информируя пассажиров,  мы помогаем им соориентироваться в городе.
-                                                </div>
+                                                </h4>
                                                 <div class="">
                                                     <button class="button-gradient">О Компании</button>
                                                 </div>
@@ -195,7 +189,7 @@
                                                     <div class="">
                                                         <button class="main-video__block-play"></button>
                                                     </div>
-                                                    <div class="main-video__block-text">Видео о компании</div>
+                                                    <p class="main-video__block-text text-xl">Видео о компании</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -208,11 +202,139 @@
             </div>
         </section>
 
+        <!-- quote -->
+        <section>
+            <div class="container bg-white pt-6">
+                <div class="row">
+                    <div class="col">
+                        <div 
+                            class="main-quote"
+                            v-bind:style="{ 'background-image': `url(${require('../assets/quote.png')})` }"
+                        >
+                            <div class="row">
+                                <div class="col-9 offset-2">
+                                    <p class="main-quote__text text-xl mb-4">
+                                        С другой стороны рамки и место обучения кадров способствует подготовки и реализации модели развития. Идейные соображения высшего порядка, а также укрепление и развитие структуры играет важную роль в формировании существенных финансовых.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9 offset-2">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <a href="javascript:;" class="link-orange">
+                                                Смотреть все
+                                                <i 
+                                                    class="icon-arrow"
+                                                    v-bind:style="{ 'background-image': `url(${require('../assets/right-arrow.png')})` }"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                        <p class="text-l">
+                                            В. Б. Громов
+                                            <br>
+                                            Генеральный директор
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- blog -->
+        <section class="main">
+            <div class="container bg-white pt-6 pb-6">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <h3 class="main-blog__title title-h3 mb-5">Блог</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center main-blog__block">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3">
+                                <a href="javascript:;" class="main-blog__item">
+                                    <div 
+                                        class="main-blog__item-image"
+                                        v-bind:style="{ 'background-image': `url(${require('../assets/blog-1.png')})` }"
+                                    ></div>
+                                    <div class="main-blog__item-title">
+                                        <p class="text-s text-gray mb-1 text-s">
+                                            14.08.2020
+                                        </p>
+                                        <p class="text-m">
+                                            Обзор универсальных спортивных экранов от производителя ITLINE
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="javascript:;" class="main-blog__item">
+                                    <div 
+                                        class="main-blog__item-image"
+                                        v-bind:style="{ 'background-image': `url(${require('../assets/blog-2.png')})` }"
+                                    >
+                                    </div>
+                                    <div class="main-blog__item-title">
+                                        <p class="text-s text-gray mb-1 text-s">
+                                            16.07.2020
+                                        </p>
+                                        <p class="text-m">
+                                            Работа ITLINE  в режиме самоизоляции
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="javascript:;" class="main-blog__item">
+                                    <div 
+                                        class="main-blog__item-image"
+                                        v-bind:style="{ 'background-image': `url(${require('../assets/blog-3.png')})` }"
+                                    >
+                                    </div>
+                                    <div class="main-blog__item-title">
+                                        <p class="text-s text-gray mb-1 text-s">
+                                            12.07.2020
+                                        </p>
+                                        <p class="text-m">
+                                            Установлено табло  в остановочный комплекс Тулы
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="javascript:;" class="main-blog__item">
+                                    <div 
+                                        class="main-blog__item-image"
+                                        v-bind:style="{ 'background-image': `url(${require('../assets/blog-4.png')})` }"
+                                    >
+                                    </div>
+                                    <div class="main-blog__item-title text-m">
+                                        <p class="text-s text-gray mb-1 text-s">
+                                            10.07.2020
+                                        </p>
+                                        <p class="">
+                                            Выращиваем ценные кадры с детства
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!--  -->
         <section>
-            <div class="container pt-100">
+            <div class="container pt-6">
                 <div class="row">
-                    <div class="col"></div>
+                    <div class="co">
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -230,7 +352,6 @@
     .bg-white{
         background-color: $white;
         box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
-        padding-top: 100px;
     }
     .main {
         position: relative;
@@ -268,9 +389,6 @@
                 width: 100%;
                 margin: auto 0;
                 color: $white;
-                font-size: 60px;
-                line-height: 64px;
-                font-weight: bold;
                 text-align: left;
             }
         }
@@ -294,30 +412,18 @@
                 background-position: center center;
             }
             &__title{
-                font-size: 18px;
-                line-height: 20px;
                 text-transform: uppercase;
                 color: $black;
-                margin-bottom: 15px;
                 font-weight: bold;
-            }
-            &__text{
-                font-size: 16px;
-                line-height: 24px;
-                color: $black;
             }
         }
         &-options{
             &__title{
-                font-size: 42px;
-                line-height: 48px;
                 font-weight: bolder;
                 color: $black;
-                margin-bottom: 80px;
             }
             &__block{
                 position: relative;
-                margin-bottom: 50px;
             }
             &__item{
                 position: relative;
@@ -353,12 +459,9 @@
                     }
                 }
                 &-title{
-                    font-size: 18px;
-                    line-height: 24px;
-                    padding: 20px 25px;
+                    padding: 20px;
                     background-color: $white;
                     font-weight: bold;
-                    min-height: 88px;
                 }
             }
         }
@@ -396,15 +499,10 @@
                 margin: auto 0;
                 &-title{
                     text-align: left;
-                    font-size: 36px;
-                    line-height: 40px;
                     color: $white;
                     font-weight: bold;
-                    margin-bottom: 50px;
                 }
                 &-text{
-                    font-size: 18px;
-                    line-height: 24px;
                     color: $white;
                     font-weight: bold;
                 }
@@ -412,8 +510,6 @@
                     position: relative;
                     width: 50px;
                     height: 50px;
-                    font-size: 12px;
-                    line-height: 14px;
                     padding: 15px 10px;
                     margin: 0;
                     color: $white;
@@ -457,6 +553,69 @@
                 background-size: contain;
                 background-position: center center;
                 background-repeat: no-repeat;
+            }
+        }
+        &-quote{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-height: 460px;
+            width: calc(100% + 30px);
+            left: -15px;
+            padding: 110px 0 35px 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: letf bottom;
+            &__text{
+                color: $black;
+                font-weight: bold;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: -70px;
+                    left: -25px;
+                    width: 79px;
+                    height: 60px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-image: url('../assets/quotes.png');
+                }
+            }
+        }
+        &-blog{
+            &__title{
+                font-weight: bolder;
+                color: $black;
+            }
+            &__block{
+                position: relative;
+            }
+            &__item{
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: $black;
+                box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
+                text-decoration: none !important;
+                transition: all .2s;
+                &:hover{
+                    color: #ff3500;
+                }
+                &-image{
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center bottom;
+                }
+                &-title{
+                    padding: 20px;
+                    background-color: $white;
+                    font-weight: bold;
+                }
             }
         }
     }
