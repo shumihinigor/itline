@@ -228,7 +228,7 @@
 
 <style lang="scss">
     .bg-white{
-        background-color: #FFFFFF;
+        background-color: $white;
         box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, .05);
         padding-top: 100px;
     }
@@ -258,7 +258,7 @@
                 min-height: 460px;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: left top;
+                background-position: left bottom;
             }
 
             &__text {
@@ -267,7 +267,7 @@
                 z-index: 1;
                 width: 100%;
                 margin: auto 0;
-                color: #FFFFFF;
+                color: $white;
                 font-size: 60px;
                 line-height: 64px;
                 font-weight: bold;
@@ -356,7 +356,7 @@
                     font-size: 18px;
                     line-height: 24px;
                     padding: 20px 25px;
-                    background-color: #FFFFFF;
+                    background-color: $white;
                     font-weight: bold;
                     min-height: 88px;
                 }
@@ -398,14 +398,14 @@
                     text-align: left;
                     font-size: 36px;
                     line-height: 40px;
-                    color: #FFFFFF;
+                    color: $white;
                     font-weight: bold;
                     margin-bottom: 50px;
                 }
                 &-text{
                     font-size: 18px;
                     line-height: 24px;
-                    color: #FFFFFF;
+                    color: $white;
                     font-weight: bold;
                 }
                 &-play{
@@ -416,7 +416,7 @@
                     line-height: 14px;
                     padding: 15px 10px;
                     margin: 0;
-                    color: #FFFFFF;
+                    color: $white;
                     background: linear-gradient(to bottom, #ff9100, #ff3500);
                     border: none;
                     outline: none;

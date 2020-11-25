@@ -65,7 +65,7 @@
             align-items: center;
             justify-content: space-around;
             list-style: none;
-            color: #FFFFFF;
+            color: $white;
             margin: 0;
             padding: 0;
             & li{
@@ -77,7 +77,7 @@
                     margin-right: 0;
                 }
                 & a{
-                    color: #FFFFFF;
+                    color: $white;
                     text-decoration: none;
                 }
             }
@@ -85,12 +85,12 @@
         &-phone{
             font-size: 12px;
             line-height: 14px;
-            color: #FFFFFF;
+            color: $white;
             text-align: right;
             & a{
                 font-size: 16px;
                 line-height: 18px;
-                color: #FFFFFF;
+                color: $white;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
@@ -103,7 +103,7 @@
                 line-height: 14px;
                 padding: 15px 10px;
                 margin: 0;
-                color: #FFFFFF;
+                color: $white;
                 background: orange;
                 border: none;
                 outline: none;
