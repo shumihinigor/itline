@@ -22,15 +22,3 @@
     }
 
 </script>
-
-<style lang="scss">
-    body {
-        background-color: #f8f8f8;
-    }
-    #app {
-        font-family: 'Open Sans', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: $black;
-    }
-</style>

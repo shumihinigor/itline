@@ -1,19 +1,20 @@
 .text{
     &-s{
-        font-size: 0.7rem !important;
-        line-height: 1rem !important;
+        // font-size: 0.7rem !important;
+        font-size: calc(8px + 2 * (100vw / 1140)) !important;
+        // line-height: 1rem !important;
     }
     &-m{
-        font-size: 0.8rem !important;
-        line-height: 1.2rem !important;
+        font-size: calc(10px + 2 * (100vw / 1140)) !important;
     }
     &-l{
-        font-size: 1rem !important;
-        line-height: 1.4rem !important;
+        font-size: calc(12px + 2 * (100vw / 1140)) !important;
     }
     &-xl{
-        font-size: 1.1rem !important;
-        line-height: 1.5rem !important;
+        font-size: calc(14px + 2 * (100vw / 1140)) !important;
+    }
+    &-xxl{
+        font-size: calc(16px + 2 * (100vw / 1140)) !important;
     }
     &-gray{
         color: $gray !important;
