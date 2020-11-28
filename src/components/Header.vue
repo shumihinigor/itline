@@ -9,7 +9,7 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav mr-auto header-links">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <router-link class="nav-link" to="/">Главная</router-link>
                     </li>
                     <li class="nav-item">
@@ -27,15 +27,6 @@
                     <li class="nav-item">
                         <router-link class="nav-link" to="/support">Поддержка</router-link>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown07">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li> -->
                 </ul>
                 <div class="header-phone mr-auto">
                     <div class="">Бесплатно по России</div>
@@ -47,59 +38,51 @@
             </div>
         </div>
     </header>
-    <!-- <header class="header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-2">
-                    <div class="header-logo"></div>
-                </div>
-                <div class="col-6">
-                    <ul class="header-links">
-                        <li>
-                            <router-link to="/">Главная</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/products">Продукция</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/about">о компании</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/blog">БЛОГ</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/contacts">Контакты</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/support">Поддержка</router-link>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-2">
-                    <div class="header-phone">
-                        <div class="">Бесплатно по России</div>
-                        <a href="tel:+78002002815" class="">8 800 200 28 15</a>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="header-contact">
-                        <button type="button" class="btn">Связаться с нами</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header> -->
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            
+        }
+    }
+}
+</script>
 
 <style lang="scss">
     .header {
-        position: relative;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
         padding: 20px 0;
         background-color: #333333;
         box-shadow: 0px 0px 10px 0px #000000;
-        margin-bottom: 100px;
+        // margin-bottom: 100px;
+        z-index: 9999;
+        & .nav-link {
+            position: relative;
+            &.router-link-exact-active{
+                color: $white !important;
+            }
+            &::after{
+                content: '';
+                width: 0;
+                transition: all .3s;
+            }
+            &:hover{
+                &::after{
+                    position: absolute;
+                    height: 1px;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    background: #FFF;
+                }
+            }
+        }
         @media (max-width: 991px) {
-            margin-bottom: 50px;
             & .navbar-toggler {
                 &:focus{
                     outline: none;
@@ -163,6 +146,11 @@
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
+                transition: all .1s;
+                &:hover{
+                    color: transparentize($white, 0.5);
+                    text-decoration: none;
+                }
             }
         }
 
@@ -185,7 +173,8 @@
                 border: 1px solid white;
                 text-transform: uppercase;
                 font-weight: bold;
-
+                border-radius: 5px;
+                transition: background .2s;
                 &:focus {
                     outline: none;
                     box-shadow: none;
@@ -196,6 +185,7 @@
                     border-radius: 5px;
                     border: none;
                     padding: 16px 11px;
+                    color: $white;
                 }
             }
         }
