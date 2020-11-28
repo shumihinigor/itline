@@ -148,7 +148,7 @@ export default {
                 font-weight: bold;
                 transition: all .1s;
                 &:hover{
-                    color: transparentize($white, 0.5);
+                    color: transparentize($white, 0.3);
                     text-decoration: none;
                 }
             }

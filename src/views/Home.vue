@@ -401,7 +401,7 @@
                 background-size: contain;
                 background-position: center center;
                 background-repeat: no-repeat;
-                @media (max-width: 991px) {
+                @media (max-width: 767px) {
                     width: 100%;
                     height: 80%;
                     right: 0;

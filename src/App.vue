@@ -2,7 +2,10 @@
     <div id="app">
         <Header />
         <div class="wrapper">
-            <transition>
+            <transition
+                name="fade"
+                mode="out-in"
+            >
                 <router-view></router-view>
             </transition>
         </div>
@@ -70,7 +73,6 @@
     }
     .wrapper{
         margin-bottom: auto;
-        margin-top: auto;
         padding-top: 160px;
         @media (max-width: 991px) {
             padding-top: 110px;
@@ -107,5 +109,16 @@
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAyMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuNjA2NiAwLjI3MjA3OEwtOS4yNzI1OWUtMDggMTAuODc4N0wyLjEyMTMyIDEzTDEyLjcyNzkgMi4zOTM0TDEwLjYwNjYgMC4yNzIwNzhaIiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik05IDIuMzkzMTdMMTkuNjA2NiAxMi45OTk4TDIxLjcyNzkgMTAuODc4NUwxMS4xMjEzIDAuMjcxODUxTDkgMi4zOTMxN1oiIGZpbGw9IndoaXRlIi8+PC9zdmc+);
 
         }
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition-duration: 0.2s;
+        transition-property: opacity;
+        transition-timing-function: ease;
+    }
+
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0
     }
 </style>
