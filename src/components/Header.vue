@@ -56,7 +56,7 @@ export default {
         top: 0;
         left: 0;
         right: 0;
-        padding: 20px 0;
+        padding: 1.2rem 1rem;
         background-color: #333333;
         box-shadow: 0px 0px 10px 0px #000000;
         // margin-bottom: 100px;
