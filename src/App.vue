@@ -2,6 +2,7 @@
     <div id="app">
         <Header />
         <div class="wrapper">
+        123
             <transition
                 name="fade"
                 mode="out-in"
