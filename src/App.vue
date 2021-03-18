@@ -2,7 +2,7 @@
     <div id="app">
         <Header />
         <div class="wrapper">
-            test 2
+            test
             <transition
                 name="fade"
                 mode="out-in"
