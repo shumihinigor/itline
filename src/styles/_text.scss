@@ -1,28 +1,35 @@
-.text{
-    &-s{
-        font-size: calc(8px + 2 * (100vw / 1140)) !important;
-    }
-    &-m{
-        font-size: calc(10px + 2 * (100vw / 1140)) !important;
-    }
-    &-l{
-        font-size: calc(12px + 2 * (100vw / 1140)) !important;
-    }
-    &-xl{
-        font-size: calc(14px + 2 * (100vw / 1140)) !important;
-    }
-    &-xxl{
-        font-size: calc(16px + 2 * (100vw / 1140)) !important;
-    }
-    &-gray{
-        color: $gray !important;
-    }
-    &-bold{
-        font-family: $Bold;
-    }
+.p1 {
+    font-size: 20px;
+    line-height: 24px;
+}
+.p2 {
+    font-size: 16px;
+    line-height: 160%;
+}
+.p3 {
+    font-size: 15px;
+    line-height: 132%;
+}
+.p4 {
+    font-size: 14px;
+    line-height: 140%;
+}
+.p5 {
+    font-size: 12px;
+    line-height: 140%;
 }
 
-p {
-    margin-top: 0;
-    margin-bottom: 0;
+.weight {
+    &-noraml {
+        font-weight: normal;
+    }
+    &-500 {
+        font-weight: 500;
+    }
+    &-700 {
+        font-weight: 700;
+    }
+    &-300 {
+        font-weight: 300;
+    }
 }

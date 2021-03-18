@@ -1,18 +1,19 @@
 <template>
-    <ProductCard />
-    <!-- <FeedBackItem 
-        name="Иванов Иван"
-        image="feedback-1.png"
-    /> -->
+    <section class="support">
+        <div class="wrapper mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h1">Поддержка</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
-    import FeedBackItem from '@/components/Feedback/FeedBackItem.vue'
-    import ProductCard from '@/components/Products/ProductCard.vue'
     export default {
-        components: {
-            FeedBackItem, ProductCard
-        },
         name: 'Support'
     }
 </script>

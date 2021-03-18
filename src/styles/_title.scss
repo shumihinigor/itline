@@ -1,25 +1,24 @@
-.title{
-    &-h1{
-        font-family: $Bold;
-        font-size: calc(18px + 32 * (100vw / 1140)) !important;
-        line-height: initial;
-    }
-    &-h2{
-        
-    }
-    &-h3{
-        font-family: $Bold;
-        font-size: calc(20px + 22 * (100vw / 1140)) !important;
-        line-height: initial;
-    }
-    &-h4{
-        font-family: $Bold;
-        font-size: calc(18px + 14 * (100vw / 1140)) !important;
-        line-height: initial;
-    }
-    &-h5{
-        font-family: $Bold;
-        font-size: calc(16px + 12 * (100vw / 1140)) !important;
-        line-height: initial;
-    }
+.h1 {
+    font-size: 40px;
+    line-height: 140%;
+}
+.h2 {
+    font-size: 40px;
+    line-height: 115%;
+}
+.h3 {
+    font-size: 30px;
+    line-height: 130%;
+}
+.h4 {
+    font-size: 24px;
+    line-height: 19px;
+}
+.h5 {
+    font-size: 20px;
+    line-height: 120%;
+}
+.h6 {
+    font-size: 16px;
+    line-height: 140%;
 }

@@ -1,11 +1,13 @@
 <template>
     <section class="about">
-        <div class="container">
-            <row>
-                <div class="col">
-                    <h1>This is an about page</h1>
+        <div class="wrapper mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h1">О компании</h1>
+                    </div>
                 </div>
-            </row>
+            </div>
         </div>
     </section>
 </template>

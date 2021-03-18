@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{font-family:'RoadRadio-Black';}
-	.st2{font-size:148.2388px;}
-	.st3{letter-spacing:6;}
-</style>
-<text transform="matrix(1 0 0 1 41.2927 312.5645)" class="st0 st1 st2 st3">ITLINE</text>
-<polygon class="st0" points="536.91,186.94 536.91,186.94 332.35,186.94 308.19,208.73 536.91,208.73 536.91,334.36 168.62,334.36 
-	144.46,356.16 536.91,356.16 558.71,356.16 558.71,186.94 "/>
+<svg width="121" height="40" viewBox="0 0 121 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.14988 10.3213V29.6959H0V10.3213H5.14988Z" fill="white"/>
+<path d="M29.7473 10.3213V14.945H22.2123V29.6959H17.0624V14.945H9.52734V10.3213H29.7473Z" fill="white"/>
+<path d="M39.31 10.3213V25.0723H52.0985V29.6959H34.1602V10.3213H39.31Z" fill="white"/>
+<path d="M61.4878 10.3213V29.6959H56.3379V10.3213H61.4878Z" fill="white"/>
+<path d="M71.1575 10.3213L81.5306 22.0229V10.3213H86.6804V29.6959H81.9403L71.5457 17.9944V29.6959H66.4648V10.3213H71.1575Z" fill="white"/>
+<path d="M109.458 10.3213V14.945H96.7729V17.5717H108.16V22.1954H96.7729V24.9299H109.911V29.6959H91.623V10.3213H109.458Z" fill="white"/>
+<path d="M115.497 0V0.00431208H67.1463L61.4357 5.15419H115.497V34.8501H28.4446L22.7383 40H115.497H120.646V0H115.497Z" fill="white"/>
 </svg>
