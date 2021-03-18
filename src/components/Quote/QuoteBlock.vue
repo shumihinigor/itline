@@ -7,7 +7,7 @@
                     <div class="bg-white pt-5">
                         <div 
                             class="main-quote"
-                            v-bind:style="{ 'background-image': `url(${require('../assets/images/quote.png')})` }"
+                            :style="{ 'background-image': `url(${require('../../assets/images/quote.png')})` }"
                         >
                             <div class="row">
                                 <div class="col-lg-9 col-12 offset-lg-2">
@@ -25,7 +25,7 @@
                                                     Смотреть все
                                                     <i 
                                                         class="icon-arrow"
-                                                        v-bind:style="{ 'background-image': `url(${require('../assets/images/right-arrow.png')})` }"
+                                                        v-bind:style="{ 'background-image': `url(${require('../../assets/images/right-arrow.png')})` }"
                                                     ></i>
                                                 </a>
                                             </div>
@@ -94,7 +94,7 @@ export default {
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    background-image: url('../assets/images/quotes.png');
+                    background-image: url('../../assets/images/quotes.png');
                     @media (max-width: 991px) {
                         left: 15px;
                         top: -80px;

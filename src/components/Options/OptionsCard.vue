@@ -3,7 +3,7 @@
         <a href="javascript:;" class="main-options__item">
             <div 
                 class="main-options__item-image"
-                :style="{'background-image': 'url(' + require('../assets/images/' + image) + ')'}"
+                :style="{'background-image': 'url(' + require('../../assets/images/' + image) + ')'}"
             ></div>
             <p class="main-options__item-title text-xl">
                 {{ text }}
@@ -68,7 +68,7 @@ export default {
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        background-image: url('../assets/images/options-bg.png');
+                        background-image: url('../../assets/images/options-bg.png');
                         background-size: cover;
                         background-position: center -75%;
                         background-repeat: no-repeat;

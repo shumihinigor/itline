@@ -216,7 +216,7 @@
 </template>
 
 <script>
-    import BlogCard from '@/components/BlogCard.vue'
+    import BlogCard from '@/components/Blog/BlogCard.vue'
     import Paginate from 'vuejs-paginate'
     
     export default {
@@ -309,6 +309,7 @@
                 cursor: pointer;
                 text-decoration: none;
                 font-size: calc(20px + 10 * (100vw / 1140)) !important;
+                line-height: 30px;
                 @media (max-width: 991px) {
                     padding: 2px;
                     max-width: 35px;
@@ -344,6 +345,7 @@
                 cursor: pointer;
                 text-decoration: none;
                 font-size: calc(20px + 10 * (100vw / 1140)) !important;
+                line-height: 30px;
                 @media (max-width: 991px) {
                     padding: 2px;
                     max-width: 35px;

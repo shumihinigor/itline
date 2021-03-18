@@ -3,7 +3,7 @@
         <div class="main-facts">
             <div 
                 class="main-facts__image"
-                :style="{'background-image': 'url(' + require('../assets/images/' + image) + ')'}"
+                :style="{'background-image': 'url(' + require('../../assets/images/' + image) + ')'}"
             >
             </div>
             <p class="main-facts__title text-xl mb-2">{{ title }}</p>

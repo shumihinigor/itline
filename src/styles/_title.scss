@@ -1,20 +1,25 @@
 .title{
     &-h1{
+        font-family: $Bold;
         font-size: calc(18px + 32 * (100vw / 1140)) !important;
-        font-weight: bold !important;
+        line-height: initial;
     }
     &-h2{
         
     }
     &-h3{
+        font-family: $Bold;
         font-size: calc(20px + 22 * (100vw / 1140)) !important;
-        font-weight: bold !important;
+        line-height: initial;
     }
     &-h4{
-        font-size: calc(18px + 16 * (100vw / 1140)) !important;
-        font-weight: bold !important;
+        font-family: $Bold;
+        font-size: calc(18px + 14 * (100vw / 1140)) !important;
+        line-height: initial;
     }
     &-h5{
-        
+        font-family: $Bold;
+        font-size: calc(16px + 12 * (100vw / 1140)) !important;
+        line-height: initial;
     }
 }

@@ -1,8 +1,6 @@
 .text{
     &-s{
-        // font-size: 0.7rem !important;
         font-size: calc(8px + 2 * (100vw / 1140)) !important;
-        // line-height: 1rem !important;
     }
     &-m{
         font-size: calc(10px + 2 * (100vw / 1140)) !important;
@@ -18,6 +16,9 @@
     }
     &-gray{
         color: $gray !important;
+    }
+    &-bold{
+        font-family: $Bold;
     }
 }
 

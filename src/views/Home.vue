@@ -230,10 +230,10 @@
 </template>
 
 <script>
-    import BlogCard from '@/components/BlogCard.vue'
-    import QuoteBlock from '@/components/QuoteBlock.vue'
-    import OptionsCard from '@/components/OptionsCard.vue'
-    import FactsItem from '@/components/FactsItem.vue'
+    import BlogCard from '@/components/Blog/BlogCard.vue'
+    import QuoteBlock from '@/components/Quote/QuoteBlock.vue'
+    import OptionsCard from '@/components/Options/OptionsCard.vue'
+    import FactsItem from '@/components/Facts/FactsItem.vue'
 
     export default {
         name: 'Home',

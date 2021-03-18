@@ -1,17 +1,18 @@
 <template>
-     <section class="support">
-          <div class="container">
-               <div class="row">
-                    <div class="col">
-                         <h1>This is an support page</h1>
-                    </div>
-               </div>
-          </div>
-     </section>
+    <ProductCard />
+    <!-- <FeedBackItem 
+        name="Иванов Иван"
+        image="feedback-1.png"
+    /> -->
 </template>
 
 <script>
-     export default {
-          name: 'Support'
-     }
+    import FeedBackItem from '@/components/Feedback/FeedBackItem.vue'
+    import ProductCard from '@/components/Products/ProductCard.vue'
+    export default {
+        components: {
+            FeedBackItem, ProductCard
+        },
+        name: 'Support'
+    }
 </script>

@@ -3,10 +3,15 @@
         <a href="javascript:;" class="main-blog__item">
             <div 
                 class="main-blog__item-image"
-                :style="{'background-image': 'url(' + require('../assets/images/' + image) + ')'}"
+                :style="{'background-image': 'url(' + require('../../assets/images/' + image) + ')'}"
             ></div>
-            <div class="main-blog__item-title">
-                <p class="text-s text-gray mb-1 text-s">
+            <div 
+                class="main-blog__item-title"
+                :style="[textCenter ? {marginTop: 'auto'} : {marginTop: '0'}]"
+            >
+                <p 
+                    v-if="date !== ''"
+                    class="text-s text-gray mb-1 text-s">
                     {{ date }}
                 </p>
                 <p class="text-m">
@@ -36,6 +41,10 @@ export default {
         image: {
             type: String,
             default: ''
+        },
+        textCenter: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
@@ -52,7 +61,8 @@ export default {
             }
             &__item{
                 position: relative;
-                display: block;
+                display: flex;
+                flex-direction: column;
                 width: 100%;
                 height: 100%;
                 color: $black;
@@ -68,12 +78,13 @@ export default {
                     height: 200px;
                     background-size: cover;
                     background-repeat: no-repeat;
-                    background-position: center bottom;
+                    background-position: center top;
                 }
                 &-title{
                     padding: 20px;
                     background-color: $white;
                     font-weight: bold;
+                    margin-bottom: auto;
                 }
             }
         }
