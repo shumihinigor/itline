@@ -1,71 +1,73 @@
 <template>
     <section class="banner">
         <div class="wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <swiper class="swiper" ref="swiperBanner" :options="swiperOptions">
-                            <swiper-slide>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h1 class="banner-title h1 weight-700">
-                                            Производим комплексные системы информирования 
-                                            на
-                                            основе светодиодных табло
-                                        </h1>
-                                        <button type="button" class="btn default">
-                                            <span class="p4">О компании</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h1 class="banner-title h1 weight-700">
-                                            Производим комплексные системы информирования 
-                                            на
-                                            основе светодиодных табло
-                                        </h1>
-                                        <button type="button" class="btn default">
-                                            <span class="p4">О компании</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h1 class="banner-title h1 weight-700">
-                                            Производим комплексные системы информирования 
-                                            на
-                                            основе светодиодных табло
-                                        </h1>
-                                        <button type="button" class="btn default">
-                                            <span class="p4">О компании</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h1 class="banner-title h1 weight-700">
-                                            Производим комплексные системы информирования 
-                                            на
-                                            основе светодиодных табло
-                                        </h1>
-                                        <button type="button" class="btn default">
-                                            <span class="p4">О компании</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <div class="swiper-pagination" slot="pagination"></div>
-                        </swiper>
+            <swiper class="swiper" ref="swiperBanner" :options="swiperOptions">
+                <swiper-slide>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <h1 class="banner-title h1 weight-700">
+                                    Производим комплексные системы информирования 
+                                    на
+                                    основе светодиодных табло
+                                </h1>
+                                <button type="button" class="btn default">
+                                    <span class="p4">О компании</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <h1 class="banner-title h1 weight-700">
+                                    Производим комплексные системы информирования 
+                                    на
+                                    основе светодиодных табло
+                                </h1>
+                                <button type="button" class="btn default">
+                                    <span class="p4">О компании</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <h1 class="banner-title h1 weight-700">
+                                    Производим комплексные системы информирования 
+                                    на
+                                    основе светодиодных табло
+                                </h1>
+                                <button type="button" class="btn default">
+                                    <span class="p4">О компании</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <h1 class="banner-title h1 weight-700">
+                                    Производим комплексные системы информирования 
+                                    на
+                                    основе светодиодных табло
+                                </h1>
+                                <button type="button" class="btn default">
+                                    <span class="p4">О компании</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
         </div>
     </section>
 </template>
