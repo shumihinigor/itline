@@ -19,6 +19,24 @@
     line-height: 140%;
 }
 
+.text {
+    &-orange {
+        color: $orange;
+    }
+    &-grey-1 {
+        color: $grey-1;
+    }
+    &-grey-2 {
+        color: $grey-2;
+    }
+    &-grey-3 {
+        color: $grey-3;
+    }
+    &-grey-6 {
+        color: $grey-6;
+    }
+}
+
 .weight {
     &-noraml {
         font-weight: normal;

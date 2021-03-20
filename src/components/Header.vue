@@ -3,12 +3,17 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div :class="['d-flex align-items-center justify-content-between', {'d-sm-none': openMenu}]">
+                        <div class="d-lg-none d-block">
+                            <div class="header-hamburger" @click="openMenu = !openMenu">
+                                <img svg-inline src="../assets/images/hamburger.svg" alt="hamburger">
+                            </div>
+                        </div>
                         <div class="d-flex align-items-center">
                             <div class="header-logo">
                                 <router-link to="/"><img svg-inline src="../assets/images/logo.svg" alt="logo"></router-link>
                             </div>
-                            <ul class="header-links">
+                            <ul class="header-links d-lg-flex d-none">
                                 <li class="header-link">
                                     <router-link class="p5 weight-500 text-uppercase" to="/products">Продукция</router-link>
                                 </li>
@@ -27,10 +32,10 @@
                             </ul>
                         </div>
                         <div class="d-flex align-items-center">
-                            <div class="header-contact">
+                            <div class="header-contact d-lg-block d-none">
                                 <a class="p4" href="javascript:;">Связаться с нами</a>
                             </div>
-                            <div class="header-phone">
+                            <div class="header-phone d-lg-block d-none">
                                 <a class="p4" href="tel:88005557777">8 (800) 555-77-77</a>
                             </div>
                             <div class="header-search">
@@ -50,7 +55,7 @@ import { mapGetters } from "vuex";
 export default {
     data() {
         return {
-            
+            openMenu: false
         }
     },
     computed: {
@@ -69,8 +74,20 @@ export default {
         padding: 16px 0;
         transition: all 0.2s;
         background-color: $white;
+        &-hamburger {
+            cursor: pointer;
+        }
         &-logo {
             margin-right: 30px;
+            @media (max-width: 1199px) {
+                margin-right: 15px;
+            }
+            @media (max-width: 991px) {
+                & svg {
+                    width: 97px;
+                    height: 32px;
+                }
+            }
         }
         &-links {
             display: flex;
@@ -133,6 +150,12 @@ export default {
         }
         &-search {
             cursor: pointer;
+            @media (max-width: 991px) {
+                & svg {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
         }
         & a {
             color: $grey-2;
