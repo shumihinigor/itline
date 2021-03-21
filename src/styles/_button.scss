@@ -12,7 +12,8 @@
         }
     }
     &.contour {
-        border: 1ps solid $orange;
+        border: 1px solid $orange;
+        background-color: $white;
         color: $orange;
         &:hover {
             box-shadow: 0px 4px 8px rgba(239, 111, 46, 0.25);

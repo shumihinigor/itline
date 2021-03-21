@@ -1,15 +1,17 @@
 <template>
     <div id="app">
-        <Header />
-        <template>
-            <transition
-                name="fade"
-                mode="out-in"
-            >
-                <router-view></router-view>
-            </transition>
-        </template>
-        <Footer />
+        <div class="wrapper">
+            <Header />
+            <template>
+                <transition
+                    name="fade"
+                    mode="out-in"
+                >
+                    <router-view></router-view>
+                </transition>
+            </template>
+            <Footer />
+        </div>
     </div>
 </template>
 
@@ -41,7 +43,12 @@
 
 <style lang="scss">
     #app {
-        padding-bottom: 500px;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding-top: 72px;
     }
     .wrapper {
         padding-top: 72px;
@@ -57,5 +64,10 @@
     .fade-enter,
     .fade-leave-active {
         opacity: 0
+    }
+    @media (min-width: 1200px) {
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 1240px !important;
+        }
     }
 </style>

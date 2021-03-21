@@ -49,6 +49,11 @@ module.exports = {
         // template is inferred to be `public/subpage.html`
         // and falls back to `public/index.html` if not found.
         // Output filename is inferred to be `subpage.html`.
-        about: 'src/main.js'
+        about: 'src/main.js',
+        solutions: 'src/main.js',
+        products: 'src/main.js',
+        news: 'src/main.js',
+        support: 'src/main.js',
+        contacts: 'src/main.js',
       }
 };

@@ -18,16 +18,19 @@
                                     <router-link class="p5 weight-500 text-uppercase" to="/products">Продукция</router-link>
                                 </li>
                                 <li class="header-link">
+                                    <router-link class="p5 weight-500 text-uppercase" to="/solutions">Готовые решения</router-link>
+                                </li>
+                                <li class="header-link">
+                                    <router-link class="p5 weight-500 text-uppercase" to="/support">Техподдержка</router-link>
+                                </li>
+                                <li class="header-link">
+                                    <router-link class="p5 weight-500 text-uppercase" to="/news">новости</router-link>
+                                </li>
+                                <li class="header-link">
                                     <router-link class="p5 weight-500 text-uppercase" to="/about">о компании</router-link>
                                 </li>
                                 <li class="header-link">
-                                    <router-link class="p5 weight-500 text-uppercase" to="/blog">БЛОГ</router-link>
-                                </li>
-                                <li class="header-link">
                                     <router-link class="p5 weight-500 text-uppercase" to="/contacts">Контакты</router-link>
-                                </li>
-                                <li class="header-link">
-                                    <router-link class="p5 weight-500 text-uppercase" to="/support">Поддержка</router-link>
                                 </li>
                             </ul>
                         </div>

@@ -1,10 +1,10 @@
 <template>
-    <section class="contacts">
+    <section class="gallery">
         <div class="mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h1 class="h1">Контакты</h1>
+                        <h1 class="h1">Галерея</h1>
                     </div>
                 </div>
             </div>
@@ -14,6 +14,6 @@
 
 <script>
     export default {
-        name: 'Contacts'
+        name: 'Gallery'
     }
 </script>

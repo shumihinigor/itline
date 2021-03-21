@@ -6,6 +6,8 @@
         <ProductsBlock />
         <!-- about block -->
         <AboutBlock />
+        <!-- gallery block -->
+        <GalleryBlock />
     </div>
 </template>
 
@@ -14,13 +16,15 @@
     import ProductsBlock from '@/components/Products/ProductsBlock'
     import SwiperBanner from '@/components/Swipers/SwiperBanner'
     import AboutBlock from '@/components/About/AboutBlock'
+    import GalleryBlock from '@/components/Gallery/GalleryBlock'
 
     export default {
         name: 'Home',
         components: {
             SwiperBanner,
             ProductsBlock,
-            AboutBlock
+            AboutBlock,
+            GalleryBlock
         },
         data() {
             return {
