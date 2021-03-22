@@ -8,6 +8,8 @@
         <AboutBlock />
         <!-- gallery block -->
         <GalleryBlock />
+        <!-- feedback block -->
+        <FeedbackBlock />
     </div>
 </template>
 
@@ -17,6 +19,7 @@
     import SwiperBanner from '@/components/Swipers/SwiperBanner'
     import AboutBlock from '@/components/About/AboutBlock'
     import GalleryBlock from '@/components/Gallery/GalleryBlock'
+    import FeedbackBlock from '@/components/Feedback/FeedbackBlock'
 
     export default {
         name: 'Home',
@@ -24,27 +27,26 @@
             SwiperBanner,
             ProductsBlock,
             AboutBlock,
-            GalleryBlock
+            GalleryBlock,
+            FeedbackBlock
         },
         data() {
             return {
                 
             }
         },
-        computed: {
-            
-        },
-        mounted() {
-            
-        },
         created() {
-
+            this.$store.commit('changeActiveHeader', true)
+            window.addEventListener('scroll', this.scrollHandler)
         },
         destroyed() {
-            
+            this.$store.commit('changeActiveHeader', false)
+            window.removeEventListener('scroll', this.scrollHandler)
         },
         methods: {
-
+            scrollHandler() {
+                window.scrollY > 0 ? this.$store.commit('changeActiveHeader', false) : this.$store.commit('changeActiveHeader', true)
+            }
         }
     }
 </script>

@@ -4,6 +4,9 @@
     padding: 11px 75px;
     text-align: center;
     transition: all 0.2s;
+    & span {
+        font-family: $TTNormsMedium;
+    }
     &.default {
         background-color: $orange;
         color: $white;

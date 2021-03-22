@@ -1,10 +1,14 @@
 <template lang="">
     <section class="about mb-24">
         <div class="container mb-64">
-            <div class="row">
+            <div class="row mb-24">
                 <div class="col-12">
                     <h1 class="h1 text-grey-1 font-weight-bold mb-16">ITLINE – производитель светодиодного оборудования</h1>
-                    <p class="p1 text-orange mb-24">Разработка функциональных решений в сфере аудио и визуального информирования</p>
+                    <p class="p1 text-orange mb-0">Разработка функциональных решений в сфере аудио и визуального информирования</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-12">
                     <p class="p3 text-grey-3 mb-0">
                         Инновационные проекты ITLINE широко применяются в сфере обслуживания, транспортного мониторинга 
                         и промышленной безопасности. Конструкторское бюро

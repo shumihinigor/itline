@@ -2,6 +2,7 @@
     <div id="app">
         <div class="wrapper">
             <Header />
+            <Breadcrumbs v-if="this.$route.name !== 'Home'" />
             <template>
                 <transition
                     name="fade"
@@ -16,12 +17,13 @@
 </template>
 
 <script>
-    import Header from '@/components/Header.vue'
-    import Footer from '@/components/Footer.vue'
+    import Header from '@/components/Header'
+    import Footer from '@/components/Footer'
+    import Breadcrumbs from '@/components/Breadcrumbs'
     
     export default {
         components: {
-            Header, Footer
+            Header, Footer, Breadcrumbs
         },
         data() {
             return {
@@ -37,6 +39,9 @@
         methods: {
             
         },
+        updated() {
+            this.$store.commit('pushBreadcrumbs', this.$route.meta.breadcrumb)
+        }
     }
 
 </script>

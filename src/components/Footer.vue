@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <div class="d-flex align-items-start">
                         <div class="mr-80">
                             <h6 class="h6 font-weight-bold text-grey-1 mb-16">Продукция</h6>
@@ -57,7 +57,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4"></div>
+                <div class="col-5 footer-help-desk">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                        <div class="">
+                            <div class="d-flex align-items-center mb-16">
+                                <div class="mr-16">
+                                    <img svg-inline src="../assets/images/help_desk.svg" alt="help_desk">
+                                </div>
+                                <div class="">
+                                    <p class="p4 mb-8">Единая справочная служба</p>
+                                    <a href="tel:88002002815" class="tel h5">8 800 200-28-15</a>
+                                </div>
+                            </div>
+                            <button type="button" class="btn contour"><span class="p4 text-uppercase">Обратиться в техподдержку</span></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -119,6 +134,17 @@ export default {
                 }
                 &:last-child {
                     margin-right: 0;
+                }
+            }
+        }
+        &-help-desk {
+            border-left: 1px solid #E0E0E0;
+            & .tel {
+                text-decoration: none;
+                color: $grey-1;
+                &:hover {
+                    text-decoration: none;
+                    color: $grey-1;
                 }
             }
         }

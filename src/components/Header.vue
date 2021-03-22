@@ -107,6 +107,12 @@ export default {
                 position: relative;
                 color: $grey-6;
                 text-decoration: none;
+                &.router-link-active {
+                    text-decoration: none;
+                    &::after {
+                        width: 100%;
+                    }
+                }
                 &::after {
                     content: '';
                     position: absolute;
@@ -162,6 +168,7 @@ export default {
         }
         & a {
             color: $grey-2;
+            font-family: $TTNormsMedium;
             &:hover {                
                 color: $grey-2;
             }

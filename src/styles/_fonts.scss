@@ -1,44 +1,101 @@
 @font-face {
-    font-family: Montserrat-Bold;
+    font-family: TTNorms-Black;
     font-display: swap;
     src: 
-        url('~@/assets/fonts/Montserrat-Bold.woff') format('woff'), 
-        url('~@/assets/fonts/Montserrat-Bold.woff2') format('woff2'), 
-        url('~@/assets/fonts/Montserrat-Bold.eot') format('eot'), 
-        url('~@/assets/fonts/Montserrat-Bold.ttf') format('ttf');
+        url('~@/assets/fonts/TTNorms/TTNorms-Black.woff') format('woff'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Black.woff2') format('woff2'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Black.eot') format('eot'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Black.ttf') format('ttf');
     font-weight: 400;
     font-style: normal
 }
 @font-face {
-    font-family: Montserrat-Medium;
+    font-family: TTNorms-Bold;
     font-display: swap;
     src: 
-        url('~@/assets/fonts/Montserrat-Medium.woff') format("woff"), 
-        url('~@/assets/fonts/Montserrat-Medium.woff2') format("woff2"), 
-        url('~@/assets/fonts/Montserrat-Medium.eot') format("eot"), 
-        url('~@/assets/fonts/Montserrat-Medium.ttf') format("ttf");
+        url('~@/assets/fonts/TTNorms/TTNorms-Bold.woff') format('woff'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Bold.woff2') format('woff2'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Bold.eot') format('eot'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Bold.ttf') format('ttf');
     font-weight: 400;
     font-style: normal
 }
 @font-face {
-    font-family: Montserrat-Regular;
+    font-family: TTNorms-Medium;
     font-display: swap;
     src: 
-        url('~@/assets/fonts/Montserrat-Regular.woff') format("woff"), 
-        url('~@/assets/fonts/Montserrat-Regular.woff2') format("woff2"), 
-        url('~@/assets/fonts/Montserrat-Regular.eot') format("eot"), 
-        url('~@/assets/fonts/Montserrat-Regular.ttf') format("ttf");
+        url('~@/assets/fonts/TTNorms/TTNorms-Medium.woff') format('woff'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Medium.woff2') format('woff2'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Medium.eot') format('eot'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Medium.ttf') format('ttf');
     font-weight: 400;
     font-style: normal
 }
 @font-face {
-    font-family: PragmaticaBlack;
+    font-family: TTNorms-Regular;
     font-display: swap;
     src: 
-        url('~@/assets/fonts/PragmaticaBlack.woff') format("woff"), 
-        url('~@/assets/fonts/PragmaticaBlack.woff2') format("woff2"), 
-        url('~@/assets/fonts/PragmaticaBlack.eot') format("eot"), 
-        url('~@/assets/fonts/PragmaticaBlack.ttf') format("ttf");
+        url('~@/assets/fonts/TTNorms/TTNorms-Regular.woff') format('woff'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Regular.woff2') format('woff2'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Regular.eot') format('eot'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: TTNorms-Light;
+    font-display: swap;
+    src: 
+        url('~@/assets/fonts/TTNorms/TTNorms-Light.woff') format('woff'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Light.woff2') format('woff2'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Light.eot') format('eot'), 
+        url('~@/assets/fonts/TTNorms/TTNorms-Light.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal
+}
+
+
+
+@font-face {
+    font-family: Ubuntu;
+    font-display: swap;
+    src: 
+        url('~@/assets/fonts/Ubuntu/ubuntu.woff') format('woff'), 
+        url('~@/assets/fonts/Ubuntu/ubuntu.woff2') format('woff2'), 
+        url('~@/assets/fonts/Ubuntu/ubuntu.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu-Bold;
+    font-display: swap;
+    src: 
+        url('~@/assets/fonts/Ubuntu/ubuntubold.woff') format('woff'), 
+        url('~@/assets/fonts/Ubuntu/ubuntubold.woff2') format('woff2'), 
+        url('~@/assets/fonts/Ubuntu/ubuntubold.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu-Light;
+    font-display: swap;
+    src: 
+        url('~@/assets/fonts/Ubuntu/ubuntulight.woff') format('woff'), 
+        url('~@/assets/fonts/Ubuntu/ubuntulight.woff2') format('woff2'), 
+        url('~@/assets/fonts/Ubuntu/ubuntulight.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu-Medium;
+    font-display: swap;
+    src: 
+        url('~@/assets/fonts/Ubuntu/ubuntumedium.woff') format('woff'), 
+        url('~@/assets/fonts/Ubuntu/ubuntumedium.woff2') format('woff2'), 
+        url('~@/assets/fonts/Ubuntu/ubuntumedium.ttf') format('ttf');
     font-weight: 400;
     font-style: normal
 }

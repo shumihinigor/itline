@@ -100,16 +100,12 @@ export default {
     },
     created() {
         window.addEventListener('scroll', this.scrollHandler)
-        this.$store.commit('changeActiveHeader', true)
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollHandler)
-        this.$store.commit('changeActiveHeader', false)
     },
     methods: {
-        scrollHandler() {
-            window.scrollY > 0 ? this.$store.commit('changeActiveHeader', false) : this.$store.commit('changeActiveHeader', true)
-        }
+        
     },
 }
 </script>
