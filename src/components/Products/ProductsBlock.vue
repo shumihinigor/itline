@@ -2,56 +2,56 @@
     <section class="product">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
                         :image="'product_image.png'"
                     />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <ProductsItem 
                         :title="'Решения для транспорта'" 
                         :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 

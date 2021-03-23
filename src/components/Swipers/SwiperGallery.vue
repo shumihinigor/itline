@@ -2,12 +2,12 @@
     <swiper class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
         <swiper-slide>
             <div class="gallery-swiper__item">
-                <div class="d-flex align-items-start">
-                    <div class="w-50">
+                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
+                    <div class="w-lg-50 w-100 mr-16">
                         <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Производство</h4>
                         <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
                     </div>
-                    <div class="w-50">
+                    <div class="w-lg-50 w-100">
                         <div 
                             class="gallery-swiper__item-image" 
                             :style="{'background-image': 'url(' + require('../../assets/images/gallery_1.png') + ')'}"
@@ -18,12 +18,12 @@
         </swiper-slide>
         <swiper-slide>
             <div class="gallery-swiper__item">
-                <div class="d-flex align-items-start">
-                    <div class="w-50">
+                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
+                    <div class="w-lg-50 w-100 mr-16">
                         <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Проекты</h4>
                         <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
                     </div>
-                    <div class="w-50">
+                    <div class="w-lg-50 w-100">
                         <div 
                             class="gallery-swiper__item-image" 
                             :style="{'background-image': 'url(' + require('../../assets/images/gallery_2.png') + ')'}"
@@ -34,12 +34,12 @@
         </swiper-slide>
         <swiper-slide>
             <div class="gallery-swiper__item">
-                <div class="d-flex align-items-start">
-                    <div class="w-50">
+                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
+                    <div class="w-lg-50 w-100 mr-16">
                         <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Производство</h4>
                         <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
                     </div>
-                    <div class="w-50">
+                    <div class="w-lg-50 w-100">
                         <div 
                             class="gallery-swiper__item-image" 
                             :style="{'background-image': 'url(' + require('../../assets/images/gallery_1.png') + ')'}"
@@ -50,12 +50,12 @@
         </swiper-slide>
         <swiper-slide>
             <div class="gallery-swiper__item">
-                <div class="d-flex align-items-start">
-                    <div class="w-50">
+                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
+                    <div class="w-lg-50 w-100 mr-16">
                         <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Проекты</h4>
                         <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
                     </div>
-                    <div class="w-50">
+                    <div class="w-lg-50 w-100">
                         <div 
                             class="gallery-swiper__item-image" 
                             :style="{'background-image': 'url(' + require('../../assets/images/gallery_2.png') + ')'}"
@@ -85,13 +85,26 @@ export default {
     data() {
         return {
             swiperOptions: {
-                slidesPerView: 2,
-                spaceBetween: 72,
-                centeredSlides: true,
+                slidesPerView: 1.25,
+                spaceBetween: 20,
+                centeredSlides: false,
+                initialSlide: 1,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
-                }
+                },
+                breakpoints: {
+                    992: {
+                        slidesPerView: 2,
+                        spaceBetween: 72,
+                        centeredSlides: true,
+                    },
+                    375: {
+                        slidesPerView: 1.25,
+                        spaceBetween: 20,
+                        centeredSlides: false,
+                    },
+                },
             }
         }
     },
@@ -101,8 +114,15 @@ export default {
         }
     },
     mounted() {
-        this.swiper.slideTo(1, 1000, false)
-    }
+        if (window.innerWidth <= 991) {
+            this.swiper.navigation.destroy();
+            this.swiper.navigation.$nextEl[0].hidden = true;
+            this.swiper.navigation.$prevEl[0].hidden = true;
+        }
+    },
+    methods: {
+        
+    },
 }
 </script>
 
@@ -114,13 +134,31 @@ export default {
                 padding: 32px 24px;
                 border-radius: 10px;
                 height: 100%;
+                @media (max-width: 991px) {
+                    padding: 20px;
+                }
                 &-image {
                     width: 100%;
                     height: 275px;
                     border-radius: 5px;
                     background-repeat: no-repeat;
-                    background-position: right top;
+                    background-position: center center;
                     background-size: cover;
+                    @media (max-width: 991px) {
+                        height: 138px;
+                    }
+                }
+                &-text {
+                    @media (max-width: 991px) {
+                        display: none;
+                    }
+                }
+                &-title {
+                    @media (max-width: 991px) {
+                        text-align: center;
+                        margin-bottom: 0 !important;
+                        margin-top: 20px;
+                    }
                 }
             }
         }
@@ -128,6 +166,10 @@ export default {
     .swiper {
         &.gallery {
             min-height: 339px;
+            @media (max-width: 991px) {
+                min-height: 217px;
+                padding: 0 15px;
+            }
             & .swiper {
                 &-slide {
                     &:not(.swiper-slide-active) {

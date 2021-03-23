@@ -77,7 +77,18 @@ export default {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
-                }
+                },
+                breakpoints: {
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    375: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                        centeredSlides: false,
+                    },
+                },
             }
         }
     },
@@ -85,7 +96,15 @@ export default {
         swiper() {
             return this.$refs.swiperFeedback.$swiper
         }
-    }
+    },
+    mounted() {
+        if (window.innerWidth <= 991) {
+            this.swiper.navigation.destroy();
+            this.swiper.navigation.$nextEl[0].hidden = true;
+            this.swiper.navigation.$prevEl[0].hidden = true;
+            this.swiper.destroy(true, false)
+        }
+    },
 }
 </script>
 
@@ -97,6 +116,10 @@ export default {
                 padding: 32px 24px;
                 border-radius: 10px;
                 height: 100%;
+                @media (max-width: 991px) {
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
                 &-image {
                     width: 64px;
                     height: 64px;
@@ -168,6 +191,11 @@ export default {
                                 box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
                             }
                         }
+                    }
+                }
+                &-wrapper {
+                    @media (max-width: 991px) {
+                        flex-direction: column;
                     }
                 }
             }

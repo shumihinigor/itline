@@ -24,6 +24,10 @@ export default {
         padding: 20px;
         border-radius: 10px;
         height: 100%;
+        @media (max-width: 991px) {
+            height: auto;
+            margin-bottom: 20px;
+        }
         &__image {
             margin-right: 20px;
         }

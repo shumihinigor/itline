@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div :class="['d-flex align-items-center justify-content-between', {'d-sm-none': openMenu}]">
+                    <div :class="[{'hide': openMenu}, 'd-flex align-items-center justify-content-between']">
                         <div class="d-lg-none d-block">
                             <div class="header-hamburger" @click="openMenu = !openMenu">
                                 <img svg-inline src="../assets/images/hamburger.svg" alt="hamburger">
@@ -49,6 +49,41 @@
                 </div>
             </div>
         </div>
+        <div :class="['hide-menu', {show: openMenu}]">
+            <div class="header-logo mb-40">
+                <router-link to="/"><img svg-inline src="../assets/images/logo.svg" alt="logo"></router-link>
+            </div>
+            <ul class="header-links">
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/products">Продукция</router-link>
+                </li>
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/solutions">Готовые решения</router-link>
+                </li>
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/support">Техподдержка</router-link>
+                </li>
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/news">новости</router-link>
+                </li>
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/about">о компании</router-link>
+                </li>
+                <li class="header-link">
+                    <router-link class="p5 weight-500 text-uppercase" to="/contacts">Контакты</router-link>
+                </li>
+            </ul>
+            <div class="mt-auto">
+                <div class="header-phone">
+                    <a class="h3" href="tel:88005557777">8 (800) 555-77-77</a>
+                </div>
+                <div class="header-contact">
+                    <button type="button" class="btn default"><a class="p4" href="javascript:;">Связаться с нами</a></button>
+                    
+                </div>
+            </div>
+            <div class="hide-menu-blur" @click="openMenu = false"></div>
+        </div>
     </header>
 </template>
 
@@ -61,9 +96,14 @@ export default {
             openMenu: false
         }
     },
+    watch: {
+        openMenu(state) {
+            state ? document.querySelector('body').style.overflow = 'hidden' : document.querySelector('body').style.overflow = 'auto'
+        }
+    },
     computed: {
         ...mapGetters(["activeHeader"]),
-    },
+    }
 }
 </script>
 
@@ -95,9 +135,14 @@ export default {
         &-links {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             padding: 0;
             margin: 0;
             list-style: none;
+            margin-right: 16px;
+            @media (max-width: 991px) {
+                margin-right: 0;
+            }
         }
         &-link {
             padding: 0;
@@ -138,6 +183,7 @@ export default {
         }
         &-contact {
             margin-right: 16px;
+            white-space: nowrap;
             & a {
                 color: $orange !important;
                 transition: all 0.2s;
@@ -148,6 +194,7 @@ export default {
         }
         &-phone {
             margin-right: 16px;
+            white-space: nowrap;
             & a {
                 color: $white;
                 transition: all 0.2s;
@@ -174,7 +221,7 @@ export default {
             }
         }
         & svg {
-            & path {
+            & path, rect {
                 fill: $grey-1;
             }
         }
@@ -196,10 +243,88 @@ export default {
                 color: $grey-6;
             }
             & svg {
-                & path {
+                & path, rect {
                     fill: $white;
                 }
             }
+        }
+        & .hide {
+            @media (max-width: 991px) {
+                display: none !important;
+            }
+        }
+    }
+
+    .hide-menu {
+        position: fixed;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        top: 0;
+        left: -100%;
+        bottom: 0;
+        background: $white;
+        height: 100%;
+        width: 80%;
+        transition: all 0.2s;
+        &.show {
+            left: 0;
+            & .hide-menu-blur {
+                left: 80%;
+            }
+        }
+        & svg {
+            & path, rect {
+                fill: $grey-1 !important;
+            }
+        }
+        & a {
+            color: $grey-2 !important;
+            font-family: $TTNormsMedium;
+            &:hover {                
+                color: $grey-2 !important;
+            }
+        }
+        & .header {
+            &-links {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            &-link {
+                margin-bottom: 24px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &-phone {
+                margin-bottom: 24px;
+                & a {
+                    color: $orange !important;
+                }
+            }
+            &-contact {
+                & button {
+                    width: 100%;
+                }
+                & a {
+                    text-decoration: none;
+                    color: $white !important;
+                }
+            }
+        }
+        &-blur {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            bottom: 0;
+            width: 20%;
+            height: 100%;
+            background: rgba(51, 51, 51, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.1s;
         }
     }
 </style>

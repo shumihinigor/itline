@@ -75,4 +75,9 @@
             max-width: 1240px !important;
         }
     }
+    @media (min-width: 992px) {
+        .container, .container-lg, .container-md, .container-sm {
+            max-width: 100% !important;
+        }
+    }
 </style>

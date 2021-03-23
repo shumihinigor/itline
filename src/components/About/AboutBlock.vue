@@ -1,5 +1,5 @@
 <template lang="">
-    <section class="about mb-24">
+    <section class="about mb-80">
         <div class="container mb-64">
             <div class="row mb-24">
                 <div class="col-12">
@@ -20,16 +20,16 @@
         </div>
         <div class="container mb-32">
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <AboutItem :text="'Единиц готовой продукции выпущено'" :title="'20 000'" :image="'about_1.svg'" />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <AboutItem :text="'Разработано для каждого направления'" :title="'Уникальное ПО'" :image="'about_2.svg'" />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <AboutItem :text="'Сотрудничают с нашей компанией по всей стране'" :title="'100 партнеров'" :image="'about_3.svg'" />
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12">
                     <AboutItem :text="'Которые имеют большой потенциал дальнейшего развития'" :title="'Создаем готовые решения'" :image="'about_4.svg'" />
                 </div>
             </div>

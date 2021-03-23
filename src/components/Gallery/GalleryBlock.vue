@@ -21,11 +21,6 @@ export default {
         return {
 
         }
-    },
-    computed: {
-        swiper() {
-            return this.$refs.swiperGallery.$swiper
-        }
     }
 }
 </script>

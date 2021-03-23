@@ -2,10 +2,10 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-7">
-                    <div class="d-flex align-items-start">
-                        <div class="mr-80">
-                            <h6 class="h6 font-weight-bold text-grey-1 mb-16">Продукция</h6>
+                <div class="col-lg-7 col-12">
+                    <div class="d-flex align-items-start flex-wrap">
+                        <div class="mr-80 mb-5">
+                            <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">Продукция</h6>
                             <ul class="footer-links">
                                 <li class="p2 text-grey-1 footer-link">Каталог продукции</li>
                                 <li class="p2 text-grey-1 footer-link">Готовые решения</li>
@@ -16,8 +16,8 @@
                                 <li class="p2 text-grey-1 footer-link">Техподдержка</li>
                             </ul>
                         </div>
-                        <div class="mr-80">
-                            <h6 class="h6 font-weight-bold text-grey-1 mb-16">О компании</h6>
+                        <div class="mr-80 mb-5">
+                            <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">О компании</h6>
                             <ul class="footer-links">
                                 <li class="p2 text-grey-1 footer-link">Дилеры</li>
                                 <li class="p2 text-grey-1 footer-link">Реквизиты</li>
@@ -25,7 +25,7 @@
                             </ul>
                         </div>
                         <div class="">
-                            <h6 class="h6 font-weight-bold text-grey-1 mb-16">Контакты</h6>
+                            <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">Контакты</h6>
                             <ul class="footer-links mb-16">
                                 <li class="p2 text-grey-1 footer-link">
                                     <span>Ярославль: </span>
@@ -57,12 +57,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5 footer-help-desk">
+                <div class="col-lg-5 col-12 footer-help-desk">
                     <div class="d-flex flex-column align-items-center justify-content-center h-100">
                         <div class="">
                             <div class="d-flex align-items-center mb-16">
                                 <div class="mr-16">
-                                    <img svg-inline src="../assets/images/help_desk.svg" alt="help_desk">
+                                    <img src="../assets/images/help_desk.svg" alt="help_desk" />
                                 </div>
                                 <div class="">
                                     <p class="p4 mb-8">Единая справочная служба</p>
@@ -87,15 +87,23 @@ export default {
 <style lang="scss">
     .footer {
         position: relative;
-        padding: 60px 0 70px 0;
+        padding: 60px 0 60px 0;
         background-color: $grey-6;
         margin-top: auto;
+        border-radius: 20px 20px 0px 0px;
+        @media (max-width: 991px) {
+            padding: 32px 0 60px 0;
+        }
         &-links {
             display: flex;
             flex-direction: column;
             padding: 0;
             margin: 0;
             list-style: none;
+        }
+        &-title {
+            font-size: 16px !important;
+            line-height: 18px !important;
         }
         &-link {
             padding: 0;
@@ -139,6 +147,10 @@ export default {
         }
         &-help-desk {
             border-left: 1px solid #E0E0E0;
+            @media (max-width: 991px) {
+                margin-top: 50px;
+                border: 0;
+            }
             & .tel {
                 text-decoration: none;
                 color: $grey-1;

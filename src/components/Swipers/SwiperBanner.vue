@@ -5,11 +5,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-12">
-                            <h1 class="banner-title h1 weight-700">
+                            <h2 class="banner-title h2 weight-700">
                                 Производим комплексные системы информирования 
                                 на
                                 основе светодиодных табло
-                            </h1>
+                            </h2>
                             <button type="button" class="btn default">
                                 <span class="p4">О компании</span>
                             </button>
@@ -21,11 +21,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-12">
-                            <h1 class="banner-title h1 weight-700">
+                            <h2 class="banner-title h2 weight-700">
                                 Производим комплексные системы информирования 
                                 на
                                 основе светодиодных табло
-                            </h1>
+                            </h2>
                             <button type="button" class="btn default">
                                 <span class="p4">О компании</span>
                             </button>
@@ -36,12 +36,12 @@
             <swiper-slide>
                 <div class="container">
                     <div class="row">
-                        <div class="col-8">
-                            <h1 class="banner-title h1 weight-700">
+                        <div class="col-lg-8 col-12">
+                            <h2 class="banner-title h2 weight-700">
                                 Производим комплексные системы информирования 
                                 на
                                 основе светодиодных табло
-                            </h1>
+                            </h2>
                             <button type="button" class="btn default">
                                 <span class="p4">О компании</span>
                             </button>
@@ -52,12 +52,12 @@
             <swiper-slide>
                 <div class="container">
                     <div class="row">
-                        <div class="col-8">
-                            <h1 class="banner-title h1 weight-700">
+                        <div class="col-lg-8 col-12">
+                            <h2 class="banner-title h2 weight-700">
                                 Производим комплексные системы информирования 
                                 на
                                 основе светодиодных табло
-                            </h1>
+                            </h2>
                             <button type="button" class="btn default">
                                 <span class="p4">О компании</span>
                             </button>
@@ -119,6 +119,10 @@ export default {
         background-size: cover;
         min-height: 725px;
         margin-bottom: 100px;
+        @media (max-width: 991px) {
+            margin-bottom: 40px;
+            min-height: 667px;
+        }
         &-title {
             color: $white;
             margin-bottom: 40px;
@@ -126,6 +130,9 @@ export default {
         & .swiper {
             &-container {
                 height: 725px;
+                @media (max-width: 991px) {
+                    height: 667px;
+                }
             }
             &-slide {
                 display: flex;

@@ -4,6 +4,9 @@
     padding: 11px 75px;
     text-align: center;
     transition: all 0.2s;
+    @media (max-width: 991px) {
+        padding: 11px 40px;
+    }
     & span {
         font-family: $TTNormsMedium;
     }
