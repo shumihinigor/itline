@@ -51,9 +51,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
     meta: {
       breadcrumb() {
-        const { title } = this.$route.params;
+        const { title } = this.$route.query;
         return {
-          label: (title || this.$route.query.title) + '',
+          label: title + '',
           parent: 'News'
         };
       }

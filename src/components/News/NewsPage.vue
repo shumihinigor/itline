@@ -45,7 +45,7 @@ export default {
         }
     },
     created() {
-        this.getPost(this.$route.params.id)
+        this.getPost(this.$route.query.id)
     },
     methods: {
         getPost(id) {
@@ -55,7 +55,6 @@ export default {
                     this.news = response.data.data.find((item) => {
                         return item.id == id
                     });
-                    this.$route.params.title = this.news.title;
                     this.loading = false;
                 });
         }
