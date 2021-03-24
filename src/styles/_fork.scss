@@ -1,0 +1,16 @@
+.modal {
+    &-content {
+        border-radius: 20px;
+    }
+    &-close {
+        cursor: pointer;
+    }
+    &-open {
+        padding-right: 0;
+    }
+    &-header {
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: 0;
+    }
+}

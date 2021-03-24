@@ -36,7 +36,7 @@
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="header-contact d-lg-block d-none">
-                                <a class="p4" href="javascript:;">Связаться с нами</a>
+                                <a class="p4" href="javascript:;" data-bs-toggle="modal" data-bs-target="#modalContacts">Связаться с нами</a>
                             </div>
                             <div class="header-phone d-lg-block d-none">
                                 <a class="p4" href="tel:88005557777">8 (800) 555-77-77</a>
@@ -84,6 +84,7 @@
             </div>
             <div class="hide-menu-blur" @click="openMenu = false"></div>
         </div>
+
     </header>
 </template>
 

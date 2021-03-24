@@ -8,84 +8,89 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue'),
-    meta: { 
-      breadcrumb: {
-        name: 'Home',
-        title: "Главная"
-      } 
-    },
+    meta: {
+      breadcrumb: 'Главная'
+    }
   },
   {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "About" */ '../views/About.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'About',
-        title: "О компании"
-      } 
-    },
+        label: 'О компании',
+        parent: 'Home'
+      }
+    }
   },
   {
     path: '/solutions',
     name: 'Solutions',
     component: () => import(/* webpackChunkName: "Solutions" */ '../views/Solutions.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'Solutions',
-        title: "Готовые решения"
-      } 
-    },
+        label: 'Готовые решения',
+        parent: 'Home'
+      }
+    }
   },
   {
     path: '/news',
     name: 'News',
     component: () => import(/* webpackChunkName: "News" */ '../views/News.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'News',
-        title: "Новости"
-      } 
+        label: 'Новости',
+        parent: 'Home'
+      }
     },
   },
   {
-    path: '/blog',
-    name: 'Blog',
-    component: () => import(/* webpackChunkName: "Blog" */ '../views/Blog.vue'),
-    meta: { breadcrumb: 'Blog' },
+    path: '/news/:id',
+    name: 'NewsPage',
+    component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
+    meta: {
+      breadcrumb() {
+        const { title } = this.$route.params;
+        return {
+          label: (title || this.$route.query.title) + '',
+          parent: 'News'
+        };
+      }
+    },
   },
   {
     path: '/contacts',
     name: 'Contacts',
     component: () => import(/* webpackChunkName: "Contacts" */ '../views/Contacts.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'Contacts',
-        title: "Контакты"
-      } 
-    },
+        label: 'Контакты',
+        parent: 'Home'
+      }
+    }
   },
   {
     path: '/products',
     name: 'Products',
     component: () => import(/* webpackChunkName: "Products" */ '../views/Products.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'Products',
-        title: "Продукция"
-      } 
-    },
+        label: 'Продукция',
+        parent: 'Home'
+      }
+    }
   },
   {
     path: '/support',
     name: 'Support',
     component: () => import(/* webpackChunkName: "Support" */ '../views/Support.vue'),
-    meta: { 
+    meta: {
       breadcrumb: {
-        name: 'Support',
-        title: "Техподдержка"
-      } 
-    },
+        label: 'Техподдержка',
+        parent: 'Home'
+      }
+    }
   }
 ]
 

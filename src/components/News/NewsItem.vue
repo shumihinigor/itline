@@ -1,6 +1,6 @@
 <template>
     <div :class="['col-12 mb-24', 'col-lg-' + col]">
-        <div :class="['news-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" :style="background(bg)">
+        <router-link :to="{ name: 'NewsPage', params: { title: title, id: id }, query: { title: title }}" tag="div" :class="['news-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" :style="background(bg)">
             <h6 class="h6 text-uppercase text-grey-1 news-item__title">{{ title }}</h6>
             <p class="p2 news-item__text text-grey-2 mb-24">
                 {{ text }}
@@ -24,13 +24,13 @@
                     <p class="p5 text-grey-2 mb-0">{{ date }}</p>
                 </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    props: ["col", "title", "text", "bg", "date", "likes", "comments", "views"],
+    props: ["col", "title", "text", "bg", "date", "likes", "comments", "views", "id"],
     methods: {
         background(bg) {
             if (bg == 'white') {
@@ -60,6 +60,7 @@ export default {
             background-position: left top;
             background-repeat: no-repeat;
             overflow: hidden;
+            cursor: pointer;
             @media (max-width: 991px) {
                 min-height: auto;
                 padding: 32px 20px;

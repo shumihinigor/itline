@@ -1,6 +1,7 @@
 @import '_variables.scss';
 @import '_padding.scss';
 @import '_button.scss';
+@import '_input.scss';
 @import '_link.scss';
 @import '_icons.scss';
 @import '_fonts.scss';
@@ -8,5 +9,7 @@
 @import '_title.scss';
 @import '_global.scss';
 
+// fix bootstrap
+@import '_fork.scss';
 
 @import '_mixins.sass';

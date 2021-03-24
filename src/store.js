@@ -5,25 +5,13 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const state = {
-    activeHeader: false,
-    breadcrumbs: [
-        {
-            name: 'Home',
-            title: "Главная"
-        }
-    ]
+    activeHeader: false
 };
 
 const mutations = {
     changeActiveHeader(state, comment) {
         state.activeHeader = comment;
-    },
-    pushBreadcrumbs(state, comment) {
-        if (state.breadcrumbs.length > 1) {
-            state.breadcrumbs.pop();
-        }
-        state.breadcrumbs.push(comment);
-    },
+    }
 };
 
 const actions = {
@@ -31,8 +19,7 @@ const actions = {
 };
 
 const getters = {
-    activeHeader: state => state.activeHeader,
-    breadcrumbs: state => state.breadcrumbs
+    activeHeader: state => state.activeHeader
 };
 
 export default new Vuex.Store({
