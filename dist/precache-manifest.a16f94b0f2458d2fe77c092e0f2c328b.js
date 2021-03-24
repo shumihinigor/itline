@@ -357,7 +357,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "983f33f39f302f6561a76386e3873944",
-    "url": "/news_page.html"
+    "url": "/news/news_page.html"
   },
   {
     "revision": "4dcf440dad149d482f16384d8c4af94d",
