@@ -38,5 +38,6 @@ module.exports = {
         news: 'src/main.js',
         support: 'src/main.js',
         contacts: 'src/main.js',
+        news_page: 'src/main.js',
       }
 };
