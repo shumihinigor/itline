@@ -6,11 +6,15 @@
         cursor: pointer;
     }
     &-open {
-        padding-right: 0;
+        padding-right: 0 !important;
     }
     &-header {
         display: flex;
         justify-content: flex-end;
         border-bottom: 0;
     }
+}
+
+svg {
+    outline: none;
 }

@@ -172,6 +172,7 @@ export default {
             }
             & .swiper {
                 &-slide {
+                    transition: all 0.2s;
                     &:not(.swiper-slide-active) {
                         &::after {
                             content: '';

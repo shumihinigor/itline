@@ -41,7 +41,7 @@
                                     >
                                     <label class="label" for="email">Email</label>
                                 </div>
-                                <div class="modal-policy text-left mb-16">
+                                <div class="modal-policy mb-16">
                                     <p class="p4 text-grey-3 mb-0">Отправляя заявку, я подтверждаю, что ознакомлен и согласен 
                                     с <a href="javascript:;">Политикой конфиденциальности</a> данного сайта</p>
                                 </div>
@@ -67,9 +67,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .modal {
         &-policy {
+            text-align: left;
             & p, a {
                 font-family: $TTNormsRegular;
             }

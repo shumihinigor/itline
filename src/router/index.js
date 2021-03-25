@@ -46,7 +46,7 @@ const routes = [
     },
   },
   {
-    path: '/news/news_page',
+    path: '/news/page',
     name: 'NewsPage',
     component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
     meta: {

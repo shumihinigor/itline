@@ -123,6 +123,9 @@ export default {
         }
         &-logo {
             margin-right: 30px;
+            & svg {
+                outline: none;
+            }
             @media (max-width: 1199px) {
                 margin-right: 15px;
             }
@@ -198,9 +201,9 @@ export default {
             white-space: nowrap;
             & a {
                 color: $white;
+                text-decoration: none;
                 transition: all 0.2s;
-                &:hover {             
-                    text-decoration: none;       
+                &:hover {                  
                     color: $white;
                 }
             }

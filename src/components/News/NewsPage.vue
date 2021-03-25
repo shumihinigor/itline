@@ -6,8 +6,9 @@
                 <div class="col-lg-8 col-12">
                     <h1 class="h1 mb-32">{{ news.title }}</h1>
                     <div 
+                        v-if="!news.bg.includes('white') && !news.bg.includes('gradient')"
                         class="news-page__image mb-40"
-                        :style="{'background-image': 'url(' + require('../../assets/images/' + news.image) + ')'}"
+                        :style="{'background-image': 'url(' + require('../../assets/images/' + news.bg) + ')'}"
                     ></div>
                     <h6 class="h6 text-uppercase text-grey-1 mb-16">{{ news.heading }}</h6>
                     <div class="mb-24">

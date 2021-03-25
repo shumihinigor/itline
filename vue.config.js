@@ -38,13 +38,13 @@ module.exports = {
         news: 'src/main.js',
         support: 'src/main.js',
         contacts: 'src/main.js',
-        news_page: {
+        page: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
-            template: 'public/news/news_page.html',
+            template: 'public/news/page.html',
             // output as dist/index.html
-            filename: 'news/news_page.html',
+            filename: 'news/page.html',
         },
       }
 };

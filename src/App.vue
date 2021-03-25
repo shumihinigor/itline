@@ -5,7 +5,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <Breadcrumbs v-if="this.$route.name !== 'Home'" />
+                        <transition
+                            name="fade"
+                            mode="out-in"
+                        >
+                            <Breadcrumbs v-if="this.$route.name !== 'Home'" />
+                        </transition>
                     </div>
                 </div>
             </div>
