@@ -2,9 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="load">
-                    <hr/><hr/><hr/><hr/>
-                </div>
+                <div class="loader"></div>
             </div>
         </div>
     </div>
@@ -17,64 +15,71 @@
 </script>
 
 <style lang="scss">
-    .load {
-        position: fixed;
-        z-index: 99999;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        width: 100px;
-        height: 100px;
-    }
-
-    .load hr {
-        border: 0;
-        margin: 0;
-        width: 40%;
-        height: 40%;
-        position: absolute;
+    .loader,
+    .loader:before,
+    .loader:after {
         border-radius: 50%;
-        animation: spin 2s ease infinite
+        width: 2.5em;
+        height: 2.5em;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation: load7 1.8s infinite ease-in-out;
+        animation: load7 1.8s infinite ease-in-out;
     }
 
-    .load :first-child {
-        background: #19A68C;
-        animation-delay: -1.5s
+    .loader {
+        color: $orange;
+        font-size: 10px;
+        margin: 80px auto;
+        position: relative;
+        text-indent: -9999em;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
     }
 
-    .load :nth-child(2) {
-        background: #F63D3A;
-        animation-delay: -1s
+    .loader:before,
+    .loader:after {
+        content: '';
+        position: absolute;
+        top: 0;
     }
 
-    .load :nth-child(3) {
-        background: #FDA543;
-        animation-delay: -0.5s
+    .loader:before {
+        left: -3.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
     }
 
-    .load :last-child {
-        background: #193B48
+    .loader:after {
+        left: 3.5em;
     }
 
-    @keyframes spin {
+    @-webkit-keyframes load7 {
 
         0%,
+        80%,
         100% {
-            transform: translate(0)
+            box-shadow: 0 2.5em 0 -1.3em;
         }
 
-        25% {
-            transform: translate(160%)
+        40% {
+            box-shadow: 0 2.5em 0 0;
+        }
+    }
+
+    @keyframes load7 {
+
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 2.5em 0 -1.3em;
         }
 
-        50% {
-            transform: translate(160%, 160%)
-        }
-
-        75% {
-            transform: translate(0, 160%)
+        40% {
+            box-shadow: 0 2.5em 0 0;
         }
     }
 </style>

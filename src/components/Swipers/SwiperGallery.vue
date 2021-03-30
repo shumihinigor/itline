@@ -1,64 +1,17 @@
 <template lang="">
-    <swiper class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
-        <swiper-slide>
+    <Preloader v-if="loading" />
+    <swiper v-else class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
+        <swiper-slide v-for="(item, index) in gallery" :key="item.id">
             <div class="gallery-swiper__item">
                 <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
                     <div class="w-lg-50 w-100 mr-16">
-                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Производство</h4>
-                        <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
+                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
+                        <p class="gallery-swiper__item-text p2 mb-0">{{ item.text }}</p>
                     </div>
                     <div class="w-lg-50 w-100">
                         <div 
                             class="gallery-swiper__item-image" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/gallery_1.png') + ')'}"
-                        ></div>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-        <swiper-slide>
-            <div class="gallery-swiper__item">
-                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
-                    <div class="w-lg-50 w-100 mr-16">
-                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Проекты</h4>
-                        <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
-                    </div>
-                    <div class="w-lg-50 w-100">
-                        <div 
-                            class="gallery-swiper__item-image" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/gallery_2.png') + ')'}"
-                        ></div>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-        <swiper-slide>
-            <div class="gallery-swiper__item">
-                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
-                    <div class="w-lg-50 w-100 mr-16">
-                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Производство</h4>
-                        <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
-                    </div>
-                    <div class="w-lg-50 w-100">
-                        <div 
-                            class="gallery-swiper__item-image" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/gallery_1.png') + ')'}"
-                        ></div>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-        <swiper-slide>
-            <div class="gallery-swiper__item">
-                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
-                    <div class="w-lg-50 w-100 mr-16">
-                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">Проекты</h4>
-                        <p class="gallery-swiper__item-text p2 mb-0">Собственные производственные площади позволяют нам тестировать оборудование в режиме реального времени. Гибкая технология монтажа предполагает возможность ручной сборки и обработки в печах.</p>
-                    </div>
-                    <div class="w-lg-50 w-100">
-                        <div 
-                            class="gallery-swiper__item-image" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/gallery_2.png') + ')'}"
+                            :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
                         ></div>
                     </div>
                 </div>
@@ -74,6 +27,7 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
+import Preloader from '@/components/Preloader/Preloader'
 import 'swiper/swiper-bundle.css';
     
 export default {
@@ -81,6 +35,7 @@ export default {
         Swiper,
         Pagination,
         SwiperSlide,
+        Preloader
     },
     data() {
         return {
@@ -105,13 +60,18 @@ export default {
                         centeredSlides: false,
                     },
                 },
-            }
+            },
+            gallery: [],
+            loading: true
         }
     },
     computed: {
         swiper() {
             return this.$refs.swiperGallery.$swiper
         }
+    },
+    created() {
+        this.getGallery();
     },
     mounted() {
         if (window.innerWidth <= 991) {
@@ -121,7 +81,14 @@ export default {
         }
     },
     methods: {
-        
+        getGallery() {
+            this.axios
+                .get('/static/gallery.json')
+                .then(response => {
+                    this.gallery = response.data.data
+                    this.loading = false;
+                });
+        }
     },
 }
 </script>

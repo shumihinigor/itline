@@ -1,53 +1,20 @@
 <template lang="">
-    <swiper class="swiper feedback" ref="swiperFeedback" :options="swiperOptions">
-        <swiper-slide>
+    <Preloader v-if="loading" />
+    <swiper v-else class="swiper feedback" ref="swiperFeedback" :options="swiperOptions">
+        <swiper-slide v-for="(item, index) in reviews" :key="item.id">
             <div class="feedback-swiper__item">
                 <div class="d-flex align-items-center justify-content-start mb-24">
                     <div 
                         class="feedback-swiper__item-image mr-16" 
-                        :style="{'background-image': 'url(' + require('../../assets/images/feedback_1.png') + ')'}"
+                        :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
                     ></div>
                     <div class="">
-                        <h5 class="feedback-swiper__item-name h5 font-weight-bold">Олег Гаврилов</h5>
-                        <p class="feedback-swiper__item-date p4 mb-0">15 апреля 2020 в 10:43</p>
+                        <h5 class="feedback-swiper__item-name h5 font-weight-bold">{{ item.name }}</h5>
+                        <p class="feedback-swiper__item-date p4 mb-0">{{ item.date }}</p>
                     </div>
                 </div>
                 <div class="">
-                    <p class="p3 text-grey-2 mb-0">Хочу сказать пару приятных слов о компании. У них отличная продукция. Мы уже столько коттеджей построили и все хорошо, нигде никаких сколов и прочего брака. Наши умелые руки и ваш хороший материал сделали отличные дома и это очень радует. Так что всем кто собирается строит дом, советую брать кирпич у них!</p>
-                </div>
-            </div>
-        </swiper-slide>
-        <swiper-slide>
-            <div class="feedback-swiper__item">
-                <div class="d-flex align-items-center justify-content-start mb-24">
-                    <div 
-                        class="feedback-swiper__item-image mr-16" 
-                        :style="{'background-image': 'url(' + require('../../assets/images/feedback_2.png') + ')'}"
-                    ></div>
-                    <div class="">
-                        <h5 class="feedback-swiper__item-name h5 font-weight-bold">Семен Ефименко</h5>
-                        <p class="feedback-swiper__item-date p4 mb-0">15 апреля 2020 в 10:43</p>
-                    </div>
-                </div>
-                <div class="">
-                    <p class="p3 text-grey-2 mb-0">Хочу сказать пару приятных слов о компании. У них отличная продукция. Мы уже столько коттеджей построили и все хорошо, нигде никаких сколов и прочего брака. Наши умелые руки и ваш хороший материал сделали отличные дома и это очень радует. Так что всем кто собирается строит дом, советую брать кирпич у них!</p>
-                </div>
-            </div>
-        </swiper-slide>
-        <swiper-slide>
-            <div class="feedback-swiper__item">
-                <div class="d-flex align-items-center justify-content-start mb-24">
-                    <div 
-                        class="feedback-swiper__item-image mr-16" 
-                        :style="{'background-image': 'url(' + require('../../assets/images/feedback_3.png') + ')'}"
-                    ></div>
-                    <div class="">
-                        <h5 class="feedback-swiper__item-name h5 font-weight-bold">Сергей Афанасьев</h5>
-                        <p class="feedback-swiper__item-date p4 mb-0">15 апреля 2020 в 10:43</p>
-                    </div>
-                </div>
-                <div class="">
-                    <p class="p3 text-grey-2 mb-0">Хочу сказать пару приятных слов о компании. У них отличная продукция. Мы уже столько коттеджей построили и все хорошо, нигде никаких сколов и прочего брака. Наши умелые руки и ваш хороший материал сделали отличные дома и это очень радует. Так что всем кто собирается строит дом, советую брать кирпич у них!</p>
+                    <p class="p3 text-grey-2 mb-0">{{ item.text }}</p>
                 </div>
             </div>
         </swiper-slide>
@@ -61,6 +28,7 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
+import Preloader from '@/components/Preloader/Preloader'
 import 'swiper/swiper-bundle.css';
     
 export default {
@@ -68,6 +36,7 @@ export default {
         Swiper,
         Pagination,
         SwiperSlide,
+        Preloader
     },
     data() {
         return {
@@ -89,7 +58,9 @@ export default {
                         centeredSlides: false,
                     },
                 },
-            }
+            },
+            reviews: [],
+            loading: true
         }
     },
     computed: {
@@ -97,12 +68,25 @@ export default {
             return this.$refs.swiperFeedback.$swiper
         }
     },
+    created() {
+        this.getReviews();
+    },
     mounted() {
         if (window.innerWidth <= 991) {
             this.swiper.navigation.destroy();
             this.swiper.navigation.$nextEl[0].hidden = true;
             this.swiper.navigation.$prevEl[0].hidden = true;
             this.swiper.destroy(true, false)
+        }
+    },
+    methods: {
+        getReviews() {
+            this.axios
+                .get('/static/reviews.json')
+                .then(response => {
+                    this.reviews = response.data.data
+                    this.loading = false;
+                });
         }
     },
 }
