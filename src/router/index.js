@@ -21,7 +21,39 @@ const routes = [
         label: 'О компании',
         parent: 'Home'
       }
-    }
+    },
+    children: [
+      {
+        name: 'InformationTab',
+        path: 'information',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Information.vue'),
+      },
+      {
+        name: 'CertificatesTab',
+        path: 'certificates',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Certificates.vue'),
+      },
+      {
+        name: 'VacanciesTab',
+        path: 'vacancies',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Vacancies.vue'),
+      },
+      {
+        name: 'HistoryTab',
+        path: 'history',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/History.vue'),
+      },
+      {
+        name: 'GalleryTab',
+        path: 'gallery',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Gallery.vue'),
+      },
+      {
+        name: 'DealersTab',
+        path: 'dealers',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Dealers.vue'),
+      }
+    ]
   },
   {
     path: '/solutions',
@@ -99,9 +131,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-// router.beforeEach((to, from, next) => {
-//   next()
-// })
 
 export default router

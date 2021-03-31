@@ -46,5 +46,53 @@ module.exports = {
             // output as dist/index.html
             filename: 'news/page.html',
         },
+        information: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/information.html',
+            // output as dist/index.html
+            filename: 'about/information.html',
+        },
+        certificates: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/certificates.html',
+            // output as dist/index.html
+            filename: 'about/certificates.html',
+        },
+        vacancies: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/vacancies.html',
+            // output as dist/index.html
+            filename: 'about/vacancies.html',
+        },
+        history: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/history.html',
+            // output as dist/index.html
+            filename: 'about/history.html',
+        },
+        gallery: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/gallery.html',
+            // output as dist/index.html
+            filename: 'about/gallery.html',
+        },
+        dealers: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/dealers.html',
+            // output as dist/index.html
+            filename: 'about/dealers.html',
+        },
       }
 };

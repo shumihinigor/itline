@@ -33,38 +33,6 @@
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-12">
-                            <h2 class="banner-title h2 weight-700">
-                                Производим комплексные системы информирования 
-                                на
-                                основе светодиодных табло
-                            </h2>
-                            <button type="button" class="btn default">
-                                <span class="p4">О компании</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </swiper-slide>
-            <swiper-slide>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-12">
-                            <h2 class="banner-title h2 weight-700">
-                                Производим комплексные системы информирования 
-                                на
-                                основе светодиодных табло
-                            </h2>
-                            <button type="button" class="btn default">
-                                <span class="p4">О компании</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </section>

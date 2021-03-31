@@ -23,6 +23,31 @@
                 </transition>
             </template>
             <ModalContacts />
+            <transition 
+                name="fade"
+                mode="out-in"
+            >
+            <div v-show="showButtons" class="fixed-block">
+                <transition 
+                    name="fade"
+                    mode="out-in"
+                >
+                    <div v-show="showSubscribe" class="subscribe-tooltips mb-3">
+                        <h6 class="h6 text-grey-1 mb-1">Подпишитесь на наши уведомления</h6>
+                        <p class="p5 text-grey-3 mb-2">Подпишитесь на уведомления нашего магазина и узнавайте о всех акциях и поступлении товара одним из первых!</p>
+                        <button class="btn default w-100">
+                            <span class="p5 text-uppercase">Подписаться</span>
+                        </button>
+                    </div>
+                </transition>
+                <button @click="showSubscribe = !showSubscribe" class="mb-2">
+                    <img src="./assets/images/bell.svg" alt="bell">
+                </button>
+                <button @click="scrollTop" class="">
+                    <img src="./assets/images/arrow_up.svg" alt="arrow_up">
+                </button>
+            </div>
+            </transition>
             <Footer />
         </div>
     </div>
@@ -40,17 +65,30 @@
         },
         data() {
             return {
-                
+                showButtons: false,
+                showSubscribe: false
             }
         },
         mounted() {
             
         },
         computed: {
-            ...mapGetters([""]),
+            ...mapGetters(["activeHeader"]),
+        },
+        created() {
+            window.addEventListener('scroll', this.scrollHandler)
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.scrollHandler)
         },
         methods: {
-            
+            scrollHandler() {
+                this.showSubscribe = false;
+                this.showButtons = window.scrollY > 50 ? true : false
+            },
+            scrollTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
         },
         updated() {
             
@@ -119,6 +157,55 @@
         }
     }
 
+    .fixed-block {
+        position: fixed;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        left: 20px;
+        bottom: 20px;
+        & .subscribe-tooltips {
+            display: block;
+            padding: 12px 16px;
+            background: $white;
+            box-shadow: 4px 4px 10px transparentize($black, 0.85);
+            border-radius: 6px;
+            max-width: 375px;
+            min-width: 375px;
+            & p {
+                font-family: $TTNormsLight;
+            }
+            & button {
+                padding: 5px 50px;
+                border-radius: 5px;
+                font-family: $TTNormsRegular;
+            }
+        }
+        & > button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            background: $orange;
+            opacity: 0.5;
+            transition: all 0.2s;
+            & img {
+                position: relative;
+                top: -1px;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    
+
     .fade-enter-active,
     .fade-leave-active {
         transition-duration: 0.2s;
@@ -130,11 +217,7 @@
     .fade-leave-active {
         opacity: 0
     }
-    // @media (min-width: 992px) {
-    //     .container, .container-lg, .container-md, .container-sm {
-    //         max-width: 100% !important;
-    //     }
-    // }
+    
     @media (min-width: 1200px) {
         .container, .container-lg, .container-md, .container-sm, .container-xl {
             max-width: 1240px !important;

@@ -9,15 +9,15 @@
                 <div class="d-flex">
                     <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16">
                         <img svg-inline src="../../assets/images/like.svg" alt="like">
-                        <span class="ml-1">{{ likes }}</span>
+                        <span class="ms-1">{{ likes }}</span>
                     </p>
                     <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16">
                         <img svg-inline src="../../assets/images/comment.svg" alt="comment">
-                        <span class="ml-1">{{ comments }}</span>
+                        <span class="ms-1">{{ comments }}</span>
                     </p>
                     <p class="p5 text-grey-2 mb-0 d-flex align-items-center">
                         <img svg-inline src="../../assets/images/view.svg" alt="view">
-                        <span class="ml-1">{{ views }}</span>
+                        <span class="ms-1">{{ views }}</span>
                     </p>
                 </div>
                 <div class="">

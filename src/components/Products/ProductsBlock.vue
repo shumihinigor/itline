@@ -1,61 +1,13 @@
 <template>
     <section class="product">
-        <div class="container">
+        <Preloader v-if="loading" />
+        <div v-else class="container">
             <div class="row">
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-12" v-for="(item, index) in products" :key="index">
                     <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
-                    />
-                </div>
-                <div class="col-lg-3 col-12">
-                    <ProductsItem 
-                        :title="'Решения для транспорта'" 
-                        :text="'Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.'" 
-                        :image="'product_image.png'"
+                        :title="item.title" 
+                        :text="item.text" 
+                        :image="item.image"
                     />
                 </div>
             </div>
@@ -64,11 +16,31 @@
 </template>
 
 <script>
+import Preloader from '@/components/Preloader/Preloader'
 import ProductsItem from './ProductsItem.vue'
 
 export default {
     components: {
-        ProductsItem
+        ProductsItem, Preloader
+    },
+    data() {
+        return {
+            loading: true,
+            products: [],
+        }
+    },
+    created() {
+        this.getProducts()
+    },
+    methods: {
+        getProducts() {
+            this.axios
+                .get('/static/products.json')
+                .then(response => {
+                    this.products = response.data.data;
+                    this.loading = false;
+                });
+        }
     },
 }
 </script>
