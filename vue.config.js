@@ -46,6 +46,14 @@ module.exports = {
             // output as dist/index.html
             filename: 'news/page.html',
         },
+        page: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/about/gallery/page.html',
+            // output as dist/index.html
+            filename: 'about/gallery/page.html',
+        },
         information: {
             // entry for the page
             entry: 'src/main.js',
