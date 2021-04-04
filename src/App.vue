@@ -99,13 +99,38 @@
 
 <style lang="scss">
     .wrapper {
+        position: relative;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         padding-top: 72px;
-    }
-    .wrapper {
-        padding-top: 72px;
+        overflow: hidden;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            top: 25%;
+            width: 780px;
+            height: 780px;
+            background-image: url(./assets/images/right_bg.svg);
+            background-position: right center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 55%;
+            width: 780px;
+            height: 780px;
+            background-image: url(./assets/images/left_bg.svg);
+            background-position: left center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
 
     .breadcrumb {

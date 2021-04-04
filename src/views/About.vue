@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="h1">О компании</h1>
+                    <h1 class="h1 mb-24">О компании</h1>
                 </div>
             </div>
         </div>
@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false, defaultTabHash: 'information_tab' }">
+                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
                             <tab to="InformationTab" id="information_tab" name="Общая информация"></tab>
                             <tab to="CertificatesTab" id="certificates_tab" name="сертификаты"></tab>
                             <tab to="VacanciesTab" id="vacancies_tab" name="вакансии"></tab>
@@ -56,10 +56,13 @@ Vue.use(Tabs);
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
+        flex-wrap: nowrap;
         list-style: none;
         padding: 0;
         margin: 0;
         margin-bottom: 50px;
+        overflow: auto;
+        padding-bottom: 10px;
     }
     .tabs-component-tab {
         position: relative;
@@ -67,6 +70,7 @@ Vue.use(Tabs);
         font-size: 16px;
         line-height: 22px;
         font-family: $TTNormsRegular;
+        white-space: nowrap;
         & a {
             color: $grey-3;
             text-transform: uppercase;

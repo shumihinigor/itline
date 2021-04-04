@@ -1,27 +1,24 @@
 <template lang="">
     <div>
         <Preloader v-if="loading" />
-        <swiper v-show="!loading" class="swiper feedback" ref="swiperFeedback" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in reviews" :key="item.id">
-                <div class="feedback-swiper__item">
-                    <div class="d-flex align-items-center justify-content-start mb-24">
-                        <div 
-                            class="feedback-swiper__item-image mr-16" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
-                        ></div>
+        <swiper v-show="!loading" class="swiper certificates" ref="swiperCertificates" :options="swiperOptions">
+            <swiper-slide v-for="(item, index) in certificates" :key="item.id">
+                <div class="certificates-swiper__item">
+                    <div 
+                        class="certificates-swiper__item-image " 
+                        :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
+                    ></div>
+                    <div class="d-flex align-items-center justify-content-start">
                         <div class="">
-                            <h5 class="feedback-swiper__item-name h5 font-weight-bold">{{ item.name }}</h5>
-                            <p class="feedback-swiper__item-date p4 mb-0">{{ item.date }}</p>
+                            <h5 class="certificates-swiper__item-title h5 font-weight-bold mb-16">{{ item.title }}</h5>
+                            <p class="certificates-swiper__item-text p2 text-grey-2 mb-0">{{ item.text }}</p>
                         </div>
-                    </div>
-                    <div class="">
-                        <p class="p3 text-grey-2 mb-0">{{ item.text }}</p>
                     </div>
                 </div>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
-        </swiper> 
+        </swiper>
     </div>
 </template>
 
@@ -43,7 +40,7 @@ export default {
     data() {
         return {
             swiperOptions: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 20,
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -51,7 +48,7 @@ export default {
                 },
                 breakpoints: {
                     992: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                         spaceBetween: 20,
                     },
                     375: {
@@ -61,17 +58,17 @@ export default {
                     },
                 },
             },
-            reviews: [],
+            certificates: [],
             loading: true
         }
     },
     computed: {
         swiper() {
-            return this.$refs.swiperFeedback.$swiper
+            return this.$refs.swiperCertificates.$swiper
         }
     },
     created() {
-        this.getReviews();
+        this.getCertificates();
     },
     mounted() {
         if (window.innerWidth <= 991) {
@@ -82,11 +79,11 @@ export default {
         }
     },
     methods: {
-        getReviews() {
+        getCertificates() {
             this.axios
-                .get('/static/reviews.json')
+                .get('/static/certificates.json')
                 .then(response => {
-                    this.reviews = response.data.data
+                    this.certificates = response.data.data
                     this.loading = false;
                 });
         }
@@ -95,37 +92,38 @@ export default {
 </script>
 
 <style lang="scss">
-    .feedback {
+    .certificates {
         &-swiper {
             &__item {
                 background-color: $white;
-                padding: 32px 24px;
+                padding: 20px;
                 border-radius: 10px;
                 height: 100%;
+                overflow: hidden;
                 @media (max-width: 991px) {
-                    padding: 20px;
                     margin-bottom: 20px;
                 }
                 &-image {
-                    width: 64px;
-                    height: 64px;
-                    border-radius: 50%;
+                    position: relative;
+                    top: -20px;
+                    left: -20px;
+                    width: calc(100% + 40px);
+                    height: 194px;
                     background-repeat: no-repeat;
-                    background-position: center center;
+                    background-position: center top;
                     background-size: contain;
                 }
-                &-name {
+                &-title {
                     margin-bottom: 4px;
                 }
-                &-date {
+                &-text {
                     font-family: $UbuntuLight;
                 }
             }
         }
     }
     .swiper {
-        &.feedback {
-            min-height: 308px;
+        &.certificates {
             & .swiper {
                 &-button {
                     &-next {
@@ -179,7 +177,11 @@ export default {
                         }
                     }
                 }
+                &-slide {
+                    height: auto;
+                }
                 &-wrapper {
+                    min-height: 471px;
                     @media (max-width: 991px) {
                         flex-direction: column;
                     }

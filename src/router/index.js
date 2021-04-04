@@ -92,6 +92,20 @@ const routes = [
     },
   },
   {
+    path: '/about/gallery/page',
+    name: 'GalleryPage',
+    component: () => import(/* webpackChunkName: "GalleryPage" */ '../components/Gallery/GalleryPage.vue'),
+    meta: {
+      breadcrumb() {
+        const { title } = this.$route.query;
+        return {
+          label: title + '',
+          parent: 'About'
+        };
+      }
+    },
+  },
+  {
     path: '/contacts',
     name: 'Contacts',
     component: () => import(/* webpackChunkName: "Contacts" */ '../views/Contacts.vue'),

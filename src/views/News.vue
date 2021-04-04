@@ -76,6 +76,7 @@ export default {
                 .get('/static/news.json')
                 .then(response => {
                     this.news = response.data.data;
+                    this.pageCount = Math.ceil(this.news.length / 8);
                     this.loading = false;
                 });
         }

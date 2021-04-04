@@ -84,7 +84,7 @@ export default {
         top: -72px;
         background-image: url('../../assets/images/banner.png');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100% 100%;
         min-height: 725px;
         margin-bottom: 100px;
         @media (max-width: 991px) {

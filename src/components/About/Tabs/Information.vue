@@ -18,30 +18,39 @@
         </div>
         <div class="container mb-48">
             <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col-lg-8 col-12">
                     <div class="quote mb-40">
                         <p><span class="text-orange">ITLINE</span> — один из ведущих производителей электронных светодиодных табло в России и СНГ. </p>
                         <p><span class="text-orange">Электронные табло ITLINE™</span> — это сочетание высококачественных запатентованных материалов, точной микроэлектроники и уникального программного обеспечения, разработанного в строгом соответствии со специализированными требованиями конкретных отраслей.</p>
                     </div>
                     <div class="mb-40">
-                        <div class="d-flex align-items-center mb-32">
-                            <img class="mr-16" src="../../../assets/images/about_information_1.svg" alt="about_information_1">
+                        <div class="about-information__block mb-32">
+                            <div class="d-flex align-items-center">
+                                <img class="mr-16" src="../../../assets/images/about_information_1.svg" alt="about_information_1">
+                                <h6 class="h6 text-uppercase d-lg-none d-block">Миссия</h6>
+                            </div>
                             <div class="">
-                                <h6 class="h6 text-uppercase">Миссия</h6>
+                                <h6 class="h6 text-uppercase d-lg-block d-none">Миссия</h6>
                                 <p class="p2 mb-0">Создание систем информирования для комфортного взаимодействия человека с внешней средой.</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-32">
-                            <img class="mr-16" src="../../../assets/images/about_information_2.svg" alt="about_information_2">
+                        <div class="about-information__block mb-32">
+                            <div class="d-flex align-items-center">
+                                <img class="mr-16" src="../../../assets/images/about_information_2.svg" alt="about_information_2">
+                                <h6 class="h6 text-uppercase d-lg-none d-block">Подход</h6>
+                            </div>
                             <div class="">
-                                <h6 class="h6 text-uppercase">Подход</h6>
+                                <h6 class="h6 text-uppercase d-lg-block d-none">Подход</h6>
                                 <p class="p2 mb-0">Передача информации доступными образами и формами, понятными пользователю на интуитивном уровне.</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <img class="mr-16" src="../../../assets/images/about_information_3.svg" alt="about_information_3">
+                        <div class="about-information__block">
+                            <div class="d-flex align-items-center">
+                                <img class="mr-16" src="../../../assets/images/about_information_3.svg" alt="about_information_3">
+                                <h6 class="h6 text-uppercase d-lg-none d-block">Цель</h6>
+                            </div>
                             <div class="">
-                                <h6 class="h6 text-uppercase">Цель</h6>
+                                <h6 class="h6 text-uppercase d-lg-block d-none">Цель</h6>
                                 <p class="p2 mb-0">Разработка универсальных решений в области информирования за счет расширения дилерской сети и  интеграций с ведущими производителями.</p>
                             </div>
                         </div>
@@ -69,5 +78,22 @@ export default {
 </script>
 
 <style lang="scss">
-    
+    .about-information__block {
+        display: flex;
+        align-items: center;
+        @media (max-width: 991px) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: $white;
+            border-radius: 10px;
+            & img {
+                margin-bottom: 20px;
+            }
+            & h6 {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
 </style>

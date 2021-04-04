@@ -33,6 +33,7 @@ export default {
         }
         &__text {
             margin-top: 20px;
+            margin-bottom: 0;
         }
     }
 </style>

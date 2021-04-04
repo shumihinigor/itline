@@ -1,25 +1,27 @@
 <template lang="">
-    <Preloader v-if="loading" />
-    <swiper v-else class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
-        <swiper-slide v-for="(item, index) in gallery" :key="item.id">
-            <div class="gallery-swiper__item">
-                <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
-                    <div class="w-lg-50 w-100 mr-16">
-                        <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
-                        <p class="gallery-swiper__item-text p2 mb-0">{{ item.text }}</p>
-                    </div>
-                    <div class="w-lg-50 w-100">
-                        <div 
-                            class="gallery-swiper__item-image" 
-                            :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
-                        ></div>
+    <div>
+        <Preloader v-if="loading" />
+        <swiper v-show="!loading" class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
+            <swiper-slide v-for="(item, index) in gallery" :key="item.id">
+                <div class="gallery-swiper__item">
+                    <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
+                        <div class="w-lg-50 w-100 mr-16">
+                            <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
+                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.text }}</p>
+                        </div>
+                        <div class="w-lg-50 w-100">
+                            <div 
+                                class="gallery-swiper__item-image" 
+                                :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
+                            ></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-    </swiper> 
+            </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+        </swiper> 
+    </div>
 </template>
 
 <script>
