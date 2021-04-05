@@ -6,63 +6,129 @@
                 "title": "Табло для транспорта",
                 "short_description": "Визуальное воспроизведение нумерации маршрутов следования пассажирского общественного транспорта",
                 "bg": "about_gallery_1.png",
-                "col": "4"
+                "col": "4",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "page_gallery_1.png"
+                    },
+                    {
+                        "col": "4",
+                        "src": "page_gallery_2.png"
+                    },
+                    {
+                        "col": "4",
+                        "src": "page_gallery_3.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_4.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_5.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_6.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_7.png"
+                    },
+                    {
+                        "col": "4",
+                        "src": "page_gallery_8.png"
+                    },
+                    {
+                        "col": "4",
+                        "src": "page_gallery_9.png"
+                    },
+                    {
+                        "col": "4",
+                        "src": "page_gallery_10.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_11.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_12.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_13.png"
+                    },
+                    {
+                        "col": "3",
+                        "src": "page_gallery_14.png"
+                    }
+                ]
             },
             {
                 "id": "2",
                 "title": "Табло для остановок",
                 "short_description": "Информирование пассажиров о нумерации маршрутов прибывающих транспортных средств",
                 "bg": "about_gallery_2.png",
-                "col": "4"
+                "col": "4",
+                "image_list": []
             },
             {
                 "id": "3",
                 "title": "Промышленные табло",
                 "short_description": "Комплексное оснащение промышленных предприятий системами оповещения",
                 "bg": "about_gallery_3.png",
-                "col": "4"
+                "col": "4",
+                "image_list": []
             },
             {
                 "id": "4",
                 "title": "Спортивные табло",
                 "short_description": "Специализированное оборудование для спортивных сооружений",
                 "bg": "about_gallery_4.png",
-                "col": "3"
+                "col": "3",
+                "image_list": []
             },
             {
                 "id": "5",
                 "title": "Табло для вокзалов",
                 "short_description": "Автоматизированная система оповещения пассажиров дальнего следования",
                 "bg": "about_gallery_5.png",
-                "col": "3"
+                "col": "3",
+                "image_list": []
             },
             {
                 "id": "6",
                 "title": "Табло для АЗС",
                 "short_description": "Наглядная демонстрация цен стоимости топлива для автомобилистов",
                 "bg": "about_gallery_6.png",
-                "col": "3"
+                "col": "3",
+                "image_list": []
             },
             {
                 "id": "7",
                 "title": "Часы-метеостанции",
                 "short_description": "Электронные светодиодные табло погодных условий для офисных помещений и улицы",
                 "bg": "about_gallery_7.png",
-                "col": "3"
+                "col": "3",
+                "image_list": []
             },
             {
                 "id": "8",
                 "title": "Табло валют",
                 "short_description": "Отображение актуальных курсов продажи / покупки иностранных валют",
                 "bg": "about_gallery_8.png",
-                "col": "12"
+                "col": "12",
+                "image_list": []
             },
             {
                 "id": "9",
                 "title": "Табло валют",
                 "short_description": "Отображение актуальных курсов продажи / покупки иностранных валют",
                 "bg": "about_gallery_8.png",
-                "col": "12"
+                "col": "12",
+                "image_list": []
             }
         ]
 }
