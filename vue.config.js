@@ -38,6 +38,8 @@ module.exports = {
         news: 'src/main.js',
         support: 'src/main.js',
         contacts: 'src/main.js',
+        
+        // news page
         page: {
             // entry for the page
             entry: 'src/main.js',
@@ -46,6 +48,8 @@ module.exports = {
             // output as dist/index.html
             filename: 'news/page.html',
         },
+
+        // gallery page
         page: {
             // entry for the page
             entry: 'src/main.js',
@@ -54,6 +58,8 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/gallery/page.html',
         },
+
+        // gallery tabs
         information: {
             // entry for the page
             entry: 'src/main.js',
@@ -101,6 +107,32 @@ module.exports = {
             template: 'public/about/dealers.html',
             // output as dist/index.html
             filename: 'about/dealers.html',
+        },
+
+        // suppor tabs
+        contacts: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/support/contacts.html',
+            // output as dist/index.html
+            filename: 'support/contacts.html',
+        },
+        warranty: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/support/warranty.html',
+            // output as dist/index.html
+            filename: 'support/warranty.html',
+        },
+        knowledge: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/support/knowledge.html',
+            // output as dist/index.html
+            filename: 'support/knowledge.html',
         },
       }
 };

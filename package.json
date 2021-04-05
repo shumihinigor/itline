@@ -18,6 +18,7 @@
     "vue": "^2.6.11",
     "vue-2-breadcrumbs": "^0.7.12",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-cool-lightbox": "^2.7.1",
     "vue-jquery": "^1.0.6",
     "vue-router": "^3.2.0",
     "vue-svg-inline-loader": "^2.1.2",

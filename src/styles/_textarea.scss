@@ -1,4 +1,4 @@
-.input {
+.textarea {
     background: $bg;
     border-radius: 5px;
     border: 0;
@@ -9,8 +9,9 @@
     font-family: $TTNormsRegular;
     font-size: 12px;
     line-height: 12px;
-    min-height: 46px;
-    max-height: 46px;
+    min-height: 100px;
+    max-height: 100px;
+    resize: none;
     &:focus,
     &:valid {
         padding-top: 22px;

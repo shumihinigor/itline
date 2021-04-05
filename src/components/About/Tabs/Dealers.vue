@@ -19,6 +19,10 @@
                     <input id="profile" type="text" required="required" class="input bg-white">
                     <label for="profile" class="label">Профиль деятельности</label>
                 </div>
+                <div class="textarea-block mb-16">
+                    <textarea id="message" type="text" required="required" class="textarea bg-white"></textarea>
+                    <label for="message" class="label">Сообщение</label>
+                </div>
                 <div class="modal-policy mb-24">
                     <p class="p4 text-grey-3 mb-0">Отправляя заявку, я подтверждаю, что ознакомлен и согласен
                     с <a href="javascript:;">Соглашением о неразглашении</a> данного сайта</p>

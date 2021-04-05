@@ -136,7 +136,24 @@ const routes = [
         label: 'Техподдержка',
         parent: 'Home'
       }
-    }
+    },
+    children: [
+      {
+        name: 'ContactSupportTab',
+        path: 'contacts',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/ContactSupportTab.vue'),
+      },
+      {
+        name: 'WarrantyTab',
+        path: 'warranty',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/WarrantyTab.vue'),
+      },
+      {
+        name: 'KnowledgeBaseTab',
+        path: 'knowledge',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/KnowledgeBaseTab.vue'),
+      }
+    ]
   }
 ]
 
