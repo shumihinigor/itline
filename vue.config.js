@@ -40,7 +40,7 @@ module.exports = {
         contacts: 'src/main.js',
         
         // news page
-        page: {
+        news_page: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -50,7 +50,7 @@ module.exports = {
         },
 
         // gallery page
-        page: {
+        gallery_page: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -60,7 +60,7 @@ module.exports = {
         },
 
         // gallery tabs
-        information: {
+        tab_information: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -68,7 +68,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/information.html',
         },
-        certificates: {
+        tab_certificates: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -76,7 +76,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/certificates.html',
         },
-        vacancies: {
+        tab_vacancies: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -84,7 +84,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/vacancies.html',
         },
-        history: {
+        tab_history: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -92,7 +92,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/history.html',
         },
-        gallery: {
+        tab_gallery: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -100,7 +100,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'about/gallery.html',
         },
-        dealers: {
+        tab_dealers: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -110,7 +110,7 @@ module.exports = {
         },
 
         // suppor tabs
-        contacts: {
+        tab_contacts: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -118,7 +118,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'support/contacts.html',
         },
-        warranty: {
+        tab_warranty: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
@@ -126,7 +126,7 @@ module.exports = {
             // output as dist/index.html
             filename: 'support/warranty.html',
         },
-        knowledge: {
+        tab_knowledge: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
