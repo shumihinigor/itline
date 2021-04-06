@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/about.html"
   },
   {
-    "revision": "482ba567590b16baef04054d127dca94",
+    "revision": "0a7e1c71e61fdd281f1787bdb10f80c8",
     "url": "/about/certificates.html"
   },
   {
-    "revision": "e46d5b366eb28d0c1e680f53a2d14ccc",
+    "revision": "957b0b41e09ee0c6ed5408439c6359a0",
     "url": "/about/dealers.html"
   },
   {
-    "revision": "cfa7009af1b996344085605966a4801e",
+    "revision": "1aa2c2a12235dd24ba3877c9123a0ed5",
     "url": "/about/gallery.html"
   },
   {
-    "revision": "45a483a31a1a9405aea00fc366f0785b",
+    "revision": "88d70d1a8ea9ebde6a5e934adb80a478",
     "url": "/about/gallery/page.html"
   },
   {
-    "revision": "70de1d1a74e45959eeb98eb64bac0c4e",
+    "revision": "b2575ae8bf1ea58883bdf2d73f97e58b",
     "url": "/about/history.html"
   },
   {
-    "revision": "ad309c4e6b18354463a77b8baa0b36e0",
+    "revision": "47c52f18d58b39dbac0064e7cd3d1805",
     "url": "/about/information.html"
   },
   {
-    "revision": "79e6f851d54a3ae2dbed5e622fe3e5f7",
+    "revision": "29db35d6e4b7213a6889c12d34706bad",
     "url": "/about/vacancies.html"
   },
   {
@@ -552,10 +552,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/js/about.d1585c17.js"
   },
   {
-    "revision": "dd17700ba14a6474ae4a",
-    "url": "/assets/js/certificates.a5defa7b.js"
-  },
-  {
     "revision": "ff149e35b25d4f9c1bcf",
     "url": "/assets/js/chunk-common.ef61a2eb.js"
   },
@@ -568,36 +564,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/js/contacts.6a0361f6.js"
   },
   {
-    "revision": "d3007595866309260350",
-    "url": "/assets/js/dealers.0d154f10.js"
-  },
-  {
-    "revision": "34a303df90811144ba1a",
-    "url": "/assets/js/gallery.fc1d9670.js"
-  },
-  {
-    "revision": "8acf961a8d1ff38baaac",
-    "url": "/assets/js/history.6339b601.js"
+    "revision": "f58e27f17599fb2b206f",
+    "url": "/assets/js/gallery_page.04c6bfa9.js"
   },
   {
     "revision": "5ca2b01df0bfb3f75ea1",
     "url": "/assets/js/index.7e730441.js"
   },
   {
-    "revision": "43140239fdcf38dc888c",
-    "url": "/assets/js/information.1d5f010c.js"
-  },
-  {
-    "revision": "748f4427838a56e8e4ed",
-    "url": "/assets/js/knowledge.480bc233.js"
-  },
-  {
     "revision": "1e5a105efd0d38feac9c",
     "url": "/assets/js/news.f070bcd6.js"
   },
   {
-    "revision": "f7348f4f70f1530033c5",
-    "url": "/assets/js/page.69f3a369.js"
+    "revision": "709fdf49f76c622de7b9",
+    "url": "/assets/js/news_page.478ffd2f.js"
   },
   {
     "revision": "468e408689ae05e88b2b",
@@ -612,12 +592,44 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/js/support.b9205524.js"
   },
   {
-    "revision": "ff1e1b8cc14870a68e66",
-    "url": "/assets/js/vacancies.302391dd.js"
+    "revision": "b4b32c74ad66cabed51f",
+    "url": "/assets/js/tab_certificates.16c939fd.js"
   },
   {
-    "revision": "39652bb2b5ecd4db185d",
-    "url": "/assets/js/warranty.47c6455a.js"
+    "revision": "6f0d8ca82d559ea6bb81",
+    "url": "/assets/js/tab_contacts.f4cb199f.js"
+  },
+  {
+    "revision": "87b2998edf71e8390013",
+    "url": "/assets/js/tab_dealers.f8a73016.js"
+  },
+  {
+    "revision": "1a971de8d3611a517bcf",
+    "url": "/assets/js/tab_gallery.56ddf4ef.js"
+  },
+  {
+    "revision": "5c10956ca256007ed1c6",
+    "url": "/assets/js/tab_history.eca3f805.js"
+  },
+  {
+    "revision": "6456774b44987520b254",
+    "url": "/assets/js/tab_information.0614379a.js"
+  },
+  {
+    "revision": "f3c1f596b73b1afdf915",
+    "url": "/assets/js/tab_knowledge.5138955a.js"
+  },
+  {
+    "revision": "d8900b24f5da17a9c60c",
+    "url": "/assets/js/tab_vacancies.cc1b0b7d.js"
+  },
+  {
+    "revision": "17940bca2d449a62fc04",
+    "url": "/assets/js/tab_warranty.ff6f84b3.js"
+  },
+  {
+    "revision": "48331ad235aa4790444f5fb360816cd0",
+    "url": "/contacts.html"
   },
   {
     "revision": "efdca09f4a03af7282c84a737186319b",
@@ -630,6 +642,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6a40a8cc7326db0d48d000d1437dbfb6",
     "url": "/news.html"
+  },
+  {
+    "revision": "59b723d77302ecc3d17f48d88ca35703",
+    "url": "/news/page.html"
   },
   {
     "revision": "8a242588c9430956b44587dfce3368c2",
@@ -676,15 +692,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/support.html"
   },
   {
-    "revision": "48331ad235aa4790444f5fb360816cd0",
+    "revision": "2cc27754ef55798907fbdb3ca8448012",
     "url": "/support/contacts.html"
   },
   {
-    "revision": "3897b4451cc20956cd7aefa92822cb57",
+    "revision": "b99dfe67003259be23483791f168a7b5",
     "url": "/support/knowledge.html"
   },
   {
-    "revision": "1438c1eccf63320b42549e351353cabc",
+    "revision": "c34cd35f1e37712a6201b393513ca369",
     "url": "/support/warranty.html"
   }
 ]);
