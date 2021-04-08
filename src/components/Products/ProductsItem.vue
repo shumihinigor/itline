@@ -23,8 +23,9 @@ export default {
         &-item {
             background-color: $white;
             border-radius: 10px;
-            margin-bottom: 32px;
+            height: 100%;
             overflow: hidden;
+            cursor: pointer;
         }
         &-image {
             & img {

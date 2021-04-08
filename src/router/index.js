@@ -125,7 +125,19 @@ const routes = [
         label: 'Продукция',
         parent: 'Home'
       }
-    }
+    },
+    children: [
+      {
+        name: 'GoodsTab',
+        path: 'goods',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/GoodsTab.vue'),
+      },
+      {
+        name: 'PaymentTab',
+        path: 'payment',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/PaymentTab.vue'),
+      }
+    ]
   },
   {
     path: '/support',

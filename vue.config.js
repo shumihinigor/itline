@@ -14,6 +14,11 @@ module.exports = {
         },
     },
     chainWebpack: config => {
+        config.module
+            .rule("pdf")
+            .test(/\.pdf$/)
+            .use("file-loader")
+            .loader("file-loader");
 		config.module
 			.rule("vue")
 			.use("vue-svg-inline-loader")
@@ -133,6 +138,24 @@ module.exports = {
             template: 'public/support/knowledge.html',
             // output as dist/index.html
             filename: 'support/knowledge.html',
+        },
+
+        // products tabs
+        tab_payment: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/products/payment.html',
+            // output as dist/index.html
+            filename: 'products/payment.html',
+        },
+        tab_goods: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/products/goods.html',
+            // output as dist/index.html
+            filename: 'products/goods.html',
         },
       }
 };

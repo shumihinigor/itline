@@ -32,12 +32,16 @@
         top: 15px;
         bottom: 0;
         left: 16px;
-        // margin: auto;
         font-family: $TTNormsRegular;
         font-size: 16px;
         line-height: 16px;
         height: 16px;
         color: $grey-1;
         transition: all 0.2s;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        padding-right: 16px;
     }
 }

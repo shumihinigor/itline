@@ -4,23 +4,23 @@
             <div class="col-lg-5 col-12">
                 <h6 class="h6 text-uppercase text-grey-1 mb-24 text-lg-start text-center">Хочу узнать условия и стать дилером!</h6>
                 <div class="input-block mb-16">
-                    <input id="name" type="text" required="required" class="input bg-white">
+                    <input id="name" type="text" required class="input bg-white">
                     <label for="name" class="label">Ваше имя  (компания)</label>
                 </div>
                 <div class="input-block mb-16">
-                    <input id="phone" type="tel" required="required" class="input bg-white">
+                    <input id="phone" type="tel" required class="input bg-white">
                     <label for="phone" class="label">Телефон</label>
                 </div>
                 <div class="input-block mb-16">
-                    <input id="email" type="email" required="required" class="input bg-white">
+                    <input id="email" type="text" required class="input bg-white">
                     <label for="email" class="label">Email</label>
                 </div>
                 <div class="input-block mb-16">
-                    <input id="profile" type="text" required="required" class="input bg-white">
+                    <input id="profile" type="text" required class="input bg-white">
                     <label for="profile" class="label">Профиль деятельности</label>
                 </div>
                 <div class="textarea-block mb-16">
-                    <textarea id="message" type="text" required="required" class="textarea bg-white"></textarea>
+                    <textarea id="message" type="text" required class="textarea bg-white"></textarea>
                     <label for="message" class="label">Сообщение</label>
                 </div>
                 <div class="modal-policy mb-24">

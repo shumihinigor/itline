@@ -1,13 +1,13 @@
 <template>
     <section class="product">
         <Preloader v-if="loading" />
-        <div v-else class="container">
-            <div class="row">
-                <div class="col-lg-3 col-12" v-for="(item, index) in products" :key="index">
+        <div v-else class="container d-flex flex-column">
+            <div :class="['row', 'order-' + index]" v-for="(item, index) in products" :key="index">
+                <div class="col-lg-3 col-12 mb-32" v-for="(product, idx) in item" :key="idx">
                     <ProductsItem 
-                        :title="item.title" 
-                        :text="item.text" 
-                        :image="item.image"
+                        :title="product.title" 
+                        :text="product.text" 
+                        :image="product.image"
                     />
                 </div>
             </div>
@@ -26,7 +26,7 @@ export default {
     data() {
         return {
             loading: true,
-            products: [],
+            products: []
         }
     },
     created() {
@@ -48,5 +48,6 @@ export default {
 <style lang="scss">
     .product {
         margin-bottom: 68px;
+        
     }
 </style>
