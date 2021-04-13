@@ -4,7 +4,7 @@
         <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
             <swiper-slide v-for="(item, index) in products" :key="item.id">
                 <div class="product-swiper__item">
-                    <div class="row">
+                    <div class="row h-100">
                         <div class="col-lg-5 col-12 position-relative">
                             <div 
                                 class="product-swiper__item-image mr-16" 

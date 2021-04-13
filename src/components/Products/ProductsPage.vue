@@ -1,7 +1,7 @@
 <template>
     <div class="product-page mb-80">
         <Preloader v-if="loading" />
-        <div v-else class="container">
+        <div v-show="!loading" class="container">
             <div class="row mb-64">
                 <div class="col">
                     <h1 class="h1 mb-0">{{ product.title }}</h1>
@@ -12,22 +12,18 @@
                     <SwiperProduct />
                 </div>
             </div>
-            <div class="row mb-80">
+            <div class="row mb-80 main-content">
                 <div class="col-lg-3 col-12">
-                    <p class="p2 weight-bold mb-16">Категории:</p>
-                    <ul class="product-page__filter">
-                        <li class="p2">Решения для транспорта</li>
-                        <li class="p2">Табло для остановок</li>
-                        <li class="p2">Табло для вокзалов</li>
-                        <li class="p2">Табло для АЗС</li>
-                        <li class="p2">Спортивные табло</li>
-                        <li class="p2">Дорожные табло</li>
-                        <li class="p2">Табло валют</li>
-                        <li class="p2">Промышленные табло</li>
-                    </ul>
+                    <ProductsFilter 
+                        class="sidebar"
+                    />
                 </div>
                 <div class="col-lg-9 col-12">
-
+                    <div class="content">
+                        <p v-for="(item, index) in 10" :key="index">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque eum, consequatur voluptatibus quas natus sunt placeat nihil enim ea quaerat ratione modi voluptatum sit, a ipsa, magni quisquam velit!
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -41,22 +37,34 @@
 
 <script>
 import Preloader from '@/components/Preloader/Preloader'
+import ProductsFilter from '@/components/Products/ProductsFilter'
 import SwiperProduct from '@/components/Swipers/SwiperProduct'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
+
+import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-sidebar"
+
 
 export default {
     name: "ProductsPage",
     components: {
-        Preloader, SwiperProduct, SwiperProductCategory
+        Preloader, SwiperProduct, SwiperProductCategory, ProductsFilter
     },
     data() {
         return {
+            products: {},
             product: {},
             loading: true
         }
     },
     created() {
         this.getProduct(this.$route.query.id)
+    },
+    mounted() {
+        var sidebar = new StickySidebar('.sidebar', {
+            topSpacing: 92,
+            bottomSpacing: 0,
+            containerSelector: '.main-content'
+        });
     },
     methods: {
         getProduct(id) {
@@ -78,25 +86,5 @@ export default {
 </script>
 
 <style lang="scss">
-    .product-page {
-        &__filter {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            & li {
-                margin-bottom: 6px;
-                transition: all 0.2s;
-                cursor: pointer;
-                &:hover {
-                    color: $orange;
-                }
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
+
 </style>

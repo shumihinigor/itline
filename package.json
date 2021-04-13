@@ -14,6 +14,7 @@
     "file-loader": "^6.2.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "register-service-worker": "^1.7.1",
+    "sticky-sidebar-v2": "^1.1.0",
     "swiper": "^6.5.0",
     "vue": "^2.6.11",
     "vue-2-breadcrumbs": "^0.7.12",

@@ -2,15 +2,19 @@
     <div>
         <Preloader v-if="loading" />
         <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in products" :key="item.id">
-                <div class="product-swiper__item">
+            <swiper-slide v-for="(product, index) in products" :key="product.id">
+                <router-link 
+                    tag="div"
+                    :to="{ name: 'ProductsPage', query: { id: product.id, title: product.title  } }"
+                    class="product-swiper__item"
+                >
                     <div class="product-swiper__image">
-                        <img :src="require('../../assets/images/' + item.image)" alt="">
+                        <img :src="require('../../assets/images/' + product.image)" alt="">
                     </div>
                     <div class="product-swiper__block">
-                        <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ item.title }}</h6>
+                        <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.title }}</h6>
                     </div>
-                </div>
+                </router-link >
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
@@ -99,6 +103,7 @@ export default {
                 border-radius: 10px;
                 height: 100%;
                 overflow: hidden;
+                cursor: pointer;
                 @media (max-width: 991px) {
                     padding: 20px;
                 }
