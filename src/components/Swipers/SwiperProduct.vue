@@ -1,19 +1,26 @@
 <template lang="">
     <div>
         <Preloader v-if="loading" />
-        <swiper v-show="!loading" class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in gallery" :key="item.id">
-                <div class="gallery-swiper__item">
-                    <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
-                        <div class="w-lg-50 w-100 mr-16">
-                            <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
-                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.text }}</p>
-                        </div>
-                        <div class="w-lg-50 w-100">
+        <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
+            <swiper-slide v-for="(item, index) in products" :key="item.id">
+                <div class="product-swiper__item">
+                    <div class="row">
+                        <div class="col-lg-5 col-12 position-relative">
                             <div 
-                                class="gallery-swiper__item-image" 
+                                class="product-swiper__item-image mr-16" 
                                 :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
                             ></div>
+                        </div>
+                        <div class="col-lg-7 col-12 d-flex flex-column align-items-start product-swiper__item-block">
+                            <h1 class="h1 mb-16">{{ item.title }}</h1>
+                            <ul>
+                                <li v-for="(li, index) in item.list" class="p2" :key="index">
+                                    {{ li }}
+                                </li>
+                            </ul>
+                            <button type="button" class="btn contour product-swiper__item-button mt-auto">
+                                <span class="text-uppercase p4">заказать</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -42,52 +49,48 @@ export default {
     data() {
         return {
             swiperOptions: {
-                slidesPerView: 1.25,
+                slidesPerView: 1,
                 spaceBetween: 20,
-                centeredSlides: false,
-                initialSlide: 1,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
                 breakpoints: {
                     992: {
-                        slidesPerView: 2,
-                        spaceBetween: 72,
-                        centeredSlides: true,
+                        slidesPerView: 1,
+                        spaceBetween: 20,
                     },
                     375: {
-                        slidesPerView: 1.25,
-                        spaceBetween: 20,
+                        slidesPerView: 1,
+                        spaceBetween: 0,
                         centeredSlides: false,
                     },
                 },
             },
-            gallery: [],
+            products: [],
             loading: true
         }
     },
     computed: {
         swiper() {
-            return this.$refs.swiperGallery.$swiper
+            return this.$refs.swiperProduct.$swiper
         }
     },
     created() {
-        this.getGallery();
+        this.getProducts();
     },
     mounted() {
         if (window.innerWidth <= 991) {
-            this.swiper.navigation.destroy();
             this.swiper.navigation.$nextEl[0].hidden = true;
             this.swiper.navigation.$prevEl[0].hidden = true;
         }
     },
     methods: {
-        getGallery() {
+        getProducts() {
             this.axios
-                .get('/static/gallery_swiper.json')
+                .get('/static/products_swiper.json')
                 .then(response => {
-                    this.gallery = response.data.data
+                    this.products = response.data.data
                     this.loading = false;
                 });
         }
@@ -95,71 +98,70 @@ export default {
 }
 </script>
 
-<style lang="scss">
-    .gallery {
+<style lang="scss" scoped>
+    .product {
         &-swiper {
             &__item {
-                background-color: $white;
+                background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);
+                border-radius: 20px;
                 padding: 32px 24px;
-                border-radius: 10px;
                 height: 100%;
+                color: $white;
                 @media (max-width: 991px) {
                     padding: 20px;
+                    margin-bottom: 20px;
                 }
                 &-image {
+                    position: absolute;
+                    top: -60px;
+                    max-width: 490px;
                     width: 100%;
-                    height: 275px;
-                    border-radius: 5px;
+                    height: 490px;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    background-size: cover;
+                    background-size: contain;
                     @media (max-width: 991px) {
-                        height: 138px;
+                        position: relative;
+                        max-width: 335px;
+                        width: 100%;
+                        height: 254px;
+                        background-size: cover;
+                        margin: 0 auto !important;
                     }
                 }
-                &-text {
+                &-block {
                     @media (max-width: 991px) {
-                        display: none;
+                        position: relative;
+                        margin-top: -60px;
                     }
                 }
-                &-title {
+                &-button {
+                    background-color: transparent !important;
+                    color: $white !important;
+                    border-color: $white !important;
+                    border-radius: 3px;
+                    min-width: 300px;
                     @media (max-width: 991px) {
-                        text-align: center;
-                        margin-bottom: 0 !important;
-                        margin-top: 20px;
+                        width: 100%;
+                        max-width: 100%;
                     }
                 }
             }
         }
     }
     .swiper {
-        &.gallery {
-            min-height: 339px;
+        &.product {
+            margin-bottom: 0;
+            min-height: 400px;
             @media (max-width: 991px) {
-                min-height: 217px;
-                padding: 0 15px;
+                min-height: auto;
+                padding-top: 50px;
             }
             & .swiper {
-                &-slide {
-                    transition: all 0.2s;
-                    &:not(.swiper-slide-active) {
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            backdrop-filter: blur(3px);
-                            background: rgba(255, 255, 255, 0.4);
-                        }
-                    }
-                }
                 &-button {
                     &-next {
                         right: 30px;
+                        top: calc(50% - 40px);
                         &::after {
                             content: '';
                             width: 40px;
@@ -185,6 +187,7 @@ export default {
                     }
                     &-prev {
                         left: 30px;
+                        top: calc(50% - 40px);
                         &::after {
                             content: '';
                             width: 40px;
@@ -207,6 +210,18 @@ export default {
                                 box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
                             }
                         }
+                    }
+                }
+                &-wrapper {
+                    min-height: 400px;
+                    @media (max-width: 991px) {
+                        min-height: auto;
+                    }
+                }
+                &-slide {
+                    height: 320px;
+                    @media (max-width: 991px) {
+                        height: auto;
                     }
                 }
             }

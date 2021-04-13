@@ -7,11 +7,12 @@ import router from './router';
 import VueBreadcrumbs from 'vue-2-breadcrumbs';
 import Paginate from 'vuejs-paginate';
 
+// vuex
+import store from "@/store";
+
 // axios
 import axios from 'axios';
 
-// vuex
-import store from "@/store";
 
 Vue.config.productionTip = false;
 Vue.prototype.axios = axios;

@@ -25,7 +25,7 @@
                 </div>
                 <div class="modal-policy mb-24">
                     <p class="p4 text-grey-3 mb-0">Отправляя заявку, я подтверждаю, что ознакомлен и согласен
-                    с <a href="javascript:;">Соглашением о неразглашении</a> данного сайта</p>
+                    с <a class="link orange" href="javascript:;">Соглашением о неразглашении</a> данного сайта</p>
                 </div>
                 <div class="mb-16">
                     <button type="button" class="btn default w-100"><span class="p4">Отправить</span></button>

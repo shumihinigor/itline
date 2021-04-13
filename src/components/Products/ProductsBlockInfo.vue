@@ -3,7 +3,7 @@
         <Preloader v-if="loading" />
         <div v-else class="container d-flex flex-column">
             <div :class="['row', 'order-' + index]" v-for="(item, index) in products" :key="index">
-                <div class="col-lg-3 col-12 mb-32" v-for="(product, idx) in item" :key="idx" @click="selectProduct(product, index)">
+                <div class="col-lg-3 col-md-6 col-12 mb-32" v-for="(product, idx) in item" :key="idx" @click="selectProduct(product, index)">
                     <ProductsItem 
                         :title="product.title" 
                         :text="product.text" 

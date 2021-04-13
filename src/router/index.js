@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // Home
   {
     path: '/',
     name: 'Home',
@@ -12,6 +13,7 @@ const routes = [
       breadcrumb: 'Главная'
     }
   },
+  // About
   {
     path: '/about',
     name: 'About',
@@ -26,35 +28,36 @@ const routes = [
       {
         name: 'InformationTab',
         path: 'information',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Information.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/InformationTab.vue'),
       },
       {
         name: 'CertificatesTab',
         path: 'certificates',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Certificates.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/CertificatesTab.vue'),
       },
       {
         name: 'VacanciesTab',
         path: 'vacancies',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Vacancies.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/VacanciesTab.vue'),
       },
       {
         name: 'HistoryTab',
         path: 'history',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/History.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/HistoryTab.vue'),
       },
       {
         name: 'GalleryTab',
         path: 'gallery',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Gallery.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/GalleryTab.vue'),
       },
       {
         name: 'DealersTab',
         path: 'dealers',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/Dealers.vue'),
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/DealersTab.vue'),
       }
     ]
   },
+  // Solutions
   {
     path: '/solutions',
     name: 'Solutions',
@@ -66,6 +69,7 @@ const routes = [
       }
     }
   },
+  // News
   {
     path: '/news',
     name: 'News',
@@ -77,6 +81,7 @@ const routes = [
       }
     },
   },
+  // NewsPage
   {
     path: '/news/page',
     name: 'NewsPage',
@@ -91,6 +96,7 @@ const routes = [
       }
     },
   },
+  // GalleryPage
   {
     path: '/about/gallery/page',
     name: 'GalleryPage',
@@ -105,6 +111,7 @@ const routes = [
       }
     },
   },
+  // Contacts
   {
     path: '/contacts',
     name: 'Contacts',
@@ -116,6 +123,7 @@ const routes = [
       }
     }
   },
+  // Products
   {
     path: '/products',
     name: 'Products',
@@ -139,6 +147,22 @@ const routes = [
       }
     ]
   },
+  // ProductsPage
+  {
+    path: '/products/goods/page',
+    name: 'ProductsPage',
+    component: () => import(/* webpackChunkName: "ProductsPage" */ '../components/Products/ProductsPage.vue'),
+    meta: {
+      breadcrumb() {
+        const { title } = this.$route.query;
+        return {
+          label: title + '',
+          parent: 'Products'
+        };
+      }
+    },
+  },
+  // Support
   {
     path: '/support',
     name: 'Support',

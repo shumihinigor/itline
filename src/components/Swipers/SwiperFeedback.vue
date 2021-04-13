@@ -180,9 +180,14 @@ export default {
                     }
                 }
                 &-wrapper {
+                    min-height: 308px;
                     @media (max-width: 991px) {
+                        min-height: auto;
                         flex-direction: column;
                     }
+                }
+                &-slide {
+                    height: auto;
                 }
             }
         }

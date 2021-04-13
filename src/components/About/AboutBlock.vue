@@ -20,16 +20,16 @@
         </div>
         <div class="container mb-32">
             <div class="row">
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
                     <AboutItem :text="'Единиц готовой продукции выпущено'" :title="'20 000'" :image="'about_1.svg'" />
                 </div>
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
                     <AboutItem :text="'Разработано для каждого направления'" :title="'Уникальное ПО'" :image="'about_2.svg'" />
                 </div>
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
                     <AboutItem :text="'Сотрудничают с нашей компанией по всей стране'" :title="'100 партнеров'" :image="'about_3.svg'" />
                 </div>
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
                     <AboutItem :text="'Которые имеют большой потенциал дальнейшего развития'" :title="'Создаем готовые решения'" :image="'about_4.svg'" />
                 </div>
             </div>
@@ -37,9 +37,11 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <button type="button" class="btn contour">
-                        <span class="p4 text-uppercase">узнать больше О компании</span>
-                    </button>
+                    <router-link to="/about">
+                        <button type="button" class="btn contour">
+                            <span class="p4 text-uppercase">узнать больше О компании</span>
+                        </button>
+                    </router-link>
                 </div>
             </div>
         </div>
