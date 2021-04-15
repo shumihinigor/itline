@@ -1,8 +1,7 @@
 <template lang="">
     <div>
-        <Preloader v-if="loading" />
-        <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in products" :key="item.id">
+        <swiper v-show="slides.length" class="swiper product" ref="swiperProduct" :options="swiperOptions">
+            <swiper-slide v-for="(item, index) in slides" :key="item.id">
                 <div class="product-swiper__item">
                     <div class="row h-100">
                         <div class="col-lg-5 col-12 position-relative">
@@ -46,6 +45,7 @@ export default {
         SwiperSlide,
         Preloader
     },
+    props: ["slides"],
     data() {
         return {
             swiperOptions: {
@@ -66,9 +66,7 @@ export default {
                         centeredSlides: false,
                     },
                 },
-            },
-            products: [],
-            loading: true
+            }
         }
     },
     computed: {
@@ -77,7 +75,7 @@ export default {
         }
     },
     created() {
-        this.getProducts();
+        
     },
     mounted() {
         if (window.innerWidth <= 991) {
@@ -86,14 +84,7 @@ export default {
         }
     },
     methods: {
-        getProducts() {
-            this.axios
-                .get('/static/products_swiper.json')
-                .then(response => {
-                    this.products = response.data.data
-                    this.loading = false;
-                });
-        }
+        
     },
 }
 </script>

@@ -3,14 +3,26 @@
         <p class="p2 weight-bold mb-16">Категории:</p>
         <ul class="product-filter">
             <router-link 
-                class="p2" 
+                :class="['p2', {active: product.id == $route.query.id}]" 
                 v-for="(product, index) in products" 
                 :key="index" 
                 tag="li"
                 exact-active-class="active"
-                :to="{ name: 'ProductsPage', query: { id: product.id, title: product.title  } }"
+                :to="{ name: 'ProductsCategory', query: { id: product.id, title: product.title  } }"
             >
-                {{ product.title }}
+                <span @click="changeFilter(product)">{{ product.title }}</span>
+                <ul>
+                    <router-link 
+                        class="p2" 
+                        v-for="(item, index) in product.category" 
+                        :key="index" 
+                        tag="li"
+                        exact-active-class="active"
+                        :to="{ name: 'ProductsCategoryPage', query: { id: product.id, title: product.title, category_id: item.id, category_title: item.title  } }"
+                    >
+                        <span @click="changeFilter(product)">{{ item.title }}</span>
+                    </router-link>
+                </ul>
             </router-link>
         </ul>
     </div>
@@ -18,25 +30,18 @@
 
 <script>
 export default {
+    props: ["products"],
     data() {
         return {
-            products: [],
             loading: true
         }
     },
     created() {
-        this.getProducts();
+        
     },
     methods: {
-        getProducts() {
-            this.axios
-                .get('/static/products.json')
-                .then(response => {
-                    for (const key in response.data.data) {
-                        this.products = this.products.concat(response.data.data[key])
-                    }
-                    this.loading = false;
-                });
+        changeFilter(product) {
+            this.$emit('change', product);
         }
     },
 }
@@ -52,16 +57,43 @@ export default {
             list-style: none;
             padding: 0;
             margin: 0;
+            & span {
+                cursor: pointer;
+            }
             & li {
                 margin-bottom: 6px;
                 transition: all 0.2s;
-                cursor: pointer;
-                &:hover,
-                &.active {
-                    color: $orange;
-                }
                 &:last-child {
                     margin-bottom: 0;
+                }
+                & > ul {
+                    display: none;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    padding: 10px 0 10px 0;
+                    margin-left: 15px;
+                    list-style: none;
+                    transition: all 0.2s;
+                    & > li {
+                        margin-bottom: 6px;
+                        transition: all 0.2s;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                &:hover,
+                &.active {
+                    transition: all 0.2s;
+                    & > span {
+                        color: $orange;
+                    }
+                }
+                &.active {
+                    & > ul {
+                        display: flex;
+                    }
                 }
             }
         }

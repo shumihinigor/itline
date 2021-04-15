@@ -147,17 +147,33 @@ const routes = [
       }
     ]
   },
-  // ProductsPage
+  // ProductsCategory
   {
-    path: '/products/goods/page',
-    name: 'ProductsPage',
-    component: () => import(/* webpackChunkName: "ProductsPage" */ '../components/Products/ProductsPage.vue'),
+    path: '/products/category',
+    name: 'ProductsCategory',
+    component: () => import(/* webpackChunkName: "ProductsCategory" */ '../components/Products/ProductsCategory.vue'),
     meta: {
       breadcrumb() {
-        const { title } = this.$route.query;
+        const { title, id } = this.$route.query;
         return {
           label: title + '',
+          path: id + title,
           parent: 'Products'
+        };
+      }
+    },
+  },
+  // ProductsCategoryPage
+  {
+    path: '/products/category/page',
+    name: 'ProductsCategoryPage',
+    component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
+    meta: {
+      breadcrumb() {
+        const { category_title } = this.$route.query;
+        return {
+          label: category_title + '',
+          parent: 'ProductsCategory'
         };
       }
     },
@@ -190,6 +206,12 @@ const routes = [
         component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/KnowledgeBaseTab.vue'),
       }
     ]
+  },
+  // PageNotFound
+  { 
+    path: "*", 
+    name: 'PageNotFound',
+    component: () => import(/* webpackChunkName: "Support" */ '../components/PageNotFound.vue'),
   }
 ]
 
@@ -197,6 +219,16 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  // console.log(to);
+  // console.log(from);
+  if (!to.query.id && from.name == 'ProductsCategoryPage') {
+    to.query.id = from.query.id;
+    to.query.title = from.query.title;
+  }
+  next()
 })
 
 export default router

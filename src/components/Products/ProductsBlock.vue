@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         goToProductPage(product) {
-            this.$router.push({ name: 'ProductsPage', query: { id: product.id, title: product.title  } });
+            this.$router.push({ name: 'ProductsCategory', query: { id: product.id, title: product.title  } });
         },
         getProducts() {
             this.axios

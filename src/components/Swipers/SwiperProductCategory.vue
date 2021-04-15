@@ -5,14 +5,18 @@
             <swiper-slide v-for="(product, index) in products" :key="product.id">
                 <router-link 
                     tag="div"
-                    :to="{ name: 'ProductsPage', query: { id: product.id, title: product.title  } }"
+                    :to="{ name: 'ProductsCategory', query: { id: product.id, title: product.title  } }"
                     class="product-swiper__item"
                 >
-                    <div class="product-swiper__image">
-                        <img :src="require('../../assets/images/' + product.image)" alt="">
-                    </div>
-                    <div class="product-swiper__block">
-                        <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.title }}</h6>
+                    <div 
+                        @click="changeCategory(product)"
+                    >
+                        <div class="product-swiper__image">
+                            <img :src="require('../../assets/images/' + product.image)" alt="">
+                        </div>
+                        <div class="product-swiper__block">
+                            <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.title }}</h6>
+                        </div>
                     </div>
                 </router-link >
             </swiper-slide>
@@ -81,6 +85,9 @@ export default {
         }
     },
     methods: {
+        changeCategory(product) {
+            this.$emit('change', product);
+        },
         getProducts() {
             this.axios
                 .get('/static/products.json')
