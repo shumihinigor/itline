@@ -69,6 +69,8 @@ export default {
                     this.gallery = response.data.data;
                     this.pageCount = Math.ceil(this.gallery.length / 8);
                     this.loading = false;
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

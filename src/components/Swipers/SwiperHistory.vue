@@ -108,6 +108,8 @@ export default {
                 .then(response => {
                     this.history = response.data.data
                     this.loading = false;
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

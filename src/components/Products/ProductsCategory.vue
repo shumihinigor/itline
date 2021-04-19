@@ -44,7 +44,10 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <SwiperProductCategory @change="changeCategory" />
+                    <SwiperProductCategory 
+                        @change="changeCategory"
+                        :products="products"
+                    />
                 </div>
             </div>
         </div>
@@ -57,6 +60,7 @@ import ProductsFilter from '@/components/Products/ProductsFilter'
 import ProductsItem from '@/components/Products/ProductsItem'
 import SwiperProduct from '@/components/Swipers/SwiperProduct'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
+import changeFilter from '@/mixins/changeFilter'
 
 import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-sidebar"
 
@@ -66,6 +70,7 @@ export default {
     components: {
         Preloader, SwiperProduct, SwiperProductCategory, ProductsFilter, ProductsItem
     },
+    mixins: [changeFilter],
     data() {
         return {
             products: [],
@@ -80,12 +85,6 @@ export default {
         this.getProduct(this.$route.query.id)
     },
     methods: {
-        changeFilter(product) {
-            this.getProduct(product.id);
-        },
-        changeCategory(product) {
-            this.getProduct(product.id);
-        },
         goToProductPageCategory(product) {
             this.$router.push({ name: 'ProductsCategoryPage', query: { id: this.product.id, title: this.product.title, category_id: product.id, category_title: product.title  } });
         },
@@ -94,6 +93,9 @@ export default {
             this.axios
                 .get('/static/products.json')
                 .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
                     this.products = [];
                     for (const key in response.data.data) {
                         this.products = this.products.concat(response.data.data[key])
@@ -111,6 +113,8 @@ export default {
                         });
                     }, 0);
 
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     }

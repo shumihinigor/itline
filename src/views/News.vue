@@ -78,6 +78,8 @@ export default {
                     this.news = response.data.data;
                     this.pageCount = Math.ceil(this.news.length / 8);
                     this.loading = false;
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

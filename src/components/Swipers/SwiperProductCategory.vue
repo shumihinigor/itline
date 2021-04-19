@@ -1,6 +1,7 @@
 <template lang="">
     <div>
         <Preloader v-if="loading" />
+        <h3 class="h3 mb-32">Категории</h3>
         <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
             <swiper-slide v-for="(product, index) in products" :key="product.id">
                 <router-link 
@@ -41,6 +42,7 @@ export default {
         SwiperSlide,
         Preloader
     },
+    props: ["products"],
     data() {
         return {
             swiperOptions: {
@@ -66,7 +68,6 @@ export default {
                     },
                 },
             },
-            products: [],
             loading: true
         }
     },
@@ -75,10 +76,8 @@ export default {
             return this.$refs.swiperProduct.$swiper
         }
     },
-    created() {
-        this.getProducts();
-    },
     mounted() {
+        this.loading = false;
         if (window.innerWidth <= 991) {
             this.swiper.navigation.$nextEl[0].hidden = true;
             this.swiper.navigation.$prevEl[0].hidden = true;
@@ -87,16 +86,6 @@ export default {
     methods: {
         changeCategory(product) {
             this.$emit('change', product);
-        },
-        getProducts() {
-            this.axios
-                .get('/static/products.json')
-                .then(response => {
-                    for (const key in response.data.data) {
-                        this.products = this.products.concat(response.data.data[key])
-                    }
-                    this.loading = false;
-                });
         }
     },
 }

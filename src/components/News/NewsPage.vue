@@ -53,10 +53,15 @@ export default {
             this.axios
                 .get('/static/news.json')
                 .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
                     this.news = response.data.data.find((item) => {
                         return item.id == id
                     });
                     this.loading = false;
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

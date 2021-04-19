@@ -90,6 +90,8 @@ export default {
                 .then(response => {
                     this.products = response.data.data;
                     this.loading = false;
+                }).catch(error => {
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

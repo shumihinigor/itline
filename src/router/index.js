@@ -178,6 +178,21 @@ const routes = [
       }
     },
   },
+  // ProductsPage
+  {
+    path: '/products/page',
+    name: 'ProductsPage',
+    component: () => import(/* webpackChunkName: "ProductsPage" */ '../components/Products/ProductsPage.vue'),
+    meta: {
+      breadcrumb() {
+        const { product_title } = this.$route.query;
+        return {
+          label: product_title + '',
+          parent: 'ProductsCategoryPage'
+        };
+      }
+    },
+  },
   // Support
   {
     path: '/support',
@@ -227,6 +242,11 @@ router.beforeEach((to, from, next) => {
   if (!to.query.id && from.name == 'ProductsCategoryPage') {
     to.query.id = from.query.id;
     to.query.title = from.query.title;
+  } else if (!to.query.id && from.name == 'ProductsPage') {
+    to.query.id = from.query.id;
+    to.query.title = from.query.title;
+    to.query.category_id = from.query.category_id;
+    to.query.category_title = from.query.category_title;
   }
   next()
 })
