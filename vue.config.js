@@ -149,13 +149,13 @@ module.exports = {
             // output as dist/index.html
             filename: 'products/payment.html',
         },
-        tab_goods: {
+        tab_output: {
             // entry for the page
             entry: 'src/main.js',
             // the source template
-            template: 'public/products/goods.html',
+            template: 'public/products/output.html',
             // output as dist/index.html
-            filename: 'products/goods.html',
+            filename: 'products/output.html',
         },
       }
 };

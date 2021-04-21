@@ -95,6 +95,9 @@ export default {
             color: $white;
             margin-bottom: 40px;
         }
+        & button {
+            min-width: 290px;
+        }
         & .swiper {
             &-container {
                 height: 725px;

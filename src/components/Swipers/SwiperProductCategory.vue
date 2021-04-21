@@ -185,7 +185,8 @@ export default {
                     }
                 }
                 &-slide {
-                    height: 250px;
+                    min-height: 250px;
+                    height: auto;
                     @media (max-width: 991px) {
                         height: auto;
                     }

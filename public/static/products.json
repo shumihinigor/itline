@@ -30,19 +30,29 @@
                                         "id": "1",
                                         "title": "Для малогабаритных автобусов",
                                         "text": "Комплект табло",
-                                        "image": "product_1.png"
+                                        "image": "product_1.png",
+                                        "price": "9 500 ₽",
+                                        "page": {
+                                            "image": "product_page_1.png",
+                                            "state": {
+                                                "in_stock": true,
+                                                "amount": "4"
+                                            }
+                                        }
                                     },
                                     {
                                         "id": "2",
                                         "title": "Для среднегабаритных автобусов",
                                         "text": "Комплект табло",
-                                        "image": "product_2.png"
+                                        "image": "product_2.png",
+                                        "price": "9 500 ₽"
                                     },
                                     {
                                         "id": "3",
                                         "title": "Для крупногабаритных автобусов",
                                         "text": "Комплект табло",
-                                        "image": "product_3.png"
+                                        "image": "product_3.png",
+                                        "price": "11 500 ₽"
                                     }
                                 ]
                             },
@@ -91,7 +101,7 @@
                         }
                     ],
                     "content": {
-                        "image": "products_page_1.svg"
+                        "image": "products_category_1.svg"
                     },
                     "swiper": [
                         {

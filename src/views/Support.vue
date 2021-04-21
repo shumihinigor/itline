@@ -51,49 +51,5 @@ export default {
 </script>
 
 <style lang="scss">
-    .tabs-component-tabs {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-bottom: 50px;
-        overflow: auto;
-        padding-bottom: 10px;
-    }
-    .tabs-component-tab {
-        position: relative;
-        margin-right: 32px;
-        font-size: 16px;
-        line-height: 22px;
-        font-family: $TTNormsRegular;
-        white-space: nowrap;
-        & a {
-            color: $grey-3;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            right: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: $orange;
-            transition: all 0.2s;
-        }
-        &.is-active {
-            // font-family: $TTNormsBold;
-            &::after {
-                width: 100%;
-            }
-        }
-    }
+
 </style>

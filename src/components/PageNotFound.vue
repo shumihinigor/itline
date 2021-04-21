@@ -18,7 +18,7 @@ temp<template>
 
 <script>
 export default {
-    
+    name: "PageNotFound"
 }
 </script>
 

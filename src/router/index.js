@@ -136,9 +136,9 @@ const routes = [
     },
     children: [
       {
-        name: 'GoodsTab',
-        path: 'goods',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/GoodsTab.vue'),
+        name: 'OutputTab',
+        path: 'output',
+        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/OutputTab.vue'),
       },
       {
         name: 'PaymentTab',
