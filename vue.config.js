@@ -157,5 +157,35 @@ module.exports = {
             // output as dist/index.html
             filename: 'products/output.html',
         },
+
+        // products category
+        products_category: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/products/category.html',
+            // output as dist/index.html
+            filename: 'products/category.html',
+        },
+
+        // category page
+        category_page: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/products/category/page.html',
+            // output as dist/index.html
+            filename: 'products/category/page.html',
+        },
+
+        // products page
+        products_page: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/products/page.html',
+            // output as dist/index.html
+            filename: 'products/page.html',
+        },
       }
 };

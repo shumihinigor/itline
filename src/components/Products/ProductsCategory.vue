@@ -110,7 +110,8 @@ export default {
                         });
                     }, 0);
 
-                }).catch(error => {
+                })
+                .catch(error => {
                     this.$router.push({ name: 'PageNotFound' });
                 });
         }
