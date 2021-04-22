@@ -157,7 +157,6 @@ const routes = [
         const { title, id } = this.$route.query;
         return {
           label: title + '',
-          path: id + title,
           parent: 'Products'
         };
       }
@@ -239,14 +238,20 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // console.log(to);
   // console.log(from);
-  if (!to.query.id && from.name == 'ProductsCategoryPage') {
-    to.query.id = from.query.id;
-    to.query.title = from.query.title;
-  } else if (!to.query.id && from.name == 'ProductsPage') {
-    to.query.id = from.query.id;
-    to.query.title = from.query.title;
-    to.query.category_id = from.query.category_id;
-    to.query.category_title = from.query.category_title;
+
+  // говно-код
+  if (!to.query.id && to.name == 'ProductsCategoryPage') {
+    router.push({ 
+      name: 'ProductsCategoryPage', 
+      query: { 
+        id: from.query.id, 
+        title: from.query.title, 
+        category_id: from.query.category_id, 
+        category_title: from.query.category_title  
+      }
+    });
+  } else if (!to.query.id && to.name == 'ProductsCategory') {
+    router.push({ name: 'ProductsCategory', query: { id: from.query.id, title: from.query.title  } });
   }
   next()
 })

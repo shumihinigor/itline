@@ -108,9 +108,6 @@ export default {
         }
     },
     created() {
-        if (!window.location.search) {
-            window.location.search = `?id=${this.$route.query.id}&title=${this.$route.query.title}&category_id=${this.$route.query.category_id}&category_title=${this.$route.query.category_title}`
-        }
         this.getProduct(this.$route.query.id)
     },
     mounted() {

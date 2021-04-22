@@ -79,9 +79,6 @@ export default {
         }
     },
     created() {
-        if (!window.location.search) {
-            window.location.search = `?id=${this.$route.query.id}&title=${this.$route.query.title}`
-        }
         this.getProduct(this.$route.query.id)
     },
     methods: {
