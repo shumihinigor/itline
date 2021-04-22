@@ -2,7 +2,7 @@
     <section class="contacts">
         <div class="container mb-80">
             <div class="row">
-                <div class="col-lg-5 col-12 mb-32">
+                <div class="col-lg-5 col-12">
                     <h1 class="h1 mb-24">Контакты</h1>
                     <div class="">
                         <div class="mb-40">
@@ -66,10 +66,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-7 col-12">
-                    <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1701188828" style="width: 100%; height: 400px;" frameborder="0"></iframe>
-                    <iframe src="https://yandex.ru/sprav/widget/rating-badge/1701188828" width="150" height="50" frameborder="0"></iframe>
                 </div>
             </div>
         </div>

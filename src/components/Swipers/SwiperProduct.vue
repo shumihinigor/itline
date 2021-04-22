@@ -18,7 +18,7 @@
                                 </li>
                             </ul>
                             <button type="button" class="btn contour product-swiper__item-button mt-auto">
-                                <span class="text-uppercase p4 text-white">заказать</span>
+                                <span class="text-uppercase p4">заказать</span>
                             </button>
                         </div>
                     </div>

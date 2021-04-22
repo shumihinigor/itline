@@ -149,15 +149,15 @@ const routes = [
   },
   // ProductsCategory
   {
-    path: '/products/category=:id&:title',
+    path: '/products/category',
     name: 'ProductsCategory',
     component: () => import(/* webpackChunkName: "ProductsCategory" */ '../components/Products/ProductsCategory.vue'),
-    props: true,
     meta: {
       breadcrumb() {
-        const { title, id } = this.$route.params;
+        const { title, id } = this.$route.query;
         return {
           label: title + '',
+          path: id + title,
           parent: 'Products'
         };
       }
@@ -165,13 +165,12 @@ const routes = [
   },
   // ProductsCategoryPage
   {
-    path: '/products/category/page?props=:id:title:category_id:category_title',
+    path: '/products/category/page',
     name: 'ProductsCategoryPage',
     component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
-    props: true,
     meta: {
       breadcrumb() {
-        const { category_title } = this.$route.params;
+        const { category_title } = this.$route.query;
         return {
           label: category_title + '',
           parent: 'ProductsCategory'
@@ -238,32 +237,16 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
+  // console.log(to);
   // console.log(from);
-  console.log(to.query.id);
   if (!to.query.id && from.name == 'ProductsCategoryPage') {
-    
-    // router.push({ name: 'ProductsCategory', query: { id: from.query.id, title: from.query.title  } });
-
-    // to.query.id = from.query.id;
-    // to.query.title = from.query.title;
-
+    to.query.id = from.query.id;
+    to.query.title = from.query.title;
   } else if (!to.query.id && from.name == 'ProductsPage') {
-
-    // router.push({ 
-    //   name: 'ProductsCategoryPage', 
-    //   query: { 
-    //     id: from.query.id, 
-    //     title: from.query.title, 
-    //     category_id: from.query.category_id, 
-    //     category_title: from.query.category_title  
-    //   }
-    // });
-
-    // to.query.id = from.query.id;
-    // to.query.title = from.query.title;
-    // to.query.category_id = from.query.category_id;
-    // to.query.category_title = from.query.category_title;
+    to.query.id = from.query.id;
+    to.query.title = from.query.title;
+    to.query.category_id = from.query.category_id;
+    to.query.category_title = from.query.category_title;
   }
   next()
 })
