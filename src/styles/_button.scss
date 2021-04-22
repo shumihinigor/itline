@@ -1,27 +1,24 @@
 .btn {
     display: inline-block;
-    border-radius: 10px;
-    padding: 11px 17px;
+    border-radius: 10px !important;
+    padding: 9px 17px !important;
     text-align: center;
     transition: all 0.2s;
     letter-spacing: 0.045em;
-    @media (max-width: 991px) {
-        padding: 11px 40px;
-    }
     & span {
         font-family: $TTNormsMedium;
     }
     &:hover,
     &:focus {
-        box-shadow: 0px 4px 8px rgba(239, 111, 46, 0.25);
+        box-shadow: 0px 4px 8px rgba(239, 111, 46, 0.25) !important;
     }
     &.default {
         background-color: $orange;
-        color: $white;
+        color: $white !important;
     }
     &.contour {
         border: 1px solid $orange;
         background-color: $white;
-        color: $orange;
+        color: $orange !important;
     }
 }

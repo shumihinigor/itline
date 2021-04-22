@@ -69,7 +69,9 @@
                                     <a href="tel:88002002815" class="tel h5">8 800 200-28-15</a>
                                 </div>
                             </div>
-                            <button type="button" class="btn contour"><span class="p4 text-uppercase">Обратиться в техподдержку</span></button>
+                            <router-link class="btn contour" tag="button" :to="{ name: 'ContactSupportTab' }">
+                                <span class="p4 text-uppercase text-orange">Обратиться в техподдержку</span>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -150,6 +152,9 @@ export default {
             @media (max-width: 991px) {
                 margin-top: 50px;
                 border: 0;
+            }
+            & .btn {
+                padding: 9px 45px !important;
             }
             & .tel {
                 text-decoration: none;
