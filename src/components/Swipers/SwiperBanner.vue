@@ -10,9 +10,9 @@
                                 на
                                 основе светодиодных табло
                             </h2>
-                            <button type="button" class="btn default">
+                            <router-link class="btn default" tag="button" to="/about">
                                 <span class="p4">О компании</span>
-                            </button>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -26,9 +26,9 @@
                                 на
                                 основе светодиодных табло
                             </h2>
-                            <button type="button" class="btn default">
+                            <router-link class="btn default" tag="button" to="/about">
                                 <span class="p4">О компании</span>
-                            </button>
+                            </router-link>
                         </div>
                     </div>
                 </div>

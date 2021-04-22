@@ -2,22 +2,19 @@
     <section class="product">
         <Preloader v-if="loading" />
         <div v-else class="container d-flex flex-column">
-            <div :class="['row', 'order-' + index]" v-for="(item, index) in products" :key="index">
-                <div class="col-lg-3 col-md-6 col-12 mb-32" v-for="(product, idx) in item" :key="idx" @click="selectProduct(product, index)">
+            <div class="row">
+                <div :class="['col-lg-3 col-md-6 col-12 mb-32', 'order-' + idx]" v-for="(product, idx) in products" :key="idx" @click="selectProduct(product, idx)">
                     <ProductsItem 
                         :title="product.title" 
                         :text="product.text" 
                         :image="product.image"
                     />
                 </div>
-            </div>
-
-            <transition
-                name="fade"
-                mode="out-in"
-            >
-                <div :class="['row mb-32', 'order-' + selectedIndex]" v-if="selectedProduct.id">
-                    <div class="col-12">
+                <transition
+                    name="fade"
+                    mode="out-in"
+                >
+                    <div :class="['col-12 mb-32', 'order-' + (selectedIndex|3)]" v-if="selectedProduct.id">
                         <div class="product-info">
                             <div class="row">
                                 <div class="col-lg-4 col-12 mb-lg-0 mb-4">
@@ -44,8 +41,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </transition>
+                </transition>
+            </div>
         </div>
     </section>
 </template>
@@ -88,6 +85,7 @@ export default {
             this.axios
                 .get('/static/products.json')
                 .then(response => {
+                    console.log(response.data);
                     this.products = response.data.data;
                     this.loading = false;
                 }).catch(error => {

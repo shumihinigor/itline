@@ -39,7 +39,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
 import Preloader from '@/components/Preloader/Preloader'
 import 'swiper/swiper-bundle.css';
-    
+// TODO: поправить даты
 export default {
     components: {
         Swiper,
@@ -155,9 +155,11 @@ export default {
     }
     .swiper {
         &.history {
-            padding-top: 120px;
+            display: flex;
+            flex-direction: column-reverse;
+            padding-top: 0;
             @media (max-width: 991px) {
-                padding-top: 100px;
+                padding-top: 0;
             }
             & .swiper {
                 &-button {
@@ -227,6 +229,8 @@ export default {
                     min-height: 471px;
                 }
                 &-pagination {
+                    position: relative;
+                    z-index: 999;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -236,32 +240,32 @@ export default {
                     @media (max-width: 991px) {
                         overflow: auto;
                     }
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        z-index: -1;
-                        top: -30px;
-                        left: 0;
-                        bottom: 0;
-                        margin: auto;
-                        display: block;
-                        width: 100%;
-                        height: 1px;
-                        background-color: transparentize($orange, 0.80);
-                    }
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        z-index: -1;
-                        top: -30px;
-                        right: -100%;
-                        bottom: 0;
-                        margin: auto;
-                        display: block;
-                        width: 100%;
-                        height: 1px;
-                        background-color: transparentize($orange, 0.80);
-                    }
+                    // &::before {
+                    //     content: '';
+                    //     position: absolute;
+                    //     z-index: -1;
+                    //     top: -30px;
+                    //     left: 0;
+                    //     bottom: 0;
+                    //     margin: auto;
+                    //     display: block;
+                    //     width: 100%;
+                    //     height: 1px;
+                    //     background-color: transparentize($orange, 0.80);
+                    // }
+                    // &::after {
+                    //     content: '';
+                    //     position: absolute;
+                    //     z-index: -1;
+                    //     top: -30px;
+                    //     right: 0;
+                    //     bottom: 0;
+                    //     margin: auto;
+                    //     display: block;
+                    //     width: 100%;
+                    //     height: 1px;
+                    //     background-color: transparentize($orange, 0.80);
+                    // }
                     &-text {
                         font-size: 16px;
                         line-height: 19px;
@@ -291,6 +295,19 @@ export default {
                             height: 20px;
                             background-color: transparentize($orange, 0.80);
                             border-radius: 50%;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            z-index: -1;
+                            top: -30px;
+                            // right: 0;
+                            bottom: 0;
+                            margin: auto;
+                            display: block;
+                            width: 50vw;
+                            height: 1px;
+                            background-color: transparentize($orange, 0.80);
                         }
                         &-active {
                             &::before {

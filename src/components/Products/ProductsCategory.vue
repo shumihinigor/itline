@@ -96,10 +96,7 @@ export default {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.products = [];
-                    for (const key in response.data.data) {
-                        this.products = this.products.concat(response.data.data[key])
-                    }
+                    this.products = response.data.data;
                     this.product = this.products.find((item) => {
                         return item.id == id
                     });

@@ -198,7 +198,8 @@
             box-shadow: 4px 4px 10px transparentize($black, 0.85);
             border-radius: 6px;
             max-width: 375px;
-            min-width: 375px;
+            min-width: 100%;
+            width: 100%;
             & p {
                 font-family: $TTNormsLight;
             }
