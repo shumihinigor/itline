@@ -7,6 +7,6 @@ app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
   res.sendFile('dist/index.html');
-});
+}); 
 
 app.listen(8081, () => console.log('server started'));
