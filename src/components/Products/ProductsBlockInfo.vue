@@ -85,7 +85,6 @@ export default {
             this.axios
                 .get('/static/products.json')
                 .then(response => {
-                    console.log(response.data);
                     this.products = response.data.data;
                     this.loading = false;
                 }).catch(error => {

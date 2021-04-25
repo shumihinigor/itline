@@ -57,9 +57,9 @@
                 <li class="header-link">
                     <router-link class="p5 weight-500 text-uppercase" to="/products">Продукция</router-link>
                 </li>
-                <!-- <li class="header-link">
+                <li class="header-link">
                     <router-link class="p5 weight-500 text-uppercase" to="/solutions">Готовые решения</router-link>
-                </li> -->
+                </li>
                 <li class="header-link">
                     <router-link class="p5 weight-500 text-uppercase" to="/support">Техподдержка</router-link>
                 </li>

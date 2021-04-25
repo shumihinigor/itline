@@ -1,19 +1,17 @@
 <template>
     <section class="solutions">
-        <div class="mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="h1">Готовые решения</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <NothingFound
+            :push-name="'Home'"
+        />
     </section>
 </template>
 
 <script>
-    export default {
-        name: 'Solutions'
-    }
+import NothingFound from '@/components/NothingFound'
+export default {
+    name: 'Solutions',
+    components: {
+        NothingFound
+    },
+}
 </script>

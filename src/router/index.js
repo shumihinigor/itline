@@ -5,7 +5,6 @@ import axios from 'axios';
 Vue.use(VueRouter)
 
 function transliterate(text, engToRus) {
-  console.log();
   text = text.split('_').join(' ');
   text = text[0].toUpperCase() + text.slice(1);
   let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
@@ -19,7 +18,7 @@ function transliterate(text, engToRus) {
 }
 
 // console.log(transliterate('Обновление Sentinel LDK 8.0.4').toLowerCase().split(' ').join('_'));
-console.log(transliterate('obnovlenie_sentinel_ldk_8.0.4', true));
+// console.log(transliterate('obnovlenie_sentinel_ldk_8.0.4', true));
 
 const routes = [
   // Home

@@ -324,14 +324,12 @@ export default {
     },
     methods: {
         tabChanged(selectedTab) {
-            console.log(selectedTab.tab.id);
             this.currentTab = selectedTab.tab.id;
         },
         changeProduct(id) {
             this.getProduct(id);
         },
         getProduct(id) {
-            console.log(id);
             this.loading = true;
             this.axios
                 .get('/static/products.json')
