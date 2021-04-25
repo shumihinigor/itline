@@ -1,0 +1,47 @@
+{
+  "name": "itline-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "node": "node server"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.0-beta3",
+    "bootstrap-vue": "^2.19.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "ejs": ">=0.4.3",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "register-service-worker": "^1.7.1",
+    "sticky-sidebar-v2": "^1.1.0",
+    "swiper": "^6.5.0",
+    "vue": "^2.6.11",
+    "vue-2-breadcrumbs": "^0.7.12",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-cool-lightbox": "^2.7.1",
+    "vue-jquery": "^1.0.6",
+    "vue-router": "^3.2.0",
+    "vue-svg-inline-loader": "^2.1.2",
+    "vue-tabs-component": "^1.5.0",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "fibers": "^5.0.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
