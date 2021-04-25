@@ -26,7 +26,7 @@
                 <div class="col-lg-9 col-12">
                     <div class="content">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 mb-32" v-for="(product, idx) in product.category" :key="idx" @click="goToProductPageCategory(product)">
+                            <div class="col-lg-4 col-md-6 col-12 mb-32" v-for="(product, idx) in product.category" :key="idx" @click="goToProductCategoryPage(product)">
                                 <ProductsItem 
                                     :title="product.title" 
                                     :text="product.text" 
@@ -67,6 +67,7 @@ import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-s
 
 export default {
     name: "ProductsCategory",
+    props: ["id"],
     components: {
         Preloader, SwiperProduct, SwiperProductCategory, ProductsFilter, ProductsItem
     },
@@ -79,11 +80,11 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.$route.query.id)
+        this.getProduct(this.id)
     },
     methods: {
-        goToProductPageCategory(product) {
-            this.$router.push({ name: 'ProductsCategoryPage', query: { id: this.product.id, title: this.product.title, category_id: product.id, category_title: product.title  } });
+        goToProductCategoryPage(product) {
+            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.product.id, category_id: product.id, } });
         },
         getProduct(id) {
             this.loading = true;

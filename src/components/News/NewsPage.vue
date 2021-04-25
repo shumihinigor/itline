@@ -36,6 +36,7 @@
 import Preloader from '@/components/Preloader/Preloader'
 export default {
     name: "NewsPage",
+    props: ["id"],
     components: {
         Preloader
     },
@@ -46,7 +47,7 @@ export default {
         }
     },
     created() {
-        this.getPost(this.$route.query.id)
+        this.getPost(this.id)
     },
     methods: {
         getPost(id) {

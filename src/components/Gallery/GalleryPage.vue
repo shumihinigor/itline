@@ -41,6 +41,7 @@ import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 
 export default {
     name: "GalleryPage",
+    props: ["id"],
     components: {
         Preloader, CoolLightBox, NothingFound
     },
@@ -52,7 +53,7 @@ export default {
         }
     },
     created() {
-        this.getGallery(this.$route.query.id)
+        this.getGallery(this.id)
     },
     methods: {
         getGallery(id) {

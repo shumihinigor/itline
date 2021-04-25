@@ -6,7 +6,7 @@
             <swiper-slide v-for="(product, index) in products" :key="product.id">
                 <router-link 
                     tag="div"
-                    :to="{ name: 'ProductsCategory', query: { id: product.id, title: product.title  } }"
+                    :to="{ name: 'ProductsCategory', params: { id: product.id  } }"
                     class="product-swiper__item"
                 >
                     <div 

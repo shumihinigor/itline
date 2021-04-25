@@ -3,12 +3,12 @@
         <p class="p2 weight-bold mb-16">Категории:</p>
         <ul class="product-filter">
             <router-link 
-                :class="['p2', {active: product.id == $route.query.id}]" 
+                :class="['p2', {active: product.id == $route.params.id}]" 
                 v-for="(product, index) in products" 
                 :key="index" 
                 tag="li"
                 exact-active-class="active"
-                :to="{ name: 'ProductsCategory', query: { id: product.id, title: product.title  } }"
+                :to="{ name: 'ProductsCategory', params: { id: product.id } }"
             >
                 <span @click="changeFilter(product)">{{ product.title }}</span>
                 <ul>
@@ -18,7 +18,7 @@
                         :key="index" 
                         tag="li"
                         exact-active-class="active"
-                        :to="{ name: 'ProductsCategoryPage', query: { id: product.id, title: product.title, category_id: item.id, category_title: item.title  } }"
+                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: item.id  } }"
                     >
                         <span @click="changeFilter(product)">{{ item.title }}</span>
                     </router-link>

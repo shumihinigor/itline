@@ -1,7 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import axios from 'axios';
 
 Vue.use(VueRouter)
+
+function transliterate(text, engToRus) {
+  console.log();
+  text = text.split('_').join(' ');
+  text = text[0].toUpperCase() + text.slice(1);
+  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+  let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+  var x;
+  for(x = 0; x < rus.length; x++) {
+    text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
+    text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());	
+  }
+  return text;
+}
+
+// console.log(transliterate('Обновление Sentinel LDK 8.0.4').toLowerCase().split(' ').join('_'));
+console.log(transliterate('obnovlenie_sentinel_ldk_8.0.4', true));
 
 const routes = [
   // Home
@@ -83,12 +101,14 @@ const routes = [
   },
   // NewsPage
   {
-    path: '/news/page',
+    path: '/news/:id',
     name: 'NewsPage',
     component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
+    props: true,
     meta: {
       breadcrumb() {
-        const { title } = this.$route.query;
+        const { id } = this.$route.params;
+        let title = transliterate(id, true);
         return {
           label: title + '',
           parent: 'News'
@@ -98,12 +118,14 @@ const routes = [
   },
   // GalleryPage
   {
-    path: '/about/gallery/page',
+    path: '/about/gallery/:id',
     name: 'GalleryPage',
     component: () => import(/* webpackChunkName: "GalleryPage" */ '../components/Gallery/GalleryPage.vue'),
+    props: true,
     meta: {
       breadcrumb() {
-        const { title } = this.$route.query;
+        const { id } = this.$route.params;
+        let title = transliterate(id, true);
         return {
           label: title + '',
           parent: 'About'
@@ -149,12 +171,15 @@ const routes = [
   },
   // ProductsCategory
   {
-    path: '/products/category',
+    path: '/products/category/:id',
     name: 'ProductsCategory',
     component: () => import(/* webpackChunkName: "ProductsCategory" */ '../components/Products/ProductsCategory.vue'),
+    props: true,
     meta: {
       breadcrumb() {
-        const { title, id } = this.$route.query;
+        const { id } = this.$route.params;
+        let title = transliterate(id, true);
+
         return {
           label: title + '',
           parent: 'Products'
@@ -164,14 +189,16 @@ const routes = [
   },
   // ProductsCategoryPage
   {
-    path: '/products/category/page',
+    path: '/products/category/:id/:category_id',
     name: 'ProductsCategoryPage',
     component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
+    props: true,
     meta: {
       breadcrumb() {
-        const { category_title } = this.$route.query;
+        const { id, category_id } = this.$route.params;
+        let title = transliterate(category_id, true);
         return {
-          label: category_title + '',
+          label: title + '',
           parent: 'ProductsCategory'
         };
       }
@@ -179,14 +206,16 @@ const routes = [
   },
   // ProductsPage
   {
-    path: '/products/page',
+    path: '/products/category/:id/:category_id/:product_id',
     name: 'ProductsPage',
     component: () => import(/* webpackChunkName: "ProductsPage" */ '../components/Products/ProductsPage.vue'),
+    props: true,
     meta: {
       breadcrumb() {
-        const { product_title } = this.$route.query;
+        const { id, category_id, product_id } = this.$route.params;
+        let title = transliterate(product_id, true);
         return {
-          label: product_title + '',
+          label: title + '',
           parent: 'ProductsCategoryPage'
         };
       }
@@ -238,21 +267,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // console.log(to);
   // console.log(from);
-
-  // говно-код
-  if (!to.query.id && to.name == 'ProductsCategoryPage') {
-    router.push({ 
-      name: 'ProductsCategoryPage', 
-      query: { 
-        id: from.query.id, 
-        title: from.query.title, 
-        category_id: from.query.category_id, 
-        category_title: from.query.category_title  
-      }
-    });
-  } else if (!to.query.id && to.name == 'ProductsCategory') {
-    router.push({ name: 'ProductsCategory', query: { id: from.query.id, title: from.query.title  } });
-  }
   next()
 })
 

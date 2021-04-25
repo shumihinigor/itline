@@ -295,6 +295,7 @@ Vue.use(Tabs);
 
 export default {
     name: "ProductsPage",
+    props: ["id", "category_id", "product_id", "product_type"],
     components: {
         Preloader, SwiperProductCategory, ProductsItem
     },
@@ -309,7 +310,7 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.$route.query.id)
+        this.getProduct(this.id)
     },
     mounted() {
         
@@ -330,6 +331,7 @@ export default {
             this.getProduct(id);
         },
         getProduct(id) {
+            console.log(id);
             this.loading = true;
             this.axios
                 .get('/static/products.json')
@@ -342,10 +344,10 @@ export default {
                         return item.id == id
                     });
                     this.category = this.product.category.find((item) => {
-                        return item.id == this.$route.query.category_id
+                        return item.id == this.category_id
                     });
                     this.productInfo = this.category[this.$route.query.product_type].products.find((item) => {
-                        return item.id == this.$route.query.product_id
+                        return item.id == this.product_id
                     });
                     this.loading = false;
                 }).catch(error => {

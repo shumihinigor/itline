@@ -95,6 +95,7 @@ import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-s
 
 export default {
     name: "ProductsCategoryPage",
+    props: ["id", "category_id"],
     components: {
         Preloader, SwiperProduct, SwiperProductCategory, ProductsFilter, ProductsItem
     },
@@ -108,14 +109,18 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.$route.query.id)
+        this.getProduct(this.id)
     },
     mounted() {
         
     },
     methods: {
         goToProductPage(product, type) {
-            this.$router.push({ name: 'ProductsPage', query: { id: this.product.id, title: this.product.title, category_id: this.category.id, category_title: this.category.title, product_id: product.id, product_type: type, product_title: product.title }});
+            this.$router.push({ 
+                name: 'ProductsPage', 
+                params: { id: this.product.id, category_id: this.category.id, product_id: product.id },
+                query: { product_type: type }
+            });
         },
         getProduct(id) {
             this.loading = true;
@@ -130,7 +135,7 @@ export default {
                         return item.id == id
                     });
                     this.category = this.product.category.find((item) => {
-                        return item.id == this.$route.query.category_id
+                        return item.id == this.category_id
                     });
                     this.loading = false;
                     

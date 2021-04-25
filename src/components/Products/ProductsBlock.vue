@@ -3,7 +3,7 @@
         <Preloader v-if="loading" />
         <div v-else class="container d-flex flex-column">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-12 mb-32" v-for="(product, idx) in products" :key="idx" @click="goToProductPageCategory(product)">
+                <div class="col-lg-3 col-md-6 col-12 mb-32" v-for="(product, idx) in products" :key="idx" @click="goToProductCategory(product)">
                     <ProductsItem 
                         :title="product.title" 
                         :text="product.text" 
@@ -33,8 +33,8 @@ export default {
         this.getProducts()
     },
     methods: {
-        goToProductPageCategory(product) {
-            this.$router.push({ name: 'ProductsCategory', query: { id: product.id, title: product.title  } });
+        goToProductCategory(product) {
+            this.$router.push({ name: 'ProductsCategory', params: { id: product.id } });
         },
         getProducts() {
             this.axios

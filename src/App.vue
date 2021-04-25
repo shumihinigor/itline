@@ -9,7 +9,9 @@
                             name="fade"
                             mode="out-in"
                         >
-                            <Breadcrumbs v-if="this.$route.name !== 'Home'" />
+                            <Breadcrumbs 
+                                v-if="this.$route.name !== 'Home'" 
+                            />
                         </transition>
                     </div>
                 </div>
