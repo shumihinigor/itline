@@ -1,4 +1,4 @@
-# itline-vue
+# itline
 
 ## Project setup
 ```
