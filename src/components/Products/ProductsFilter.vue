@@ -14,13 +14,13 @@
                 <ul>
                     <router-link 
                         class="p2" 
-                        v-for="(item, index) in product.category" 
+                        v-for="(cateory, index) in product.categories" 
                         :key="index" 
                         tag="li"
                         exact-active-class="active"
-                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: item.id  } }"
+                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: cateory.id  } }"
                     >
-                        <span @click="changeFilter(product)">{{ item.title }}</span>
+                        <span @click="changeFilter(product)">{{ cateory.title }}</span>
                     </router-link>
                 </ul>
             </router-link>
@@ -57,6 +57,9 @@ export default {
             list-style: none;
             padding: 0;
             margin: 0;
+            @media (max-width: 991px) {
+                margin-bottom: 32px;
+            }
             & span {
                 cursor: pointer;
             }

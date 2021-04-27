@@ -3,12 +3,18 @@
         <Preloader v-if="loading" />
         <div v-else class="container d-flex flex-column">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-12 mb-32" v-for="(product, idx) in products" :key="idx" @click="goToProductCategory(product)">
-                    <ProductsItem 
-                        :title="product.title" 
-                        :text="product.text" 
-                        :image="product.image"
-                    />
+                <div 
+                    class="col-lg-3 col-md-6 col-12 mb-32" 
+                    v-for="(product, idx) in products" 
+                    :key="idx" 
+                >
+                    <div @click="goToProductCategory(product)">
+                        <ProductsItem 
+                            :title="product.title" 
+                            :text="product.text" 
+                            :image="product.image"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

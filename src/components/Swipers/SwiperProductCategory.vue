@@ -9,9 +9,7 @@
                     :to="{ name: 'ProductsCategory', params: { id: product.id  } }"
                     class="product-swiper__item"
                 >
-                    <div 
-                        @click="changeCategory(product)"
-                    >
+                    <div @click="changeCategory(product)">
                         <div class="product-swiper__image">
                             <img :src="require('../../assets/images/' + product.image)" alt="">
                         </div>

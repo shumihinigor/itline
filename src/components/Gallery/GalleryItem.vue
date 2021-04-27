@@ -1,6 +1,10 @@
 <template>
     <div :class="['col-12 col-md-6 mb-24', 'col-lg-' + col]">
-        <router-link :to="{ name: 'GalleryPage', params: { id: id }}" tag="div" :class="['gallery-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" :style="background(bg)">
+        <router-link 
+            :to="{ name: 'GalleryPage', params: { id: id }}" tag="div" 
+            :class="['gallery-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" 
+            :style="background(bg)"
+        >
             <h6 class="h6 text-uppercase text-grey-1 gallery-item__title">{{ title }}</h6>
             <p class="p2 gallery-item__text text-grey-2 mb-0">
                 {{ text }}

@@ -26,12 +26,18 @@
                 <div class="col-lg-9 col-12">
                     <div class="content">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 mb-32" v-for="(product, idx) in product.category" :key="idx" @click="goToProductCategoryPage(product)">
-                                <ProductsItem 
-                                    :title="product.title" 
-                                    :text="product.text" 
-                                    :image="product.image"
-                                />
+                            <div 
+                                class="col-lg-4 col-md-6 col-12 mb-32" 
+                                v-for="(category, idx) in product.categories" 
+                                :key="idx" 
+                            >
+                                <div @click="goToProductCategoryPage(category)">
+                                    <ProductsItem 
+                                        :title="category.title" 
+                                        :text="category.text" 
+                                        :image="category.image"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -39,7 +45,7 @@
             </div>
             <div class="row mb-80" v-if="product.content.image">
                 <div class="col">
-                    <img :src="require('../../assets/images/' + product.content.image)">
+                    <img class="w-100" :src="require('../../assets/images/' + product.content.image)">
                 </div>
             </div>
             <div class="row">
@@ -80,11 +86,20 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.id)
+        this.getProduct(this.id);
     },
     methods: {
-        goToProductCategoryPage(product) {
-            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.product.id, category_id: product.id, } });
+        goToProductCategoryPage(category) {
+            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.product.id, category_id: category.id, } });
+        },
+        initSidebar() {
+            setTimeout(() => {
+                var sidebar = new StickySidebar('.sidebar', {
+                    topSpacing: 92,
+                    bottomSpacing: 0,
+                    containerSelector: '.main-content'
+                });
+            }, 0);
         },
         getProduct(id) {
             this.loading = true;
@@ -99,15 +114,9 @@ export default {
                         return item.id == id
                     });
                     this.loading = false;
-                    
-                    setTimeout(() => {
-                        var sidebar = new StickySidebar('.sidebar', {
-                            topSpacing: 92,
-                            bottomSpacing: 0,
-                            containerSelector: '.main-content'
-                        });
-                    }, 0);
-
+                    if (window.innerWidth > 991) {
+                        this.initSidebar();
+                    }
                 })
                 .catch(error => {
                     this.$router.push({ name: 'PageNotFound' });

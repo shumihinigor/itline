@@ -151,6 +151,11 @@
             font-family: $TTNormsLight;
             font-size: 14px;
             line-height: 18px;
+            text-transform: uppercase;
+            &:nth-child(1),
+            &:nth-child(2) {
+                text-transform: none;
+            }
             &::before {
                 display: none !important;
             }

@@ -13,9 +13,9 @@
                 <div class="col">
                     <div>
                         <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
-                            <tab to="ContactSupportTab" id="contacts_tab" name="Обратиться в техподдержку"></tab>
-                            <tab to="WarrantyTab" id="warranty_tab" name="гарантия"></tab>
-                            <tab to="KnowledgeBaseTab" id="knowledge_tab" name="база знаний"></tab>
+                            <tab to="ContactSupportTab" id="contactsTab" name="Обратиться в техподдержку"></tab>
+                            <tab to="WarrantyTab" id="warrantyTab" name="гарантия"></tab>
+                            <tab to="KnowledgeBaseTab" id="knowledgeTab" name="база знаний"></tab>
                         </tabs>
                     </div>
                 </div>
@@ -26,7 +26,9 @@
             name="fade"
             mode="out-in"
         >
-            <router-view></router-view>
+            <ContactSupportTab v-if="currentTab == 'contactsTab'" />
+            <WarrantyTab v-else-if="currentTab == 'warrantyTab'" />
+            <KnowledgeBaseTab v-else-if="currentTab == 'knowledgeTab'" />
         </transition>
 
     </section>
@@ -36,15 +38,28 @@
 import Vue from 'vue';
 import Tabs from 'vue-tabs-component';
 
+// tabs
+import ContactSupportTab from '@/components/Support/Tabs/ContactSupportTab'
+import WarrantyTab from '@/components/Support/Tabs/WarrantyTab'
+import KnowledgeBaseTab from '@/components/Support/Tabs/KnowledgeBaseTab'
+
 Vue.use(Tabs);
 
 export default {
     name: 'Support',
+    components: {
+        ContactSupportTab,
+        WarrantyTab,
+        KnowledgeBaseTab
+    },
+    data() {
+        return {
+            currentTab: 'contactsTab'
+        }
+    },
     methods: {
         tabChanged(selectedTab) {
-            if (this.$route.name !== selectedTab.tab.$attrs.to) {
-                this.$router.push({ name: selectedTab.tab.$attrs.to })
-            }
+            this.currentTab = selectedTab.tab.id;
         }
     }
 }

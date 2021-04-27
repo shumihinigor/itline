@@ -27,7 +27,7 @@
             </CoolLightBox>
         </div>
         <NothingFound
-            :push-name="'GalleryTab'"
+            :push-name="'About'"
             v-else
         />
     </div>

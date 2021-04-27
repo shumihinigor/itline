@@ -35,12 +35,18 @@
                             </div>
                         </div>
                         <div class="row mb-56">
-                            <div class="col-lg-4 col-md-6 col-12 mb-32" v-for="(category, idx) in category.series.products" :key="idx" @click="goToProductPage(category, type='series')">
-                                <ProductsItem 
-                                    :title="category.title" 
-                                    :text="category.text" 
-                                    :image="category.image"
-                                />
+                            <div 
+                                class="col-lg-4 col-md-6 col-12 mb-32" 
+                                v-for="(category, idx) in category.series.products" 
+                                :key="idx"
+                            >
+                                <div @click="goToProductPage(category, type='series')">
+                                    <ProductsItem 
+                                        :title="category.title" 
+                                        :text="category.text" 
+                                        :image="category.image"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -54,12 +60,18 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 mb-32" v-for="(category, idx) in category.solutions.products" :key="idx" @click="goToProductPage(category, type='solutions')">
-                                <ProductsItem 
-                                    :title="category.title" 
-                                    :text="category.text" 
-                                    :image="category.image"
-                                />
+                            <div 
+                                class="col-lg-4 col-md-6 col-12 mb-32" 
+                                v-for="(category, idx) in category.solutions.products" 
+                                :key="idx" 
+                            >
+                                <div @click="goToProductPage(category, type='solutions')">
+                                    <ProductsItem 
+                                        :title="category.title" 
+                                        :text="category.text" 
+                                        :image="category.image"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,6 +134,15 @@ export default {
                 query: { product_type: type }
             });
         },
+        initSidebar() {
+            setTimeout(() => {
+                var sidebar = new StickySidebar('.sidebar', {
+                    topSpacing: 92,
+                    bottomSpacing: 0,
+                    containerSelector: '.main-content'
+                });
+            }, 0);
+        },
         getProduct(id) {
             this.loading = true;
             this.axios
@@ -134,18 +155,14 @@ export default {
                     this.product = this.products.find((item) => {
                         return item.id == id
                     });
-                    this.category = this.product.category.find((item) => {
+                    this.category = this.product.categories.find((item) => {
                         return item.id == this.category_id
                     });
                     this.loading = false;
                     
-                    setTimeout(() => {
-                        var sidebar = new StickySidebar('.sidebar', {
-                            topSpacing: 92,
-                            bottomSpacing: 0,
-                            containerSelector: '.main-content'
-                        });
-                    }, 0);
+                    if (window.innerWidth > 991) {
+                        this.initSidebar();
+                    }
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });
                 });

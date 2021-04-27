@@ -4,21 +4,41 @@ import axios from 'axios';
 
 Vue.use(VueRouter)
 
-function transliterate(text, engToRus) {
-  text = text.split('_').join(' ');
-  text = text[0].toUpperCase() + text.slice(1);
-  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
-  let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
-  var x;
-  for(x = 0; x < rus.length; x++) {
-    text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
-    text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());	
-  }
-  return text;
+function transliterateEN(text) {
+    text = text.split('-').join(' ');
+    
+    let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    var x;
+    for (x = 0; x < rus.length; x++) {
+        text = text.split(eng[x]).join(rus[x]);
+    }
+    text = text[0].toUpperCase() + text.slice(1);
+    return text;
 }
 
-// console.log(transliterate('Обновление Sentinel LDK 8.0.4').toLowerCase().split(' ').join('_'));
-// console.log(transliterate('obnovlenie_sentinel_ldk_8.0.4', true));
+// test 
+// console.log(transliterateEN('tablo-dlya-AZS')); // Табло для азс
+// console.log(transliterateEN('obnovlenie-SENTINEL-LDK-8.0.4')); // Обновление SENTINEL LDK 8.0.4
+
+function transliterateRU(text) {
+    text = text.toLowerCase();
+    let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    var x;
+    for (x = 0; x < rus.length; x++) {
+        text = text.split(eng[x]).join(eng[x].toUpperCase());
+    }
+    for (x = 0; x < rus.length; x++) {
+        text = text.split(rus[x]).join(eng[x]);
+    }
+    
+    return text.split(' ').join('-');
+}
+
+// test 
+// console.log(transliterateRU('Табло для АЗС')); // tablo-dlya-azs
+// console.log(transliterateRU('Обновление Sentinel LDK 8.0.4')); // obnovlenie-SENTINEL-LDK-8.0.4
 
 const routes = [
   // Home
@@ -40,39 +60,7 @@ const routes = [
         label: 'О компании',
         parent: 'Home'
       }
-    },
-    children: [
-      {
-        name: 'InformationTab',
-        path: 'information',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/InformationTab.vue'),
-      },
-      {
-        name: 'CertificatesTab',
-        path: 'certificates',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/CertificatesTab.vue'),
-      },
-      {
-        name: 'VacanciesTab',
-        path: 'vacancies',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/VacanciesTab.vue'),
-      },
-      {
-        name: 'HistoryTab',
-        path: 'history',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/HistoryTab.vue'),
-      },
-      {
-        name: 'GalleryTab',
-        path: 'gallery',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/GalleryTab.vue'),
-      },
-      {
-        name: 'DealersTab',
-        path: 'dealers',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/About/Tabs/DealersTab.vue'),
-      }
-    ]
+    }
   },
   // Solutions
   {
@@ -107,7 +95,7 @@ const routes = [
     meta: {
       breadcrumb() {
         const { id } = this.$route.params;
-        let title = transliterate(id, true);
+        let title = transliterateEN(id);
         return {
           label: title + '',
           parent: 'News'
@@ -124,7 +112,7 @@ const routes = [
     meta: {
       breadcrumb() {
         const { id } = this.$route.params;
-        let title = transliterate(id, true);
+        let title = transliterateEN(id);
         return {
           label: title + '',
           parent: 'About'
@@ -155,18 +143,6 @@ const routes = [
         parent: 'Home'
       }
     },
-    children: [
-      {
-        name: 'OutputTab',
-        path: 'output',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/OutputTab.vue'),
-      },
-      {
-        name: 'PaymentTab',
-        path: 'payment',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Products/Tabs/PaymentTab.vue'),
-      }
-    ]
   },
   // ProductsCategory
   {
@@ -177,7 +153,7 @@ const routes = [
     meta: {
       breadcrumb() {
         const { id } = this.$route.params;
-        let title = transliterate(id, true);
+        let title = transliterateEN(id);
 
         return {
           label: title + '',
@@ -195,7 +171,7 @@ const routes = [
     meta: {
       breadcrumb() {
         const { id, category_id } = this.$route.params;
-        let title = transliterate(category_id, true);
+        let title = transliterateEN(category_id);
         return {
           label: title + '',
           parent: 'ProductsCategory'
@@ -212,7 +188,7 @@ const routes = [
     meta: {
       breadcrumb() {
         const { id, category_id, product_id } = this.$route.params;
-        let title = transliterate(product_id, true);
+        let title = transliterateEN(product_id);
         return {
           label: title + '',
           parent: 'ProductsCategoryPage'
@@ -230,24 +206,7 @@ const routes = [
         label: 'Техподдержка',
         parent: 'Home'
       }
-    },
-    children: [
-      {
-        name: 'ContactSupportTab',
-        path: 'contacts',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/ContactSupportTab.vue'),
-      },
-      {
-        name: 'WarrantyTab',
-        path: 'warranty',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/WarrantyTab.vue'),
-      },
-      {
-        name: 'KnowledgeBaseTab',
-        path: 'knowledge',
-        component: () => import(/* webpackChunkName: "NewsPage" */ '../components/Support/Tabs/KnowledgeBaseTab.vue'),
-      }
-    ]
+    }
   },
   // PageNotFound
   { 

@@ -12,9 +12,9 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
-                            <tab to="OutputTab" id="products_tab" name="Продукция"></tab>
-                            <tab to="PaymentTab" id="payment_tab" name="Оплата и доставка"></tab>
+                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false, defaultTabHash: 'products_tab' }">
+                            <tab id="productsTab" name="Продукция"></tab>
+                            <tab id="paymentTab" name="Оплата и доставка"></tab>
                         </tabs>
                     </div>
                 </div>
@@ -25,7 +25,8 @@
             name="fade"
             mode="out-in"
         >
-            <router-view></router-view>
+            <OutputTab v-if="currentTab == 'productsTab'" />
+            <PaymentTab v-else-if="currentTab == 'paymentTab'" />
         </transition>
     </section>
 </template>
@@ -34,15 +35,25 @@
 import Vue from 'vue';
 import Tabs from 'vue-tabs-component';
 
+// tabs
+import OutputTab from '@/components/Products/Tabs/OutputTab'
+import PaymentTab from '@/components/Products/Tabs/PaymentTab'
+
 Vue.use(Tabs);
 
 export default {
     name: 'Products',
+    components: {
+        OutputTab, PaymentTab
+    },
+    data() {
+        return {
+            currentTab: 'productsTab'
+        }
+    },
     methods: {
         tabChanged(selectedTab) {
-            if (this.$route.name !== selectedTab.tab.$attrs.to) {
-                this.$router.push({ name: selectedTab.tab.$attrs.to })
-            }
+            this.currentTab = selectedTab.tab.id;
         }
     }
 }

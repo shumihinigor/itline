@@ -261,12 +261,27 @@
                 <div class="col">
                     <h3 class="h3 mb-32">Похожие товары</h3>
                     <div class="row">
-                        <div class="col-lg-3 col-12" v-for="(item, idx) in similarProducts" :key="idx" @click="changeProduct(item.id)">
-                            <ProductsItem 
-                                :title="item.title" 
-                                :price="item.price" 
-                                :image="item.image"
-                            />
+                        <div 
+                            v-for="(item, idx) in similarProducts" 
+                            :key="idx"
+                            class="col-lg-3 col-12"
+                        >
+                            <router-link 
+                                tag="div"
+                                :to="{ 
+                                    name: 'ProductsPage', 
+                                    params: { id: id, category_id: category_id, product_id: item.id },
+                                    query: { product_type: $route.query.product_type }
+                                }"
+                            >
+                                <div @click="changeProduct(id)">
+                                    <ProductsItem 
+                                        :title="item.title" 
+                                        :price="item.price" 
+                                        :image="item.image"
+                                    />
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -295,7 +310,7 @@ Vue.use(Tabs);
 
 export default {
     name: "ProductsPage",
-    props: ["id", "category_id", "product_id", "product_type"],
+    props: ["id", "category_id", "product_id"],
     components: {
         Preloader, SwiperProductCategory, ProductsItem
     },
@@ -327,6 +342,7 @@ export default {
             this.currentTab = selectedTab.tab.id;
         },
         changeProduct(id) {
+            console.log(id);
             this.getProduct(id);
         },
         getProduct(id) {
@@ -341,7 +357,7 @@ export default {
                     this.product = this.products.find((item) => {
                         return item.id == id
                     });
-                    this.category = this.product.category.find((item) => {
+                    this.category = this.product.categories.find((item) => {
                         return item.id == this.category_id
                     });
                     this.productInfo = this.category[this.$route.query.product_type].products.find((item) => {
