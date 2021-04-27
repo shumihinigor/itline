@@ -2,7 +2,7 @@
     "data": 
         [
             {
-                "id": "tablo_dlya_transporta",
+                "id": "tablo-dlya-transporta",
                 "title": "Табло для транспорта",
                 "short_description": "Визуальное воспроизведение нумерации маршрутов следования пассажирского общественного транспорта",
                 "bg": "about_gallery_1.png",
@@ -67,7 +67,7 @@
                 ]
             },
             {
-                "id": "tablo_dlya_ostanovok",
+                "id": "tablo-dlya-ostanovok",
                 "title": "Табло для остановок",
                 "short_description": "Информирование пассажиров о нумерации маршрутов прибывающих транспортных средств",
                 "bg": "about_gallery_2.png",
@@ -75,7 +75,7 @@
                 "image_list": []
             },
             {
-                "id": "promyshlennyye_tablo",
+                "id": "promyshlennyye-tablo",
                 "title": "Промышленные табло",
                 "short_description": "Комплексное оснащение промышленных предприятий системами оповещения",
                 "bg": "about_gallery_3.png",
@@ -83,7 +83,7 @@
                 "image_list": []
             },
             {
-                "id": "sportivnyye_tablo",
+                "id": "sportivnyye-tablo",
                 "title": "Спортивные табло",
                 "short_description": "Специализированное оборудование для спортивных сооружений",
                 "bg": "about_gallery_4.png",
@@ -91,7 +91,7 @@
                 "image_list": []
             },
             {
-                "id": "tablo_dlya_vokzalov",
+                "id": "tablo-dlya-vokzalov",
                 "title": "Табло для вокзалов",
                 "short_description": "Автоматизированная система оповещения пассажиров дальнего следования",
                 "bg": "about_gallery_5.png",
@@ -99,7 +99,7 @@
                 "image_list": []
             },
             {
-                "id": "tablo_dlya_AZS",
+                "id": "tablo-dlya-AZS",
                 "title": "Табло для АЗС",
                 "short_description": "Наглядная демонстрация цен стоимости топлива для автомобилистов",
                 "bg": "about_gallery_6.png",
@@ -107,7 +107,7 @@
                 "image_list": []
             },
             {
-                "id": "chasy_meteostantsii",
+                "id": "chasy-meteostantsii",
                 "title": "Часы-метеостанции",
                 "short_description": "Электронные светодиодные табло погодных условий для офисных помещений и улицы",
                 "bg": "about_gallery_7.png",
@@ -115,7 +115,7 @@
                 "image_list": []
             },
             {
-                "id": "tablo_valyut",
+                "id": "tablo-valyut",
                 "title": "Табло валют",
                 "short_description": "Отображение актуальных курсов продажи / покупки иностранных валют",
                 "bg": "about_gallery_8.png",
