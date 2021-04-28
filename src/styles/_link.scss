@@ -1,8 +1,12 @@
 .link {
     text-decoration: none;
     color: $grey-2;
+    transition: all 0.2s;
     &.orange {
         color: $orange;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

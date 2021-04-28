@@ -273,8 +273,9 @@
                                     params: { id: id, category_id: category_id, product_id: item.id },
                                     query: { product_type: $route.query.product_type }
                                 }"
+                                class="h-100"
                             >
-                                <div @click="changeProduct(id)">
+                                <div class="h-100" @click="changeProduct(id)">
                                     <ProductsItem 
                                         :title="item.title" 
                                         :price="item.price" 

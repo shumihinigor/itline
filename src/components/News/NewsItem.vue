@@ -99,9 +99,6 @@ export default {
             &__title {
                 margin-top: auto;
             }
-            &__text {
-
-            }
         }
     }
 </style>

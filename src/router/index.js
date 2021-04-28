@@ -8,7 +8,7 @@ function transliterateEN(text) {
     text = text.split('-').join(' ');
     
     let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
-    let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
     var x;
     for (x = 0; x < rus.length; x++) {
         text = text.split(eng[x]).join(rus[x]);
@@ -18,13 +18,13 @@ function transliterateEN(text) {
 }
 
 // test 
-// console.log(transliterateEN('tablo-dlya-AZS')); // Табло для азс
+// console.log(transliterateEN('tablo-dlya-azs')); // Табло для азс
 // console.log(transliterateEN('obnovlenie-SENTINEL-LDK-8.0.4')); // Обновление SENTINEL LDK 8.0.4
 
 function transliterateRU(text) {
     text = text.toLowerCase();
     let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
-    let eng = "shh sh ch cz yu ya yo zh kh `` y e` a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
+    let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 ".split(/ +/g);
     var x;
     for (x = 0; x < rus.length; x++) {
         text = text.split(eng[x]).join(eng[x].toUpperCase());

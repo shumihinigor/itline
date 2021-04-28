@@ -7,14 +7,55 @@
                     <h1 class="h1 mb-0">{{ category.title }}</h1>
                 </div>
             </div>
-            <div class="row mb-32">
-                <div class="col">
-                    <SwiperProduct
-                        v-if="product.swiper.length"
-                        :slides="product.swiper"
-                    />
+            <template>
+                <div>
+                    <div class="row mb-32"  v-if="category.stock && category.stock.state == 'active'">
+                         <div class="col-lg-3 col-12 mb-32">
+                             <div class="stock">
+                                 <div class="stock-card">
+                                    <div 
+                                        class="stock-image" 
+                                        :style="{'background-image': 'url(' + require('../../assets/images/' + category.stock.card.image) + ')'}"
+                                    ></div>
+                                    <h1 class="h5 mb-16">{{ category.stock.card.title }}</h1>
+                                    <ul class="ps-3 m-0">
+                                        <li v-for="(li, index) in category.stock.card.list" class="p4" :key="index">
+                                            {{ li }}
+                                        </li>
+                                    </ul>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-lg-9 col-12">
+                             <h3 class="h3 mb-16">{{ category.stock.title }}</h3>
+                             <div class="mb-16">
+                                 <p class="p2 mb-8" v-for="(item, index) in category.stock.description" :key="index" v-html="item"></p>
+                             </div>
+                             <div class="">
+                                 <p>
+                                    <a class="p2 link orange text-decoration-none" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Условия акции.
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="">
+                                        <p class="p5 text-grey-2 mb-8" v-for="(item, index) in category.stock.conditions" :key="index" v-html="item"></p>
+                                    </div>
+                                </div>
+                                 
+                             </div>
+                         </div>
+                    </div>
+                    <div class="row mb-32" v-else>
+                        <div class="col">
+                            <SwiperProduct
+                                v-if="product.swiper.length"
+                                :slides="product.swiper"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </template>
             <div class="row mb-80 main-content">
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
@@ -121,7 +162,7 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.id)
+        this.getProduct(this.id);
     },
     mounted() {
         
@@ -172,5 +213,23 @@ export default {
 </script>
 
 <style lang="scss">
-
+.stock {
+    &-card {
+        position: relative;
+        padding: 20px 16px;
+        background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);
+        border-radius: 20px;
+        color: $white;
+    }
+    &-image {
+        display: block;
+        width: 209px;
+        height: 209px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+        margin-top: -30px;
+    }
+}
 </style>

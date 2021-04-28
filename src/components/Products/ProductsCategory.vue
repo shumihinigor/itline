@@ -31,7 +31,7 @@
                                 v-for="(category, idx) in product.categories" 
                                 :key="idx" 
                             >
-                                <div @click="goToProductCategoryPage(category)">
+                                <div class="h-100" @click="goToProductCategoryPage(category)">
                                     <ProductsItem 
                                         :title="category.title" 
                                         :text="category.text" 
@@ -86,7 +86,9 @@ export default {
         }
     },
     created() {
-        this.getProduct(this.id);
+        if (!this.products.length) {
+            this.getProduct(this.id);
+        }
     },
     methods: {
         goToProductCategoryPage(category) {
