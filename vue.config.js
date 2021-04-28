@@ -38,14 +38,9 @@ module.exports = {
     pwa: {
         name: 'ITLINE',
         themeColor: '#EF6F2E',
-        msTileColor: '#EF6F2E',
-        manifestPath: 'manifest.json',
-        workboxPluginMode: 'InjectManifest',
+        workboxPluginMode: 'GenerateSW',
         workboxOptions: {
-            // swSrc is required in InjectManifest mode.
-            swSrc: 'src/registerServiceWorker.js',
-            // ...other Workbox options...
-            exclude: [/_redirects/],
+            exclude: [/\.map$/, /_redirects/]
         }
     }
     // pages: {
