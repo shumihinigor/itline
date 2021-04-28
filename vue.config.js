@@ -35,6 +35,19 @@ module.exports = {
             })
         ]
     },
+    pwa: {
+        name: 'ITLINE',
+        themeColor: '#EF6F2E',
+        msTileColor: '#EF6F2E',
+        manifestPath: 'manifest.json',
+        workboxPluginMode: 'InjectManifest',
+        workboxOptions: {
+            // swSrc is required in InjectManifest mode.
+            swSrc: 'src/registerServiceWorker.js',
+            // ...other Workbox options...
+            exclude: [/_redirects/],
+        }
+    }
     // pages: {
     //     index: 'src/main.js',
     //     about: 'src/main.js',
