@@ -58,7 +58,7 @@ export default {
     methods: {
         getGallery(id) {
             this.axios
-                .get('/static/about_gallery.json')
+                .get('/static/gallery.json')
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
@@ -87,7 +87,7 @@ export default {
             height: 280px;
             min-height: 280px;
             border-radius: 10px;
-            background-size: cover;
+            // background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             cursor: pointer;

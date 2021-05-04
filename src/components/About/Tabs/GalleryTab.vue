@@ -64,7 +64,7 @@ export default {
     methods: {
         getGallery() {
             this.axios
-                .get('/static/about_gallery.json')
+                .get('/static/gallery.json')
                 .then(response => {
                     this.gallery = response.data.data;
                     this.pageCount = Math.ceil(this.gallery.length / 8);

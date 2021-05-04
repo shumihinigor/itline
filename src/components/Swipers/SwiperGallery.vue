@@ -3,20 +3,24 @@
         <Preloader v-if="loading" />
         <swiper v-show="!loading" class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
             <swiper-slide v-for="(item, index) in gallery" :key="item.id">
-                <div class="gallery-swiper__item">
+                <router-link 
+                    :to="{ name: 'GalleryPage', params: { id: item.id }}" 
+                    tag="div"
+                    class="gallery-swiper__item"
+                >
                     <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
                         <div class="w-lg-50 w-100 mr-16">
                             <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
-                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.text }}</p>
+                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.short_description }}</p>
                         </div>
                         <div class="w-lg-50 w-100">
                             <div 
                                 class="gallery-swiper__item-image" 
-                                :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
+                                :style="{'background-image': 'url(' + require('../../assets/images/' + item.bg) + ')'}"
                             ></div>
                         </div>
                     </div>
-                </div>
+                </router-link>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
@@ -85,9 +89,10 @@ export default {
     methods: {
         getGallery() {
             this.axios
-                .get('/static/gallery_swiper.json')
+                .get('/static/gallery.json')
                 .then(response => {
-                    this.gallery = response.data.data
+                    this.gallery = response.data.data;
+                    console.log(this.gallery);
                     this.loading = false;
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });
@@ -105,6 +110,7 @@ export default {
                 padding: 32px 24px;
                 border-radius: 10px;
                 height: 100%;
+                cursor: pointer;
                 @media (max-width: 991px) {
                     padding: 20px;
                 }

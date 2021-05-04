@@ -37,7 +37,7 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.12",
     "fibers": "^5.0.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.12.0",
