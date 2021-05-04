@@ -1,0 +1,609 @@
+{
+    "data": 
+        [
+            {
+                "id": "Tablo-dlya-transporta",
+                "title": "Фотографии табло для транспорта",
+                "short_description": "Визуальное воспроизведение нумерации маршрутов следования пассажирского общественного транспорта",
+                "bg": "gallery_1.jpg",
+                "col": "4",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_1_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_1_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_15.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_16.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_1_17.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Tablo-dlya-ostanovok",
+                "title": "Фотографии табло для остановок",
+                "short_description": "Информирование пассажиров о нумерации маршрутов прибывающих транспортных средств",
+                "bg": "gallery_2.jpg",
+                "col": "4",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_2_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_15.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_16.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_2_17.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_18.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_19.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_20.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_2_21.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Promyshlennye-tablo",
+                "title": "Фотографии промышленных табло",
+                "short_description": "Комплексное оснащение промышленных предприятий системами оповещения",
+                "bg": "gallery_3.jpg",
+                "col": "4",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_3_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_15.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_16.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_3_17.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_3_18.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Sportivnye-tablo",
+                "title": "Фотографии спортивных табло",
+                "short_description": "Специализированное оборудование для спортивных сооружений",
+                "bg": "gallery_4.jpg",
+                "col": "3",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_4_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_4_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_4_15.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Tablo-dlya-vokzalov",
+                "title": "Табло для вокзалов",
+                "short_description": "Автоматизированная система оповещения пассажиров дальнего следования",
+                "bg": "gallery_5.jpg",
+                "col": "3",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_5_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_5_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_5_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_5_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_5_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_5_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_5_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_5_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_5_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_5_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_5_11.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Tablo-dlya-azs",
+                "title": "Табло для АЗС",
+                "short_description": "Наглядная демонстрация цен стоимости топлива для автомобилистов",
+                "bg": "gallery_6.jpg",
+                "col": "3",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_6_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_15.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_16.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_6_17.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_18.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_19.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_6_20.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "CHasy-meteostanczii",
+                "title": "Часы-метеостанции",
+                "short_description": "Электронные светодиодные табло погодных условий для офисных помещений и улицы",
+                "bg": "gallery_7.jpg",
+                "col": "3",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_7_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_7_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_7_15.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "Tablo-valyut",
+                "title": "Табло валют",
+                "short_description": "Отображение актуальных курсов продажи / покупки иностранных валют",
+                "bg": "gallery_8.jpg",
+                "col": "12",
+                "image_list": [
+                    {
+                        "col": "4",
+                        "src": "gallery_8_1.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_2.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_3.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_4.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_5.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_6.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_7.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_8.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_9.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_10.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_11.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_12.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_13.jpg"
+                    },
+                    {
+                        "col": "3",
+                        "src": "gallery_8_14.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_15.jpg"
+                    },
+                    {
+                        "col": "4",
+                        "src": "gallery_8_16.jpg"
+                    }
+                ]
+            }
+        ]
+}

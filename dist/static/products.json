@@ -2,7 +2,7 @@
     "data": 
         [
             {
-                "id": "resheniya-dlya-transporta",
+                "id": "Resheniya-dlya-transporta",
                 "title": "Решения для транспорта",
                 "text": "Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.",
                 "image": "product_1.png",
@@ -14,7 +14,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "active",
                             "title": "Заголовок акции. На все табло -10%",
@@ -49,7 +49,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -63,7 +63,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -77,7 +77,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -96,7 +96,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -110,14 +110,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -125,10 +125,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -163,7 +163,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -177,7 +177,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -191,7 +191,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -210,7 +210,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -224,14 +224,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -241,7 +241,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -276,7 +276,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -290,7 +290,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -304,7 +304,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -323,7 +323,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -337,14 +337,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -354,7 +354,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -389,7 +389,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -403,7 +403,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -417,7 +417,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -436,7 +436,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -450,14 +450,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -484,7 +484,7 @@
                 ]
             },
             {
-                "id": "tablo-dlya-ostanovok",
+                "id": "Tablo-dlya-ostanovok",
                 "title": "Табло для остановок",
                 "text": "Светодиодные информационные табло для транспортных средств марки ITLINE.",
                 "image": "product_2.png",
@@ -497,7 +497,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -532,7 +532,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -546,7 +546,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -560,7 +560,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -579,7 +579,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -593,14 +593,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -608,10 +608,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -646,7 +646,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -660,7 +660,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -674,7 +674,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -693,7 +693,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -707,14 +707,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -724,7 +724,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -759,7 +759,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -773,7 +773,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -787,7 +787,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -806,7 +806,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -820,14 +820,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -837,7 +837,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -872,7 +872,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -886,7 +886,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -900,7 +900,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -919,7 +919,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -933,14 +933,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -967,7 +967,7 @@
                 ]
             },
             {
-                "id": "tablo-dlya-vokzalov",
+                "id": "Tablo-dlya-vokzalov",
                 "title": "Табло для вокзалов",
                 "text": "Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.",
                 "image": "product_3.png",
@@ -980,7 +980,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1015,7 +1015,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1029,7 +1029,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1043,7 +1043,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1062,7 +1062,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1076,14 +1076,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1091,10 +1091,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1129,7 +1129,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1143,7 +1143,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1157,7 +1157,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1176,7 +1176,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1190,14 +1190,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1207,7 +1207,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1242,7 +1242,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1256,7 +1256,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1270,7 +1270,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1289,7 +1289,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1303,14 +1303,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1320,7 +1320,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1355,7 +1355,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1369,7 +1369,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1383,7 +1383,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1402,7 +1402,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1416,14 +1416,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1450,7 +1450,7 @@
                 ]
             },
             {
-                "id": "tablo-dlya-azs",
+                "id": "Tablo-dlya-azs",
                 "title": "Табло для АЗС",
                 "text": "Светодиодные информационные табло для транспортных средств марки ITLINE.",
                 "image": "product_4.png",
@@ -1463,7 +1463,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1498,7 +1498,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1512,7 +1512,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1526,7 +1526,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1545,7 +1545,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1559,14 +1559,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1574,10 +1574,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1612,7 +1612,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1626,7 +1626,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1640,7 +1640,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1659,7 +1659,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1673,14 +1673,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1690,7 +1690,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1725,7 +1725,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1739,7 +1739,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1753,7 +1753,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1772,7 +1772,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1786,14 +1786,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1803,7 +1803,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1838,7 +1838,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1852,7 +1852,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -1866,7 +1866,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1885,7 +1885,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1899,14 +1899,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -1933,7 +1933,7 @@
                 ]
             },
             {
-                "id": "sportivnye-tablo",
+                "id": "sportivnye-Tablo",
                 "title": "Спортивные табло",
                 "text": "Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.",
                 "image": "product_5.png",
@@ -1946,7 +1946,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -1981,7 +1981,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -1995,7 +1995,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2009,7 +2009,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2028,7 +2028,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2042,14 +2042,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2057,10 +2057,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2095,7 +2095,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2109,7 +2109,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2123,7 +2123,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2142,7 +2142,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2156,14 +2156,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2173,7 +2173,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2208,7 +2208,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2222,7 +2222,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2236,7 +2236,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2255,7 +2255,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2269,14 +2269,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2286,7 +2286,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2321,7 +2321,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2335,7 +2335,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2349,7 +2349,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2368,7 +2368,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2382,14 +2382,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2416,7 +2416,7 @@
                 ]
             },
             {
-                "id": "tablo-valyut",
+                "id": "Tablo-valyut",
                 "title": "Табло валют",
                 "text": "Светодиодные информационные табло для транспортных средств марки ITLINE.",
                 "image": "product_6.png",
@@ -2429,7 +2429,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2464,7 +2464,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2478,7 +2478,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2492,7 +2492,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2511,7 +2511,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2525,14 +2525,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2540,10 +2540,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2578,7 +2578,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2592,7 +2592,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2606,7 +2606,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2625,7 +2625,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2639,14 +2639,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2656,7 +2656,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2691,7 +2691,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2705,7 +2705,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2719,7 +2719,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2738,7 +2738,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2752,14 +2752,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2769,7 +2769,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2804,7 +2804,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2818,7 +2818,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2832,7 +2832,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2851,7 +2851,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2865,14 +2865,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2899,7 +2899,7 @@
                 ]
             },
             {
-                "id": "promyshlennye-tablo",
+                "id": "promyshlennye-Tablo",
                 "title": "Промышленные табло",
                 "text": "Устройства отображения информации: часы-термометры, табло-метеостанции, табло погодных условий.",
                 "image": "product_7.png",
@@ -2912,7 +2912,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -2947,7 +2947,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -2961,7 +2961,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -2975,7 +2975,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -2994,7 +2994,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3008,14 +3008,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3023,10 +3023,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3061,7 +3061,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3075,7 +3075,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3089,7 +3089,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3108,7 +3108,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3122,14 +3122,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3139,7 +3139,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3174,7 +3174,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3188,7 +3188,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3202,7 +3202,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3221,7 +3221,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3235,14 +3235,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3252,7 +3252,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3287,7 +3287,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3301,7 +3301,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3315,7 +3315,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3334,7 +3334,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3348,14 +3348,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3382,7 +3382,7 @@
                 ]
             },
             {
-                "id": "gotovye-resheniya",
+                "id": "gotovye-Resheniya",
                 "title": "Готовые решения",
                 "text": "Светодиодные информационные табло для транспортных средств марки ITLINE.",
                 "image": "product_8.png",
@@ -3394,7 +3394,7 @@
                 ],
                 "categories": [
                     {
-                        "id": "tablo",
+                        "id": "Tablo",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3429,7 +3429,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3443,7 +3443,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3457,7 +3457,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3476,7 +3476,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3490,14 +3490,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3505,10 +3505,10 @@
                                 }
                             ]
                         },
-                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'> <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' svg-inline='' role='presentation' focusable='false' tabindex='-1'><path d='M21.102 0H5.237C4 0 3 .933 3 2.083v35.834C3 39.067 4.001 40 5.237 40h29.526C36 40 37 39.067 37 37.917v-23.11L21.102 0zM37 10.225V2.083C37 .933 35.998 0 34.763 0h-8.741L37 10.225z' fill='#EEF5F5'></path><path d='M13.38 20.495V23h-1.464v-7.11h2.774c.533 0 1.002.098 1.406.294.407.195.72.473.937.835.218.358.327.766.327 1.225 0 .697-.239 1.247-.717 1.65-.476.4-1.135.601-1.978.601h-1.284zm0-1.186h1.31c.387 0 .681-.092.883-.274.205-.182.308-.443.308-.781 0-.348-.103-.63-.308-.845-.205-.215-.488-.325-.85-.332h-1.342v2.232zM18.372 23v-7.11h2.188c.625 0 1.183.142 1.674.425.495.28.88.68 1.158 1.202.276.517.415 1.106.415 1.767v.327c0 .661-.137 1.249-.41 1.763-.27.514-.653.913-1.148 1.196a3.347 3.347 0 01-1.675.43h-2.202zm1.465-5.923v4.746h.708c.573 0 1.01-.187 1.313-.561.303-.375.458-.91.464-1.607v-.376c0-.722-.15-1.27-.449-1.64-.3-.375-.737-.562-1.313-.562h-.723zm9.316 3.018H26.34V23h-1.465v-7.11h4.629v1.187H26.34v1.836h2.812v1.182z' fill='#494C52'></path></svg><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
+                        "content": "<div class='content'><div class='mb-24'><p class='p2'><span class='weight-bold'> Транспортные светодиодные табло ITLINE</span> — визитная карточка Вашего автопарка.</p><p class='p2'> Табло предназначены для визуального воспроизведения нумерации маршрутов следования пассажирского общественного транспорта, отображения наименований остановок и демонстрации информации социальной и рекламной деятельности.</p><p class='p2'> Качество и яркость светодиодов обеспечивают табло хорошую видимость изображенной информации с дальних расстояний.</p><p class='p2'> Табло для транспорта ITLINE соответствуют стандартам качества федеральной программы “Доступная среда”</p></div><div class='row mb-48'><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div><div class='col-lg-6 col-12'> <a href='/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf' download class='file__link bg-white mb-16'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Описание датчиков, используемых в табло ITLINE</p><p class='p5 text-grey-3 mb-0'>2,4Mb</p></div> </a></div></div><div class=''><h6 class='h6 text-uppercase'>Возможности транспортных табло ITLINE</h6><p class='p2'>Светодиодные табло торговой марки 'ITLINE' отличаются бесперебойной работой в любых условиях.</p><p class='p2'>Информация на маршрутных табло ITLINE может отображаться в статичном и динамичном режиме:</p><ul class='list mt-24 mb-24'><li class='p2'>Бегущая строка</li><li class='p2'>Скроллинга</li><li class='p2'>Дополнительные эффекты анимации</li></ul><p class='p2'>Язык текстовых сообщений — русский, английский. Высота шрифтов и формат окон регулируется.</p><p class='p2'><span class='weight-bold'>Управление табло:</span> автоматическое отображение текстовой информации на табло с помощью используемых на подвижном составе автоинформаторов, при наличии функции и выхода RS-485 для подключения табло.</p><p class='p2 weight-bold'>Совместимость работы с ведущими производителями автоинформаторов и системами:</p><ul class='list mt-24 mb-24'><li class='p2'>Автоинформатор ITLINE</li><li class='p2'>Информатор Селена</li><li class='p2'>Galileosky Base Block</li><li class='p2'>Терминал ASC-7</li><li class='p2'>ЦБК - Бортовой компьютер Евромобайл</li></ul><p class='p2 mb-0'>Для удобства заказчиков осуществляется взаимодействие с ведущими производителями автоинформаторов, проводится тестирование и расширяется список совместимого оборудования с табло ITLINE. Возможно предоставление Вашим разработчикам протокола обмена данных нашего контролера.</p></div></div>"
                     },
                     {
-                        "id": "avtoinformator",
+                        "id": "Avtoinformator",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3543,7 +3543,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3557,7 +3557,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3571,7 +3571,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3590,7 +3590,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3604,14 +3604,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3621,7 +3621,7 @@
                         }
                     },
                     {
-                        "id": "ehkrany",
+                        "id": "EHkrany",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3656,7 +3656,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3670,7 +3670,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3684,7 +3684,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3703,7 +3703,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3717,14 +3717,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3734,7 +3734,7 @@
                         }
                     },
                     {
-                        "id": "videonablyudenie",
+                        "id": "Videonablyudenie",
                         "stock": {
                             "state": "disabled",
                             "title": "Заголовок акции. На все табло -10%",
@@ -3769,7 +3769,7 @@
                             ],
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3783,7 +3783,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
@@ -3797,7 +3797,7 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
@@ -3816,7 +3816,7 @@
                             "title": "Готовые решения комплексного оборудования транспорта",
                             "products": [
                                 {
-                                    "id": "dlya-malogabaritnykh-avtobusov",
+                                    "id": "Dlya-malogabaritnykh-avtobusov",
                                     "title": "Для малогабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_1.png",
@@ -3830,14 +3830,14 @@
                                     }
                                 },
                                 {
-                                    "id": "dlya-srednegabaritnykh-avtobusov",
+                                    "id": "Dlya-srednegabaritnykh-avtobusov",
                                     "title": "Для среднегабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_2.png",
                                     "price": "9 500 ₽"
                                 },
                                 {
-                                    "id": "dlya-krupnogabaritnykh-avtobusov",
+                                    "id": "Dlya-krupnogabaritnykh-avtobusov",
                                     "title": "Для крупногабаритных автобусов",
                                     "text": "Комплект табло",
                                     "image": "product_3.png",
