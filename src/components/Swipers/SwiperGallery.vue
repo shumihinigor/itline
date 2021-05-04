@@ -16,7 +16,7 @@
                         <div class="w-lg-50 w-100">
                             <div 
                                 class="gallery-swiper__item-image" 
-                                :style="{'background-image': 'url(' + require('../../assets/images/' + item.bg) + ')'}"
+                                :style="{'background-image': 'url(' + require('../../assets/images/gallery/' + item.bg) + ')'}"
                             ></div>
                         </div>
                     </div>

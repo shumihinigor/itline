@@ -29,7 +29,7 @@
                                         <p class="p2 text-grey-1 mb-16">Сюда можно добавить любую необходимую информацию: заголовок, текстовое описание, изображения, ссылки и пр.</p>
                                         <div class="product-info__links">
                                             <a :href="'/static/files/' + file[0]" download class="file__link" v-for="(file, index) in selectedProduct.files" :key="index">
-                                                <img svg-inline src="../../assets/images/product_pdf.svg" alt="product_pdf">
+                                                <!-- <img svg-inline src="../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                                                 <div class="d-flex flex-column align-items-start ml-16">
                                                     <p class="p2 text-grey-1 mb-1">{{ file[0].slice(0, -4) }}</p>
                                                     <p class="p5 text-grey-3 mb-0">{{ file[1] }}Mb</p>

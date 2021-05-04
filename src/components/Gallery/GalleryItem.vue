@@ -23,7 +23,7 @@ export default {
             } else if (bg == 'gradient') {
                 return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
             } else {
-                return 'background-image: url(' + require('../../assets/images/' + bg) + ');'
+                return 'background-image: url(' + require('../../assets/images/gallery/' + bg) + ');'
             }
         }
     },
@@ -42,7 +42,7 @@ export default {
             height: 100%;
             min-height: 280px;
             background-size: cover;
-            background-position: left top;
+            background-position: center center;
             background-repeat: no-repeat;
             overflow: hidden;
             cursor: pointer;

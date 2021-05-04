@@ -11,15 +11,15 @@
             </p>
             <div class="d-flex justify-content-between">
                 <div class="d-flex">
-                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16">
+                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16" v-if="likes">
                         <img svg-inline src="../../assets/images/like.svg" alt="like">
                         <span class="ms-1">{{ likes }}</span>
                     </p>
-                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16">
+                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16" v-if="comments">
                         <img svg-inline src="../../assets/images/comment.svg" alt="comment">
                         <span class="ms-1">{{ comments }}</span>
                     </p>
-                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center">
+                    <p class="p5 text-grey-2 mb-0 d-flex align-items-center" v-if="views">
                         <img svg-inline src="../../assets/images/view.svg" alt="view">
                         <span class="ms-1">{{ views }}</span>
                     </p>
@@ -42,7 +42,7 @@ export default {
             } else if (bg == 'gradient') {
                 return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
             } else {
-                return 'background-image: url(' + require('../../assets/images/' + bg) + ');'
+                return 'background-image: url(' + require('../../assets/images/news/' + bg) + ');'
             }
         }
     },

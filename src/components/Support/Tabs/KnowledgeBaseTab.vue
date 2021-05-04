@@ -28,28 +28,28 @@
                 <div class="col">
                     <div class="">
                         <a href="/static/files/Виды и способы креплений светодиодных табло ITLINE.pdf" download class="file__link bg-white">
-                            <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf">
+                            <!-- <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                             <div class="d-flex flex-column align-items-start ml-16">
                                 <p class="p2 text-grey-1 mb-1">Описание датчиков, используемых в табло ITLINE</p>
                                 <p class="p5 text-grey-3 mb-0">2,4Mb</p>
                             </div>
                         </a>
                         <a href="/static/files/Описание датчиков, используемых в табло ITLINE.pdf" download class="file__link bg-white">
-                            <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf">
+                            <!-- <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                             <div class="d-flex flex-column align-items-start ml-16">
                                 <p class="p2 text-grey-1 mb-1">Описание датчиков, используемых в табло ITLINE</p>
                                 <p class="p5 text-grey-3 mb-0">2,4Mb</p>
                             </div>
                         </a>
                         <a href="/static/files/Способы подключения питания к табло ITLINE.pdf" download class="file__link bg-white">
-                            <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf">
+                            <!-- <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                             <div class="d-flex flex-column align-items-start ml-16">
                                 <p class="p2 text-grey-1 mb-1">Описание датчиков, используемых в табло ITLINE</p>
                                 <p class="p5 text-grey-3 mb-0">2,4Mb</p>
                             </div>
                         </a>
                         <a href="/static/files/Способы управления табло ITLINE.pdf" download class="file__link bg-white">
-                            <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf">
+                            <!-- <img svg-inline src="../../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                             <div class="d-flex flex-column align-items-start ml-16">
                                 <p class="p2 text-grey-1 mb-1">Описание датчиков, используемых в табло ITLINE</p>
                                 <p class="p5 text-grey-3 mb-0">2,4Mb</p>

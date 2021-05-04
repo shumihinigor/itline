@@ -68,12 +68,13 @@ export default {
                     });
                     if (this.gallery.image_list.length) {
                         this.gallery.image_list.map((item) => {
-                            item.src = require('../../assets/images/' + item.src)
+                            item.src = require('../../assets/images/gallery/' + item.src)
                         })
                     }
                     this.loading = false;
                 }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
+                    console.log(error);
+                    // this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

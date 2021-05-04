@@ -11,7 +11,14 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9 col-12">
                                 <div class="">
-                                    <p class="history-swiper__item-text p2 text-grey-2 mb-16">{{ item.text }}</p>
+                                    <div class="history-swiper__item-text mb-8">
+                                        <p 
+                                            v-for="(text, index) in item.text" :key="index"
+                                            class="p2 text-grey-2 mb-8"
+                                        >
+                                            {{ text }}
+                                        </p>
+                                    </div>
                                     <div class="">
                                         <ul class="list p2">
                                             <li class="p2" v-for="(item, index) in item.list" :key="index">
@@ -68,7 +75,9 @@ export default {
                             "2011",
                             "2012",
                             "2015",
-                            "2018-2019",
+                            "2017",
+                            "2018",
+                            "2019",
                             "2020"
                         ]
                         return `
@@ -106,6 +115,7 @@ export default {
             this.axios
                 .get('/static/history.json')
                 .then(response => {
+                    console.log(response.data);
                     this.history = response.data.data
                     this.loading = false;
                 }).catch(error => {

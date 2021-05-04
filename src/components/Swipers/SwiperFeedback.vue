@@ -6,6 +6,7 @@
                 <div class="feedback-swiper__item">
                     <div class="d-flex align-items-center justify-content-start mb-24">
                         <div 
+                            v-if="item.image"
                             class="feedback-swiper__item-image mr-16" 
                             :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
                         ></div>
@@ -114,7 +115,7 @@ export default {
                     border-radius: 50%;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    background-size: contain;
+                    background-size: cover;
                 }
                 &-name {
                     margin-bottom: 4px;

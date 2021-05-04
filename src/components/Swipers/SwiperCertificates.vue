@@ -6,12 +6,15 @@
                 <div class="certificates-swiper__item">
                     <div 
                         class="certificates-swiper__item-image " 
-                        :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
+                        :style="{'background-image': 'url(' + require('../../assets/images/certificates/' + item.image) + ')'}"
                     ></div>
                     <div class="d-flex align-items-center justify-content-start">
                         <div class="">
                             <h5 class="certificates-swiper__item-title h5 font-weight-bold mb-16">{{ item.title }}</h5>
-                            <p class="certificates-swiper__item-text p2 text-grey-2 mb-0">{{ item.text }}</p>
+                            <p 
+                                v-for="(text, index) in item.text" :key="index"
+                                class="certificates-swiper__item-text p2 text-grey-2"
+                            >{{ text }}</p>
                         </div>
                     </div>
                 </div>
@@ -107,13 +110,13 @@ export default {
                 }
                 &-image {
                     position: relative;
-                    top: -20px;
-                    left: -20px;
-                    width: calc(100% + 40px);
+                    top: -10px;
+                    left: -10px;
+                    width: calc(100% + 20px);
                     height: 194px;
                     background-repeat: no-repeat;
                     background-position: center top;
-                    background-size: contain;
+                    background-size: cover;
                 }
                 &-title {
                     margin-bottom: 4px;
