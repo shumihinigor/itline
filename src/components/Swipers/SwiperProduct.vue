@@ -6,8 +6,9 @@
                     <div class="row h-100">
                         <div class="col-lg-5 col-12 position-relative">
                             <div 
+                                v-if="item.image"
                                 class="product-swiper__item-image mr-16" 
-                                :style="{'background-image': 'url(' + require('../../assets/images/' + item.image) + ')'}"
+                                :style="{'background-image': 'url(' + require('../../assets/images/products/' + item.image) + ')'}"
                             ></div>
                         </div>
                         <div class="col-lg-7 col-12 d-flex flex-column align-items-start product-swiper__item-block">
@@ -17,9 +18,11 @@
                                     {{ li }}
                                 </li>
                             </ul>
-                            <button type="button" class="btn contour product-swiper__item-button mt-auto">
-                                <span class="text-uppercase p4 text-white">заказать</span>
-                            </button>
+                            <a :href="item.button.href" v-if="item.button" class="mt-auto">
+                                <button type="button" class="btn contour product-swiper__item-button">
+                                    <span class="text-uppercase p4 text-white">{{ item.button.text }}</span>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>

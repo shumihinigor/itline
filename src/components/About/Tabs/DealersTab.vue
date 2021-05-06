@@ -31,6 +31,9 @@
                     <button type="button" class="btn default w-100"><span class="p4">Отправить</span></button>
                 </div>
             </div>
+            <div class="col-lg-7 col-12">
+                
+            </div>
         </div>
     </div>
 </template>

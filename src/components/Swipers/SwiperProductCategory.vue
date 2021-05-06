@@ -11,7 +11,7 @@
                 >
                     <div @click="changeCategory(product)">
                         <div class="product-swiper__image">
-                            <img :src="require('../../assets/images/' + product.image)" alt="">
+                            <img :src="require('../../assets/images/products/' + product.image)" alt="">
                         </div>
                         <div class="product-swiper__block">
                             <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.title }}</h6>

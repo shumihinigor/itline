@@ -2,20 +2,31 @@
     <div class="product-page mb-80">
         <Preloader v-if="loading" />
         <div v-else class="container">
-            <div class="row mb-64">
+            <!-- TITLE -->
+            <div class="row mb-40">
                 <div class="col">
                     <h1 class="h1 mb-0">{{ product.title }}</h1>
                 </div>
             </div>
-            <div class="row mb-32">
+            <!-- SWIPER PRODUCT -->
+            <div class="row mb-32" v-if="product.swiper && product.swiper.length">
                 <div class="col">
                     <SwiperProduct
-                        v-if="product.swiper.length"
                         :slides="product.swiper"
                     />
                 </div>
             </div>
+            <!-- DESCRIPTION -->
+            <div class="row mb-80" v-if="product.description.length">
+                <div class="col">
+                    <p class="p2" v-for="(text, index) in product.description" :key="index">
+                        {{ text }}
+                    </p>
+                </div>
+            </div>
+            <!-- MAIN -->
             <div class="row mb-80 main-content">
+                <!-- FILTER -->
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
@@ -23,6 +34,7 @@
                         :products="products"
                     />
                 </div>
+                <!-- ITEMS -->
                 <div class="col-lg-9 col-12">
                     <div class="content">
                         <div class="row">
@@ -43,11 +55,66 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-80" v-if="product.content.image">
+            <!-- PDF -->
+            <div class="row mb-40" v-if="product.pdf">
                 <div class="col">
-                    <img class="w-100" :src="require('../../assets/images/' + product.content.image)">
+                    <a 
+                        :href="'/static/files/' + product.pdf.name + '.pdf'" 
+                        download="" 
+                        class="file__link bg-white"
+                    >
+                        <div class="d-flex flex-column align-items-start ml-16">
+                            <p class="p2 text-grey-1 mb-1">{{ product.pdf.title }}</p>
+                            <p class="p5 text-grey-3 mb-0">{{ product.pdf.size }}Mb</p>
+                        </div>
+                    </a>
                 </div>
             </div>
+            <!-- CONTENT -->
+            <div class="row mb-80" v-if="product.content.length">
+                <div class="col">
+                    <div class="content mb-40" v-for="(content, index) in product.content" :key="index">
+                        <!-- QUOTE -->
+                        <div class="quote mb-40" v-if="content.quote">
+                            <p class="p2 mb-8">
+                                {{ content.quote }}
+                            </p>
+                            <p class="p2 mb-0 text-orange" v-html="content.quote_writer"></p>
+                        </div>
+                        <!-- TITLE AND TEXT -->
+                        <div class="mb-32">
+                            <h3 class="h3 mb-32" v-if="content.title">
+                                {{ content.title }}
+                            </h3>
+                            <p class="p2" v-for="(text, index) in content.text" :key="index" v-html="text"></p>
+                        </div>
+                        <!-- ACCORDION -->
+                        <template>
+                            <div class="mb-32" v-if="content.accordion && content.accordion.length">
+                                <div class="" v-for="(item, index) in content.accordion" :key="index">
+                                    <p>
+                                        <a class="p2 link orange text-decoration-none" data-bs-toggle="collapse" :href="'#item_' + index" role="button" aria-expanded="false" :aria-controls="'item_' + index">
+                                            {{ item.title }}
+                                        </a>
+                                    </p>
+                                    <div class="collapse" :id="'item_' + index">
+                                        <div class="">
+                                            <p class="p5 text-grey-2 mb-8">
+                                                {{ item.text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- IMAGE -->
+                        <div class="" v-if="content.image">
+                            <img class="mw-100" :src="require('../../assets/images/products/' + content.image)" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SWIPER CATEGORY -->
             <div class="row">
                 <div class="col">
                     <SwiperProductCategory 

@@ -2,6 +2,7 @@
     <div class="product-page mb-80">
         <Preloader v-if="loading" />
         <div v-else class="container">
+            <!-- TITLE -->
             <div class="row mb-56">
                 <div class="col">
                     <h1 class="h1 mb-0">
@@ -10,16 +11,27 @@
                 </div>
             </div>
             <div class="row mb-24">
-                <div class="col-lg-4 col-12 mb-32">
+                <!-- IMAGE -->
+                <div class="col-lg-4 col-12 mb-32" v-if="productInfo.page.image">
                     <div 
                         class="product-page__image" 
-                        :style="{'background-image': 'url(' + require('../../assets/images/' + productInfo.page.image) + ')'}"
+                        :style="{'background-image': 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')'}"
                     ></div>
                 </div>
+                <!-- STOCK AND STATE -->
                 <div class="col-lg-4 col-12 mb-32">
-                    <p class="p2 mb-8">Здесь располагается какая-то общая информация о товаре, например: визуализация нумерации маршрутов следования пассажирского общественного транспорта. </p>
-                    <p class="p4 text-grey-3 mb-0">Подробную информацию уточняйте у менеджера</p>
-                    <div class="product-page__state mb-32 mt-24">
+                    <!-- INFO PRODUCT -->
+                    <div class="mb-32" v-if="productInfo.page.info">
+                        <p class="p2 mb-8" v-if="productInfo.page.info.text">
+                            {{ productInfo.page.info.text }}
+                        </p>
+                        <p class="p4 text-grey-3 mb-0" v-if="productInfo.page.info.description">
+                            {{ productInfo.page.info.description }}
+                        </p>
+                    </div>
+                    <!-- STATE -->
+                    <div class="product-page__state mb-24" v-if="productInfo.page.state">
+                        <!-- IN STOCK -->
                         <div class="product-page__state-stock mr-24">
                             <span class="d-flex align-items-center" v-if="productInfo.page.state.in_stock">
                                 <img svg-inline src="../../assets/images/in_stock.svg" alt="in_stock">
@@ -30,6 +42,7 @@
                                 <p class="p2 mb-0 ml-16">Товара нет на складе</p>
                             </span>
                         </div>
+                        <!-- AMOUNT -->
                         <div class="product-page__state-amount">
                             <span class="d-flex align-items-center">
                                 <img :src="require('../../assets/images/amount_' + productInfo.page.state.amount + '.svg')" alt="amount">
@@ -40,12 +53,24 @@
                             </span>
                         </div>
                     </div>
-                    <div class="product-page__stock">
+                    <!-- STOCK -->
+                    <div class="product-page__stock" v-if="productInfo.page.stock">
                         <h6 class="h6 text-orange text-uppercase mb-16">Акция!</h6>
-                        <p class="p2 mb-8">Доставка комплектов табло для транспорта в Москву и Санкт‑Петербург БЕСПЛАТНО!</p>
-                        <p class="p4 text-grey-3">Подробную информацию уточняйте у менеджера</p>
+                        <p
+                            v-if="productInfo.page.stock.text.length"
+                            class="p2 mb-8" 
+                        >
+                            <span class="d-block mb-8" v-for="(text, index) in productInfo.page.stock.text" :key="index">
+                                {{ text }}
+                            </span>
+                        </p>
+                        <p 
+                            v-if="productInfo.page.stock.description"
+                            class="p4 text-grey-3"
+                        >{{ productInfo.page.stock.description }}</p>
                     </div>
                 </div>
+                <!-- FEEDBACK -->
                 <div class="col-lg-4 col-12 mb-32">
                     <div class="product-page__stock">
                         <h6 class="h6 text-uppercase mb-24 text-center">связаться с менеджером</h6>
@@ -94,169 +119,141 @@
                 </div>
             </div>
 
-            <!-- tabs -->
-            <div class="row">
-                <div class="col">
-                    <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
-                        <tab id="structure_tab" name="Состав комплекта"></tab>
-                        <tab id="characteristics_tab" name="характеристики"></tab>
-                        <tab id="control_tab" name="управление"></tab>
-                        <tab id="conformity_tab" name="соответствие гост"></tab>
-                        <tab id="set_tab" name="комплект поставки"></tab>
-                    </tabs>
-                </div>
-            </div>
-            <!-- tab -->
-            <div class="row mb-64">
-                <div class="col">
-                    <div class="" v-if="currentTab == 'structure_tab'">
-                        <table class="table table-light table-bordered">
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th colspan="4" scope="col">Состав комплекта</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">Mark</th>
-                                    <th scope="col">Otto</th>
-                                    <th scope="col">mdo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <!-- TABLES -->
+            <template>
+                <div v-if="productInfo.page.tables">
+                    <!-- TABS -->
+                    <div class="row">
+                        <div class="col">
+                            <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
+                                <tab id="parameters_tab" name="Параметры" v-if="productInfo.page.tables.parameters"></tab>
+                                <tab id="options_tab" name="опции" v-if="productInfo.page.tables.options"></tab>
+                                <tab id="delivery_tab" name="комплект поставки" v-if="productInfo.page.tables.delivery"></tab>
+                                <tab id="functions_tab" name="расширенные функции" v-if="productInfo.page.tables.functions"></tab>
+                            </tabs>
+                        </div>
                     </div>
-                    <div class="" v-else-if="currentTab == 'characteristics_tab'">
-                        <table class="table table-light table-bordered">
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th colspan="4" scope="col">Характеристики</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="" v-else-if="currentTab == 'control_tab'">
-                        <table class="table table-light table-bordered">
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th colspan="4" scope="col">Управление</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="" v-else-if="currentTab == 'conformity_tab'">
-                        <table class="table table-light table-bordered">
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th colspan="4" scope="col">Соответствие гост</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="" v-else>
-                        <table class="table table-light table-bordered">
-                            <thead class="table-dark text-center">
-                                <tr>
-                                    <th colspan="4" scope="col">Комплект поставки</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <!-- TAB -->
+                    <div class="row mb-64">
+                        <div class="col">
+                            <div class="" v-if="currentTab == 'parameters_tab'">
+                                <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="productInfo.page.tables.parameters.table.length">
+                                    <thead class="table-dark text-center">
+                                        <tr>
+                                            <th colspan="2" scope="col">Параметры</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(cell, index) in productInfo.page.tables.parameters.table" :key="index">
+                                            <td class="p2">{{ cell.title }}</td>
+                                            <td class="p2">{{ cell.value }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="" v-if="productInfo.page.tables.parameters.list">
+                                    <h6 class="h6 mb-16" v-if="productInfo.page.tables.parameters.list_title">
+                                        {{ productInfo.page.tables.parameters.list_title }}
+                                    </h6>
+                                    <ul class="list" v-if="productInfo.page.tables.parameters.list.length">
+                                        <li 
+                                            v-for="(li, index) in productInfo.page.tables.parameters.list" :key="index"
+                                            class="p2 text-grey-2"
+                                        >
+                                            {{ li }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="" v-if="currentTab == 'options_tab'">
+                                <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="productInfo.page.tables.options.table.length">
+                                    <thead class="table-dark text-center">
+                                        <tr>
+                                            <th colspan="2" scope="col">Опции</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(cell, index) in productInfo.page.tables.options.table" :key="index">
+                                            <td class="p2">{{ cell.title }}</td>
+                                            <td class="p2">{{ cell.value }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="" v-if="productInfo.page.tables.options.list">
+                                    <h6 class="h6 mb-16" v-if="productInfo.page.tables.options.list_title">
+                                        {{ productInfo.page.tables.options.list_title }}
+                                    </h6>
+                                    <ul class="list" v-if="productInfo.page.tables.options.list.length">
+                                        <li 
+                                            v-for="(li, index) in productInfo.page.tables.options.list" :key="index"
+                                            class="p2 text-grey-2"
+                                        >
+                                            {{ li }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="" v-if="currentTab == 'delivery_tab'">
+                                <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="productInfo.page.tables.delivery.table.length">
+                                    <thead class="table-dark text-center">
+                                        <tr>
+                                            <th colspan="2" scope="col">Комплект поставки</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(cell, index) in productInfo.page.tables.delivery.table" :key="index">
+                                            <td class="p2">{{ cell.title }}</td>
+                                            <td class="p2">{{ cell.value }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="" v-if="productInfo.page.tables.delivery.list">
+                                    <h6 class="h6 mb-16" v-if="productInfo.page.tables.delivery.list_title">
+                                        {{ productInfo.page.tables.delivery.list_title }}
+                                    </h6>
+                                    <ul class="list" v-if="productInfo.page.tables.delivery.list.length">
+                                        <li 
+                                            v-for="(li, index) in productInfo.page.tables.delivery.list" :key="index"
+                                            class="p2 text-grey-2"
+                                        >
+                                            {{ li }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="" v-if="currentTab == 'functions_tab'">
+                                <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="productInfo.page.tables.functions.table.length">
+                                    <thead class="table-dark text-center">
+                                        <tr>
+                                            <th colspan="2" scope="col">Расширенные функции</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(cell, index) in productInfo.page.tables.functions.table" :key="index">
+                                            <td class="p2">{{ cell.title }}</td>
+                                            <td class="p2">{{ cell.value }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="" v-if="productInfo.page.tables.functions.list">
+                                    <h6 class="h6 mb-16" v-if="productInfo.page.tables.functions.list_title">
+                                        {{ productInfo.page.tables.functions.list_title }}
+                                    </h6>
+                                    <ul class="list" v-if="productInfo.page.tables.functions.list.length">
+                                        <li 
+                                            v-for="(li, index) in productInfo.page.tables.functions.list" :key="index"
+                                            class="p2 text-grey-2"
+                                        >
+                                            {{ li }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </template>
+            
+            <!-- SIMILAR PRODUCTS -->
             <div class="row mb-64">
                 <div class="col">
                     <h3 class="h3 mb-32">Похожие товары</h3>
@@ -264,14 +261,13 @@
                         <div 
                             v-for="(item, idx) in similarProducts" 
                             :key="idx"
-                            class="col-lg-3 col-12"
+                            class="col-lg-3 col-12 mb-24"
                         >
                             <router-link 
                                 tag="div"
                                 :to="{ 
                                     name: 'ProductsPage', 
-                                    params: { id: id, category_id: category_id, product_id: item.id },
-                                    query: { product_type: $route.query.product_type }
+                                    params: { id: id, category_id: category_id, product_id: item.id }
                                 }"
                                 class="h-100"
                             >
@@ -287,6 +283,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- SWIPER CATEGORY -->
             <div class="row">
                 <div class="col">
                     <SwiperProductCategory 
@@ -322,7 +320,8 @@ export default {
             category: {},
             productInfo: {},
             loading: true,
-            currentTab: "structure_tab"
+            currentTab: "parameters_tab",
+            similarProducts: []
         }
     },
     created() {
@@ -332,11 +331,7 @@ export default {
         
     },
     computed: {
-        similarProducts() {
-            return this.category[this.$route.query.product_type].products.filter((item) => {
-                return item.id !== this.productInfo.id
-            })
-        }
+        
     },
     methods: {
         tabChanged(selectedTab) {
@@ -361,8 +356,14 @@ export default {
                     this.category = this.product.categories.find((item) => {
                         return item.id == this.category_id
                     });
-                    this.productInfo = this.category[this.$route.query.product_type].products.find((item) => {
-                        return item.id == this.product_id
+                    this.category.products.map((item) => {
+                        item.items.find((item) => {
+                            if (item.id == this.product_id) {
+                                this.productInfo = item;
+                            } else {
+                                this.similarProducts.push(item);
+                            }
+                        })
                     });
                     this.loading = false;
                 }).catch(error => {
@@ -380,7 +381,7 @@ export default {
             width: 100%;
             height: auto;
             min-height: 400px;
-            background-position: center center;
+            background-position: top center;
             background-repeat: no-repeat;
             background-size: contain;
         }
