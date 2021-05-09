@@ -19,9 +19,7 @@
             <!-- DESCRIPTION -->
             <div class="row mb-80" v-if="product.description.length">
                 <div class="col">
-                    <p class="p2" v-for="(text, index) in product.description" :key="index">
-                        {{ text }}
-                    </p>
+                    <p class="p2" v-for="(text, index) in product.description" :key="index" v-html="text"></p>
                 </div>
             </div>
             <!-- MAIN -->
@@ -71,7 +69,7 @@
                 </div>
             </div>
             <!-- CONTENT -->
-            <div class="row mb-80" v-if="product.content.length">
+            <div class="row mb-40" v-if="product.content && product.content.length">
                 <div class="col">
                     <div class="content mb-40" v-for="(content, index) in product.content" :key="index">
                         <!-- QUOTE -->
@@ -82,7 +80,7 @@
                             <p class="p2 mb-0 text-orange" v-html="content.quote_writer"></p>
                         </div>
                         <!-- TITLE AND TEXT -->
-                        <div class="mb-32">
+                        <div class="mb-32" v-if="(content.title || content.text) && content.text.length">
                             <h3 class="h3 mb-32" v-if="content.title">
                                 {{ content.title }}
                             </h3>

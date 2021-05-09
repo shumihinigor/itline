@@ -13,14 +13,14 @@
                 <span @click="changeFilter(product)">{{ product.title }}</span>
                 <ul>
                     <router-link 
-                        class="p2" 
-                        v-for="(cateory, index) in product.categories" 
+                        :class="['p2', {active: category.id == $route.params.category_id}]"
+                        v-for="(category, index) in product.categories" 
                         :key="index" 
                         tag="li"
                         exact-active-class="active"
-                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: cateory.id  } }"
+                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: category.id  } }"
                     >
-                        <span @click="changeFilter(product)">{{ cateory.title }}</span>
+                        <span @click="changeFilter(product)">{{ category.title }}</span>
                     </router-link>
                 </ul>
             </router-link>

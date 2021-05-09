@@ -86,7 +86,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         min-height: 725px;
-        margin-bottom: 100px;
+        // margin-bottom: 100px;
         @media (max-width: 991px) {
             margin-bottom: 40px;
             min-height: 667px;

@@ -2,13 +2,13 @@
     <div class="product-item">
         <div 
             class="product-image"
-            :style="{'background-image': 'url(' + require('../../assets/images/products/' + image) + ')'}"
+            :style="{'background-image': image ? 'url(' + require('../../assets/images/products/' + image) + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
         >
         </div>
         <div class="product-block">
             <h6 v-if="title" class="h6 product-title text-uppercase font-weight-bold">{{ title }}</h6>
             <p v-if="text" class="p2 product-text" v-html="text"></p>
-            <h4 v-if="price" class="h4 font-weight-bold mb-0">{{ price }}</h4>
+            <h4 v-if="price" class="h4 font-weight-bold mb-0 mt-2">{{ price }} ₽</h4>
         </div>
     </div>
 </template>

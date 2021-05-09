@@ -2,10 +2,10 @@
     <div>
         <!-- swiper -->
         <SwiperBanner />
-        <!-- products block -->
-        <ProductsBlock />
         <!-- about block -->
         <AboutBlock />
+        <!-- products block -->
+        <ProductsBlock />
         <!-- gallery block -->
         <GalleryBlock />
         <!-- feedback block -->

@@ -61,7 +61,7 @@ export default {
             height: 100%;
             min-height: 280px;
             background-size: cover;
-            background-position: left top;
+            background-position: center center;
             background-repeat: no-repeat;
             overflow: hidden;
             cursor: pointer;

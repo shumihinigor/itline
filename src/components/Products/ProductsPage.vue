@@ -12,10 +12,10 @@
             </div>
             <div class="row mb-24">
                 <!-- IMAGE -->
-                <div class="col-lg-4 col-12 mb-32" v-if="productInfo.page.image">
+                <div class="col-lg-4 col-12 mb-32">
                     <div 
                         class="product-page__image" 
-                        :style="{'background-image': 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')'}"
+                        :style="{'background-image': productInfo.page.image ? 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')'}"
                     ></div>
                 </div>
                 <!-- STOCK AND STATE -->
@@ -221,6 +221,7 @@
                                 </div>
                             </div>
                             <div class="" v-if="currentTab == 'functions_tab'">
+                                <h4 class="h4 mb-16" v-if="productInfo.page.tables.functions.title">{{ productInfo.page.tables.functions.title }}</h4>
                                 <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="productInfo.page.tables.functions.table.length">
                                     <thead class="table-dark text-center">
                                         <tr>
@@ -254,7 +255,7 @@
             </template>
             
             <!-- SIMILAR PRODUCTS -->
-            <div class="row mb-64">
+            <div class="row mb-64" v-if="similarProducts.length">
                 <div class="col">
                     <h3 class="h3 mb-32">Похожие товары</h3>
                     <div class="row">
@@ -356,14 +357,14 @@ export default {
                     this.category = this.product.categories.find((item) => {
                         return item.id == this.category_id
                     });
-                    this.category.products.map((item) => {
-                        item.items.find((item) => {
+
+                    this.category.products.map((category) => {
+                        category.items.find((item) => {
                             if (item.id == this.product_id) {
                                 this.productInfo = item;
-                            } else {
-                                this.similarProducts.push(item);
+                                this.similarProducts = category.items.filter(x => x.id !== this.productInfo.id);
                             }
-                        })
+                        });
                     });
                     this.loading = false;
                 }).catch(error => {

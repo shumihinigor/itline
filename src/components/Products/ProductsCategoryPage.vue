@@ -59,9 +59,7 @@
                     <!-- DESCRIPTION -->
                     <div class="row mb-24" v-if="category.description && category.description.length">
                         <div class="col">
-                            <p class="p2" v-for="(text, index) in category.description" :key="index">
-                                {{ text }}
-                            </p>
+                            <p class="p2" v-for="(text, index) in category.description" :key="index" v-html="text"></p>
                         </div>
                     </div>
                     <!-- PDF -->
@@ -114,6 +112,7 @@
                                                 :title="category.title" 
                                                 :text="category.text" 
                                                 :image="category.image"
+                                                :price="category.price"
                                             />
                                         </div>
                                     </div>
@@ -182,11 +181,50 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row mb-80" v-if="category.content">
+            <!-- CONTENT -->
+            <div class="row mb-40" v-if="category.content && category.content.length">
                 <div class="col">
-                    <div class="" v-html="category.content"></div>
+                    <div class="content mb-40" v-for="(content, index) in category.content" :key="index">
+                        <!-- QUOTE -->
+                        <div class="quote mb-40" v-if="content.quote">
+                            <p class="p2 mb-8">
+                                {{ content.quote }}
+                            </p>
+                            <p class="p2 mb-0 text-orange" v-html="content.quote_writer"></p>
+                        </div>
+                        <!-- TITLE AND TEXT -->
+                        <div class="mb-32" v-if="content.title || content.text">
+                            <h3 class="h3 mb-32" v-if="content.title">
+                                {{ content.title }}
+                            </h3>
+                            <p class="p2" v-for="(text, index) in content.text" :key="index" v-html="text"></p>
+                        </div>
+                        <!-- ACCORDION -->
+                        <template>
+                            <div class="mb-32" v-if="content.accordion && content.accordion.length">
+                                <div class="" v-for="(item, index) in content.accordion" :key="index">
+                                    <p>
+                                        <a class="p2 link orange text-decoration-none" data-bs-toggle="collapse" :href="'#item_' + index" role="button" aria-expanded="false" :aria-controls="'item_' + index">
+                                            {{ item.title }}
+                                        </a>
+                                    </p>
+                                    <div class="collapse" :id="'item_' + index">
+                                        <div class="">
+                                            <p class="p5 text-grey-2 mb-8">
+                                                {{ item.text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- IMAGE -->
+                        <div class="" v-if="content.image">
+                            <img class="mw-100" :src="require('../../assets/images/products/' + content.image)" alt="">
+                        </div>
+                    </div>
                 </div>
-            </div> -->
+            </div>
             <!-- SWIPER CATEGORY -->
             <div class="row">
                 <div class="col">
