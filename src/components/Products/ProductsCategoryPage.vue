@@ -113,71 +113,13 @@
                                                 :text="category.text" 
                                                 :image="category.image"
                                                 :price="category.price"
+                                                :style="{ 'cursor': category.page ? '' : 'default' }"
                                             />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <!-- series -->
-                        <!-- <template>
-                            <div v-if="category.series">
-                                <div class="row mb-32" v-if="category.series.title || category.series.text.length">
-                                    <div class="col">
-                                        <h3 class="h3 mb-16">{{ category.series.title }}</h3>
-                                        <p class="p2 mb-8" v-for="(item, index) in category.series.text" :key="index">
-                                            {{ item }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row mb-56">
-                                    <div 
-                                        class="col-lg-4 col-md-6 col-12 mb-32" 
-                                        v-for="(category, idx) in category.series.products" 
-                                        :key="idx"
-                                    >
-                                        <div class="h-100" @click="goToProductPage(category, type='series')">
-                                            <ProductsItem 
-                                                :title="category.title" 
-                                                :text="category.text" 
-                                                :image="category.image"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </template> -->
-
-                        <!-- solutions -->
-                        <!-- <template>
-                            <div v-if="category.solutions">
-                                <div class="row mb-32" v-if="category.solutions.title || category.solutions.text.length">
-                                    <div class="col">
-                                        <h3 class="h3 mb-16">{{ category.solutions.title }}</h3>
-                                        <p class="p2 mb-8" v-for="(item, index) in category.solutions.text" :key="index">
-                                            {{ item }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div 
-                                        class="col-lg-4 col-md-6 col-12 mb-32" 
-                                        v-for="(category, idx) in category.solutions.products" 
-                                        :key="idx" 
-                                    >
-                                        <div class="h-100" @click="goToProductPage(category, type='solutions')">
-                                            <ProductsItem 
-                                                :title="category.title" 
-                                                :text="category.text" 
-                                                :image="category.image"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </template> -->
                     </div>
                 </div>
             </div>

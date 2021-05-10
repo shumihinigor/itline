@@ -7,14 +7,14 @@ Vue.use(VueRouter)
 function transliterateEN(text) {
   text = text.split('-').join(' ');
   
-  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 Щ Ш Ч Ц Ю Я Ё Ж Х Ъ Ы Э А Б В Г Д Е З И Й К Л М Н О П Р С Т У Ф Ь 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
-  let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 SHH SH CH CZ YU YA YO ZH KH `` Y EH A B V G D E Z I J K L M N O P R S T U F ` 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
+  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
+  let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
 
   for (var x = 0; x < rus.length; x++) {
       text = text.split(eng[x]).join(rus[x]);
   }
 
-  return text;
+  return text[0].toUpperCase() + text.slice(1);
 }
 
 // test 
@@ -22,9 +22,11 @@ function transliterateEN(text) {
 // console.log(transliterateEN('obnovlenie-SENTINEL-LDK-8.0.4')); // Обновление SENTINEL LDK 8.0.4
 
 function transliterateRU(text) {
-    
-  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9 Щ Ш Ч Ц Ю Я Ё Ж Х Ъ Ы Э А Б В Г Д Е З И Й К Л М Н О П Р С Т У Ф Ь 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
-  let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9 SHH SH CH CZ YU YA YO ZH KH `` Y EH A B V G D E Z I J K L M N O P R S T U F ` 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
+
+  text = text.toLowerCase();
+
+  let rus = "щ ш ч ц ю я ё ж х ъ ы э а б в г д е з и й к л м н о п р с т у ф ь 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
+  let eng = "shh sh ch cz yu ya yo zh kh `` y eh a b v g d e z i j k l m n o p r s t u f ` 0 1 2 3 4 5 6 7 8 9".split(/ +/g);
 
   for (var x = 0; x < rus.length; x++) {
       text = text.split(rus[x]).join(eng[x]);
