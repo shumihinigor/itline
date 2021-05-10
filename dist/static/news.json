@@ -2,7 +2,7 @@
     "data": 
         [
             {
-                "id": "Den`-promyshlennosti-2019",
+                "id": "den`-promyshlennosti-2019",
                 "title": "День промышленности 2019",
                 "short_description": "",
                 "heading": "",
@@ -17,6 +17,11 @@
                 "list": [],
                 "description": "",
                 "bg": "news_1.jpg",
+                "images": [
+                    "news_1_1.jpg",
+                    "news_1_2.jpg",
+                    "news_1_3.jpg"
+                ],
                 "date": "03.10.2019",
                 "likes": "",
                 "comments": "",
@@ -25,7 +30,7 @@
             },
 
             {
-                "id": "Intellektual`nye-transportnye-sistemy-Rossii",
+                "id": "intellektual`nye-transportnye-sistemy-rossii",
                 "title": "Интеллектуальные транспортные системы России",
                 "short_description": "",
                 "heading": "",
@@ -47,6 +52,10 @@
                 ],
                 "description": "«В умном городе каждый динамический процесс можно измерить и им можно управлять. Умный город это датчики, которые считывают все процессы, отправляют на платформу, которая обрабатывает информацию и вырабатывает управленческие решения. Транспорт в такой системе будет решающим фактором», — отметил директор центра исследования транспортных проблем мегаполисов института экономики транспорта и транспортной политики НИУ ВШЭ Константин Трофименко.",
                 "bg": "news_2.jpg",
+                "images": [
+                    "news_2_1.jpg",
+                    "news_2_2.jpg"
+                ],
                 "date": "25.09.2020",
                 "likes": "",
                 "comments": "",
@@ -55,7 +64,7 @@
             },
 
             {
-                "id": "EHlektronika-Transport-2019",
+                "id": "ehlektronika-transport-2019",
                 "title": "Электроника-Транспорт 2019",
                 "short_description": "",
                 "heading": "«Цифровая трансформация транспорта начинается с проверенной системы информирования!» - именно с таким лозунгом выступил Андрей Дубров, директор компании ITLINE, в рамках круглого стола на 13й международной выставке «Электроника-Транспорт 2019».",
@@ -70,6 +79,12 @@
                 ],
                 "description": "<a href='/static/files/ITLINE_SmartTransport_2019.pdf' download class='file__link bg-white'><div class='d-flex flex-column align-items-start ml-16'><p class='p2 text-grey-1 mb-1'>Системы информирования ITLINE</p><p class='p5 text-grey-3 mb-0'>10,4Mb</p></div></a>",
                 "bg": "news_3.jpg",
+                "images": [
+                    "news_3_1.jpg",
+                    "news_3_2.jpg",
+                    "news_3_3.jpg",
+                    "news_3_4.jpg"
+                ],
                 "date": "",
                 "likes": "",
                 "comments": "",
@@ -78,7 +93,7 @@
             },
 
             {
-                "id": "Den`-promyshlennosti-yaroslavskoj-oblasti-2018",
+                "id": "den`-promyshlennosti-yaroslavskoj-oblasti-2018",
                 "title": "День промышленности ярославской области 2018",
                 "short_description": "",
                 "heading": "",
@@ -93,6 +108,15 @@
                 "list": [],
                 "description": "",
                 "bg": "news_4.jpg",
+                "images": [
+                    "news_4_1.jpg",
+                    "news_4_2.jpg",
+                    "news_4_3.jpg",
+                    "news_4_4.jpg",
+                    "news_4_5.jpg",
+                    "news_4_6.jpg",
+                    "news_4_7.jpg"
+                ],
                 "date": "02.10.2018",
                 "likes": "",
                 "comments": "",
@@ -101,7 +125,7 @@
             },
 
             {
-                "id": "EHlektrotrans-2018",
+                "id": "ehlektrotrans-2018",
                 "title": "Электротранс-2018",
                 "short_description": "",
                 "heading": "",
@@ -116,6 +140,11 @@
                 "list": [],
                 "description": "",
                 "bg": "news_5.jpg",
+                "images": [
+                    "news_5_1.jpg",
+                    "news_5_2.jpg",
+                    "news_5_3.jpg"
+                ],
                 "date": "",
                 "likes": "",
                 "comments": "",
@@ -124,7 +153,7 @@
             },
 
             {
-                "id": "Navitekh-2018",
+                "id": "navitekh-2018",
                 "title": "Навитех-2018",
                 "short_description": "",
                 "heading": "",
@@ -139,6 +168,12 @@
                 "list": [],
                 "description": "<iframe width='100%' height='400' src='https://www.youtube.com/embed/Nh-fa-AuQbY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
                 "bg": "news_6.jpg",
+                "images": [
+                    "news_6_1.jpg",
+                    "news_6_2.jpg",
+                    "news_6_3.jpg",
+                    "news_6_4.jpg"
+                ],
                 "date": "",
                 "likes": "",
                 "comments": "",
@@ -147,7 +182,7 @@
             },
 
             {
-                "id": "STESA-2018",
+                "id": "stesa-2018",
                 "title": "СТЕСА-2018",
                 "short_description": "",
                 "heading": "ITLINE: Для нас не существует границ!",
@@ -160,6 +195,11 @@
                 "list": [],
                 "description": "",
                 "bg": "news_7.jpg",
+                "images": [
+                    "news_7_1.jpg",
+                    "news_7_2.jpg",
+                    "news_7_3.jpg"
+                ],
                 "date": "",
                 "likes": "",
                 "comments": "",
@@ -168,7 +208,7 @@
             },
 
             {
-                "id": "SMARTTRANSPORT-2017",
+                "id": "smarttransport-2017",
                 "title": "SMARTTRANSPORT 2017",
                 "short_description": "",
                 "heading": "18 октября 2017 года компания ITLINE приняла участие в выставке SMARTTRANSPORT 2017.",
@@ -187,6 +227,13 @@
                 "list": [],
                 "description": "",
                 "bg": "news_8.jpg",
+                "images": [
+                    "news_8_1.jpg",
+                    "news_8_2.jpg",
+                    "news_8_3.jpg",
+                    "news_8_4.jpg",
+                    "news_8_5.jpg"
+                ],
                 "date": "18.10.2017",
                 "likes": "",
                 "comments": "",
