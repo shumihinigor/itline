@@ -21,10 +21,12 @@ module.exports = {
     proxy: {
       "/rest/": {
         target: "https://test.it-line.info/",
+        changeOrigin: true,
         secure: false
       },
       "/images/": {
         target: "https://test.it-line.info/",
+        changeOrigin: true,
         secure: false
       }
     }

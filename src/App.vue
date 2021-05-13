@@ -10,7 +10,7 @@
                             mode="out-in"
                         >
                             <Breadcrumbs 
-                                v-if="$route.name !== 'Home' && breadcrumbs.length"
+                                v-if="$route.name !== 'Home' && $route.name !== 'PageNotFound' && breadcrumbs.length"
                             />
                         </transition>
                     </div>
