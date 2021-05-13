@@ -4,7 +4,7 @@
             <router-link 
                 class=""
                 :to="{ name: item.name }"
-            >{{ item.name }}</router-link>
+            >{{ item.meta.title }}</router-link>
         </div>
     </div>
 </template>

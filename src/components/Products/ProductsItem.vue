@@ -7,7 +7,6 @@
         </div>
         <div class="product-block">
             <h6 v-if="title" class="h6 product-title text-uppercase font-weight-bold">{{ title }}</h6>
-            <p v-if="text" class="p2 product-text" v-html="text"></p>
             <h4 v-if="price" class="h4 font-weight-bold mb-0 mt-2">{{ price }} ₽</h4>
         </div>
     </div>

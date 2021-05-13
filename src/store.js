@@ -6,28 +6,15 @@ Vue.use(Vuex);
 
 const state = {
     activeHeader: false,
-    breadcrumbs: [
-        {
-            path: '/',
-            name: 'Home',
-            meta: {
-                title: 'Главная',
-                breadcrumb: 'Главная'
-            }
-        }
-    ]
+    breadcrumbs: []
 };
 
 const mutations = {
     changeActiveHeader(state, comment) {
         state.activeHeader = comment;
     },
-    pushBreadcrumbs(state, comment) {
-        state.breadcrumbs.push(comment);
-    },
-    spliceBreadcrumbs(state, comment) {
-        console.log(comment);
-        state.breadcrumbs = state.breadcrumbs.splice(comment);
+    breadcrumbs(state, comment) {
+        state.breadcrumbs = comment;
     }
 };
 

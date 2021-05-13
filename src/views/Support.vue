@@ -57,6 +57,25 @@ export default {
             currentTab: 'contactsTab'
         }
     },
+    created() {
+        let breadcrumbs = [
+            {
+                path: '/',
+                name: 'Home',
+                meta: {
+                    title: "Главная"
+                }
+            },
+            {
+                path: '/support',
+                name: 'Support',
+                meta: {
+                    title: "Техподдержка"
+                }
+            }
+        ]
+        this.$store.commit("breadcrumbs", breadcrumbs)
+    },
     methods: {
         tabChanged(selectedTab) {
             this.currentTab = selectedTab.tab.id;

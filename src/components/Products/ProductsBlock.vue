@@ -8,10 +8,9 @@
                     v-for="(product, idx) in products" 
                     :key="idx" 
                 >
-                    <div @click="goToProductCategory(product)">
+                    <div class="h-100" @click="goToProductCategory(product)">
                         <ProductsItem 
-                            :title="product.title" 
-                            :text="product.text" 
+                            :title="product.alias" 
                             :image="product.image"
                         />
                     </div>
@@ -40,24 +39,17 @@ export default {
     },
     methods: {
         goToProductCategory(product) {
-            this.$router.push({ name: 'ProductsCategory', params: { id: product.id } });
+            this.$router.push({ name: 'ProductsCategory', params: { id: product.alias } });
         },
         getProducts() {
             this.axios
                 .get('/rest/products')
                 .then(response => {
-                    // console.log(response.data.results);
-                }).catch(error => {
-                    // this.$router.push({ name: 'PageNotFound' }); 
-                });
-
-            this.axios
-                .get('/static/products.json')
-                .then(response => {
-                    this.products = response.data.data;
+                    console.log(response.data.results);
+                    this.products = response.data.results;
                     this.loading = false;
                 }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
+                    this.$router.push({ name: 'PageNotFound' }); 
                 });
         }
     },

@@ -127,7 +127,26 @@
 
 <script>
     export default {
-        name: 'Contacts'
+        name: 'Contacts',
+        created() {
+            let breadcrumbs = [
+                {
+                    path: '/',
+                    name: 'Home',
+                    meta: {
+                        title: "Главная"
+                    }
+                },
+                {
+                    path: '/contacts',
+                    name: 'Contacts',
+                    meta: {
+                        title: "Контакты"
+                    }
+                }
+            ]
+            this.$store.commit("breadcrumbs", breadcrumbs)
+        },
     }
 </script>
 

@@ -1,4 +1,4 @@
-temp<template>
+<template>
     <div class="not-found">
         <div class="container">
             <div class="row">
@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
     .not-found {
+        padding: 80px 0;
         position: relative;
         text-align: center;
         height: 100%;
@@ -41,7 +42,6 @@ export default {
             line-height: 140%;
             color: #FAFAFA;
             letter-spacing: 0.0075em;
-            margin-bottom: 50px;
             background-image: url('../assets/images/404.svg');
             background-position: center center;
             background-repeat: no-repeat;

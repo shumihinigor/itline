@@ -10,7 +10,7 @@
                             mode="out-in"
                         >
                             <Breadcrumbs 
-                                v-if="this.$route.name !== 'Home'"
+                                v-if="$route.name !== 'Home' && breadcrumbs.length"
                             />
                         </transition>
                     </div>
@@ -29,26 +29,26 @@
                 name="fade"
                 mode="out-in"
             >
-            <div v-show="showButtons" class="fixed-block">
-                <transition 
-                    name="fade"
-                    mode="out-in"
-                >
-                    <div v-show="showSubscribe" class="subscribe-tooltips mb-3">
-                        <h6 class="h6 text-grey-1 mb-1">Подпишитесь на наши уведомления</h6>
-                        <p class="p5 text-grey-3 mb-2">Подпишитесь на уведомления нашего магазина и узнавайте о всех акциях и поступлении товара одним из первых!</p>
-                        <button class="btn default w-100">
-                            <span class="p5 text-uppercase">Подписаться</span>
-                        </button>
-                    </div>
-                </transition>
-                <button @click="showSubscribe = !showSubscribe" class="mb-2">
-                    <img src="./assets/images/bell.svg" alt="bell">
-                </button>
-                <button @click="scrollTop" class="">
-                    <img src="./assets/images/arrow_up.svg" alt="arrow_up">
-                </button>
-            </div>
+                <div v-show="showButtons" class="fixed-block">
+                    <transition 
+                        name="fade"
+                        mode="out-in"
+                    >
+                        <div v-show="showSubscribe" class="subscribe-tooltips mb-3">
+                            <h6 class="h6 text-grey-1 mb-1">Подпишитесь на наши уведомления</h6>
+                            <p class="p5 text-grey-3 mb-2">Подпишитесь на уведомления нашего магазина и узнавайте о всех акциях и поступлении товара одним из первых!</p>
+                            <button class="btn default w-100">
+                                <span class="p5 text-uppercase">Подписаться</span>
+                            </button>
+                        </div>
+                    </transition>
+                    <button @click="showSubscribe = !showSubscribe" class="mb-2">
+                        <img src="./assets/images/bell.svg" alt="bell">
+                    </button>
+                    <button @click="scrollTop" class="">
+                        <img src="./assets/images/arrow_up.svg" alt="arrow_up">
+                    </button>
+                </div>
             </transition>
             <Footer />
         </div>
@@ -59,22 +59,17 @@
     import { mapGetters } from "vuex";
     import Header from '@/components/Header'
     import Footer from '@/components/Footer'
-    // import Breadcrumbs from '@/components/Breadcrumbs'
+    import Breadcrumbs from '@/components/Breadcrumbs'
     import ModalContacts from '@/components/Modal/ModalContacts'
     
     export default {
         components: {
-            Header, Footer, ModalContacts
+            Header, Footer, ModalContacts, Breadcrumbs
         },
         data() {
             return {
                 showButtons: false,
                 showSubscribe: false
-            }
-        },
-        watch: {
-            $route(route) {
-                // console.log(this.breadcrumbs);
             }
         },
         mounted() {

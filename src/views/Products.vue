@@ -51,6 +51,25 @@ export default {
             currentTab: 'productsTab'
         }
     },
+    created() {
+        let breadcrumbs = [
+            {
+                path: '/',
+                name: 'Home',
+                meta: {
+                    title: "Главная"
+                }
+            },
+            {
+                path: '/products',
+                name: 'Products',
+                meta: {
+                    title: "Продукция"
+                }
+            }
+        ]
+        this.$store.commit("breadcrumbs", breadcrumbs)
+    },
     methods: {
         tabChanged(selectedTab) {
             this.currentTab = selectedTab.tab.id;

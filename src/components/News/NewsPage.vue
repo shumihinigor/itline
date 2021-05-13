@@ -41,21 +41,42 @@ export default {
         }
     },
     created() {
-        this.getPost(this.id)
+        this.getPost(this.id);
     },
     methods: {
         getPost(id) {
             this.axios
-                .get('/rest/news/')
+                .get(`/rest/news/${id}`)
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.news = response.data.results.find((item) => {
-                        return item.alias == id
-                    });
+                    this.news = response.data.object;
+                    let breadcrumbs = [
+                        {
+                            path: '/',
+                            name: 'Home',
+                            meta: {
+                            title: "Главная"
+                            }
+                        },
+                        {
+                            path: '/news',
+                            name: 'News',
+                            meta: {
+                                title: "Новости"
+                            }
+                        },
+                        {
+                            path: `/news/${this.id}`,
+                            name: 'NewsPage',
+                            meta: {
+                                title: this.news.title
+                            }
+                        }
+                    ]
+                    this.$store.commit("breadcrumbs", breadcrumbs)
                     this.loading = false;
-                    // this.$route.meta.title = this.news.title;
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });
                 });

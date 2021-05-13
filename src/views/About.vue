@@ -67,6 +67,25 @@ Vue.use(Tabs);
                 currentTab: 'informationTab'
             }
         },
+        created() {
+            let breadcrumbs = [
+                {
+                    path: '/',
+                    name: 'Home',
+                    meta: {
+                        title: "Главная"
+                    }
+                },
+                {
+                    path: '/about',
+                    name: 'About',
+                    meta: {
+                        title: "О компании"
+                    }
+                }
+            ]
+            this.$store.commit("breadcrumbs", breadcrumbs)
+        },
         methods: {
             tabChanged(selectedTab) {
                 this.currentTab = selectedTab.tab.id;

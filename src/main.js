@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './registerServiceWorker';
 import router from './router';
-import VueBreadcrumbs from 'vue-2-breadcrumbs';
 import Paginate from 'vuejs-paginate';
 
 // vuex
@@ -16,7 +15,6 @@ import axios from 'axios';
 
 Vue.config.productionTip = false;
 Vue.prototype.axios = axios;
-Vue.use(VueBreadcrumbs);
 Vue.component('paginate', Paginate)
 
 new Vue({

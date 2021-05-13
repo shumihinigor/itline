@@ -65,7 +65,24 @@ export default {
         }
     },
     created() {
-        this.getPost()
+        this.getPost();
+        let breadcrumbs = [
+            {
+                path: '/',
+                name: 'Home',
+                meta: {
+                title: "Главная"
+                }
+            },
+            {
+                path: '/news',
+                name: 'News',
+                meta: {
+                    title: "Новости"
+                }
+            }
+        ]
+        this.$store.commit("breadcrumbs", breadcrumbs)
     },
     methods: {
         getPost() {
