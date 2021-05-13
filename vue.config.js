@@ -13,6 +13,22 @@ module.exports = {
             }
         },
     },
+
+  devServer: {
+    host: "localhost",
+    publicPath: "/",
+    hotOnly: false,
+    proxy: {
+      "/rest/": {
+        target: "https://test.it-line.info/",
+        secure: false
+      },
+      "/images/": {
+        target: "https://test.it-line.info/",
+        secure: false
+      }
+    }
+  },
     chainWebpack: config => {
         config.module
             .rule("pdf")

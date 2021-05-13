@@ -1,16 +1,16 @@
 <template>
     <div :class="['col-12 mb-24', 'col-lg-' + col]">
         <router-link 
-            :to="{ name: 'NewsPage', params: { id: id }}" tag="div" 
-            :class="['news-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" 
-            :style="background(bg)"
+            :to="{ name: 'NewsPage', meta: { title: title }, params: { id: id } }" tag="div"
+            :class="['news-item', image == '' ? 'gradient' : 'image']" 
+            :style="background(image)"
         >
             <h6 class="h6 text-uppercase text-grey-1 news-item__title">{{ title }}</h6>
             <p class="p2 news-item__text text-grey-2 mb-24">
                 {{ text }}
             </p>
-            <div class="d-flex justify-content-between">
-                <div class="d-flex">
+            <div class="d-flex justify-content-end">
+                <!-- <div class="d-flex">
                     <p class="p5 text-grey-2 mb-0 d-flex align-items-center mr-16" v-if="likes">
                         <img svg-inline src="../../assets/images/like.svg" alt="like">
                         <span class="ms-1">{{ likes }}</span>
@@ -23,9 +23,9 @@
                         <img svg-inline src="../../assets/images/view.svg" alt="view">
                         <span class="ms-1">{{ views }}</span>
                     </p>
-                </div>
+                </div> -->
                 <div class="">
-                    <p class="p5 text-grey-2 mb-0">{{ date }}</p>
+                    <p class="p5 text-grey-2 mb-0">{{ parseDate(date) }}</p>
                 </div>
             </div>
         </router-link>
@@ -34,16 +34,17 @@
 
 <script>
 export default {
-    props: ["col", "title", "text", "bg", "date", "likes", "comments", "views", "id"],
+    props: ["col", "title", "text", "image", "date", "likes", "comments", "views", "id"],
     methods: {
-        background(bg) {
-            if (bg == 'white') {
-                return 'background: #FFFFFF;'
-            } else if (bg == 'gradient') {
-                return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
+        background(image) {
+            if (image) {
+                return 'background-image: url(' + image + ');'
             } else {
-                return 'background-image: url(' + require('../../assets/images/news/' + bg) + ');'
+                return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
             }
+        },
+        parseDate(date) {
+            return date.split(' ')[0].split('-').join('.')
         }
     },
 }
@@ -70,6 +71,17 @@ export default {
                 padding: 32px 20px;
             }
             &.image {
+                & .news-item__title {
+                    color: $white;
+                }
+                & p {
+                    color: $white;
+                }
+                & svg {
+                    & path {
+                        fill: white;
+                    }
+                }
                 &::before {
                     content: '';
                     position: absolute;
@@ -83,7 +95,7 @@ export default {
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, #000000 100%);
                 }
             }
-            &.text_white {
+            &.gradient {
                 & .news-item__title {
                     color: $white;
                 }

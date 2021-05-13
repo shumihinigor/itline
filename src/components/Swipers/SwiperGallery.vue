@@ -92,7 +92,6 @@ export default {
                 .get('/static/gallery.json')
                 .then(response => {
                     this.gallery = response.data.data;
-                    console.log(this.gallery);
                     this.loading = false;
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });

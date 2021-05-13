@@ -44,6 +44,14 @@ export default {
         },
         getProducts() {
             this.axios
+                .get('/rest/products')
+                .then(response => {
+                    // console.log(response.data.results);
+                }).catch(error => {
+                    // this.$router.push({ name: 'PageNotFound' }); 
+                });
+
+            this.axios
                 .get('/static/products.json')
                 .then(response => {
                     this.products = response.data.data;

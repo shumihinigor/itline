@@ -115,7 +115,6 @@ export default {
             this.axios
                 .get('/static/history.json')
                 .then(response => {
-                    console.log(response.data);
                     this.history = response.data.data
                     this.loading = false;
                 }).catch(error => {

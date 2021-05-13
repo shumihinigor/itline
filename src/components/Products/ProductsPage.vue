@@ -489,7 +489,6 @@ export default {
             this.currentTab = selectedTab.tab.id;
         },
         changeProduct(id) {
-            console.log(id);
             this.getProduct(id);
         },
         getProduct(id) {

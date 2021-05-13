@@ -10,7 +10,7 @@
                             mode="out-in"
                         >
                             <Breadcrumbs 
-                                v-if="this.$route.name !== 'Home'" 
+                                v-if="this.$route.name !== 'Home'"
                             />
                         </transition>
                     </div>
@@ -59,6 +59,7 @@
     import { mapGetters } from "vuex";
     import Header from '@/components/Header'
     import Footer from '@/components/Footer'
+    // import Breadcrumbs from '@/components/Breadcrumbs'
     import ModalContacts from '@/components/Modal/ModalContacts'
     
     export default {
@@ -71,11 +72,16 @@
                 showSubscribe: false
             }
         },
+        watch: {
+            $route(route) {
+                // console.log(this.breadcrumbs);
+            }
+        },
         mounted() {
             
         },
         computed: {
-            ...mapGetters(["activeHeader"]),
+            ...mapGetters(["activeHeader", "breadcrumbs"]),
         },
         created() {
             window.addEventListener('scroll', this.scrollHandler)
@@ -151,13 +157,6 @@
             font-family: $TTNormsLight;
             font-size: 14px;
             line-height: 18px;
-            text-transform: uppercase;
-            &:nth-child(1),
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4) {
-                text-transform: none;
-            }
             &::before {
                 display: none !important;
             }

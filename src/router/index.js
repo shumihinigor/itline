@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios';
 
+import store from "@/store";
+
 Vue.use(VueRouter)
 
 function transliterateEN(text) {
@@ -46,6 +48,7 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue'),
     meta: {
+      title: 'Главная',
       breadcrumb: 'Главная'
     }
   },
@@ -55,6 +58,7 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "About" */ '../views/About.vue'),
     meta: {
+      title: 'О компании',
       breadcrumb: {
         label: 'О компании',
         parent: 'Home'
@@ -67,6 +71,7 @@ const routes = [
     name: 'Solutions',
     component: () => import(/* webpackChunkName: "Solutions" */ '../views/Solutions.vue'),
     meta: {
+      title: 'Готовые решения',
       breadcrumb: {
         label: 'Готовые решения',
         parent: 'Home'
@@ -79,6 +84,7 @@ const routes = [
     name: 'News',
     component: () => import(/* webpackChunkName: "News" */ '../views/News.vue'),
     meta: {
+      title: 'Новости',
       breadcrumb: {
         label: 'Новости',
         parent: 'Home'
@@ -92,11 +98,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
     props: true,
     meta: {
+      title: '',
       breadcrumb() {
         const { id } = this.$route.params;
-        let title = transliterateEN(id);
+        // const { title } = this.$route.meta;
+        const title = transliterateEN(id);
         return {
-          label: title + '',
+          label: title,
           parent: 'News'
         };
       }
@@ -222,8 +230,13 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  // console.log(to);
-  // console.log(from);
+  // const breadcrumbs = store.getters["breadcrumbs"];
+  // breadcrumbs.map((item, idx) => {
+  //   if (item.name !== to.name) {
+      
+  //   }
+  // });
+  // console.log(breadcrumbs);
   next()
 })
 

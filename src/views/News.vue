@@ -13,15 +13,12 @@
 
                 <NewsItem
                     v-for="(item, index) in currentBlock" :key="index"
-                    :col="item.col"
+                    :col="4"
                     :title="item.title"
                     :text="item.short_description"
-                    :bg="item.bg"
+                    :image="item.image"
                     :date="item.date"
-                    :likes="item.likes"
-                    :comments="item.comments"
-                    :views="item.views"
-                    :id="item.id"
+                    :id="item.alias"
                 />
 
             </div>
@@ -58,7 +55,7 @@ export default {
             page: 1,
             news: [],
             loading: true,
-            count: 8,
+            count: 9,
             pageCount: 2
         }
     },
@@ -73,10 +70,10 @@ export default {
     methods: {
         getPost() {
             this.axios
-                .get('/static/news.json')
+                .get('/rest/news')
                 .then(response => {
-                    this.news = response.data.data;
-                    this.pageCount = Math.ceil(this.news.length / 8);
+                    this.news = response.data.results;
+                    this.pageCount = Math.ceil(this.news.length / 9);
                     this.loading = false;
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });
