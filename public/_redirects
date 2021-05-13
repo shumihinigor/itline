@@ -1,3 +1,5 @@
-/*    /index.html   200
-
-/rest/*  https://test.it-line.info/  200
+/rest/*  https://test.it-line.info/rest/:splat  200
+/rest/*  https://test.it-line.info/rest/:splat  304
+/images/*  https://test.it-line.info/images/:splat  200
+/images/*  https://test.it-line.info/images/:splat  304
+/*  /index.html  200
