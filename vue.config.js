@@ -22,12 +22,18 @@ module.exports = {
       "/rest/": {
         target: "https://test.it-line.info/",
         changeOrigin: true,
-        secure: false
+        secure: false,
+        router: {
+            '/rest': 'https://test.it-line.info/'
+        }
       },
       "/images/": {
         target: "https://test.it-line.info/",
         changeOrigin: true,
-        secure: false
+        secure: false,
+        router: {
+            '/images': 'https://test.it-line.info/'
+        }
       }
     }
   },
