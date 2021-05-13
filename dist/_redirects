@@ -1,4 +1,3 @@
-/*  /index.html  200
-/rest/news  https://test.it-line.info/rest/news  200
-/rest/news  https://test.it-line.info/rest/news  304
+/rest/*  https://test.it-line.info/rest/:splat  200
 /rest/*  https://test.it-line.info/rest/:splat  304
+/*  /index.html  200
