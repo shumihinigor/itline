@@ -13,7 +13,7 @@ const mutations = {
     changeActiveHeader(state, comment) {
         state.activeHeader = comment;
     },
-    breadcrumbs(state, comment) {
+    changeBreadcrumbs(state, comment) {
         state.breadcrumbs = comment;
     }
 };

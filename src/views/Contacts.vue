@@ -145,7 +145,7 @@
                     }
                 }
             ]
-            this.$store.commit("breadcrumbs", breadcrumbs)
+            this.$store.commit("changeBreadcrumbs", breadcrumbs)
         },
     }
 </script>

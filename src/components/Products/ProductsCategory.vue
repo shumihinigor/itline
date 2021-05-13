@@ -171,6 +171,18 @@ export default {
         getProduct(id) {
             this.loading = true;
             this.axios
+                .get(`/rest/products/${this.id}`)
+                .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    // this.$router.push({ name: 'PageNotFound' });
+                });
+
+            this.axios
                 .get('/static/products.json')
                 .then(response => {
                     if (id == 'undefined') {

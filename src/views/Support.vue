@@ -74,7 +74,7 @@ export default {
                 }
             }
         ]
-        this.$store.commit("breadcrumbs", breadcrumbs)
+        this.$store.commit("changeBreadcrumbs", breadcrumbs)
     },
     methods: {
         tabChanged(selectedTab) {
