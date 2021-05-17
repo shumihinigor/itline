@@ -6,15 +6,17 @@
             <swiper-slide v-for="(product, index) in products" :key="product.id">
                 <router-link 
                     tag="div"
-                    :to="{ name: 'ProductsCategory', params: { id: product.id  } }"
+                    :to="{ name: 'ProductsCategory', params: { id: product.alias  } }"
                     class="product-swiper__item"
                 >
-                    <div @click="changeCategory(product)">
-                        <div class="product-swiper__image">
-                            <img :src="require('../../assets/images/products/' + product.image)" alt="">
+                    <div class="" @click="changeCategory(product)">
+                        <div 
+                            class="product-swiper__image"
+                            :style="{'background-image': product.image ? 'url(' + '/' + product.image + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
+                        >
                         </div>
-                        <div class="product-swiper__block">
-                            <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.title }}</h6>
+                        <div class="product-swiper__block mt-auto">
+                            <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.name }}</h6>
                         </div>
                     </div>
                 </router-link >
@@ -109,11 +111,12 @@ export default {
                 }
             }
             &__image {
-                & img {
-                    width: 100%;
-                    @media (max-width: 991px) {
-                        border-radius: 10px;
-                    }
+                min-height: 190px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media (max-width: 991px) {
+                    border-radius: 10px;
                 }
             }
         }

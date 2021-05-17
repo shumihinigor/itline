@@ -10,7 +10,7 @@
                 >
                     <div class="h-100" @click="goToProductCategory(product)">
                         <ProductsItem 
-                            :title="product.alias" 
+                            :title="product.name" 
                             :image="product.image"
                         />
                     </div>
@@ -45,7 +45,6 @@ export default {
             this.axios
                 .get('/rest/products')
                 .then(response => {
-                    console.log(response.data.results);
                     this.products = response.data.results;
                     this.loading = false;
                 }).catch(error => {

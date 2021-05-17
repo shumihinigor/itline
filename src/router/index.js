@@ -41,7 +41,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "NewsPage" */ '../components/News/NewsPage.vue'),
     props: true
   },
-  // GalleryPage
+  // GalleryPage +
   {
     path: '/about/gallery/:id',
     name: 'GalleryPage',

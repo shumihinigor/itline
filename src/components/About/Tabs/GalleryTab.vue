@@ -5,17 +5,12 @@
             <div class="row">
                 <GalleryItem
                     v-for="(item, index) in currentBlock" :key="index"
-                    :col="item.col"
-                    :title="item.title"
-                    :text="item.short_description"
-                    :bg="item.bg"
-                    :date="item.date"
-                    :likes="item.likes"
-                    :comments="item.comments"
-                    :views="item.views"
-                    :id="item.id"
+                    :col="4"
+                    :title="item.name"
+                    :text="item.description"
+                    :image="item.cover_file"
+                    :id="item.alias"
                 />
-
             </div>
             <div class="row">
                 <div class="col">
@@ -59,14 +54,14 @@ export default {
         }
     },
     created() {
-        this.getGallery()
+        this.getGallery();
     },
     methods: {
         getGallery() {
             this.axios
-                .get('/static/gallery.json')
+                .get('/rest/gallery/')
                 .then(response => {
-                    this.gallery = response.data.data;
+                    this.gallery = response.data.results;
                     this.pageCount = Math.ceil(this.gallery.length / 8);
                     this.loading = false;
                 }).catch(error => {

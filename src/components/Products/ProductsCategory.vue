@@ -17,7 +17,7 @@
                 </div>
             </div>
             <!-- DESCRIPTION -->
-            <div class="row mb-80" v-if="product.description.length">
+            <div class="row mb-80" v-if="product.description && product.description.length">
                 <div class="col">
                     <p class="p2" v-for="(text, index) in product.description" :key="index" v-html="text"></p>
                 </div>
@@ -30,6 +30,7 @@
                         class="sidebar"
                         @change="changeFilter"
                         :products="products"
+                        :categories="categories"
                     />
                 </div>
                 <!-- ITEMS -->
@@ -38,13 +39,12 @@
                         <div class="row">
                             <div 
                                 class="col-lg-4 col-md-6 col-12 mb-32" 
-                                v-for="(category, idx) in product.categories" 
+                                v-for="(category, idx) in categories" 
                                 :key="idx" 
                             >
                                 <div class="h-100" @click="goToProductCategoryPage(category)">
                                     <ProductsItem 
-                                        :title="category.title" 
-                                        :text="category.text" 
+                                        :title="category.title"
                                         :image="category.image"
                                     />
                                 </div>
@@ -147,17 +147,16 @@ export default {
         return {
             products: [],
             product: {},
+            categories: [],
             loading: true
         }
     },
     created() {
-        if (!this.products.length) {
-            this.getProduct(this.id);
-        }
+        this.getData(this.id);
     },
     methods: {
         goToProductCategoryPage(category) {
-            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.product.id, category_id: category.id, } });
+            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.id, category_id: category.alias } });
         },
         initSidebar() {
             setTimeout(() => {
@@ -168,39 +167,70 @@ export default {
                 });
             }, 0);
         },
-        getProduct(id) {
-            this.loading = true;
-            this.axios
-                .get(`/rest/products/${this.id}`)
+        async getCategories(id) {
+            await this.axios
+                .get(`/rest/products/${id}`)
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    console.log(response.data);
-                })
-                .catch(error => {
-                    // this.$router.push({ name: 'PageNotFound' });
+                    this.categories = response.data.results;
                 });
-
-            this.axios
-                .get('/static/products.json')
+        },
+        async getProducts(id) {
+            await this.axios
+                .get('/rest/products')
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.products = response.data.data;
+                    this.products = response.data.results;
                     this.product = this.products.find((item) => {
-                        return item.id == id
+                        return item.alias == id
                     });
+                });
+        },
+        getData(id) {
+            this.loading = true;
+            this.products = [];
+            this.product = {};
+            this.categories = [];
+            Promise.all([this.getProducts(id), this.getCategories(id)])
+                .then(() => {
+                    let breadcrumbs = [
+                        {
+                            path: '/',
+                            name: 'Home',
+                            meta: {
+                                title: "Главная"
+                            }
+                        },
+                        {
+                            path: '/products',
+                            name: 'Products',
+                            meta: {
+                                title: "Продукция"
+                            }
+                        },
+                        {
+                            path: `/products/category/${this.id}`,
+                            name: 'ProductsCategory',
+                            meta: {
+                                title: this.product.name
+                            }
+                        }
+                    ]
+                    this.$store.commit("changeBreadcrumbs", breadcrumbs);
+                    this.initSidebar();
                     this.loading = false;
-                    if (window.innerWidth > 991) {
-                        this.initSidebar();
-                    }
                 })
-                .catch(error => {
+                .catch(({ response }) => {
                     this.$router.push({ name: 'PageNotFound' });
                 });
         }
+    },
+    destroyed() {
+        this.$store.commit("changeBreadcrumbs", []);
     }
 }
 </script>

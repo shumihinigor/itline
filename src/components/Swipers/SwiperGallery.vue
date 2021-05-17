@@ -2,21 +2,21 @@
     <div>
         <Preloader v-if="loading" />
         <swiper v-show="!loading" class="swiper gallery" ref="swiperGallery" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in gallery" :key="item.id">
+            <swiper-slide v-for="(item, index) in gallery" :key="item.alias">
                 <router-link 
-                    :to="{ name: 'GalleryPage', params: { id: item.id }}" 
+                    :to="{ name: 'GalleryPage', params: { id: item.alias }}" 
                     tag="div"
                     class="gallery-swiper__item"
                 >
                     <div class="d-flex flex-lg-row flex-column-reverse align-items-start">
                         <div class="w-lg-50 w-100 mr-16">
-                            <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.title }}</h4>
-                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.short_description }}</p>
+                            <h4 class="gallery-swiper__item-title h4 font-weight-bold mb-16">{{ item.name }}</h4>
+                            <p class="gallery-swiper__item-text p2 mb-0">{{ item.description }}</p>
                         </div>
                         <div class="w-lg-50 w-100">
                             <div 
                                 class="gallery-swiper__item-image" 
-                                :style="{'background-image': 'url(' + require('../../assets/images/gallery/' + item.bg) + ')'}"
+                                :style="{'background-image': item.cover_file ? 'url(' + item.cover_file + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
                             ></div>
                         </div>
                     </div>
@@ -89,9 +89,9 @@ export default {
     methods: {
         getGallery() {
             this.axios
-                .get('/static/gallery.json')
+                .get('/rest/gallery/')
                 .then(response => {
-                    this.gallery = response.data.data;
+                    this.gallery = response.data.results;
                     this.loading = false;
                 }).catch(error => {
                     this.$router.push({ name: 'PageNotFound' });

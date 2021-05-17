@@ -82,6 +82,9 @@ export default {
                 });
         }
     },
+    destroyed() {
+        this.$store.commit("changeBreadcrumbs", []);
+    }
 }
 </script>
 

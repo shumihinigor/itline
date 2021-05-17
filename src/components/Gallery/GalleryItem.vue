@@ -2,8 +2,8 @@
     <div :class="['col-12 col-md-6 mb-24', 'col-lg-' + col]">
         <router-link 
             :to="{ name: 'GalleryPage', params: { id: id }}" tag="div" 
-            :class="['gallery-item', {'text_white': bg !== 'white'}, {'image': bg !== 'white' && bg !== 'gradient'}]" 
-            :style="background(bg)"
+            :class="['gallery-item', image == '' ? 'gradient' : 'image']" 
+            :style="background(image)"
         >
             <h6 class="h6 text-uppercase text-grey-1 gallery-item__title">{{ title }}</h6>
             <p class="p2 gallery-item__text text-grey-2 mb-0">
@@ -15,15 +15,13 @@
 
 <script>
 export default {
-    props: ["col", "title", "text", "bg", "date", "likes", "comments", "views", "id"],
+    props: ["col", "title", "text", "image", "id"],
     methods: {
-        background(bg) {
-            if (bg == 'white') {
-                return 'background: #FFFFFF;'
-            } else if (bg == 'gradient') {
-                return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
+        background(image) {
+            if (image) {
+                return 'background-image: url(' + image + ');'
             } else {
-                return 'background-image: url(' + require('../../assets/images/gallery/' + bg) + ');'
+                return 'background: linear-gradient(144.77deg, #EF6F2E 0.25%, #FFC839 107.32%);'
             }
         }
     },
@@ -51,6 +49,17 @@ export default {
                 padding: 32px 20px;
             }
             &.image {
+                & .gallery-item__title {
+                    color: $white;
+                }
+                & p {
+                    color: $white;
+                }
+                & svg {
+                    & path {
+                        fill: white;
+                    }
+                }
                 &::before {
                     content: '';
                     position: absolute;
@@ -64,7 +73,8 @@ export default {
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, #000000 100%);
                 }
             }
-            &.text_white {
+            &.gradient {
+                color: $white;
                 & .gallery-item__title {
                     color: $white;
                 }
@@ -79,9 +89,6 @@ export default {
             }
             &__title {
                 margin-top: auto;
-            }
-            &__text {
-
             }
         }
     }

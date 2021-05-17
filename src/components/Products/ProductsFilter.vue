@@ -3,22 +3,22 @@
         <p class="p2 weight-bold mb-16">Категории:</p>
         <ul class="product-filter">
             <router-link 
-                :class="['p2', {active: product.id == $route.params.id}]" 
+                :class="['p2', {active: product.alias == $route.params.id}]" 
                 v-for="(product, index) in products" 
                 :key="index" 
                 tag="li"
                 exact-active-class="active"
-                :to="{ name: 'ProductsCategory', params: { id: product.id } }"
+                :to="{ name: 'ProductsCategory', params: { id: product.alias } }"
             >
-                <span @click="changeFilter(product)">{{ product.title }}</span>
+                <span @click="changeFilter(product)">{{ product.name }}</span>
                 <ul>
                     <router-link 
-                        :class="['p2', {active: category.id == $route.params.category_id}]"
-                        v-for="(category, index) in product.categories" 
+                        :class="['p2', {active: category.alias == $route.params.category_id}]"
+                        v-for="(category, index) in categories" 
                         :key="index" 
                         tag="li"
                         exact-active-class="active"
-                        :to="{ name: 'ProductsCategoryPage', params: { id: product.id, category_id: category.id  } }"
+                        :to="{ name: 'ProductsCategoryPage', params: { id: product.alias, category_id: category.alias  } }"
                     >
                         <span @click="changeFilter(product)">{{ category.title }}</span>
                     </router-link>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    props: ["products"],
+    props: ["products", "categories"],
     data() {
         return {
             loading: true

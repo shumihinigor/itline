@@ -1,7 +1,7 @@
 <template>
     <div class="gallery-page mb-80">
         <Preloader v-if="loading" />
-        <div class="container" v-else-if="gallery.image_list.length">
+        <div class="container" v-else-if="gallery.images && gallery.images.length">
             <div class="row justify-content-center mb-40">
                 <div class="col-12">
                     <h1 class="h1 mb-0">{{ gallery.title }}</h1>
@@ -9,18 +9,18 @@
             </div>
             <div class="row">
                 <div 
-                    v-for="(item, imageIndex) in gallery.image_list" :key="imageIndex"
-                    :class="['col-12 mb-24', 'col-lg-' + item.col]" 
+                    v-for="(item, imageIndex) in gallery.images" :key="imageIndex"
+                    :class="['col-12 mb-24', 'col-lg-' + 4]" 
                 >
                     <div 
                         class="gallery-page__image"
-                        :style="{'background-image': 'url(' + item.src + ')'}"
+                        :style="{'background-image': 'url(' + item + ')'}"
                         @click="index = imageIndex"
                     ></div>
                 </div>
             </div>
             <CoolLightBox 
-                :items="gallery.image_list" 
+                :items="gallery.images" 
                 :index="index"
                 :effect="'fade'"
                 @close="index = null">
@@ -53,30 +53,50 @@ export default {
         }
     },
     created() {
-        this.getGallery(this.id)
+        this.getGallery(this.id);
     },
     methods: {
         getGallery(id) {
             this.axios
-                .get('/static/gallery.json')
+                .get(`/rest/gallery/${id}`)
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.gallery = response.data.data.find((item) => {
-                        return item.id == id
-                    });
-                    if (this.gallery.image_list.length) {
-                        this.gallery.image_list.map((item) => {
-                            item.src = require('../../assets/images/gallery/' + item.src)
-                        })
-                    }
+                    this.gallery = response.data.object;
+                    let breadcrumbs = [
+                        {
+                            path: '/',
+                            name: 'Home',
+                            meta: {
+                                title: "Главная"
+                            }
+                        },
+                        {
+                            path: '/about',
+                            name: 'About',
+                            meta: {
+                                title: "О компании"
+                            }
+                        },
+                        {
+                            path: `/about/gallery/${id}`,
+                            name: 'GalleryPage',
+                            meta: {
+                                title: this.gallery.title
+                            }
+                        }
+                    ]
+                    this.$store.commit("changeBreadcrumbs", breadcrumbs);
                     this.loading = false;
                 }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
+                    // this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },
+    destroyed() {
+        this.$store.commit("changeBreadcrumbs", []);
+    }
 }
 </script>
 
