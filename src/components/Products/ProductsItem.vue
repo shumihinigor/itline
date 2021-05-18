@@ -2,7 +2,7 @@
     <div class="product-item">
         <div 
             class="product-image"
-            :style="{'background-image': image ? 'url(' + image + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
+            v-lazy:background-image="image"
         >
         </div>
         <div class="product-block">
@@ -33,7 +33,7 @@ export default {
         &-image {
             height: 194px;
             background-position: center center;
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             // & img {
             //     width: 100%;

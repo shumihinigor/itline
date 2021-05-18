@@ -14,7 +14,7 @@
                 >
                     <div 
                         class="gallery-page__image"
-                        :style="{'background-image': 'url(' + item + ')'}"
+                        v-lazy:background-image="item"
                         @click="index = imageIndex"
                     ></div>
                 </div>

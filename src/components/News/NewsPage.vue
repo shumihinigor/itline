@@ -13,7 +13,7 @@
                     <div 
                         v-else-if="news.image"
                         class="news-page__image mb-40"
-                        :style="{'background-image': 'url(' + '/' + news.image + ')'}"
+                        v-lazy:background-image="'/' + news.image"
                     ></div>
                     <div class="mb-24">
                         <div class="p2" v-if="news.text" v-html="news.text"></div>

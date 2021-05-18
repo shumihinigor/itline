@@ -1,10 +1,10 @@
 export default {
     methods: {
-        changeFilter(product) {
-            this.getData(product.alias);
+        changeFilter(id) {
+            this.getData(id);
         },
-        changeCategory(product) {
-            this.getData(product.alias);
+        changeCategory(id) {
+            this.getData(id);
         }
     }
 };

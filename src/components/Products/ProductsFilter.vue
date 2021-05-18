@@ -2,28 +2,22 @@
     <div>
         <p class="p2 weight-bold mb-16">Категории:</p>
         <ul class="product-filter">
-            <router-link 
+            <li 
                 :class="['p2', {active: product.alias == $route.params.id}]" 
                 v-for="(product, index) in products" 
-                :key="index" 
-                tag="li"
-                exact-active-class="active"
-                :to="{ name: 'ProductsCategory', params: { id: product.alias } }"
+                :key="index"
             >
-                <span @click="changeFilter(product)">{{ product.name }}</span>
+                <span @click.stop="goToProductsCategory(product.alias)">{{ product.name }}</span>
                 <ul>
-                    <router-link 
+                    <li
                         :class="['p2', {active: category.alias == $route.params.category_id}]"
                         v-for="(category, index) in categories" 
-                        :key="index" 
-                        tag="li"
-                        exact-active-class="active"
-                        :to="{ name: 'ProductsCategoryPage', params: { id: product.alias, category_id: category.alias  } }"
+                        :key="index"
                     >
-                        <span @click="changeFilter(product)">{{ category.title }}</span>
-                    </router-link>
+                        <span @click.stop="goToProductsCategoryPage(product.alias, category.alias)">{{ category.title }}</span>
+                    </li>
                 </ul>
-            </router-link>
+            </li>
         </ul>
     </div>
 </template>
@@ -40,8 +34,23 @@ export default {
         
     },
     methods: {
-        changeFilter(product) {
-            this.$emit('change', product);
+        changeCategory(id) {
+            this.$emit('change-category', id);
+        },
+        changeCategoryPage(id) {
+            this.$emit('change-category-page', id);
+        },
+        goToProductsCategory(id) {
+            if (this.$route.params.id !== id) {
+                this.$router.push({ name: 'ProductsCategory', params: { id: id } })
+                this.changeCategory(id);
+            }
+        },
+        goToProductsCategoryPage(id, category_id) {
+            if (this.$route.params.category_id !== category_id) {
+                this.$router.push({ name: 'ProductsCategoryPage', params: { id: id, category_id: category_id } })
+                this.changeCategoryPage(id);
+            }
         }
     },
 }

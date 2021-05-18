@@ -9,10 +9,10 @@
                     :to="{ name: 'ProductsCategory', params: { id: product.alias  } }"
                     class="product-swiper__item"
                 >
-                    <div class="" @click="changeCategory(product)">
+                    <div class="" @click="changeCategory(product.alias)">
                         <div 
                             class="product-swiper__image"
-                            :style="{'background-image': product.image ? 'url(' + '/' + product.image + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
+                            v-lazy:background-image="'/' + product.image"
                         >
                         </div>
                         <div class="product-swiper__block mt-auto">
@@ -84,8 +84,8 @@ export default {
         }
     },
     methods: {
-        changeCategory(product) {
-            this.$emit('change', product);
+        changeCategory(id) {
+            this.$emit('change', id);
         }
     },
 }

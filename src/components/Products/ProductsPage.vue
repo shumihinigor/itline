@@ -26,7 +26,7 @@
                 <div class="col-lg-4 col-12 mb-32">
                     <div 
                         class="product-page__image" 
-                        :style="{'background-image': productInfo.page.image ? 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')'}"
+                        :style="{'background-image': productInfo.page.image ? 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')' : 'url(' + '/static/image_not_found.png' + ')'}"
                     ></div>
                 </div>
                 <!-- STOCK AND STATE -->

@@ -5,7 +5,7 @@
             <!-- TITLE -->
             <div class="row mb-40">
                 <div class="col">
-                    <h1 class="h1 mb-0">{{ product.title }}</h1>
+                    <h1 class="h1 mb-0">{{ product.name }}</h1>
                 </div>
             </div>
             <!-- SWIPER PRODUCT -->
@@ -28,7 +28,7 @@
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
-                        @change="changeFilter"
+                        @change-category="changeFilter"
                         :products="products"
                         :categories="categories"
                     />
@@ -148,7 +148,8 @@ export default {
             products: [],
             product: {},
             categories: [],
-            loading: true
+            loading: true,
+            sidebar: null
         }
     },
     created() {
@@ -160,7 +161,7 @@ export default {
         },
         initSidebar() {
             setTimeout(() => {
-                var sidebar = new StickySidebar('.sidebar', {
+                this.sidebar = new StickySidebar('.sidebar', {
                     topSpacing: 92,
                     bottomSpacing: 0,
                     containerSelector: '.main-content'
@@ -192,9 +193,6 @@ export default {
         },
         getData(id) {
             this.loading = true;
-            this.products = [];
-            this.product = {};
-            this.categories = [];
             Promise.all([this.getProducts(id), this.getCategories(id)])
                 .then(() => {
                     let breadcrumbs = [
@@ -221,11 +219,13 @@ export default {
                         }
                     ]
                     this.$store.commit("changeBreadcrumbs", breadcrumbs);
-                    this.initSidebar();
+                    if (!this.sidebar) {
+                        this.initSidebar();
+                    }
                     this.loading = false;
                 })
                 .catch(({ response }) => {
-                    this.$router.push({ name: 'PageNotFound' });
+                    // this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },

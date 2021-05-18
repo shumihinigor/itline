@@ -25,7 +25,7 @@
             name="fade"
             mode="out-in"
         >
-            <OutputTab v-if="currentTab == 'productsTab'" />
+            <ProductsTab v-if="currentTab == 'productsTab'" />
             <PaymentTab v-else-if="currentTab == 'paymentTab'" />
         </transition>
     </section>
@@ -36,7 +36,7 @@ import Vue from 'vue';
 import Tabs from 'vue-tabs-component';
 
 // tabs
-import OutputTab from '@/components/Products/Tabs/OutputTab'
+import ProductsTab from '@/components/Products/Tabs/ProductsTab'
 import PaymentTab from '@/components/Products/Tabs/PaymentTab'
 
 Vue.use(Tabs);
@@ -44,7 +44,7 @@ Vue.use(Tabs);
 export default {
     name: 'Products',
     components: {
-        OutputTab, PaymentTab
+        ProductsTab, PaymentTab
     },
     data() {
         return {

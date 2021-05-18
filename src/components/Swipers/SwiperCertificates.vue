@@ -6,7 +6,7 @@
                 <div class="certificates-swiper__item">
                     <div 
                         class="certificates-swiper__item-image " 
-                        :style="{'background-image': 'url(' + require('../../assets/images/certificates/' + item.image) + ')'}"
+                        v-lazy:background-image="require('../../assets/images/certificates/' + item.image)"
                     ></div>
                     <div class="d-flex align-items-center justify-content-start">
                         <div class="">

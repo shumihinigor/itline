@@ -1,5 +1,7 @@
-body {
-    font-family: $Ubuntu, sans-serif;
+body, html {
+    font-size: 16px;
+    line-height: 22px;
+    font-family: $TTNormsRegular;
     color: $grey-2;
     background-color: $bg;
     transition: all 0.2s;

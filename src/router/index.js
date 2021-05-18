@@ -66,16 +66,16 @@ const routes = [
       title: "Продукция"
     }
   },
-  // ProductsCategory
+  // ProductsCategory +
   {
-    path: '/products/category/:id',
+    path: '/products/:id',
     name: 'ProductsCategory',
     component: () => import(/* webpackChunkName: "ProductsCategory" */ '../components/Products/ProductsCategory.vue'),
     props: true
   },
   // ProductsCategoryPage
   {
-    path: '/products/category/:id/:category_id',
+    path: '/products/:id/:category_id',
     name: 'ProductsCategoryPage',
     component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
     props: true

@@ -16,7 +16,7 @@
                         <div class="w-lg-50 w-100">
                             <div 
                                 class="gallery-swiper__item-image" 
-                                :style="{'background-image': item.cover_file ? 'url(' + item.cover_file + ')' : 'url(' + require('../../assets/images/' + 'image_not_found.svg') + ')' }"
+                                v-lazy:background-image="item.cover_file"
                             ></div>
                         </div>
                     </div>

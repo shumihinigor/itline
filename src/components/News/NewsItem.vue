@@ -3,10 +3,10 @@
         <router-link 
             :to="{ name: 'NewsPage', meta: { title: title }, params: { id: id } }" tag="div"
             :class="['news-item', image == '' ? 'gradient' : 'image']" 
-            :style="background(image)"
+            v-lazy:background-image="image"
         >
             <h6 class="h6 text-uppercase text-grey-1 news-item__title">{{ title }}</h6>
-            <p class="p2 news-item__text text-grey-2 mb-24">
+            <p class="p2 news-item__text text-grey-2 mb-0">
                 {{ text }}
             </p>
             <div class="d-flex justify-content-end">
@@ -25,7 +25,7 @@
                     </p>
                 </div> -->
                 <div class="">
-                    <p class="p5 text-grey-2 mb-0">{{ parseDate(date) }}</p>
+                    <p class="p5 text-grey-2 mt-24 mb-0">{{ parseDate(date) }}</p>
                 </div>
             </div>
         </router-link>
@@ -106,6 +106,18 @@ export default {
                     & path {
                         fill: white;
                     }
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, #000000 100%);
                 }
             }
             &__title {

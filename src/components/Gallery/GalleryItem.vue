@@ -3,7 +3,7 @@
         <router-link 
             :to="{ name: 'GalleryPage', params: { id: id }}" tag="div" 
             :class="['gallery-item', image == '' ? 'gradient' : 'image']" 
-            :style="background(image)"
+            v-lazy:background-image="image"
         >
             <h6 class="h6 text-uppercase text-grey-1 gallery-item__title">{{ title }}</h6>
             <p class="p2 gallery-item__text text-grey-2 mb-0">

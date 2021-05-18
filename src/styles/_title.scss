@@ -1,4 +1,4 @@
-.h1 {
+h1, .h1 {
     font-size: 40px;
     line-height: 46px;
     font-family: $TTNormsBold;
@@ -7,7 +7,7 @@
         line-height: 38px;
     }
 }
-.h2 {
+h2, .h2 {
     font-size: 40px;
     line-height: 46px;
     font-family: $TTNormsBold;
@@ -16,7 +16,7 @@
         line-height: 32px;
     }
 }
-.h3 {
+h3, .h3 {
     font-size: 30px;
     line-height: 36px;
     font-family: $TTNormsBold;
@@ -25,7 +25,7 @@
         line-height: 26px;
     }
 }
-.h4 {
+h4, .h4 {
     font-size: 24px;
     line-height: 30px;
     font-family: $TTNormsBold;
@@ -34,7 +34,7 @@
         line-height: 22px;
     }
 }
-.h5 {
+h5, .h5 {
     font-size: 20px;
     line-height: 26px;
     font-family: $TTNormsBold;
@@ -43,7 +43,7 @@
         line-height: 22px;
     }
 }
-.h6 {
+h6, .h6 {
     font-size: 16px;
     line-height: 22px;
     font-family: $TTNormsBold;

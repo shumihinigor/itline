@@ -48,18 +48,18 @@
                              </div>
                          </div>
                     </div>
-                    <!-- <div class="row mb-32" v-else>
+                    <div class="row mb-32" v-else-if="category.swiper && category.swiper.length">
                         <div class="col">
                             <SwiperProduct
                                 v-if="product.swiper.length"
                                 :slides="product.swiper"
                             />
                         </div>
-                    </div> -->
+                    </div>
                     <!-- DESCRIPTION -->
-                    <div class="row mb-24" v-if="category.description && category.description.length">
+                    <div class="row mb-24" v-if="category.short_description && category.short_description.length">
                         <div class="col">
-                            <p class="p2" v-for="(text, index) in category.description" :key="index" v-html="text"></p>
+                            <p class="p2" v-html="category.short_description"></p>
                         </div>
                     </div>
                     <!-- PDF -->
@@ -84,14 +84,15 @@
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
-                        @change="changeFilter"
+                        @change-category-page="changeFilter"
                         :products="products"
+                        :categories="categories"
                     />
                 </div>
                 <div class="col-lg-9 col-12">
                     <div class="content">
 
-                        <div v-if="category.products">
+                        <!-- <div v-if="category.products">
                             <div class="mb-56" v-for="(product, index) in category.products" :key="index">
                                 <div class="row mb-32" v-if="product.title || product.text.length">
                                     <div class="col">
@@ -119,30 +120,36 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <!-- CONTENT -->
-            <div class="row mb-40" v-if="category.content && category.content.length">
+            <!-- TEXT -->
+            <div class="row mb-40" v-if="category.text && category.text.length">
                 <div class="col">
-                    <div class="content mb-40" v-for="(content, index) in category.content" :key="index">
+                    <div class="" v-html="category.text"></div>
+                </div>
+            </div>
+            <!-- CONTENT -->
+            <!-- <div class="row mb-40" v-if="category.content && category.content.length">
+                <div class="col">
+                    <div class="content mb-40" v-for="(content, index) in category.content" :key="index"> -->
                         <!-- QUOTE -->
-                        <div class="quote mb-40" v-if="content.quote">
+                        <!-- <div class="quote mb-40" v-if="content.quote">
                             <p class="p2 mb-8">
                                 {{ content.quote }}
                             </p>
                             <p class="p2 mb-0 text-orange" v-html="content.quote_writer"></p>
-                        </div>
+                        </div> -->
                         <!-- TITLE AND TEXT -->
-                        <div class="mb-32" v-if="content.title || content.text">
+                        <!-- <div class="mb-32" v-if="content.title || content.text">
                             <h3 class="h3 mb-32" v-if="content.title">
                                 {{ content.title }}
                             </h3>
                             <p class="p2" v-for="(text, index) in content.text" :key="index" v-html="text"></p>
-                        </div>
+                        </div> -->
                         <!-- ACCORDION -->
-                        <template>
+                        <!-- <template>
                             <div class="mb-32" v-if="content.accordion && content.accordion.length">
                                 <div class="" v-for="(item, index) in content.accordion" :key="index">
                                     <p>
@@ -159,19 +166,18 @@
                                     </div>
                                 </div>
                             </div>
-                        </template>
+                        </template> -->
                         <!-- IMAGE -->
-                        <div class="" v-if="content.image">
+                        <!-- <div class="" v-if="content.image">
                             <img class="mw-100" :src="require('../../assets/images/products/' + content.image)" alt="">
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div>
                 </div>
-            </div>
+            </div> -->
             <!-- SWIPER CATEGORY -->
             <div class="row">
                 <div class="col">
                     <SwiperProductCategory 
-                        @change="changeCategory"
                         :products="products"
                     />
                 </div>
@@ -202,12 +208,14 @@ export default {
         return {
             products: [],
             product: {},
+            categories: [],
             category: {},
-            loading: true
+            loading: true,
+            sidebar: null
         }
     },
     created() {
-        this.getProduct(this.id);
+        this.getData(this.id);
     },
     mounted() {
         
@@ -223,37 +231,86 @@ export default {
         },
         initSidebar() {
             setTimeout(() => {
-                var sidebar = new StickySidebar('.sidebar', {
+                this.sidebar = new StickySidebar('.sidebar', {
                     topSpacing: 92,
                     bottomSpacing: 0,
                     containerSelector: '.main-content'
                 });
             }, 0);
         },
-        getProduct(id) {
-            this.loading = true;
-            this.axios
-                .get('/static/products.json')
+        async getCategories(id) {
+            await this.axios
+                .get(`/rest/products/${id}`)
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.products = response.data.data;
+                    this.categories = response.data.results;
+                    this.category = this.categories.find((item) => {
+                        return item.alias == this.category_id
+                    });
+                });
+        },
+        async getProducts(id) {
+            await this.axios
+                .get('/rest/products')
+                .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
+                    this.products = response.data.results;
                     this.product = this.products.find((item) => {
-                        return item.id == id
+                        return item.alias == id
                     });
-                    this.category = this.product.categories.find((item) => {
-                        return item.id == this.category_id
-                    });
-                    this.loading = false;
-                    
-                    if (window.innerWidth > 991) {
+                });
+        },
+        getData(id) {
+            this.loading = true;
+            Promise.all([this.getProducts(id), this.getCategories(id)])
+                .then(() => {
+                    let breadcrumbs = [
+                        {
+                            path: '/',
+                            name: 'Home',
+                            meta: {
+                                title: "Главная"
+                            }
+                        },
+                        {
+                            path: '/products',
+                            name: 'Products',
+                            meta: {
+                                title: "Продукция"
+                            }
+                        },
+                        {
+                            path: `/products/category/${this.id}`,
+                            name: 'ProductsCategory',
+                            meta: {
+                                title: this.product.name
+                            }
+                        },
+                        {
+                            path: `/products/category/${this.id}/${this.category_id}`,
+                            name: 'ProductsCategoryPage',
+                            meta: {
+                                title: this.category.title
+                            }
+                        }
+                    ]
+                    this.$store.commit("changeBreadcrumbs", breadcrumbs);
+                    if (!this.sidebar) {
                         this.initSidebar();
                     }
-                }).catch(error => {
+                    this.loading = false;
+                })
+                .catch(({ response }) => {
                     this.$router.push({ name: 'PageNotFound' });
                 });
         }
+    },
+    destroyed() {
+        this.$store.commit("changeBreadcrumbs", []);
     }
 }
 </script>

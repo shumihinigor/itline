@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './registerServiceWorker';
 import router from './router';
 import Paginate from 'vuejs-paginate';
+import VueLazyload from 'vue-lazyload'
 
 // vuex
 import store from "@/store";
@@ -12,7 +13,12 @@ import store from "@/store";
 // axios
 import axios from 'axios';
 
-
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: '/static/image_not_found.png',
+  loading: '/static/loading.gif',
+  attempt: 1
+})
 Vue.config.productionTip = false;
 Vue.prototype.axios = axios;
 Vue.component('paginate', Paginate)
