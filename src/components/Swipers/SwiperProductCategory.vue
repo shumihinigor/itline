@@ -85,7 +85,7 @@ export default {
     },
     methods: {
         changeCategory(id) {
-            this.$emit('change', id);
+            this.$emit("change", id);
         }
     },
 }

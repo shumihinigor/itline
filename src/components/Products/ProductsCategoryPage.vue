@@ -84,43 +84,28 @@
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
-                        @change-category-page="changeFilter"
+                        @change="changeFilter"
                         :products="products"
                         :categories="categories"
                     />
                 </div>
                 <div class="col-lg-9 col-12">
                     <div class="content">
-
-                        <!-- <div v-if="category.products">
-                            <div class="mb-56" v-for="(product, index) in category.products" :key="index">
-                                <div class="row mb-32" v-if="product.title || product.text.length">
-                                    <div class="col">
-                                        <h3 class="h3 mb-16" v-if="product.title">{{ product.title }}</h3>
-                                        <p class="p2 mb-8" v-for="(text, index) in product.text" :key="index">
-                                            {{ text }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div 
-                                        class="col-lg-4 col-md-6 col-12 mb-32" 
-                                        v-for="(category, idx) in product.items" 
-                                        :key="idx"
-                                    >
-                                        <div class="h-100" @click="goToProductPage(category)">
-                                            <ProductsItem 
-                                                :title="category.title" 
-                                                :text="category.text" 
-                                                :image="category.image"
-                                                :price="category.price"
-                                                :style="{ 'cursor': category.page ? '' : 'default' }"
-                                            />
-                                        </div>
-                                    </div>
+                        <!-- ITEMS -->
+                        <div class="row">
+                            <div 
+                                class="col-lg-4 col-md-6 col-12 mb-32" 
+                                v-for="(product, idx) in categoriesProducts" 
+                                :key="idx" 
+                            >
+                                <div class="h-100" @click="goToProductPage(product)">
+                                    <ProductsItem 
+                                        :title="product.title"
+                                        :image="product.image.url"
+                                    />
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,16 +194,14 @@ export default {
             products: [],
             product: {},
             categories: [],
+            categoriesProducts: [],
             category: {},
             loading: true,
             sidebar: null
         }
     },
     created() {
-        this.getData(this.id);
-    },
-    mounted() {
-        
+        this.getData(this.id, this.category_id);
     },
     methods: {
         goToProductPage(product) {
@@ -264,9 +247,19 @@ export default {
                     });
                 });
         },
-        getData(id) {
+        async getCategoriesProducts(id) {
+            await this.axios
+                .get(`/rest/products/${id}`)
+                .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
+                    this.categoriesProducts = response.data.results;
+                });
+        },
+        getData(id, category_id) {
             this.loading = true;
-            Promise.all([this.getProducts(id), this.getCategories(id)])
+            Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
                 .then(() => {
                     let breadcrumbs = [
                         {
@@ -299,9 +292,7 @@ export default {
                         }
                     ]
                     this.$store.commit("changeBreadcrumbs", breadcrumbs);
-                    if (!this.sidebar) {
-                        this.initSidebar();
-                    }
+                    this.initSidebar();
                     this.loading = false;
                 })
                 .catch(({ response }) => {

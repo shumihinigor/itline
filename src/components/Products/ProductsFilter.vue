@@ -26,30 +26,23 @@
 export default {
     props: ["products", "categories"],
     data() {
-        return {
-            loading: true
-        }
-    },
-    created() {
-        
+        return {}
     },
     methods: {
-        changeCategory(id) {
-            this.$emit('change-category', id);
-        },
-        changeCategoryPage(id) {
-            this.$emit('change-category-page', id);
-        },
         goToProductsCategory(id) {
             if (this.$route.params.id !== id) {
-                this.$router.push({ name: 'ProductsCategory', params: { id: id } })
-                this.changeCategory(id);
+                this.$router.push({ name: 'ProductsCategory', params: { id: id } });
+                setTimeout(() => {
+                    this.$emit("change", id);
+                }, 0);
             }
         },
         goToProductsCategoryPage(id, category_id) {
             if (this.$route.params.category_id !== category_id) {
-                this.$router.push({ name: 'ProductsCategoryPage', params: { id: id, category_id: category_id } })
-                this.changeCategoryPage(id);
+                this.$router.push({ name: 'ProductsCategoryPage', params: { id: id, category_id: category_id } });
+                setTimeout(() => {
+                    this.$emit("change", id, category_id);
+                }, 0);
             }
         }
     },
@@ -57,57 +50,59 @@ export default {
 </script>
 
 <style lang="scss">
-    
-    .product {
-        &-filter {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            @media (max-width: 991px) {
-                margin-bottom: 32px;
+.product {
+    &-filter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        @media (max-width: 991px) {
+            margin-bottom: 32px;
+        }
+        & span {
+            cursor: pointer;
+        }
+        & li {
+            margin-bottom: 6px;
+            transition: all 0.2s;
+            &:last-child {
+                margin-bottom: 0;
             }
-            & span {
-                cursor: pointer;
-            }
-            & li {
-                margin-bottom: 6px;
+            & > ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                padding: 10px 0 10px 0;
+                margin-left: 15px;
+                list-style: none;
                 transition: all 0.2s;
-                &:last-child {
-                    margin-bottom: 0;
+                & > li {
+                    margin-bottom: 6px;
+                    transition: all 0.2s;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            &:hover,
+            &.active {
+                transition: all 0.2s;
+                & > span {
+                    color: $orange;
+                }
+            }
+            &.active {
+                & > span {
+                    cursor: default;
                 }
                 & > ul {
-                    display: none;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    width: 100%;
-                    padding: 10px 0 10px 0;
-                    margin-left: 15px;
-                    list-style: none;
-                    transition: all 0.2s;
-                    & > li {
-                        margin-bottom: 6px;
-                        transition: all 0.2s;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-                }
-                &:hover,
-                &.active {
-                    transition: all 0.2s;
-                    & > span {
-                        color: $orange;
-                    }
-                }
-                &.active {
-                    & > ul {
-                        display: flex;
-                    }
+                    display: flex;
                 }
             }
         }
     }
+}   
 </style>

@@ -28,7 +28,7 @@
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
-                        @change-category="changeFilter"
+                        @change="changeFilter"
                         :products="products"
                         :categories="categories"
                     />
@@ -45,7 +45,7 @@
                                 <div class="h-100" @click="goToProductCategoryPage(category)">
                                     <ProductsItem 
                                         :title="category.title"
-                                        :image="category.image"
+                                        :image="category.image.url"
                                     />
                                 </div>
                             </div>
@@ -219,13 +219,11 @@ export default {
                         }
                     ]
                     this.$store.commit("changeBreadcrumbs", breadcrumbs);
-                    if (!this.sidebar) {
-                        this.initSidebar();
-                    }
+                    this.initSidebar();
                     this.loading = false;
                 })
                 .catch(({ response }) => {
-                    // this.$router.push({ name: 'PageNotFound' });
+                    this.$router.push({ name: 'PageNotFound' });
                 });
         }
     },
