@@ -7,9 +7,11 @@
                 v-for="(product, index) in products" 
                 :key="index"
             >
-                <span @click.stop="goToProductsCategory(product.alias)">{{ product.name }}</span>
+                <span @click.stop="goToProductsCategoryList(product.alias)">{{ product.name }}</span>
                 <ul>
-                    <li
+                    <Preloader v-if="!categories.length" />
+                    <li 
+                        v-else
                         :class="['p2', {active: category.alias == $route.params.category_id}]"
                         v-for="(category, index) in categories" 
                         :key="index"
@@ -23,17 +25,21 @@
 </template>
 
 <script>
+import Preloader from '@/components/Preloader/Preloader'
 export default {
     props: ["products", "categories"],
+    components: {
+        Preloader
+    },
     data() {
         return {}
     },
     methods: {
-        goToProductsCategory(id) {
+        goToProductsCategoryList(id) {
             if (this.$route.params.id !== id) {
-                this.$router.push({ name: 'ProductsCategory', params: { id: id } });
+                this.$router.push({ name: 'ProductsCategoryList', params: { id: id } });
                 setTimeout(() => {
-                    this.$emit("change", id);
+                    this.$emit("change-list", id);
                 }, 0);
             }
         },
@@ -41,7 +47,7 @@ export default {
             if (this.$route.params.category_id !== category_id) {
                 this.$router.push({ name: 'ProductsCategoryPage', params: { id: id, category_id: category_id } });
                 setTimeout(() => {
-                    this.$emit("change", id, category_id);
+                    this.$emit("change-page", id, category_id);
                 }, 0);
             }
         }
@@ -101,6 +107,17 @@ export default {
                 & > ul {
                     display: flex;
                 }
+            }
+        }
+        & .loader {
+            margin: 0 auto;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            &::before,
+            &::after {
+                width: 10px;
+                height: 10px;
             }
         }
     }

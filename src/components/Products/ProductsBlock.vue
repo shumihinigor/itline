@@ -8,10 +8,10 @@
                     v-for="(product, idx) in products" 
                     :key="idx" 
                 >
-                    <div class="h-100" @click="goToProductCategory(product)">
+                    <div class="h-100" @click="goToProductCategoryList(product)">
                         <ProductsItem 
                             :title="product.name" 
-                            :image="product.image"
+                            :image="'/' + product.image"
                         />
                     </div>
                 </div>
@@ -38,8 +38,8 @@ export default {
         this.getProducts()
     },
     methods: {
-        goToProductCategory(product) {
-            this.$router.push({ name: 'ProductsCategory', params: { id: product.alias } });
+        goToProductCategoryList(product) {
+            this.$router.push({ name: 'ProductsCategoryList', params: { id: product.alias } });
         },
         getProducts() {
             this.axios

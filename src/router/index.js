@@ -68,17 +68,26 @@ const routes = [
   },
   // ProductsCategory +
   {
-    path: '/products/:id',
+    path: '/products',
     name: 'ProductsCategory',
     component: () => import(/* webpackChunkName: "ProductsCategory" */ '../components/Products/ProductsCategory.vue'),
-    props: true
-  },
-  // ProductsCategoryPage
-  {
-    path: '/products/:id/:category_id',
-    name: 'ProductsCategoryPage',
-    component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
-    props: true
+    props: true,
+    children: [
+      // ProductsCategoryList
+      {
+        path: ':id',
+        name: 'ProductsCategoryList',
+        component: () => import(/* webpackChunkName: "ProductsCategoryList" */ '../components/Products/ProductsCategoryList.vue'),
+        props: true
+      },
+      // ProductsCategoryPage
+      {
+        path: ':id/:category_id',
+        name: 'ProductsCategoryPage',
+        component: () => import(/* webpackChunkName: "ProductsCategoryPage" */ '../components/Products/ProductsCategoryPage.vue'),
+        props: true
+      }
+    ]
   },
   // ProductsPage
   {

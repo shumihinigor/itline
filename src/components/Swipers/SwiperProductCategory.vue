@@ -4,11 +4,7 @@
         <h3 class="h3 mb-32">Категории</h3>
         <swiper v-show="!loading" class="swiper product" ref="swiperProduct" :options="swiperOptions">
             <swiper-slide v-for="(product, index) in products" :key="product.id">
-                <router-link 
-                    tag="div"
-                    :to="{ name: 'ProductsCategory', params: { id: product.alias  } }"
-                    class="product-swiper__item"
-                >
+                <div class="product-swiper__item">
                     <div class="" @click="changeCategory(product.alias)">
                         <div 
                             class="product-swiper__image"
@@ -19,7 +15,7 @@
                             <h6 class="h6 product-swiper__title text-uppercase font-weight-bold mb-0">{{ product.name }}</h6>
                         </div>
                     </div>
-                </router-link >
+                </div>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
@@ -85,7 +81,12 @@ export default {
     },
     methods: {
         changeCategory(id) {
-            this.$emit("change", id);
+            if (this.$route.params.id !== id) {
+                this.$router.push({ name: 'ProductsCategoryList', params: { id: id } });
+                setTimeout(() => {
+                    this.$emit("change-category", id);
+                }, 0);
+            }
         }
     },
 }

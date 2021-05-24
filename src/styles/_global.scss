@@ -6,3 +6,15 @@ body, html {
     background-color: $bg;
     transition: all 0.2s;
 }
+.stub {
+    &-breadcrumb {
+        height: 18px;
+        width: 125px;
+        background-color: $grey-6;
+    }
+    &-title {
+        height: 46px;
+        width: 150px;
+        background-color: $grey-6;
+    }
+}
