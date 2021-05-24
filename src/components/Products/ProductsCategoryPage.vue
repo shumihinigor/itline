@@ -109,17 +109,48 @@ export default {
     data() {
         return {}
     },
-    created() {
-        
+    mounted() {
+        this.initPageBreadcrumbs();
     },
     methods: {
         goToProductPage(product) {
-            if (product.page) {
-                this.$router.push({ 
-                    name: 'ProductsPage', 
-                    params: { id: this.product.id, category_id: this.category.id, product_id: product.id }
-                });
-            }
+            this.$router.push({ 
+                name: 'ProductsPage', 
+                params: { id: this.id, category_id: this.category_id, product_id: product.alias }
+            });
+        },
+        initPageBreadcrumbs() {
+            let breadcrumbs = [
+                {
+                    path: '/',
+                    name: 'Home',
+                    meta: {
+                        title: "Главная"
+                    }
+                },
+                {
+                    path: '/products',
+                    name: 'Products',
+                    meta: {
+                        title: "Продукция"
+                    }
+                },
+                {
+                    path: `/products/${this.id}`,
+                    name: 'ProductsCategoryList',
+                    meta: {
+                        title: this.product.name
+                    }
+                },
+                {
+                    path: `/products/${this.id}/${this.category_id}`,
+                    name: 'ProductsCategoryPage',
+                    meta: {
+                        title: this.category.title
+                    }
+                }
+            ]
+            this.$store.commit("changeBreadcrumbs", breadcrumbs);
         }
     },
     destroyed() {

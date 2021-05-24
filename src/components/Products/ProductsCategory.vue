@@ -10,7 +10,7 @@
                 </div>
             </div>
             <!-- SWIPER PRODUCT -->
-            <div class="row mb-32" v-if="product.swiper && product.swiper.length">
+            <div class="row mb-32" v-if="product && product.swiper && product.swiper.length">
                 <div class="col">
                     <SwiperProduct
                         :slides="product.swiper"
@@ -72,6 +72,7 @@ import Preloader from '@/components/Preloader/Preloader'
 import ProductsFilter from '@/components/Products/ProductsFilter'
 import SwiperProduct from '@/components/Swipers/SwiperProduct'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
+import { mapGetters } from "vuex";
 
 import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-sidebar"
 
@@ -97,8 +98,15 @@ export default {
             description: ""
         }
     },
+    computed: {
+        ...mapGetters(["breadcrumbs"]),
+    },
+    watch: {
+        breadcrumbs() {
+            
+        }
+    },
     created() {
-        console.log(this.category_id);
         this.category_id ? this.getDataPage(this.id, this.category_id) : this.getDataList(this.id);
     },
     methods: {
@@ -108,7 +116,9 @@ export default {
             this.title = "";
             this.content = "";
             await this.getCategories(id);
-            this.initListBreadcrumbs();
+            this.product = this.products.find((item) => {
+                return item.alias == id
+            });
             this.title = this.product.name;
             this.loadingOnChange = false;
         },
@@ -118,7 +128,9 @@ export default {
             this.title = "";
             this.content = "";
             await this.getCategoriesProducts(category_id);
-            this.initPageBreadcrumbs();
+            this.category = this.categories.find((item) => {
+                return item.alias == this.category_id
+            });
             this.title = this.category.title;
             this.content = this.category.text;
             this.loadingOnChange = false;
@@ -140,8 +152,8 @@ export default {
                         return Promise.reject();
                     }
                     this.categories = response.data.results;
-                    this.product = this.products.find((item) => {
-                        return item.alias == id
+                    this.category = this.categories.find((item) => {
+                        return item.alias == this.category_id
                     });
                 });
         },
@@ -152,9 +164,6 @@ export default {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.category = this.categories.find((item) => {
-                        return item.alias == this.category_id
-                    });
                     this.categoriesProducts = response.data.results;
                 });
         },
@@ -175,90 +184,33 @@ export default {
             this.loading = true;
             Promise.all([this.getProducts(id), this.getCategories(id)])
                 .then(() => {
-                    this.initListBreadcrumbs();
                     this.title = this.product.name;
                     this.initSidebar();
-                    this.loading = false;
                 })
                 .catch(({ response }) => {
                     this.$router.push({ name: 'PageNotFound' });
+                })
+                .finally(() => {
+                    this.loading = false;
                 });
         },
         getDataPage(id, category_id) {
             this.loading = true;
             Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
                 .then(() => {
-                    this.initPageBreadcrumbs();
                     this.title = this.category.title;
                     this.content = this.category.text;
                     this.initSidebar();
-                    this.loading = false;
                 })
                 .catch(({ response }) => {
                     this.$router.push({ name: 'PageNotFound' });
+                })
+                .finally(() => {
+                    this.loading = false;
                 });
-        },
-        initListBreadcrumbs() {
-            let breadcrumbs = [
-                {
-                    path: '/',
-                    name: 'Home',
-                    meta: {
-                        title: "Главная"
-                    }
-                },
-                {
-                    path: '/products',
-                    name: 'Products',
-                    meta: {
-                        title: "Продукция"
-                    }
-                },
-                {
-                    path: `/products/category/${this.id}`,
-                    name: 'ProductsCategory',
-                    meta: {
-                        title: this.product.name
-                    }
-                }
-            ]
-            this.$store.commit("changeBreadcrumbs", breadcrumbs);
-        },
-        initPageBreadcrumbs() {
-            let breadcrumbs = [
-                {
-                    path: '/',
-                    name: 'Home',
-                    meta: {
-                        title: "Главная"
-                    }
-                },
-                {
-                    path: '/products',
-                    name: 'Products',
-                    meta: {
-                        title: "Продукция"
-                    }
-                },
-                {
-                    path: `/products/category/${this.id}`,
-                    name: 'ProductsCategory',
-                    meta: {
-                        title: this.product.name
-                    }
-                },
-                {
-                    path: `/products/category/${this.id}/${this.category_id}`,
-                    name: 'ProductsCategoryPage',
-                    meta: {
-                        title: this.category.title
-                    }
-                }
-            ]
-            this.$store.commit("changeBreadcrumbs", breadcrumbs);
         }
     },
-    destroyed() {
+    beforeDestroy() {
         this.$store.commit("changeBreadcrumbs", []);
     }
 }

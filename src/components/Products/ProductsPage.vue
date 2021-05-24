@@ -11,14 +11,9 @@
                 </div>
             </div>
             <!-- INFO PRODUCT -->
-            <div class="row mb-24" v-if="productInfo.page.info">
-                <div class="" >
-                    <p class="p2 mb-8" v-if="productInfo.page.info.text">
-                        {{ productInfo.page.info.text }}
-                    </p>
-                    <p class="p4 text-grey-3 mb-0" v-if="productInfo.page.info.description">
-                        {{ productInfo.page.info.description }}
-                    </p>
+            <div class="row mb-24" v-if="productInfo.short_description">
+                <div class="col">
+                    <p class="p4 text-grey-3 mb-0" v-html="productInfo.short_description"></p>
                 </div>
             </div>
             <div class="row mb-24">
@@ -26,16 +21,16 @@
                 <div class="col-lg-4 col-12 mb-32">
                     <div 
                         class="product-page__image" 
-                        :style="{'background-image': productInfo.page.image ? 'url(' + require('../../assets/images/products/' + productInfo.page.image) + ')' : 'url(' + '/static/image_not_found.png' + ')'}"
+                        v-lazy:background-image="productInfo.image.url"
                     ></div>
                 </div>
                 <!-- STOCK AND STATE -->
                 <div class="col-lg-4 col-12 mb-32">
                     <!-- STATE -->
-                    <div class="product-page__state mb-24" v-if="productInfo.page.state">
+                    <div class="product-page__state mb-24" v-if="productInfo.state">
                         <!-- IN STOCK -->
                         <div class="product-page__state-stock mr-24">
-                            <span class="d-flex align-items-center" v-if="productInfo.page.state.in_stock">
+                            <span class="d-flex align-items-center" v-if="productInfo.state.in_stock">
                                 <img svg-inline src="../../assets/images/in_stock.svg" alt="in_stock">
                                 <p class="p2 mb-0 ml-16">Товар на складе</p>
                             </span>
@@ -45,31 +40,31 @@
                             </span>
                         </div>
                         <!-- AMOUNT -->
-                        <div class="product-page__state-amount" v-if="productInfo.page.state.in_stock">
+                        <div class="product-page__state-amount" v-if="productInfo.state.in_stock">
                             <span class="d-flex align-items-center">
-                                <img :src="require('../../assets/images/amount_' + productInfo.page.state.amount + '.svg')" alt="amount">
-                                <p v-if="productInfo.page.state.amount == 4" class="p2 mb-0 ml-16">Много</p>
-                                <p v-else-if="productInfo.page.state.amount == 3" class="p2 mb-0 ml-16">Достаточно</p>
-                                <p v-else-if="productInfo.page.state.amount == 2" class="p2 mb-0 ml-16">Мало</p>
+                                <img :src="require('../../assets/images/amount_' + productInfo.state.amount + '.svg')" alt="amount">
+                                <p v-if="productInfo.state.amount == 4" class="p2 mb-0 ml-16">Много</p>
+                                <p v-else-if="productInfo.state.amount == 3" class="p2 mb-0 ml-16">Достаточно</p>
+                                <p v-else-if="productInfo.state.amount == 2" class="p2 mb-0 ml-16">Мало</p>
                                 <p v-else class="p2 mb-0 ml-16">Очень мало</p>
                             </span>
                         </div>
                     </div>
                     <!-- STOCK -->
-                    <div class="product-page__stock" v-if="productInfo.page.stock">
+                    <div class="product-page__stock" v-if="productInfo.stock">
                         <h6 class="h6 text-orange text-uppercase mb-16">Акция!</h6>
                         <p
-                            v-if="productInfo.page.stock.text.length"
+                            v-if="productInfo.stock.text.length"
                             class="p2 mb-8" 
                         >
-                            <span class="d-block mb-8" v-for="(text, index) in productInfo.page.stock.text" :key="index">
+                            <span class="d-block mb-8" v-for="(text, index) in productInfo.stock.text" :key="index">
                                 {{ text }}
                             </span>
                         </p>
                         <p 
-                            v-if="productInfo.page.stock.description"
+                            v-if="productInfo.stock.description"
                             class="p4 text-grey-3"
-                        >{{ productInfo.page.stock.description }}</p>
+                        >{{ productInfo.stock.description }}</p>
                     </div>
                 </div>
                 <!-- FEEDBACK -->
@@ -123,7 +118,7 @@
 
             <!-- TABLES -->
             <template>
-                <div v-if="productInfo.page.tables">
+                <div v-if="productInfo.tables">
                     <!-- TABS -->
                     <div class="row">
                         <div class="col">
@@ -468,15 +463,17 @@ export default {
         return {
             products: [],
             product: {},
+            categories: [],
             category: {},
-            productInfo: {},
+            categoriesProducts: [],
             loading: true,
             currentTab: "parameters_tab",
-            similarProducts: []
+            similarProducts: [],
+            productInfo: {}
         }
     },
     created() {
-        this.getProduct(this.id)
+        this.getDataPage(this.id, this.category_id)
     },
     mounted() {
         
@@ -491,35 +488,102 @@ export default {
         changeProduct(id) {
             this.getProduct(id);
         },
-        getProduct(id) {
-            this.loading = true;
-            this.axios
-                .get('/static/products.json')
+        async getCategories(id) {
+            await this.axios
+                .get(`/rest/products/${id}`)
                 .then(response => {
                     if (id == 'undefined') {
                         return Promise.reject();
                     }
-                    this.products = response.data.data;
+                    this.categories = response.data.results;
                     this.product = this.products.find((item) => {
-                        return item.id == id
+                        return item.alias == id
                     });
-                    this.category = this.product.categories.find((item) => {
-                        return item.id == this.category_id
+                });
+        },
+        async getCategoriesProducts(id) {
+            await this.axios
+                .get(`/rest/products/${id}`)
+                .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
+                    this.category = this.categories.find((item) => {
+                        return item.alias == this.category_id
                     });
-
-                    this.category.products.map((category) => {
-                        category.items.find((item) => {
-                            if (item.id == this.product_id) {
-                                this.productInfo = item;
-                                this.similarProducts = category.items.filter(x => x.id !== this.productInfo.id);
-                            }
-                        });
+                    this.categoriesProducts = response.data.results;
+                    this.productInfo = this.categoriesProducts.find((item) => {
+                        return item.alias == this.product_id
+                    })
+                });
+        },
+        async getProducts(id) {
+            await this.axios
+                .get('/rest/products')
+                .then(response => {
+                    if (id == 'undefined') {
+                        return Promise.reject();
+                    }
+                    this.products = response.data.results;
+                    this.product = this.products.find((item) => {
+                        return item.alias == id
                     });
+                });
+        },
+        getDataPage(id, category_id) {
+            this.loading = true;
+            Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
+                .then(() => {
+                    this.initBreadcrumbs();
                     this.loading = false;
-                }).catch(error => {
+                })
+                .catch(({ response }) => {
                     this.$router.push({ name: 'PageNotFound' });
                 });
+        },
+        initBreadcrumbs() {
+            let breadcrumbs = [
+                {
+                    path: '/',
+                    name: 'Home',
+                    meta: {
+                        title: "Главная"
+                    }
+                },
+                {
+                    path: '/products',
+                    name: 'Products',
+                    meta: {
+                        title: "Продукция"
+                    }
+                },
+                {
+                    path: `/products/${this.id}`,
+                    name: 'ProductsCategoryList',
+                    meta: {
+                        title: this.product.name
+                    }
+                },
+                {
+                    path: `/products/${this.id}/${this.category_id}`,
+                    name: 'ProductsCategoryPage',
+                    meta: {
+                        title: this.category.title
+                    }
+                },
+                {
+                    path: `/products/${this.id}/${this.category_id}/${this.product_id}`,
+                    name: 'ProductsPage',
+                    meta: {
+                        title: this.productInfo.title
+                    }
+                }
+            ]
+            this.$store.commit("changeBreadcrumbs", breadcrumbs);
         }
+    },
+    destroyed() {
+        this.$store.commit("changeBreadcrumbs", []);
     }
 }
 </script>

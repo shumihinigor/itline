@@ -30,11 +30,38 @@ export default {
     data() {
         return {}
     },
-    created() {},
+    mounted() {
+        this.initListBreadcrumbs();
+    },
     methods: {
         goToProductCategoryPage(category) {
-            console.log(category);
-            // this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.id, category_id: category.alias } });
+            this.$router.push({ name: 'ProductsCategoryPage', params: { id: this.id, category_id: category.alias } });
+        },
+        initListBreadcrumbs() {
+            let breadcrumbs = [
+                {
+                    path: '/',
+                    name: 'Home',
+                    meta: {
+                        title: "Главная"
+                    }
+                },
+                {
+                    path: '/products',
+                    name: 'Products',
+                    meta: {
+                        title: "Продукция"
+                    }
+                },
+                {
+                    path: `/products/${this.id}`,
+                    name: 'ProductsCategoryList',
+                    meta: {
+                        title: this.product.name
+                    }
+                }
+            ]
+            this.$store.commit("changeBreadcrumbs", breadcrumbs);
         }
     },
     destroyed() {
