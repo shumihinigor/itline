@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false, defaultTabHash: 'products_tab' }">
+                        <tabs ref="tabs" @changed="tabChanged" :options="{ useUrlFragment: false }">
                             <tab id="productsTab" name="Продукция"></tab>
                             <tab id="paymentTab" name="Оплата и доставка"></tab>
                         </tabs>
@@ -43,6 +43,7 @@ Vue.use(Tabs);
 
 export default {
     name: 'Products',
+    props: ["tab"],
     components: {
         ProductsTab, PaymentTab
     },
@@ -69,6 +70,11 @@ export default {
             }
         ]
         this.$store.commit("changeBreadcrumbs", breadcrumbs)
+    },
+    mounted() {
+        if (this.tab) {
+            this.$refs.tabs.selectTab(this.tab)
+        }
     },
     methods: {
         tabChanged(selectedTab) {

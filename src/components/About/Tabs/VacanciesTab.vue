@@ -11,7 +11,7 @@
                         ITLINE — это комфортная среда, в которой каждый сотрудник реализовывает свой потенциал. Семинары у гуру направлений, обмен знаниями внутри компании, и возможность работать на вершине технологий в сфере передачи информации! Быть частью нашей команды — это быть человеком во всех смыслах!
                     </p>
                 </div>
-                <button class="btn default d-lg-block d-none">
+                <button class="btn default d-lg-block d-none" disabled>
                     <span>Смотреть вакансии</span>
                 </button>
             </div>
@@ -55,8 +55,8 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn default w-100 mt-56 d-lg-none d-block">
-                    <span>смотреть вакансии</span>
+                <button class="btn default w-100 mt-56 d-lg-none d-block" disabled>
+                    <span>Смотреть вакансии</span>
                 </button>
             </div>
         </div>

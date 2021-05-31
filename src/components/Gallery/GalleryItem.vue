@@ -1,7 +1,7 @@
 <template>
     <div :class="['col-12 col-md-6 mb-24', 'col-lg-' + col]">
         <router-link 
-            :to="{ name: 'GalleryPage', params: { id: id }}" tag="div" 
+            :to="{ name: 'GalleryPage', params: { id: id } }" tag="div" 
             :class="['gallery-item', image == '' ? 'gradient' : 'image']" 
             v-lazy:background-image="image"
         >

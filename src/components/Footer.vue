@@ -7,50 +7,50 @@
                         <div class="mr-80 mb-5">
                             <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">Продукция</h6>
                             <ul class="footer-links">
-                                <li class="p2 text-grey-1 footer-link">Каталог продукции</li>
-                                <li class="p2 text-grey-1 footer-link">Готовые решения</li>
-                                <li class="p2 text-grey-1 footer-link">Реализованные проекты</li>
-                                <li class="p2 text-grey-1 footer-link">Оплата и доставка</li>
-                                <li class="p2 text-grey-1 footer-link">Гарантия</li>
-                                <li class="p2 text-grey-1 footer-link">База знаний</li>
-                                <li class="p2 text-grey-1 footer-link">Техподдержка</li>
+                                <router-link :to="{ name: 'Products' }" tag="li" class="p2 text-grey-1 footer-link">Каталог продукции</router-link>
+                                <!-- <router-link class="p2 text-grey-1 footer-link">Готовые решения</router-link> -->
+                                <!-- <router-link class="p2 text-grey-1 footer-link">Реализованные проекты</router-link> -->
+                                <router-link :to="{ name: 'Products', params: { tab: '#paymentTab' } }" tag="li" class="p2 text-grey-1 footer-link">Оплата и доставка</router-link>
+                                <router-link :to="{ name: 'Support', params: { tab: '#warrantyTab' } }" tag="li" class="p2 text-grey-1 footer-link">Гарантия</router-link>
+                                <router-link :to="{ name: 'Support', params: { tab: '#knowledgeTab' } }" tag="li" class="p2 text-grey-1 footer-link">База знаний</router-link>
+                                <router-link :to="{ name: 'Support', params: { tab: '#contactsTab' } }" tag="li" class="p2 text-grey-1 footer-link">Техподдержка</router-link>
                             </ul>
                         </div>
                         <div class="mr-80 mb-5">
                             <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">О компании</h6>
                             <ul class="footer-links">
-                                <li class="p2 text-grey-1 footer-link">Дилеры</li>
-                                <li class="p2 text-grey-1 footer-link">Реквизиты</li>
-                                <li class="p2 text-grey-1 footer-link">Вакансии</li>
+                                <router-link :to="{ name: 'About', params: { tab: '#dealersTab' } }" tag="li" class="p2 text-grey-1 footer-link">Дилеры</router-link>
+                                <router-link :to="{ name: 'Contacts' }" tag="li" class="p2 text-grey-1 footer-link">Реквизиты</router-link>
+                                <router-link :to="{ name: 'About', params: { tab: '#vacanciesTab' } }" tag="li" class="p2 text-grey-1 footer-link">Вакансии</router-link>
                             </ul>
                         </div>
                         <div class="">
                             <h6 class="h6 footer-title text-uppercase font-weight-bold text-grey-1 mb-16">Контакты</h6>
                             <ul class="footer-links mb-16">
                                 <li class="p2 text-grey-1 footer-link">
-                                    <span>Ярославль: </span>
+                                    <span class="cursor-default">Ярославль: </span>
                                     <a class="font-weight-bold" href="tel:+74852594937">+7 (4852) 59-49-37</a>
                                 </li>
                                 <li class="p2 text-grey-1 footer-link">
-                                    <span>Москва: </span>
+                                    <span class="cursor-default">Москва: </span>
                                     <a class="font-weight-bold" href="tel:+74952229031">+7 (495) 222-90-31</a>
                                 </li>
                                 <li class="p2 text-grey-1 footer-link">
-                                    <span>Россия: </span>
+                                    <span class="cursor-default">Россия: </span>
                                     <a class="font-weight-bold" href="tel:88002002815">8 800 200-28-15</a>
                                 </li>
                             </ul>
                             <div class="footer-social">
-                                <a href="javascript:;">
+                                <a href="https://vk.com/tabloitline" target="_blank">
                                     <img svg-inline src="../assets/images/vk.svg" alt="vk">
                                 </a>
-                                <a href="javascript:;">
+                                <a href="https://www.instagram.com/tablo_itline/?utm_medium=copy_link" target="_blank">
                                     <img svg-inline src="../assets/images/inst.svg" alt="inst">
                                 </a>
-                                <a href="javascript:;">
+                                <a href="https://www.facebook.com/itline.tablo/" target="_blank">
                                     <img svg-inline src="../assets/images/fb.svg" alt="fb">
                                 </a>
-                                <a href="javascript:;">
+                                <a href="https://www.youtube.com/channel/UC2fwy4yo5Abb4X_I_THo-fg" target="_blank">
                                     <img svg-inline src="../assets/images/youtube.svg" alt="youtube">
                                 </a>
                             </div>
@@ -111,6 +111,7 @@ export default {
             padding: 0;
             margin: 0;
             margin-bottom: 4px;
+            cursor: pointer;
             & a {
                text-decoration: none;
                color: $grey-1;

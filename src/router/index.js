@@ -20,10 +20,11 @@ const routes = [
   {
     path: '/about',
     name: 'About',
+    component: () => import(/* webpackChunkName: "About" */ '../views/About.vue'),
+    props: true,
     meta: {
       title: "О компании"
-    },
-    component: () => import(/* webpackChunkName: "About" */ '../views/About.vue')
+    }
   },
   // News +
   {
@@ -62,6 +63,7 @@ const routes = [
     path: '/products',
     name: 'Products',
     component: () => import(/* webpackChunkName: "Products" */ '../views/Products.vue'),
+    props: true,
     meta: {
       title: "Продукция"
     }
@@ -101,6 +103,7 @@ const routes = [
     path: '/support',
     name: 'Support',
     component: () => import(/* webpackChunkName: "Support" */ '../views/Support.vue'),
+    props: true,
     meta: {
       title: "Техподдержка"
     }

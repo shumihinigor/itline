@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
+                        <tabs ref="tabs" @changed="tabChanged" :options="{ useUrlFragment: false }">
                             <tab to="ContactSupportTab" id="contactsTab" name="Обратиться в техподдержку"></tab>
                             <tab to="WarrantyTab" id="warrantyTab" name="гарантия"></tab>
                             <tab to="KnowledgeBaseTab" id="knowledgeTab" name="база знаний"></tab>
@@ -47,6 +47,7 @@ Vue.use(Tabs);
 
 export default {
     name: 'Support',
+    props: ["tab"],
     components: {
         ContactSupportTab,
         WarrantyTab,
@@ -75,6 +76,11 @@ export default {
             }
         ]
         this.$store.commit("changeBreadcrumbs", breadcrumbs)
+    },
+    mounted() {
+        if (this.tab) {
+            this.$refs.tabs.selectTab(this.tab)
+        }
     },
     methods: {
         tabChanged(selectedTab) {
