@@ -117,6 +117,9 @@ export default {
     watch: {
         openMenu(state) {
             state ? document.querySelector('body').style.overflow = 'hidden' : document.querySelector('body').style.overflow = 'auto'
+        },
+        '$route.name'() {
+            this.openMenu = false;
         }
     },
     computed: {

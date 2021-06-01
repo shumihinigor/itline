@@ -18,9 +18,9 @@
                 </div>
             </div>
             <!-- DESCRIPTION -->
-            <div class="row mb-80" v-if="description">
+            <div class="row mb-40" v-if="description">
                 <div class="col">
-                    <p class="p2" v-html="description"></p>
+                    <p class="p2 mb-0" v-html="description"></p>
                 </div>
             </div>
             <!-- MAIN -->
@@ -102,8 +102,8 @@ export default {
         ...mapGetters(["breadcrumbs"]),
     },
     watch: {
-        breadcrumbs() {
-            
+        '$route.name'(route) {
+            route == 'ProductsCategoryPage' ? this.changePage(this.id, this.category_id) : this.changeList(this.id);
         }
     },
     created() {
@@ -115,6 +115,7 @@ export default {
             this.categories = [];
             this.title = "";
             this.content = "";
+            this.description = "";
             await this.getCategories(id);
             this.product = this.products.find((item) => {
                 return item.alias == id
@@ -133,6 +134,7 @@ export default {
             });
             this.title = this.category.title;
             this.content = this.category.text;
+            this.description = this.category.short_description;
             this.loadingOnChange = false;
         },
         initSidebar() {
@@ -200,6 +202,7 @@ export default {
                 .then(() => {
                     this.title = this.category.title;
                     this.content = this.category.text;
+                    this.description = this.category.short_description;
                     this.initSidebar();
                 })
                 .catch(({ response }) => {
@@ -217,5 +220,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.content {
+    & img {
+        max-width: 100%;
+    }
+}
 </style>

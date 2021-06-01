@@ -15,7 +15,8 @@
             <router-link
                 class=""
                 :to="{ name: item.name }"
-            >{{ item.meta.title }}</router-link>
+                v-html="item.meta.title"
+            ></router-link>
         </div>
     </div>
 </template>

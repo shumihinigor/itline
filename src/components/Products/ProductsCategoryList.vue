@@ -31,7 +31,9 @@ export default {
         return {}
     },
     mounted() {
-        this.initListBreadcrumbs();
+        if (this.product) {
+            this.initListBreadcrumbs();
+        }
     },
     methods: {
         goToProductCategoryPage(category) {

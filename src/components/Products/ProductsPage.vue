@@ -5,9 +5,7 @@
             <!-- TITLE -->
             <div class="row mb-32">
                 <div class="col">
-                    <h1 class="h1 mb-0">
-                        {{ productInfo.title }}
-                    </h1>
+                    <h1 class="h1 mb-0" v-html="productInfo.title"></h1>
                 </div>
             </div>
             <!-- INFO PRODUCT -->
@@ -421,7 +419,7 @@
                                     <ProductsItem 
                                         :title="item.title" 
                                         :price="item.price" 
-                                        :image="item.image"
+                                        :image="item.image.url"
                                     />
                                 </div>
                             </router-link>
@@ -468,7 +466,6 @@ export default {
             categoriesProducts: [],
             loading: true,
             currentTab: "parameters_tab",
-            similarProducts: [],
             productInfo: {}
         }
     },
@@ -479,7 +476,9 @@ export default {
         
     },
     computed: {
-        
+        similarProducts() {
+            return this.categoriesProducts.filter(item => item.id !== this.productInfo.id)
+        }
     },
     methods: {
         tabChanged(selectedTab) {

@@ -102,7 +102,7 @@ import ProductsItem from '@/components/Products/ProductsItem'
 
 export default {
     name: "ProductsCategoryPage",
-    props: ["id", "category_id", "products", "product", "categories", "category", "categories-products"],
+    props: ["id", "category_id", "category", "products", "product", "categories", "categories-products"],
     components: {
         ProductsItem
     },
@@ -110,7 +110,9 @@ export default {
         return {}
     },
     mounted() {
-        this.initPageBreadcrumbs();
+        if (this.category) {
+            this.initPageBreadcrumbs();
+        }
     },
     methods: {
         goToProductPage(product) {
