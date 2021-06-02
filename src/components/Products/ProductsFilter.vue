@@ -38,17 +38,17 @@ export default {
         goToProductsCategoryList(id) {
             if (this.$route.params.id !== id) {
                 this.$router.push({ name: 'ProductsCategoryList', params: { id: id } });
-                setTimeout(() => {
-                    this.$emit("change-list", id);
-                }, 0);
+                // setTimeout(() => {
+                //     this.$emit("change-list", id);
+                // }, 0);
             }
         },
         goToProductsCategoryPage(id, category_id) {
             if (this.$route.params.category_id !== category_id) {
                 this.$router.push({ name: 'ProductsCategoryPage', params: { id: id, category_id: category_id } });
-                setTimeout(() => {
-                    this.$emit("change-page", id, category_id);
-                }, 0);
+                // setTimeout(() => {
+                //     this.$emit("change-page", id, category_id);
+                // }, 0);
             }
         }
     },

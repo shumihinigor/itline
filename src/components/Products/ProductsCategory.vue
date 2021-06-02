@@ -29,8 +29,6 @@
                 <div class="col-lg-3 col-12">
                     <ProductsFilter 
                         class="sidebar"
-                        @change-list="changeList"
-                        @change-page="changePage"
                         :products="products"
                         :categories="categories"
                     />
@@ -58,7 +56,6 @@
             <div class="row">
                 <div class="col">
                     <SwiperProductCategory 
-                        @change-category="changeList"
                         :products="products"
                     />
                 </div>
@@ -102,8 +99,8 @@ export default {
         ...mapGetters(["breadcrumbs"]),
     },
     watch: {
-        '$route.name'(route) {
-            route == 'ProductsCategoryPage' ? this.changePage(this.id, this.category_id) : this.changeList(this.id);
+        '$route'(route) {
+            route.name == 'ProductsCategoryPage' ? this.changePage(this.id, this.category_id) : this.changeList(this.id);
         }
     },
     created() {
@@ -116,9 +113,9 @@ export default {
             this.title = "";
             this.content = "";
             this.description = "";
-            await this.getCategories(id);
+            await this.getCategories(this.id);
             this.product = this.products.find((item) => {
-                return item.alias == id
+                return item.alias == this.id
             });
             this.title = this.product.name;
             this.loadingOnChange = false;
@@ -128,7 +125,7 @@ export default {
             this.categoriesProducts = [];
             this.title = "";
             this.content = "";
-            await this.getCategoriesProducts(category_id);
+            await this.getCategoriesProducts(this.category_id);
             this.category = this.categories.find((item) => {
                 return item.alias == this.category_id
             });

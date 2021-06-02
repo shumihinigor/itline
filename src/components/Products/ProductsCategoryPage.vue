@@ -9,6 +9,7 @@
                 <div class="h-100" @click="goToProductPage(product)">
                     <ProductsItem 
                         :title="product.title"
+                        :text="product.product_options.prod_size"
                         :image="product.image.url"
                     />
                 </div>
