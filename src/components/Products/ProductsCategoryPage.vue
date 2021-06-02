@@ -17,7 +17,9 @@
         </div>
         <div class="row" v-else>
             <div class="col">
-                <NothingFound />
+                <div class="nothing-found">
+                    <h1 class="nothing-found__title">Ничего не найдено</h1>
+                </div>
             </div>
         </div>
     </div>

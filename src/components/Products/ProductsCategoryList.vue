@@ -16,7 +16,9 @@
         </div>
         <div class="row" v-else>
             <div class="col">
-                <NothingFound />
+                <div class="nothing-found">
+                    <h1 class="nothing-found__title">Ничего не найдено</h1>
+                </div>
             </div>
         </div>
     </div>
@@ -24,13 +26,13 @@
 
 <script>
 import ProductsItem from '@/components/Products/ProductsItem'
-
+import NothingFound from '@/components/NothingFound'
 
 export default {
     name: "ProductsCategoryList",
     props: ["id", "category_id", "products", "product", "categories"],
     components: {
-        ProductsItem
+        ProductsItem, NothingFound
     },
     data() {
         return {}
