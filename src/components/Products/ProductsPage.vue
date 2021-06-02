@@ -116,280 +116,33 @@
 
             <!-- TABLES -->
             <template>
-                <div v-if="productInfo.tables">
+                <div v-if="Object.keys(uniqTabs).length">
                     <!-- TABS -->
                     <div class="row">
                         <div class="col">
                             <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
-                                <tab id="parameters_tab" name="Параметры" v-if="productInfo.page.tables.parameters"></tab>
-                                <tab id="structure_tab" name="Состав комплекта" v-if="productInfo.page.tables.structure"></tab>
-                                <tab id="characteristics_tab" name="Характеристики" v-if="productInfo.page.tables.characteristics"></tab>
-                                <tab id="control_tab" name="Управление" v-if="productInfo.page.tables.control"></tab>
-                                <tab id="conformity_tab" name="Соответствие ГОСТ" v-if="productInfo.page.tables.conformity"></tab>
-                                <tab id="options_tab" name="Опции" v-if="productInfo.page.tables.options"></tab>
-                                <tab id="delivery_tab" name="Комплект поставки" v-if="productInfo.page.tables.delivery"></tab>
-                                <tab id="functions_tab" name="Расширенные функции" v-if="productInfo.page.tables.functions"></tab>
+                                <tab v-for="(tab, name) in uniqTabs" :key="name" :id="name" :name="name"></tab>
                             </tabs>
                         </div>
                     </div>
-                    <!-- TAB -->
+                    <!-- CURENT TAB -->
                     <div class="row mb-64">
                         <div class="col">
-                            <div class="" v-if="currentTab == 'parameters_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.parameters" :key="index">
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
+                            <div v-for="(tab, name) in uniqTabs" :key="name">
+                                <div v-if="name == currentTab">
+                                    <table class="table table-light table-bordered" style="table-layout: fixed;">
                                         <thead class="table-dark text-center">
                                             <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Параметры' }}</th>
+                                                <th colspan="2" scope="col">{{ name }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
+                                            <tr v-for="(cell, idx) in tab" :key="idx">
+                                                <td class="p2">{{ cell.caption }}</td>
+                                                <td class="p2">{{ cell.value + cell.measure_unit }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'structure_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.structure" :key="index">
-                                    <h4 class="h4 mb-16" v-if="item.title">{{ item.title }}</h4>
-                                    <div class="" v-if="item.text && item.text.length">
-                                        <p class="p2" v-for="(text, index) in item.text" :key="index" v-html="text"></p>
-                                    </div>
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Состав комплекта' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'characteristics_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.characteristics" :key="index">
-                                    <h4 class="h4 mb-16" v-if="item.title">{{ item.title }}</h4>
-                                    <div class="" v-if="item.text && item.text.length">
-                                        <p class="p2" v-for="(text, index) in item.text" :key="index" v-html="text"></p>
-                                    </div>
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Характеристики' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'control_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.control" :key="index">
-                                    <h4 class="h4 mb-16" v-if="item.title">{{ item.title }}</h4>
-                                    <div class="" v-if="item.text && item.text.length">
-                                        <p class="p2" v-for="(text, index) in item.text" :key="index" v-html="text"></p>
-                                    </div>
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Управление' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'conformity_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.conformity" :key="index">
-                                    <h4 class="h4 mb-16" v-if="item.title">{{ item.title }}</h4>
-                                    <div class="" v-if="item.text && item.text.length">
-                                        <p class="p2" v-for="(text, index) in item.text" :key="index" v-html="text"></p>
-                                    </div>
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Соответствие ГОСТ' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'options_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.options" :key="index">
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Опции' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'delivery_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.delivery" :key="index">
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Комплект поставки' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="" v-if="currentTab == 'functions_tab'">
-                                <div class="mb-24" v-for="(item, index) in productInfo.page.tables.functions" :key="index">
-                                    <h4 class="h4 mb-16" v-if="item.title">{{ item.title }}</h4>
-                                    <table class="table table-light table-bordered" style="table-layout: fixed;" v-if="item.table && item.table.length">
-                                        <thead class="table-dark text-center">
-                                            <tr>
-                                                <th colspan="2" scope="col">{{ item.table_name || 'Расширенные функции' }}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(cell, index) in item.table" :key="index">
-                                                <td class="p2">{{ cell.title }}</td>
-                                                <td class="p2">{{ cell.value }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="" v-if="item.list">
-                                        <h6 class="h6 mb-16" v-if="item.list_title">
-                                            {{ item.list_title }}
-                                        </h6>
-                                        <ul class="list" v-if="item.list.length">
-                                            <li 
-                                                v-for="(li, index) in item.list" :key="index"
-                                                class="p2 text-grey-2"
-                                            >
-                                                {{ li }}
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -411,13 +164,14 @@
                                 tag="div"
                                 :to="{ 
                                     name: 'ProductsPage', 
-                                    params: { id: id, category_id: category_id, product_id: item.id }
+                                    params: { id: id, category_id: category_id, product_id: item.alias }
                                 }"
                                 class="h-100"
                             >
-                                <div class="h-100" @click="changeProduct(id)">
+                                <div class="h-100" @click="changeProduct()">
                                     <ProductsItem 
-                                        :title="item.title" 
+                                        :title="item.title"
+                                        :text="item.product_options.prod_size"
                                         :price="item.price" 
                                         :image="item.image.url"
                                     />
@@ -466,14 +220,12 @@ export default {
             categoriesProducts: [],
             loading: true,
             currentTab: "parameters_tab",
-            productInfo: {}
+            productInfo: {},
+            uniqTabs: {}
         }
     },
     created() {
-        this.getDataPage(this.id, this.category_id)
-    },
-    mounted() {
-        
+        this.getDataPage(this.id, this.category_id);
     },
     computed: {
         similarProducts() {
@@ -481,11 +233,23 @@ export default {
         }
     },
     methods: {
+        arrayTabs() {
+            for (const key in this.productInfo.product_options) {
+                if (typeof this.uniqTabs[this.productInfo.product_options[key].category_name] == 'undefined') {
+                    this.uniqTabs[this.productInfo.product_options[key].category_name] = [this.productInfo.product_options[key]]
+                } else {
+                    this.uniqTabs[this.productInfo.product_options[key].category_name].push(this.productInfo.product_options[key])
+                }
+            }
+        },
         tabChanged(selectedTab) {
             this.currentTab = selectedTab.tab.id;
         },
-        changeProduct(id) {
-            this.getProduct(id);
+        async changeProduct() {
+            this.loading = true;
+            await this.getCategoriesProducts(this.category_id);
+            this.initBreadcrumbs();
+            this.loading = false;
         },
         async getCategories(id) {
             await this.axios
@@ -534,6 +298,9 @@ export default {
             Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
                 .then(() => {
                     this.initBreadcrumbs();
+                    if (this.productInfo.product_options && Object.keys(this.productInfo.product_options).length) {
+                        this.arrayTabs();
+                    }
                     this.loading = false;
                 })
                 .catch(({ response }) => {
