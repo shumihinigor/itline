@@ -27,7 +27,7 @@
             <div class="row mb-80 main-content">
                 <!-- FILTER -->
                 <div class="col-lg-3 col-12">
-                    <ProductsFilter 
+                    <ProductsFilter
                         class="sidebar"
                         :products="products"
                         :categories="categories"
@@ -101,6 +101,11 @@ export default {
     watch: {
         '$route'(route) {
             route.name == 'ProductsCategoryPage' ? this.changePage(this.id, this.category_id) : this.changeList(this.id);
+            if (this.sidebar) {
+                this.sidebar.destroy();
+                this.sidebar = null;
+            }
+            this.initSidebar();
         }
     },
     created() {
@@ -135,13 +140,15 @@ export default {
             this.loadingOnChange = false;
         },
         initSidebar() {
-            setTimeout(() => {
-                this.sidebar = new StickySidebar('.sidebar', {
-                    topSpacing: 92,
-                    bottomSpacing: 0,
-                    containerSelector: '.main-content'
-                });
-            }, 0);
+            if (window.innerWidth > 991) {
+                setTimeout(() => {
+                    this.sidebar = new StickySidebar('.sidebar', {
+                        topSpacing: 92,
+                        bottomSpacing: 0,
+                        containerSelector: '.main-content'
+                    });
+                }, 0);
+            }
         },
         async getCategories(id) {
             await this.axios

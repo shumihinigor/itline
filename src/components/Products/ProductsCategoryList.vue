@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <div class="row">
+        <div class="row" v-if="categories.length">
             <div 
                 class="col-lg-4 col-md-6 col-12 mb-32" 
                 v-for="(category, idx) in categories" 
@@ -12,6 +12,11 @@
                         :image="category.image.url"
                     />
                 </div>
+            </div>
+        </div>
+        <div class="row" v-else>
+            <div class="col">
+                <NothingFound />
             </div>
         </div>
     </div>

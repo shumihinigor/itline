@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <div class="row">
+        <div class="row" v-if="categoriesProducts.length">
             <div 
                 class="col-lg-4 col-md-6 col-12 mb-32" 
                 v-for="(product, idx) in categoriesProducts" 
@@ -13,6 +13,11 @@
                         :image="product.image.url"
                     />
                 </div>
+            </div>
+        </div>
+        <div class="row" v-else>
+            <div class="col">
+                <NothingFound />
             </div>
         </div>
     </div>
@@ -100,12 +105,13 @@
 
 <script>
 import ProductsItem from '@/components/Products/ProductsItem'
+import NothingFound from '@/components/NothingFound'
 
 export default {
     name: "ProductsCategoryPage",
     props: ["id", "category_id", "category", "products", "product", "categories", "categories-products"],
     components: {
-        ProductsItem
+        ProductsItem, NothingFound
     },
     data() {
         return {}

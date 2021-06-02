@@ -139,7 +139,7 @@
                                         <tbody>
                                             <tr v-for="(cell, idx) in tab" :key="idx">
                                                 <td class="p2">{{ cell.caption }}</td>
-                                                <td class="p2">{{ cell.value + cell.measure_unit }}</td>
+                                                <td class="p2" v-html="cell.value + cell.measure_unit"></td>
                                             </tr>
                                         </tbody>
                                     </table>
