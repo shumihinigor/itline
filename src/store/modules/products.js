@@ -19,7 +19,10 @@ const state = () => ({
     category: {},
     title: "",
     content: "",
-    description: ""
+    description: "",
+
+    productPage: {},
+    productPageOptionsTabs: {}
   });
   
   // getters
@@ -62,6 +65,13 @@ const state = () => ({
     description: state => {
         return state.description;
     },
+
+    productPage: state => {
+        return state.productPage;
+    },
+    productPageOptionsTabs: state => {
+        return state.productPageOptionsTabs;
+    },
   };
   
   // actions
@@ -78,6 +88,15 @@ const state = () => ({
         } else {
             commit('setSelectedProduct', {});
             commit('setSelectedIndex', null);
+        }
+    },
+    filterProductPageOptionsTabs({ commit, state }) {
+        for (const key in state.productPage.product_options) {
+            if (typeof state.productPageOptionsTabs[state.productPage.product_options[key].category_name] == 'undefined') {
+                state.productPageOptionsTabs[state.productPage.product_options[key].category_name] = [state.productPage.product_options[key]]
+            } else {
+                state.productPageOptionsTabs[state.productPage.product_options[key].category_name].push(state.productPage.product_options[key])
+            }
         }
     },
 
@@ -118,7 +137,7 @@ const state = () => ({
         commit('setContent', "");
         commit('setDescription', "");
         
-        await dispatch('getCategoriesProducts', category_id);
+        await dispatch('getCategoriesProducts', { category_id: category_id });
         commit('setCategory', state.categories.find(item => item.alias == category_id));
 
         commit('setTitle', state.category.title);
@@ -154,14 +173,21 @@ const state = () => ({
                 commit('setCategory', state.categories.find(item => item.alias == category_id));
             });
     },
-    async getCategoriesProducts({ commit, state }, id) {
+    async getCategoriesProducts({ commit, state, dispatch }, { category_id, product_id }) {
         await axios
-            .get(`/rest/products/${id}`)
+            .get(`/rest/products/${category_id}`)
             .then(response => {
-                if (id == 'undefined') {
+                if (category_id == 'undefined') {
                     return Promise.reject();
                 }
+                commit('setProductPageOptionsTabs', {});
                 commit('setCategoriesProducts', response.data.results);
+                if (product_id) {
+                    commit('setProductPage', state.categoriesProducts.find(item => item.alias == product_id));
+                    if (state.productPage.product_options && Object.keys(state.productPage.product_options).length) {
+                        dispatch('filterProductPageOptionsTabs', null);
+                    }
+                }
             });
     },
     async getDataList({ commit, state, dispatch }, { id, category_id }) {
@@ -174,8 +200,12 @@ const state = () => ({
                 router.push({ name: 'PageNotFound' });
             });
     },
-    async getDataPage({ commit, state, dispatch }, { id, category_id }) {
-        await Promise.all([dispatch('getProducts', id), dispatch('getCategories', { id: id, category_id: category_id }), dispatch('getCategoriesProducts', category_id)])
+    async getDataPage({ commit, state, dispatch }, { id, category_id, product_id }) {
+        await Promise.all([
+            dispatch('getProducts', id), 
+            dispatch('getCategories', { id: id, category_id: category_id }), 
+            dispatch('getCategoriesProducts', { category_id: category_id, product_id: product_id })
+        ])
             .then(() => {
                 commit('setTitle', state.category.title);
                 commit('setContent', state.category.text);
@@ -227,6 +257,13 @@ const state = () => ({
     },
     setDescription(state, description) {
         state.description = description;
+    },
+
+    setProductPage(state, productPage) {
+        state.productPage = productPage;
+    },
+    setProductPageOptionsTabs(state, productPageOptionsTabs) {
+        state.productPageOptionsTabs = productPageOptionsTabs;
     },
   };
   

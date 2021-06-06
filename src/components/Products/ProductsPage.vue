@@ -5,13 +5,13 @@
             <!-- TITLE -->
             <div class="row mb-32">
                 <div class="col">
-                    <h1 class="h1 mb-0" v-html="productInfo.title"></h1>
+                    <h1 class="h1 mb-0" v-html="productPage.title"></h1>
                 </div>
             </div>
             <!-- INFO PRODUCT -->
-            <div class="row mb-24" v-if="productInfo.short_description">
+            <div class="row mb-24" v-if="productPage.short_description">
                 <div class="col">
-                    <p class="p4 text-grey-3 mb-0" v-html="productInfo.short_description"></p>
+                    <p class="p4 text-grey-3 mb-0" v-html="productPage.short_description"></p>
                 </div>
             </div>
             <div class="row mb-24">
@@ -19,16 +19,16 @@
                 <div class="col-lg-4 col-12 mb-32">
                     <div 
                         class="product-page__image" 
-                        v-lazy:background-image="productInfo.image.url"
+                        v-lazy:background-image="productPage.image.url"
                     ></div>
                 </div>
                 <!-- STOCK AND STATE -->
                 <div class="col-lg-4 col-12 mb-32">
                     <!-- STATE -->
-                    <div class="product-page__state mb-24" v-if="productInfo.state">
+                    <div class="product-page__state mb-24" v-if="productPage.state">
                         <!-- IN STOCK -->
                         <div class="product-page__state-stock mr-24">
-                            <span class="d-flex align-items-center" v-if="productInfo.state.in_stock">
+                            <span class="d-flex align-items-center" v-if="productPage.state.in_stock">
                                 <img svg-inline src="../../assets/images/in_stock.svg" alt="in_stock">
                                 <p class="p2 mb-0 ml-16">Товар на складе</p>
                             </span>
@@ -38,31 +38,31 @@
                             </span>
                         </div>
                         <!-- AMOUNT -->
-                        <div class="product-page__state-amount" v-if="productInfo.state.in_stock">
+                        <div class="product-page__state-amount" v-if="productPage.state.in_stock">
                             <span class="d-flex align-items-center">
-                                <img :src="require('../../assets/images/amount_' + productInfo.state.amount + '.svg')" alt="amount">
-                                <p v-if="productInfo.state.amount == 4" class="p2 mb-0 ml-16">Много</p>
-                                <p v-else-if="productInfo.state.amount == 3" class="p2 mb-0 ml-16">Достаточно</p>
-                                <p v-else-if="productInfo.state.amount == 2" class="p2 mb-0 ml-16">Мало</p>
+                                <img :src="require('../../assets/images/amount_' + productPage.state.amount + '.svg')" alt="amount">
+                                <p v-if="productPage.state.amount == 4" class="p2 mb-0 ml-16">Много</p>
+                                <p v-else-if="productPage.state.amount == 3" class="p2 mb-0 ml-16">Достаточно</p>
+                                <p v-else-if="productPage.state.amount == 2" class="p2 mb-0 ml-16">Мало</p>
                                 <p v-else class="p2 mb-0 ml-16">Очень мало</p>
                             </span>
                         </div>
                     </div>
                     <!-- STOCK -->
-                    <div class="product-page__stock" v-if="productInfo.stock">
+                    <div class="product-page__stock" v-if="productPage.stock">
                         <h6 class="h6 text-orange text-uppercase mb-16">Акция!</h6>
                         <p
-                            v-if="productInfo.stock.text.length"
+                            v-if="productPage.stock.text.length"
                             class="p2 mb-8" 
                         >
-                            <span class="d-block mb-8" v-for="(text, index) in productInfo.stock.text" :key="index">
+                            <span class="d-block mb-8" v-for="(text, index) in productPage.stock.text" :key="index">
                                 {{ text }}
                             </span>
                         </p>
                         <p 
-                            v-if="productInfo.stock.description"
+                            v-if="productPage.stock.description"
                             class="p4 text-grey-3"
-                        >{{ productInfo.stock.description }}</p>
+                        >{{ productPage.stock.description }}</p>
                     </div>
                 </div>
                 <!-- FEEDBACK -->
@@ -116,19 +116,19 @@
 
             <!-- TABLES -->
             <template>
-                <div v-if="Object.keys(uniqTabs).length">
+                <div v-if="Object.keys(productPageOptionsTabs).length">
                     <!-- TABS -->
                     <div class="row">
                         <div class="col">
                             <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
-                                <tab v-for="(tab, name) in uniqTabs" :key="name" :id="name" :name="name"></tab>
+                                <tab v-for="(tab, name) in productPageOptionsTabs" :key="name" :id="name" :name="name"></tab>
                             </tabs>
                         </div>
                     </div>
                     <!-- CURENT TAB -->
                     <div class="row mb-64">
                         <div class="col">
-                            <div v-for="(tab, name) in uniqTabs" :key="name">
+                            <div v-for="(tab, name) in productPageOptionsTabs" :key="name">
                                 <div v-if="name == currentTab">
                                     <table class="table table-light table-bordered" style="table-layout: fixed;">
                                         <thead class="table-dark text-center">
@@ -168,7 +168,7 @@
                                 }"
                                 class="h-100"
                             >
-                                <div class="h-100" @click="changeProduct()">
+                                <div class="h-100" @click="changeProduct(item.alias)">
                                     <ProductsItem 
                                         :title="item.title"
                                         :text="item.product_options.prod_size"
@@ -200,6 +200,9 @@ import Preloader from '@/components/Preloader/Preloader'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
 import ProductsItem from '@/components/Products/ProductsItem'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("products");
+
 import Vue from 'vue';
 import Tabs from 'vue-tabs-component';
 
@@ -213,99 +216,41 @@ export default {
     },
     data() {
         return {
-            products: [],
-            product: {},
-            categories: [],
-            category: {},
-            categoriesProducts: [],
             loading: true,
-            currentTab: "parameters_tab",
-            productInfo: {},
-            uniqTabs: {}
+            currentTab: ""
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'products',
+            'product',
+            'categories',
+            'categoriesProducts',
+            'category',
+            'productPage',
+            'productPageOptionsTabs'
+        ]),
+        similarProducts() {
+            return this.categoriesProducts.filter(item => item.id !== this.productPage.id)
         }
     },
     created() {
-        this.getDataPage(this.id, this.category_id);
-    },
-    computed: {
-        similarProducts() {
-            return this.categoriesProducts.filter(item => item.id !== this.productInfo.id)
-        }
+        this.getDataPage({ id: this.id, category_id: this.category_id, product_id: this.product_id }).then(() => {
+            this.initBreadcrumbs();
+            this.loading = false;
+        });
     },
     methods: {
-        arrayTabs() {
-            for (const key in this.productInfo.product_options) {
-                if (typeof this.uniqTabs[this.productInfo.product_options[key].category_name] == 'undefined') {
-                    this.uniqTabs[this.productInfo.product_options[key].category_name] = [this.productInfo.product_options[key]]
-                } else {
-                    this.uniqTabs[this.productInfo.product_options[key].category_name].push(this.productInfo.product_options[key])
-                }
-            }
-        },
+        ...mapMutations([""]),
+        ...mapActions(['getDataPage', 'getCategoriesProducts']),
         tabChanged(selectedTab) {
             this.currentTab = selectedTab.tab.id;
         },
-        async changeProduct() {
+        async changeProduct(product_id) {
             this.loading = true;
-            await this.getCategoriesProducts(this.category_id);
+            await this.getCategoriesProducts({ id: this.id, category_id: this.category_id, product_id: product_id });
             this.initBreadcrumbs();
             this.loading = false;
-        },
-        async getCategories(id) {
-            await this.axios
-                .get(`/rest/products/${id}`)
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.categories = response.data.results;
-                    this.product = this.products.find((item) => {
-                        return item.alias == id
-                    });
-                });
-        },
-        async getCategoriesProducts(id) {
-            await this.axios
-                .get(`/rest/products/${id}`)
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.category = this.categories.find((item) => {
-                        return item.alias == this.category_id
-                    });
-                    this.categoriesProducts = response.data.results;
-                    this.productInfo = this.categoriesProducts.find((item) => {
-                        return item.alias == this.product_id
-                    })
-                });
-        },
-        async getProducts(id) {
-            await this.axios
-                .get('/rest/products')
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.products = response.data.results;
-                    this.product = this.products.find((item) => {
-                        return item.alias == id
-                    });
-                });
-        },
-        getDataPage(id, category_id) {
-            this.loading = true;
-            Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
-                .then(() => {
-                    this.initBreadcrumbs();
-                    if (this.productInfo.product_options && Object.keys(this.productInfo.product_options).length) {
-                        this.arrayTabs();
-                    }
-                    this.loading = false;
-                })
-                .catch(({ response }) => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
         },
         initBreadcrumbs() {
             let breadcrumbs = [
@@ -341,7 +286,7 @@ export default {
                     path: `/products/${this.id}/${this.category_id}/${this.product_id}`,
                     name: 'ProductsPage',
                     meta: {
-                        title: this.productInfo.title
+                        title: this.productPage.title
                     }
                 }
             ]
