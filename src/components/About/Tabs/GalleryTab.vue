@@ -35,39 +35,35 @@
 import Preloader from '@/components/Preloader/Preloader'
 import GalleryItem from '@/components/Gallery/GalleryItem'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("gallery");
+
+
 export default {
     components: {
         GalleryItem, Preloader
     },
     data() {
         return {
-            page: 1,
-            gallery: [],
-            loading: true,
-            count: 8,
-            pageCount: 2
+            loading: true
         }
     },
     computed: {
+        ...mapGetters([
+            'page',
+            'gallery',
+            'count',
+            'pageCount'
+        ]),
         currentBlock() {
             return this.gallery.slice((this.page - 1) * this.count, this.page * this.count);
         }
     },
     created() {
-        this.getGallery();
+        this.getGallery().then(() => this.loading = false);
     },
     methods: {
-        getGallery() {
-            this.axios
-                .get('/rest/gallery/')
-                .then(response => {
-                    this.gallery = response.data.results;
-                    this.pageCount = Math.ceil(this.gallery.length / 8);
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
-        }
+        ...mapActions(['getGallery'])
     },
 }
 </script>

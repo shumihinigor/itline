@@ -8,7 +8,7 @@ import Paginate from 'vuejs-paginate';
 import VueLazyload from 'vue-lazyload'
 
 // vuex
-import store from "@/store";
+import store from "@/store/index";
 
 // axios
 import axios from 'axios';

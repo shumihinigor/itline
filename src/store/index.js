@@ -2,6 +2,10 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 
+// modules
+import gallery from "./modules/gallery";
+
+
 Vue.use(Vuex);
 
 const state = {
@@ -28,8 +32,11 @@ const getters = {
 };
 
 export default new Vuex.Store({
-  state,
-  getters,
-  actions,
-  mutations
+    state,
+    getters,
+    actions,
+    mutations,
+    modules: {
+        gallery
+    }
 });

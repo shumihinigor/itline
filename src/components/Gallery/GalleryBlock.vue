@@ -16,11 +16,6 @@ import SwiperGallery from '@/components/Swipers/SwiperGallery'
 export default {
     components: {
         SwiperGallery
-    },
-    data() {
-        return {
-
-        }
     }
 }
 </script>
