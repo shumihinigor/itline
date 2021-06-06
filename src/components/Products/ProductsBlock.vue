@@ -24,32 +24,30 @@
 import Preloader from '@/components/Preloader/Preloader'
 import ProductsItem from './ProductsItem.vue'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("products");
+
 export default {
     components: {
         ProductsItem, Preloader
     },
     data() {
         return {
-            loading: true,
-            products: []
+            loading: true
         }
     },
+    computed: {
+        ...mapGetters([
+            'products'
+        ]),
+    },
     created() {
-        this.getProducts()
+        this.getProducts().then(() => this.loading = false);
     },
     methods: {
+        ...mapActions(['getProducts']),
         goToProductCategoryList(product) {
             this.$router.push({ name: 'ProductsCategoryList', params: { id: product.alias } });
-        },
-        getProducts() {
-            this.axios
-                .get('/rest/products')
-                .then(response => {
-                    this.products = response.data.results;
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' }); 
-                });
         }
     },
 }

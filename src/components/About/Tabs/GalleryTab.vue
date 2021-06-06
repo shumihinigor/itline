@@ -22,7 +22,7 @@
                         :next-class="'paginate-next'"
                         :page-class="'paginate-item'"
                         :container-class="'paginate'"
-                        v-model="page"
+                        :click-handler="clickCallback"
                     >
                     </paginate>
                 </div>
@@ -36,7 +36,7 @@ import Preloader from '@/components/Preloader/Preloader'
 import GalleryItem from '@/components/Gallery/GalleryItem'
 
 import { createNamespacedHelpers } from "vuex";
-const { mapGetters, mapActions } = createNamespacedHelpers("gallery");
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("gallery");
 
 
 export default {
@@ -63,7 +63,11 @@ export default {
         this.getGallery().then(() => this.loading = false);
     },
     methods: {
-        ...mapActions(['getGallery'])
+        ...mapMutations(["setPage"]),
+        ...mapActions(['getGallery']),
+        clickCallback(e) {
+            this.setPage(e);
+        }
     },
 }
 </script>

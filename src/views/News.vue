@@ -32,7 +32,7 @@
                         :next-class="'paginate-next'"
                         :page-class="'paginate-item'"
                         :container-class="'paginate'"
-                        v-model="page"
+                        :click-handler="clickCallback"
                     >
                     </paginate>
                 </div>
@@ -45,6 +45,9 @@
 import Preloader from '@/components/Preloader/Preloader'
 import NewsItem from '@/components/News/NewsItem'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("news");
+
 export default {
     components: {
         NewsItem, Preloader
@@ -52,20 +55,22 @@ export default {
     name: 'News',
     data() {
         return {
-            page: 1,
-            news: [],
-            loading: true,
-            count: 9,
-            pageCount: 2
+            loading: true
         }
     },
     computed: {
+        ...mapGetters([
+            'page',
+            'news',
+            'count',
+            'pageCount'
+        ]),
         currentBlock() {
             return this.news.slice((this.page - 1) * this.count, this.page * this.count);
         }
     },
     created() {
-        this.getPost();
+        this.getNews().then(() => this.loading = false);
         let breadcrumbs = [
             {
                 path: '/',
@@ -82,19 +87,13 @@ export default {
                 }
             }
         ]
-        this.$store.commit("changeBreadcrumbs", breadcrumbs)
+        this.$store.commit('changeBreadcrumbs', breadcrumbs)
     },
     methods: {
-        getPost() {
-            this.axios
-                .get('/rest/news')
-                .then(response => {
-                    this.news = response.data.results;
-                    this.pageCount = Math.ceil(this.news.length / 9);
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
+        ...mapMutations(["setPage", "setCount"]),
+        ...mapActions(['getNews']),
+        clickCallback(e) {
+            this.setPage(e);
         }
     },
 }

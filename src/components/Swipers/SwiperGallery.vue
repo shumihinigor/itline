@@ -35,6 +35,9 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
 import Preloader from '@/components/Preloader/Preloader'
 import 'swiper/swiper-bundle.css';
+
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("gallery");
     
 export default {
     components: {
@@ -67,17 +70,19 @@ export default {
                     },
                 },
             },
-            gallery: [],
             loading: true
         }
     },
     computed: {
+        ...mapGetters([
+            'gallery'
+        ]),
         swiper() {
             return this.$refs.swiperGallery.$swiper
         }
     },
     created() {
-        this.getGallery();
+        this.getGallery().then(() => this.loading = false);
     },
     mounted() {
         if (window.innerWidth <= 991) {
@@ -87,16 +92,7 @@ export default {
         }
     },
     methods: {
-        getGallery() {
-            this.axios
-                .get('/rest/gallery/')
-                .then(response => {
-                    this.gallery = response.data.results;
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
-        }
+        ...mapActions(['getGallery'])
     },
 }
 </script>

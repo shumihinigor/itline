@@ -69,10 +69,9 @@ import Preloader from '@/components/Preloader/Preloader'
 import ProductsFilter from '@/components/Products/ProductsFilter'
 import SwiperProduct from '@/components/Swipers/SwiperProduct'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
-import { mapGetters } from "vuex";
 
-import StickySidebar from "../../../node_modules/sticky-sidebar-v2/dist/sticky-sidebar"
-
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("products");
 
 export default {
     name: "ProductsCategory",
@@ -82,140 +81,38 @@ export default {
     },
     data() {
         return {
-            products: [],
-            product: {},
-            categories: [],
-            category: {},
-            categoriesProducts: [],
-            loading: true,
-            loadingOnChange: false,
-            sidebar: null,
-            title: "",
-            content: "",
-            description: ""
+            loading: true
         }
     },
     computed: {
-        ...mapGetters(["breadcrumbs"]),
+        ...mapGetters([
+            'products',
+            'product',
+            'sidebar',
+            'loadingOnChange',
+            'categories',
+            'categoriesProducts',
+            'category',
+            'title',
+            'content',
+            'description'
+        ])
     },
     watch: {
         '$route'(route) {
-            route.name == 'ProductsCategoryPage' ? this.changePage(this.id, this.category_id) : this.changeList(this.id);
-            if (this.sidebar) {
-                this.sidebar.destroy();
-                this.sidebar = null;
-            }
-            this.initSidebar();
+            route.name == 'ProductsCategoryPage' ? this.changePage({ id: this.id, category_id: this.category_id }) : this.changeList({ id: this.id, category_id: this.category_id });
         }
     },
     created() {
-        this.category_id ? this.getDataPage(this.id, this.category_id) : this.getDataList(this.id);
+        if (this.category_id) {
+            this.getDataPage({ id: this.id, category_id: this.category_id }).then(() => this.loading = false);
+        } else {
+            this.getDataList({ id: this.id, category_id: this.category_id }).then(() => this.loading = false);
+        }
     },
     methods: {
-        async changeList(id) {
-            this.loadingOnChange = true;
-            this.categories = [];
-            this.title = "";
-            this.content = "";
-            this.description = "";
-            await this.getCategories(this.id);
-            this.product = this.products.find((item) => {
-                return item.alias == this.id
-            });
-            this.title = this.product.name;
-            this.loadingOnChange = false;
-        },
-        async changePage(id, category_id) {
-            this.loadingOnChange = true;
-            this.categoriesProducts = [];
-            this.title = "";
-            this.content = "";
-            await this.getCategoriesProducts(this.category_id);
-            this.category = this.categories.find((item) => {
-                return item.alias == this.category_id
-            });
-            this.title = this.category.title;
-            this.content = this.category.text;
-            this.description = this.category.short_description;
-            this.loadingOnChange = false;
-        },
-        initSidebar() {
-            if (window.innerWidth > 991) {
-                setTimeout(() => {
-                    this.sidebar = new StickySidebar('.sidebar', {
-                        topSpacing: 92,
-                        bottomSpacing: 0,
-                        containerSelector: '.main-content'
-                    });
-                }, 0);
-            }
-        },
-        async getCategories(id) {
-            await this.axios
-                .get(`/rest/products/${id}`)
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.categories = response.data.results;
-                    this.category = this.categories.find((item) => {
-                        return item.alias == this.category_id
-                    });
-                });
-        },
-        async getCategoriesProducts(id) {
-            await this.axios
-                .get(`/rest/products/${id}`)
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.categoriesProducts = response.data.results;
-                });
-        },
-        async getProducts(id) {
-            await this.axios
-                .get('/rest/products')
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.products = response.data.results;
-                    this.product = this.products.find((item) => {
-                        return item.alias == id
-                    });
-                });
-        },
-        getDataList(id) {
-            this.loading = true;
-            Promise.all([this.getProducts(id), this.getCategories(id)])
-                .then(() => {
-                    this.title = this.product.name;
-                    this.initSidebar();
-                })
-                .catch(({ response }) => {
-                    this.$router.push({ name: 'PageNotFound' });
-                })
-                .finally(() => {
-                    this.loading = false;
-                });
-        },
-        getDataPage(id, category_id) {
-            this.loading = true;
-            Promise.all([this.getProducts(id), this.getCategories(id), this.getCategoriesProducts(category_id)])
-                .then(() => {
-                    this.title = this.category.title;
-                    this.content = this.category.text;
-                    this.description = this.category.short_description;
-                    this.initSidebar();
-                })
-                .catch(({ response }) => {
-                    this.$router.push({ name: 'PageNotFound' });
-                })
-                .finally(() => {
-                    this.loading = false;
-                });
-        }
+        ...mapMutations(["setSidebar"]),
+        ...mapActions(['getDataPage', 'getDataList', 'changePage', 'changeList', 'initSidebar'])
     },
     beforeDestroy() {
         this.$store.commit("changeBreadcrumbs", []);

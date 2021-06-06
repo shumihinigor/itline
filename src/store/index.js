@@ -4,6 +4,8 @@ import Vuex from "vuex";
 
 // modules
 import gallery from "./modules/gallery";
+import news from "./modules/news";
+import products from "./modules/products";
 
 
 Vue.use(Vuex);
@@ -37,6 +39,8 @@ export default new Vuex.Store({
     actions,
     mutations,
     modules: {
-        gallery
+        gallery,
+        news,
+        products
     }
 });

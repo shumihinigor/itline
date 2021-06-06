@@ -5,8 +5,8 @@ import router from '@/router';
 // initial state
 const state = () => ({
     page: 1,
-    gallery: [],
-    galleryPage: {},
+    news: [],
+    newsPage: {},
     count: 9,
     pageCount: 2
   });
@@ -16,11 +16,11 @@ const state = () => ({
     page: state => {
         return state.page;
     },
-    gallery: state => {
-        return state.gallery;
+    news: state => {
+        return state.news;
     },
-    galleryPage: state => {
-        return state.galleryPage;
+    newsPage: state => {
+        return state.newsPage;
     },
     count: state => {
         return state.count;
@@ -32,45 +32,48 @@ const state = () => ({
   
   // actions
   const actions = {
-    async getGallery({ commit, state }) {
+    async getNews({ commit, state }) {
         await axios
-            .get('/rest/gallery/')
+            .get('/rest/news')
             .then(response => {
-                commit('setGallery', response.data.results);
-                commit('setPageCount', Math.ceil(state.gallery.length / 9));
+                commit('setNews', response.data.results);
+                commit('setPageCount', Math.ceil(state.news.length / 9));
             }).catch(error => {
                 router.push({ name: 'PageNotFound' });
             });
     },
-    async getGalleryPage({ commit, state }, id) {
+    async getNewsPage({ commit, state }, id) {
         await axios
-            .get(`/rest/gallery/${id}`)
+            .get(`/rest/news/${id}`)
             .then(response => {
-                commit('setGalleryPage', response.data.object);
+                if (id == 'undefined') {
+                    return Promise.reject();
+                }
+                commit('setNewsPage', response.data.object);
                 let breadcrumbs = [
                     {
                         path: '/',
                         name: 'Home',
                         meta: {
-                            title: "Главная"
+                        title: "Главная"
                         }
                     },
                     {
-                        path: '/about',
-                        name: 'About',
+                        path: '/news',
+                        name: 'News',
                         meta: {
-                            title: "О компании"
+                            title: "Новости"
                         }
                     },
                     {
-                        path: `/about/gallery/${id}`,
-                        name: 'GalleryPage',
+                        path: `/news/${id}`,
+                        name: 'NewsPage',
                         meta: {
-                            title: state.galleryPage.title
+                            title: state.newsPage.title
                         }
                     }
                 ]
-                commit("changeBreadcrumbs", breadcrumbs, { root: true });
+                commit("changeBreadcrumbs", breadcrumbs, { root: true })
             }).catch(error => {
                 router.push({ name: 'PageNotFound' });
             });
@@ -82,11 +85,11 @@ const state = () => ({
     setPage(state, page) {
         state.page = page;
     },
-    setGallery(state, gallery) {
-        state.gallery = gallery;
+    setNews(state, news) {
+        state.news = news;
     },
-    setGalleryPage(state, galleryPage) {
-        state.galleryPage = galleryPage;
+    setNewsPage(state, newsPage) {
+        state.newsPage = newsPage;
     },
     setCount(state, count) {
         state.count = count;

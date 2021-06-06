@@ -3,12 +3,13 @@
         <Preloader v-if="loading" />
         <div v-else class="container d-flex flex-column">
             <div class="row">
-                <div :class="['col-lg-3 col-md-6 col-12 mb-32', 'order-' + idx]" v-for="(product, idx) in products" :key="idx" @click="selectProduct(product, idx)">
-                    <ProductsItem 
-                        :title="product.title" 
-                        :text="product.text" 
-                        :image="product.image"
-                    />
+                <div :class="['col-lg-3 col-md-6 col-12 mb-32', 'order-' + idx]" v-for="(product, idx) in products" :key="idx">
+                    <div @click="selectProduct({ product: product, index: idx })">
+                        <ProductsItem 
+                            :title="product.name" 
+                            :image="'/' + product.image"
+                        />  
+                    </div>
                 </div>
                 <transition
                     name="fade"
@@ -19,15 +20,14 @@
                             <div class="row">
                                 <div class="col-lg-4 col-12 mb-lg-0 mb-4">
                                     <ProductsItem
-                                        :title="selectedProduct.title" 
-                                        :text="selectedProduct.text" 
-                                        :image="selectedProduct.image"
+                                        :title="selectedProduct.name" 
+                                        :image="'/' + selectedProduct.image"
                                     />
                                 </div>
                                 <div class="col-lg-8 col-12">
                                     <div class="product-info__block">
                                         <p class="p2 text-grey-1 mb-16">Сюда можно добавить любую необходимую информацию: заголовок, текстовое описание, изображения, ссылки и пр.</p>
-                                        <div class="product-info__links">
+                                        <div class="product-info__links" v-if="selectedProduct.files && selectedProduct.files.length">
                                             <a :href="'/static/files/' + file[0]" download class="file__link" v-for="(file, index) in selectedProduct.files" :key="index">
                                                 <!-- <img svg-inline src="../../assets/images/product_pdf.svg" alt="product_pdf"> -->
                                                 <div class="d-flex flex-column align-items-start ml-16">
@@ -51,46 +51,31 @@
 import Preloader from '@/components/Preloader/Preloader'
 import ProductsItem from './ProductsItem.vue'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("products");
+
 export default {
     components: {
         ProductsItem, Preloader
     },
     data() {
         return {
-            loading: true,
-            products: [],
-            selectedProduct: {},
-            selectedIndex: null
+            loading: true
         }
+    },
+    computed: {
+        ...mapGetters([
+            'products',
+            'selectedProduct',
+            'selectedIndex',
+        ])
     },
     created() {
-        this.getProducts()
+        this.getProducts().then(() => this.loading = false);
     },
     methods: {
-        selectProduct(product, index) {
-            if (window.innerWidth > 991) {
-                if (this.selectedProduct.id == product.id) {
-                    this.selectedProduct = {};
-                    this.selectedIndex = null;
-                } else {
-                    this.selectedProduct = product;
-                    this.selectedIndex = index;
-                }
-            } else {
-                this.selectedProduct = {};
-                this.selectedIndex = null;
-            }
-        },
-        getProducts() {
-            this.axios
-                .get('/static/products.json')
-                .then(response => {
-                    this.products = response.data.data;
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
-        }
+        ...mapActions(['getProducts', 'selectProduct']),
+        
     },
 }
 </script>

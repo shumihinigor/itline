@@ -4,19 +4,19 @@
         <div v-else class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-12">
-                    <h1 class="h1 mb-32">{{ news.title }}</h1>
+                    <h1 class="h1 mb-32">{{ newsPage.title }}</h1>
                     <SwiperNews
-                        v-if="news.images && news.images.length"
+                        v-if="newsPage.images && newsPage.images.length"
                         class="mb-40"
-                        :images="news.images"
+                        :images="newsPage.images"
                     />
                     <div 
-                        v-else-if="news.image"
+                        v-else-if="newsPage.image"
                         class="news-page__image mb-40"
-                        v-lazy:background-image="'/' + news.image"
+                        v-lazy:background-image="'/' + newsPage.image"
                     ></div>
                     <div class="mb-24">
-                        <div class="p2" v-if="news.text" v-html="news.text"></div>
+                        <div class="p2" v-if="newsPage.text" v-html="newsPage.text"></div>
                     </div>
                 </div>
             </div>
@@ -28,6 +28,9 @@
 import Preloader from '@/components/Preloader/Preloader'
 import SwiperNews from '@/components/Swipers/SwiperNews'
 
+import { createNamespacedHelpers } from "vuex";
+const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("news");
+
 export default {
     name: "NewsPage",
     props: ["id"],
@@ -36,51 +39,19 @@ export default {
     },
     data() {
         return {
-            news: {},
             loading: true
         }
     },
+    computed: {
+        ...mapGetters([
+            'newsPage'
+        ]),
+    },
     created() {
-        this.getPost(this.id);
+        this.getNewsPage(this.id).then(() => this.loading = false);
     },
     methods: {
-        getPost(id) {
-            this.axios
-                .get(`/rest/news/${id}`)
-                .then(response => {
-                    if (id == 'undefined') {
-                        return Promise.reject();
-                    }
-                    this.news = response.data.object;
-                    let breadcrumbs = [
-                        {
-                            path: '/',
-                            name: 'Home',
-                            meta: {
-                            title: "Главная"
-                            }
-                        },
-                        {
-                            path: '/news',
-                            name: 'News',
-                            meta: {
-                                title: "Новости"
-                            }
-                        },
-                        {
-                            path: `/news/${this.id}`,
-                            name: 'NewsPage',
-                            meta: {
-                                title: this.news.title
-                            }
-                        }
-                    ]
-                    this.$store.commit("changeBreadcrumbs", breadcrumbs)
-                    this.loading = false;
-                }).catch(error => {
-                    this.$router.push({ name: 'PageNotFound' });
-                });
-        }
+        ...mapActions(['getNewsPage']),
     },
     destroyed() {
         this.$store.commit("changeBreadcrumbs", []);
