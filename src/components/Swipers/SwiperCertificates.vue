@@ -2,10 +2,11 @@
     <div>
         <Preloader v-if="loading" />
         <swiper v-show="!loading" class="swiper certificates" ref="swiperCertificates" :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in certificates" :key="item.id">
+            <swiper-slide v-for="(item, idx) in certificates" :key="item.id">
                 <div class="certificates-swiper__item">
                     <div 
                         class="certificates-swiper__item-image " 
+                        @click="index = idx"
                         v-lazy:background-image="require('../../assets/images/certificates/' + item.image)"
                     ></div>
                     <div class="d-flex align-items-center justify-content-start">
@@ -22,6 +23,12 @@
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
+        <CoolLightBox 
+            :items="certificatesImages" 
+            :index="index"
+            :effect="'fade'"
+            @close="index = null">
+        </CoolLightBox>
     </div>
 </template>
 
@@ -32,12 +39,15 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
 import Preloader from '@/components/Preloader/Preloader'
 import 'swiper/swiper-bundle.css';
+import CoolLightBox from 'vue-cool-lightbox'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
     
 export default {
     components: {
         Swiper,
         Pagination,
         SwiperSlide,
+        CoolLightBox,
         Preloader
     },
     data() {
@@ -62,10 +72,16 @@ export default {
                 },
             },
             certificates: [],
-            loading: true
+            loading: true,
+            index: null
         }
     },
     computed: {
+        certificatesImages() {
+            return this.certificates.map((item) => {
+                return require('../../assets/images/certificates/' + item.image);
+            })
+        },
         swiper() {
             return this.$refs.swiperCertificates.$swiper
         }

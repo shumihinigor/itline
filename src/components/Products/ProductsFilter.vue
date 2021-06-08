@@ -9,14 +9,14 @@
             >
                 <span @click.stop="goToProductsCategoryList(product.alias)">{{ product.name }}</span>
                 <ul>
-                    <Preloader v-if="!categories.length" />
+                    <Preloader v-if="!categories" />
                     <li 
                         v-else
-                        :class="['p2', {active: category.alias == $route.params.category_id}]"
                         v-for="(category, index) in categories" 
+                        :class="['p2', {active: category.params.alias == $route.params.category_id}]"
                         :key="index"
                     >
-                        <span @click.stop="goToProductsCategoryPage(product.alias, category.alias)">{{ category.title }}</span>
+                        <span @click.stop="goToProductsCategoryPage(product.alias, category.params.alias)">{{ category.params.title }}</span>
                     </li>
                 </ul>
             </li>

@@ -16,7 +16,7 @@
             </div>
             <div class="row mb-24">
                 <!-- IMAGE -->
-                <div class="col-lg-4 col-12 mb-32">
+                <div class="col-lg-4 col-12 mb-32" v-if="productPage.image">
                     <div 
                         class="product-page__image" 
                         v-lazy:background-image="productPage.image.url"
@@ -25,10 +25,10 @@
                 <!-- STOCK AND STATE -->
                 <div class="col-lg-4 col-12 mb-32">
                     <!-- STATE -->
-                    <div class="product-page__state mb-24" v-if="productPage.state">
+                    <div class="product-page__state mb-24" v-if="productPage.product_options && productPage.product_options.lb_instock">
                         <!-- IN STOCK -->
                         <div class="product-page__state-stock mr-24">
-                            <span class="d-flex align-items-center" v-if="productPage.state.in_stock">
+                            <span class="d-flex align-items-center" v-if="!!+productPage.product_options.lb_instock.value">
                                 <img svg-inline src="../../assets/images/in_stock.svg" alt="in_stock">
                                 <p class="p2 mb-0 ml-16">Товар на складе</p>
                             </span>
@@ -38,7 +38,7 @@
                             </span>
                         </div>
                         <!-- AMOUNT -->
-                        <div class="product-page__state-amount" v-if="productPage.state.in_stock">
+                        <!-- <div class="product-page__state-amount" v-if="productPage.state.in_stock">
                             <span class="d-flex align-items-center">
                                 <img :src="require('../../assets/images/amount_' + productPage.state.amount + '.svg')" alt="amount">
                                 <p v-if="productPage.state.amount == 4" class="p2 mb-0 ml-16">Много</p>
@@ -46,23 +46,18 @@
                                 <p v-else-if="productPage.state.amount == 2" class="p2 mb-0 ml-16">Мало</p>
                                 <p v-else class="p2 mb-0 ml-16">Очень мало</p>
                             </span>
-                        </div>
+                        </div> -->
                     </div>
+                    <div v-if="productPage.text" v-html="productPage.text"></div>
                     <!-- STOCK -->
-                    <div class="product-page__stock" v-if="productPage.stock">
+                    <div class="product-page__stock">
                         <h6 class="h6 text-orange text-uppercase mb-16">Акция!</h6>
-                        <p
-                            v-if="productPage.stock.text.length"
-                            class="p2 mb-8" 
-                        >
-                            <span class="d-block mb-8" v-for="(text, index) in productPage.stock.text" :key="index">
-                                {{ text }}
+                        <p class="p2 mb-8">
+                            <span class="d-block mb-8">
+                                Доставка комплектов табло для транспорта в Москву и Санкт‑Петербург БЕСПЛАТНО!
                             </span>
                         </p>
-                        <p 
-                            v-if="productPage.stock.description"
-                            class="p4 text-grey-3"
-                        >{{ productPage.stock.description }}</p>
+                        <p class="p4 text-grey-3">Подробную информацию уточняйте у менеджера</p>
                     </div>
                 </div>
                 <!-- FEEDBACK -->
@@ -164,16 +159,16 @@
                                 tag="div"
                                 :to="{ 
                                     name: 'ProductsPage', 
-                                    params: { id: id, category_id: category_id, product_id: item.alias }
+                                    params: { id: id, category_id: category_id, product_id: item.params.alias }
                                 }"
                                 class="h-100"
                             >
-                                <div class="h-100" @click="changeProduct(item.alias)">
+                                <div class="h-100" @click="changeProduct(item.params.alias)">
                                     <ProductsItem 
-                                        :title="item.title"
-                                        :text="item.product_options.prod_size"
-                                        :price="item.price" 
-                                        :image="item.image.url"
+                                        :title="item.params.title"
+                                        :text="item.params.product_options ? item.params.product_options.prod_size : ''"
+                                        :price="item.params.price" 
+                                        :image="item.params.image.url"
                                     />
                                 </div>
                             </router-link>
@@ -231,7 +226,7 @@ export default {
             'productPageOptionsTabs'
         ]),
         similarProducts() {
-            return this.categoriesProducts.filter(item => item.id !== this.productPage.id)
+            return this.categoriesProducts.filter(item => item.params.id !== this.productPage.id)
         }
     },
     created() {
@@ -272,7 +267,7 @@ export default {
                     path: `/products/${this.id}`,
                     name: 'ProductsCategoryList',
                     meta: {
-                        title: this.product.name
+                        title: this.product.title
                     }
                 },
                 {

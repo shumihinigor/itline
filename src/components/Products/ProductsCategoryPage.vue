@@ -1,17 +1,34 @@
 <template>
     <div class="content">
-        <div class="row" v-if="categoriesProducts.length">
-            <div 
-                class="col-lg-4 col-md-6 col-12 mb-32" 
-                v-for="(product, idx) in categoriesProducts" 
-                :key="idx" 
-            >
-                <div class="h-100" @click="goToProductPage(product)">
-                    <ProductsItem 
-                        :title="product.title"
-                        :text="product.product_options.prod_size"
-                        :image="product.image.url"
-                    />
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2" v-if="categoriesProducts.length">
+            <div :class="['mb-32', {
+                'w-100': productCategory.childs.childs.length
+            }]" v-for="(productCategory, idx) in categoriesProducts" :key="idx">
+                <div v-if="!productCategory.childs.childs.length">
+                    <div class="h-100" @click="goToProductPage(productCategory.params)">
+                        <ProductsItem
+                            :title="productCategory.params.title"
+                            :text="productCategory.params.product_options ? productCategory.params.product_options.prod_size : ''"
+                            :image="productCategory.params.image.url"
+                        />
+                    </div>
+                </div>
+                <div v-else>
+                    <div v-html="productCategory.params.text"></div>
+                    <div class="row">
+                        <div 
+                            v-for="(product, index) in productCategory.childs.childs" :key="index"
+                            class="col-lg-4 col-md-6 col-12 mb-32"
+                        >
+                            <div class="h-100" @click="goToProductPage(product.params)">
+                                <ProductsItem
+                                    :title="product.params.title"
+                                    :text="product.params.product_options ? product.params.product_options.prod_size : ''"
+                                    :image="product.params.image.url"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,7 +167,7 @@ export default {
                     path: `/products/${this.id}`,
                     name: 'ProductsCategoryList',
                     meta: {
-                        title: this.product.name
+                        title: this.product.title
                     }
                 },
                 {

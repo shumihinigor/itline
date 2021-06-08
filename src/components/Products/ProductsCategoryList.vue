@@ -6,10 +6,10 @@
                 v-for="(category, idx) in categories" 
                 :key="idx" 
             >
-                <div class="h-100" @click="goToProductCategoryPage(category)">
+                <div class="h-100" @click="goToProductCategoryPage(category.params)">
                     <ProductsItem 
-                        :title="category.title"
-                        :image="category.image.url"
+                        :title="category.params.title"
+                        :image="category.params.image.url"
                     />
                 </div>
             </div>
@@ -66,7 +66,7 @@ export default {
                     path: `/products/${this.id}`,
                     name: 'ProductsCategoryList',
                     meta: {
-                        title: this.product.name
+                        title: this.product.title
                     }
                 }
             ]

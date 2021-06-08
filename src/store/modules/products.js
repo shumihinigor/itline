@@ -92,7 +92,7 @@ const state = () => ({
     },
     filterProductPageOptionsTabs({ commit, state }) {
         for (const key in state.productPage.product_options) {
-            if (typeof state.productPageOptionsTabs[state.productPage.product_options[key].category_name] == 'undefined') {
+            if (typeof state.productPageOptionsTabs[state.productPage.product_options[key].category_name] == 'undefined' && !key.match(/lb/)) {
                 state.productPageOptionsTabs[state.productPage.product_options[key].category_name] = [state.productPage.product_options[key]]
             } else {
                 state.productPageOptionsTabs[state.productPage.product_options[key].category_name].push(state.productPage.product_options[key])
@@ -105,7 +105,6 @@ const state = () => ({
             .get('/rest/products')
             .then(response => {
                 commit('setProducts', response.data.results);
-                commit('setProduct', state.products.find(item => item.alias == id));
             }).catch(error => {
                 router.push({ name: 'PageNotFound' }); 
             });
@@ -119,9 +118,10 @@ const state = () => ({
         commit('setDescription', "");
 
         await dispatch('getCategories', { id: id, category_id: category_id });
-        commit('setProduct', state.products.find(item => item.alias == id));
 
-        commit('setTitle', state.product.name);
+        commit('setTitle', state.product.title);
+        commit('setContent', state.product.text);
+        commit('setDescription', state.product.short_description);
         commit('setLoadingOnChange', false);
 
         if (state.sidebar) {
@@ -138,7 +138,6 @@ const state = () => ({
         commit('setDescription', "");
         
         await dispatch('getCategoriesProducts', { category_id: category_id });
-        commit('setCategory', state.categories.find(item => item.alias == category_id));
 
         commit('setTitle', state.category.title);
         commit('setContent', state.category.text);
@@ -169,8 +168,8 @@ const state = () => ({
                 if (id == 'undefined') {
                     return Promise.reject();
                 }
-                commit('setCategories', response.data.results);
-                commit('setCategory', state.categories.find(item => item.alias == category_id));
+                commit('setCategories', response.data.results.childs);
+                commit('setProduct', response.data.results.params);
             });
     },
     async getCategoriesProducts({ commit, state, dispatch }, { category_id, product_id }) {
@@ -181,9 +180,21 @@ const state = () => ({
                     return Promise.reject();
                 }
                 commit('setProductPageOptionsTabs', {});
-                commit('setCategoriesProducts', response.data.results);
+                commit('setCategoriesProducts', response.data.results.childs);
+                commit('setCategory', response.data.results.params);
                 if (product_id) {
-                    commit('setProductPage', state.categoriesProducts.find(item => item.alias == product_id));
+                    response.data.results.childs.find((item) => {
+                        if (item.childs.childs.length) {
+                            return item.childs.childs.find(child => {
+                                if (child.params.alias == product_id) {
+                                    commit('setProductPage', child.params)
+                                    commit('setCategoriesProducts', item.childs.childs);
+                                }
+                            })
+                        } else if (item.params.alias == product_id) {
+                            commit('setProductPage', item.params)
+                        }
+                    })
                     if (state.productPage.product_options && Object.keys(state.productPage.product_options).length) {
                         dispatch('filterProductPageOptionsTabs', null);
                     }
@@ -193,7 +204,9 @@ const state = () => ({
     async getDataList({ commit, state, dispatch }, { id, category_id }) {
         await Promise.all([dispatch('getProducts', id), dispatch('getCategories', { id: id, category_id: category_id })])
             .then(() => {
-                commit('setTitle', state.product.name);
+                commit('setTitle', state.product.title);
+                commit('setContent', state.product.text);
+                commit('setDescription', state.product.short_description);
                 dispatch('initSidebar', null);
             })
             .catch(({ response }) => {
@@ -210,10 +223,12 @@ const state = () => ({
                 commit('setTitle', state.category.title);
                 commit('setContent', state.category.text);
                 commit('setDescription', state.category.short_description);
-                dispatch('initSidebar', null);
+                if (router.currentRoute.name !== 'ProductsPage') {
+                    dispatch('initSidebar', null);
+                }
             })
             .catch(({ response }) => {
-                router.push({ name: 'PageNotFound' });
+                // router.push({ name: 'PageNotFound' });
             });
     }
   };
