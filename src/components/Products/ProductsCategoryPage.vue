@@ -14,7 +14,8 @@
                     </div>
                 </div>
                 <div v-else>
-                    <div v-html="productCategory.params.text"></div>
+                    <h3 class="h3 mb-24" v-html="productCategory.params.title"></h3>
+                    <!-- <div v-html="productCategory.params.text"></div> -->
                     <div class="row">
                         <div 
                             v-for="(product, index) in productCategory.childs.childs" :key="index"
@@ -40,86 +41,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="category-page mb-80"> -->
-        <!-- <div v-else class="container"> -->
-            <!-- <template>
-                <div class="mb-40"> -->
-                    <!-- STOCK -->
-                    <!-- <div class="row mb-32" v-if="category.stock && category.stock.state == 'active'">
-                         <div class="col-lg-3 col-12 mb-32">
-                             <div class="stock">
-                                 <div class="stock-card">
-                                    <div 
-                                        class="stock-image" 
-                                        :style="{'background-image': 'url(' + require('../../assets/images/' + category.stock.card.image) + ')'}"
-                                    ></div>
-                                    <h1 class="h5 mb-16">{{ category.stock.card.title }}</h1>
-                                    <ul class="ps-3 m-0">
-                                        <li v-for="(li, index) in category.stock.card.list" class="p4" :key="index">
-                                            {{ li }}
-                                        </li>
-                                    </ul>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-lg-9 col-12">
-                             <h3 class="h3 mb-16">{{ category.stock.title }}</h3>
-                             <div class="mb-16">
-                                 <p class="p2 mb-8" v-for="(item, index) in category.stock.description" :key="index" v-html="item"></p>
-                             </div>
-                             <div class="">
-                                 <p>
-                                    <a class="p2 link orange text-decoration-none" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        Условия акции.
-                                    </a>
-                                </p>
-                                <div class="collapse" id="collapseExample">
-                                    <div class="">
-                                        <p class="p5 text-grey-2 mb-8" v-for="(item, index) in category.stock.conditions" :key="index" v-html="item"></p>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div> -->
-                    <!-- <div class="row mb-32" v-else-if="category.swiper && category.swiper.length">
-                        <div class="col">
-                            <SwiperProduct
-                                v-if="product.swiper.length"
-                                :slides="product.swiper"
-                            />
-                        </div>
-                    </div> -->
-                    <!-- DESCRIPTION -->
-                    <!-- <div class="row mb-24" v-if="category.short_description && category.short_description.length">
-                        <div class="col">
-                            <p class="p2" v-html="category.short_description"></p>
-                        </div>
-                    </div> -->
-                    <!-- PDF -->
-                    <!-- <div class="row mb-24" v-if="category.pdf">
-                        <div class="col">
-                            <a
-                                :href="'/static/files/' + category.pdf.name + '.pdf'" 
-                                download="" 
-                                class="file__link bg-white"
-                            >
-                                <div class="d-flex flex-column align-items-start ml-16">
-                                    <p class="p2 text-grey-1 mb-1">{{ category.pdf.title }}</p>
-                                    <p class="p5 text-grey-3 mb-0">{{ category.pdf.size }}Mb</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </template> -->
-            <!-- TEXT -->
-            <!-- <div class="row mb-40" v-if="category.text && category.text.length">
-                <div class="col">
-                    <div class="" v-html="category.text"></div>
-                </div>
-            </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
 </template>
 
 <script>

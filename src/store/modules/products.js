@@ -94,7 +94,7 @@ const state = () => ({
         for (const key in state.productPage.product_options) {
             if (typeof state.productPageOptionsTabs[state.productPage.product_options[key].category_name] == 'undefined' && !key.match(/lb/)) {
                 state.productPageOptionsTabs[state.productPage.product_options[key].category_name] = [state.productPage.product_options[key]]
-            } else {
+            } else if (!key.match(/lb/)) {
                 state.productPageOptionsTabs[state.productPage.product_options[key].category_name].push(state.productPage.product_options[key])
             }
         }
@@ -202,7 +202,10 @@ const state = () => ({
             });
     },
     async getDataList({ commit, state, dispatch }, { id, category_id }) {
-        await Promise.all([dispatch('getProducts', id), dispatch('getCategories', { id: id, category_id: category_id })])
+        await Promise.all([
+            await dispatch('getProducts', id), 
+            await dispatch('getCategories', { id: id, category_id: category_id })
+        ])
             .then(() => {
                 commit('setTitle', state.product.title);
                 commit('setContent', state.product.text);
@@ -215,9 +218,9 @@ const state = () => ({
     },
     async getDataPage({ commit, state, dispatch }, { id, category_id, product_id }) {
         await Promise.all([
-            dispatch('getProducts', id), 
-            dispatch('getCategories', { id: id, category_id: category_id }), 
-            dispatch('getCategoriesProducts', { category_id: category_id, product_id: product_id })
+            await dispatch('getProducts', id), 
+            await dispatch('getCategories', { id: id, category_id: category_id }), 
+            await dispatch('getCategoriesProducts', { category_id: category_id, product_id: product_id })
         ])
             .then(() => {
                 commit('setTitle', state.category.title);
@@ -228,7 +231,7 @@ const state = () => ({
                 }
             })
             .catch(({ response }) => {
-                // router.push({ name: 'PageNotFound' });
+                router.push({ name: 'PageNotFound' });
             });
     }
   };
