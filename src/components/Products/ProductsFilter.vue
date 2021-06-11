@@ -9,7 +9,7 @@
             >
                 <span @click.stop="goToProductsCategoryList(product.alias)">{{ product.name }}</span>
                 <ul>
-                    <Preloader v-if="!categories" />
+                    <Preloader v-if="categories && !categories.length" />
                     <li 
                         v-else
                         v-for="(category, index) in categories" 

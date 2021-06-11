@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <div class="row" v-if="categories.length">
+        <div class="row" v-if="categories && categories.length">
             <div 
                 class="col-lg-4 col-md-6 col-12 mb-32" 
                 v-for="(category, idx) in categories" 

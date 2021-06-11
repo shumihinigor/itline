@@ -184,8 +184,8 @@ const state = () => ({
                 commit('setCategory', response.data.results.params);
                 if (product_id) {
                     response.data.results.childs.find((item) => {
-                        if (item.childs.childs.length) {
-                            return item.childs.childs.find(child => {
+                        if (item.childs && item.childs.length) {
+                            return item.childs.find(child => {
                                 if (child.params.alias == product_id) {
                                     commit('setProductPage', child.params)
                                     commit('setCategoriesProducts', item.childs.childs);

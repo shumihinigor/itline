@@ -2,9 +2,9 @@
     <div class="content">
         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2" v-if="categoriesProducts.length">
             <div :class="['mb-32', {
-                'w-100': productCategory.childs.childs.length
+                'w-100': productCategory.childs
             }]" v-for="(productCategory, idx) in categoriesProducts" :key="idx">
-                <div v-if="!productCategory.childs.childs.length">
+                <div class="h-100" v-if="!productCategory.childs">
                     <div class="h-100" @click="goToProductPage(productCategory.params)">
                         <ProductsItem
                             :title="productCategory.params.title"
@@ -15,10 +15,10 @@
                 </div>
                 <div v-else>
                     <h3 class="h3 mb-24" v-html="productCategory.params.title"></h3>
-                    <!-- <div v-html="productCategory.params.text"></div> -->
+                    <div class="mb-24" v-html="productCategory.params.text"></div>
                     <div class="row">
                         <div 
-                            v-for="(product, index) in productCategory.childs.childs" :key="index"
+                            v-for="(product, index) in productCategory.childs" :key="index"
                             class="col-lg-4 col-md-6 col-12 mb-32"
                         >
                             <div class="h-100" @click="goToProductPage(product.params)">
