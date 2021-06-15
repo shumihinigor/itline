@@ -77,18 +77,18 @@ const state = () => ({
   // actions
   const actions = {
     selectProduct({ commit, state }, { product, index }) {
-        if (window.innerWidth > 991) {
-            if (state.selectedProduct.id == product.id) {
-                commit('setSelectedProduct', {});
-                commit('setSelectedIndex', null);
-            } else {
-                commit('setSelectedProduct', product);
-                commit('setSelectedIndex', index);
-            }
-        } else {
+        if (state.selectedProduct.id == product.id) {
             commit('setSelectedProduct', {});
             commit('setSelectedIndex', null);
+        } else {
+            commit('setSelectedProduct', product);
+            commit('setSelectedIndex', index);
         }
+        // if (window.innerWidth > 991) {
+        // } else {
+        //     commit('setSelectedProduct', {});
+        //     commit('setSelectedIndex', null);
+        // }
     },
     filterProductPageOptionsTabs({ commit, state }) {
         for (const key in state.productPage.product_options) {

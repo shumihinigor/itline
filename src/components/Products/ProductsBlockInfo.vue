@@ -15,7 +15,11 @@
                     name="fade"
                     mode="out-in"
                 >
-                    <div :class="['col-12 mb-32', 'order-' + (selectedIndex|3)]" v-if="selectedProduct.id">
+                    <div 
+                        class="col-12 mb-32"
+                        :class="windowWidth > 991 ? 'order-' + (selectedIndex|3) : 'order-' + selectedIndex"
+                        v-if="selectedProduct.id"
+                    >
                         <div class="product-info">
                             <div class="row w-100">
                                 <div class="col-lg-4 col-12 mb-lg-0 mb-4">
@@ -26,7 +30,6 @@
                                 </div>
                                 <div class="col-lg-8 col-12">
                                     <div class="product-info__block">
-                                        <!-- <p class="p2 text-grey-1 mb-16">Сюда можно добавить любую необходимую информацию: заголовок, текстовое описание, изображения, ссылки и пр.</p> -->
                                         <div class="product-info__links" v-if="files[selectedProduct.alias]">
                                             <div 
                                                 v-for="(filesBlock, index) in files" 
@@ -80,6 +83,7 @@ export default {
     },
     data() {
         return {
+            windowWidth: window.innerWidth,
             loading: true,
             files: {
                 "resheniya-dlya-transporta": [
@@ -374,6 +378,9 @@ export default {
             }
         }
     },
+    watch: {
+        
+    },
     computed: {
         ...mapGetters([
             'products',
@@ -382,12 +389,18 @@ export default {
         ])
     },
     created() {
+        window.addEventListener('resize', this.onResize);
         this.getProducts().then(() => this.loading = false);
     },
     methods: {
         ...mapActions(['getProducts', 'selectProduct']),
-        
+        onResize() {
+            this.windowWidth = window.innerWidth
+        }
     },
+    destroyed() {
+        window.removeEventListener('resize', this.onResize); 
+    }
 }
 </script>
 
