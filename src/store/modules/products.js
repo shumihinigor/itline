@@ -84,11 +84,6 @@ const state = () => ({
             commit('setSelectedProduct', product);
             commit('setSelectedIndex', index);
         }
-        // if (window.innerWidth > 991) {
-        // } else {
-        //     commit('setSelectedProduct', {});
-        //     commit('setSelectedIndex', null);
-        // }
     },
     filterProductPageOptionsTabs({ commit, state }) {
         for (const key in state.productPage.product_options) {
@@ -188,7 +183,7 @@ const state = () => ({
                             return item.childs.find(child => {
                                 if (child.params.alias == product_id) {
                                     commit('setProductPage', child.params)
-                                    commit('setCategoriesProducts', item.childs.childs);
+                                    commit('setCategoriesProducts', item.childs);
                                 }
                             })
                         } else if (item.params.alias == product_id) {
