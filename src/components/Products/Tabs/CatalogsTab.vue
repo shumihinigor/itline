@@ -16,7 +16,7 @@
                                         <a 
                                             :href="'/static/files/' + file.url" 
                                             download 
-                                            class="file__link mb-24" 
+                                            class="file__link bg-white mb-24" 
                                         >
                                             <div class="d-flex flex-column align-items-start ml-16">
                                                 <p class="p2 text-grey-1 mb-1">{{ file.name }}</p>
@@ -40,7 +40,7 @@
                                         <a 
                                             :href="'/static/files/' + file.url" 
                                             download 
-                                            class="file__link mb-24" 
+                                            class="file__link bg-white mb-24" 
                                         >
                                             <div class="d-flex flex-column align-items-start ml-16">
                                                 <p class="p2 text-grey-1 mb-1">{{ file.name }}</p>
