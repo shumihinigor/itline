@@ -23,8 +23,8 @@ $iterator: 8
 
 
 $order_count: 30
-$order_iterator: 30
+$order_iterator: 1
 
-@for $i from 1 through $count
-    .order-#{$i} 
+@for $i from 1 through $order_count
+    .order-#{$i * $order_iterator} 
         order: $i !important

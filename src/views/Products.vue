@@ -14,6 +14,7 @@
                     <div>
                         <tabs ref="tabs" @changed="tabChanged" :options="{ useUrlFragment: false }">
                             <tab id="productsTab" name="Продукция"></tab>
+                            <tab id="catalogsTab" name="Каталоги и презентации"></tab>
                             <tab id="paymentTab" name="Оплата и доставка"></tab>
                         </tabs>
                     </div>
@@ -26,6 +27,7 @@
             mode="out-in"
         >
             <ProductsTab v-if="currentTab == 'productsTab'" />
+            <CatalogsTab v-if="currentTab == 'catalogsTab'" />
             <PaymentTab v-else-if="currentTab == 'paymentTab'" />
         </transition>
     </section>
@@ -38,6 +40,7 @@ import Tabs from 'vue-tabs-component';
 // tabs
 import ProductsTab from '@/components/Products/Tabs/ProductsTab'
 import PaymentTab from '@/components/Products/Tabs/PaymentTab'
+import CatalogsTab from '@/components/Products/Tabs/CatalogsTab'
 
 Vue.use(Tabs);
 
@@ -45,7 +48,7 @@ export default {
     name: 'Products',
     props: ["tab"],
     components: {
-        ProductsTab, PaymentTab
+        ProductsTab, PaymentTab, CatalogsTab
     },
     data() {
         return {
