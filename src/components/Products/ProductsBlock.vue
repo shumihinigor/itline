@@ -56,6 +56,8 @@ export default {
 <style lang="scss">
     .product {
         margin-bottom: 68px;
-        
+        & .product-image {
+            background-size: cover !important;
+        }
     }
 </style>

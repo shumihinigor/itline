@@ -56,6 +56,10 @@ export default {
         }
     },
     created() {
+        // seo
+        // this.$store.commit('setSeoTitle', "");
+        // this.$store.commit('setSeoDescription', "");
+
         let breadcrumbs = [
             {
                 path: '/',

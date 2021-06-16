@@ -10,11 +10,11 @@
                         class="mb-40"
                         :images="newsPage.images"
                     />
-                    <div 
+                    <!-- <div 
                         v-else-if="newsPage.image"
                         class="news-page__image mb-40"
                         v-lazy:background-image="'/' + newsPage.image"
-                    ></div>
+                    ></div> -->
                     <div class="mb-24">
                         <div class="p2" v-if="newsPage.text" v-html="newsPage.text"></div>
                     </div>
@@ -48,7 +48,14 @@ export default {
         ]),
     },
     created() {
-        this.getNewsPage(this.id).then(() => this.loading = false);
+        
+        this.getNewsPage(this.id).then(() => {
+            // seo
+            this.$store.commit('setSeoTitle', this.newsPage.seo_title);
+            this.$store.commit('setSeoDescription', this.newsPage.seo_description);
+
+            this.loading = false;
+        });
     },
     methods: {
         ...mapActions(['getNewsPage']),

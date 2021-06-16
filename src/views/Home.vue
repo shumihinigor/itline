@@ -36,6 +36,10 @@
             }
         },
         created() {
+            // seo
+            this.$store.commit('setSeoTitle', "ITLINE светодиодные электронные табло - производство и разработка");
+            this.$store.commit('setSeoDescription', "Электронные светодиодные табло ITLINE для различных отраслей - led табло для транспорта, табло валют, спортивные табло, метео табло, табло для АЗС и тд");
+
             this.$store.commit('changeActiveHeader', true)
             window.addEventListener('scroll', this.scrollHandler)
         },

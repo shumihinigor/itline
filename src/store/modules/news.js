@@ -49,7 +49,7 @@ const state = () => ({
                 if (id == 'undefined') {
                     return Promise.reject();
                 }
-                commit('setNewsPage', response.data.object);
+                commit('setNewsPage', response.data.results);
                 let breadcrumbs = [
                     {
                         path: '/',

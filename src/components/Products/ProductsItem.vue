@@ -36,11 +36,11 @@ export default {
         &-image {
             height: 194px;
             background-position: center center;
-            background-size: cover;
+            background-size: 90%;
             background-repeat: no-repeat;
-            // & img {
-            //     width: 100%;
-            // }
+            &[lazy="error"] {
+                background-color: #000000;
+            }
         }
         &-block {
             padding: 20px;

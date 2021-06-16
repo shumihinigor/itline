@@ -129,6 +129,10 @@
     export default {
         name: 'Contacts',
         created() {
+            // seo
+            this.$store.commit('setSeoTitle', "Контакты производителя светодиодных табло компании ITLINE");
+            this.$store.commit('setSeoDescription', "Контакты компании ITLINE - офис продаж, адрес производства, региональное представительство. Свяжитесь с менеджерами");
+
             let breadcrumbs = [
                 {
                     path: '/',

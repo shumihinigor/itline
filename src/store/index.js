@@ -12,10 +12,18 @@ Vue.use(Vuex);
 
 const state = {
     activeHeader: false,
-    breadcrumbs: []
+    breadcrumbs: [],
+    seoTitle: "",
+    seoDescription: ""
 };
 
 const mutations = {
+    setSeoTitle(state, comment) {
+        state.seoTitle = comment;
+    },
+    setSeoDescription(state, comment) {
+        state.seoDescription = comment;
+    },
     changeActiveHeader(state, comment) {
         state.activeHeader = comment;
     },
@@ -29,6 +37,8 @@ const actions = {
 };
 
 const getters = {
+    seoTitle: state => state.seoTitle,
+    seoDescription: state => state.seoDescription,
     activeHeader: state => state.activeHeader,
     breadcrumbs: state => state.breadcrumbs
 };

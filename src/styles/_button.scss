@@ -8,9 +8,14 @@
     & span {
         font-family: $TTNormsMedium;
     }
-    &:hover,
-    &:focus {
+    &:hover {
         box-shadow: 0px 4px 8px rgba(239, 111, 46, 0.25) !important;
+    }
+    &:active {
+        opacity: 0.9;
+    }
+    &:focus {
+        box-shadow: none;
     }
     &.default {
         background-color: $orange;

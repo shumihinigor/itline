@@ -124,6 +124,10 @@ const state = () => ({
             commit('setSidebar', null);
         }
         dispatch('initSidebar', null);
+
+        // seo
+        commit('setSeoTitle', state.product.seo_title, { root: true });
+        commit('setSeoDescription', state.product.short_description, { root: true });
     },
     async changePage({ commit, state, dispatch }, { id, category_id }) {
         commit('setLoadingOnChange', true);
@@ -144,6 +148,10 @@ const state = () => ({
             commit('setSidebar', null);
         }
         dispatch('initSidebar', null);
+
+        // seo
+        commit('setSeoTitle', state.category.seo_title, { root: true });
+        commit('setSeoDescription', state.category.short_description, { root: true });
     },
     initSidebar({ commit, state }) {
         if (window.innerWidth > 991) {
@@ -175,7 +183,7 @@ const state = () => ({
                     return Promise.reject();
                 }
                 commit('setProductPageOptionsTabs', {});
-                commit('setCategoriesProducts', response.data.results.childs);
+                commit('setCategoriesProducts', response.data.results.childs ? response.data.results.childs : []);
                 commit('setCategory', response.data.results.params);
                 if (product_id) {
                     response.data.results.childs.find((item) => {
@@ -206,6 +214,10 @@ const state = () => ({
                 commit('setContent', state.product.text);
                 commit('setDescription', state.product.short_description);
                 dispatch('initSidebar', null);
+
+                // seo
+                commit('setSeoTitle', state.product.seo_title, { root: true });
+                commit('setSeoDescription', state.product.short_description, { root: true });
             })
             .catch(({ response }) => {
                 router.push({ name: 'PageNotFound' });
@@ -224,6 +236,10 @@ const state = () => ({
                 if (router.currentRoute.name !== 'ProductsPage') {
                     dispatch('initSidebar', null);
                 }
+
+                // seo
+                commit('setSeoTitle', state.category.seo_title, { root: true });
+                commit('setSeoDescription', state.category.short_description, { root: true });
             })
             .catch(({ response }) => {
                 router.push({ name: 'PageNotFound' });

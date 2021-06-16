@@ -406,7 +406,6 @@ export default {
 
 <style lang="scss">
     .product {
-        margin-bottom: 68px;
         &-info {
             display: flex;
             align-items: flex-start;

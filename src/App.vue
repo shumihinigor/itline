@@ -72,11 +72,16 @@
                 showSubscribe: false
             }
         },
-        mounted() {
-            
+        watch: {
+            seoTitle(title) {
+                document.head.querySelector('title').textContent = title;
+            },
+            seoDescription(description) {
+                document.head.querySelector('meta[name="description"]').content = description;
+            }
         },
         computed: {
-            ...mapGetters(["activeHeader", "breadcrumbs"]),
+            ...mapGetters(["activeHeader", "breadcrumbs", "seoTitle", "seoDescription"]),
         },
         created() {
             window.addEventListener('scroll', this.scrollHandler)
@@ -92,9 +97,6 @@
             scrollTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }
-        },
-        updated() {
-            
         }
     }
 

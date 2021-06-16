@@ -229,6 +229,10 @@ export default {
             return this.categoriesProducts.filter(item => item.params.id !== this.productPage.id)
         }
     },
+    updated() {
+        this.$store.commit('setSeoTitle', this.productPage.seo_title);
+        this.$store.commit('setSeoDescription', this.productPage.short_description);
+    },
     created() {
         this.getDataPage({ id: this.id, category_id: this.category_id, product_id: this.product_id }).then(() => {
             this.initBreadcrumbs();

@@ -70,6 +70,10 @@ export default {
         }
     },
     created() {
+        // seo
+        this.$store.commit('setSeoTitle', "Список новостей компании ITLINE");
+        this.$store.commit('setSeoDescription', "Новости от компании ITLINE - проходящие акции, новые условия, достижения и различные события, которые окружают компанию ITLINE");
+        
         this.getNews().then(() => this.loading = false);
         let breadcrumbs = [
             {
