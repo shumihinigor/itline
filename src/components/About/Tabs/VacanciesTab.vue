@@ -11,9 +11,13 @@
                         ITLINE — это комфортная среда, в которой каждый сотрудник реализовывает свой потенциал. Семинары у гуру направлений, обмен знаниями внутри компании, и возможность работать на вершине технологий в сфере передачи информации! Быть частью нашей команды — это быть человеком во всех смыслах!
                     </p>
                 </div>
-                <button class="btn default d-lg-block d-none" disabled>
+                <a 
+                    href="https://yaroslavl.hh.ru/employer/671040" 
+                    class="btn default d-lg-inline-block d-none" 
+                    target="_blank"
+                >
                     <span>Смотреть вакансии</span>
-                </button>
+                </a>
             </div>
             <div class="col-lg-6 col-12">
                 <div class="vacancies-radial">
@@ -55,9 +59,13 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn default w-100 mt-56 d-lg-none d-block" disabled>
+                <a 
+                    href="https://yaroslavl.hh.ru/employer/671040" 
+                    class="btn default w-100 mt-56 d-lg-none d-inline-block" 
+                    target="_blank"
+                >
                     <span>Смотреть вакансии</span>
-                </button>
+                </a>
             </div>
         </div>
     </div>
