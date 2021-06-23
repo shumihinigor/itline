@@ -63,48 +63,11 @@
                 <!-- FEEDBACK -->
                 <div class="col-lg-4 col-12 mb-32">
                     <div class="product-page__stock">
-                        <h6 class="h6 text-uppercase mb-24 text-center">связаться с менеджером</h6>
-                        <div class="input-block mb-16">
-                            <input 
-                                id="text"
-                                type="text" 
-                                class="input"
-                                required
-                            >
-                            <label class="label" for="text">Введенный текст</label>
-                        </div>
-                        <div class="input-block mb-16">
-                            <input 
-                                id="phone"
-                                type="text" 
-                                class="input"
-                                required
-                            >
-                            <label class="label" for="phone">Телефон</label>
-                        </div>
-                        <div class="input-block mb-16">
-                            <input 
-                                id="email"
-                                type="text" 
-                                class="input"
-                                required
-                            >
-                            <label class="label" for="email">Email</label>
-                        </div>
-                        <div class="textarea-block mb-16">
-                            <textarea id="message" type="text" required class="textarea"></textarea>
-                            <label for="message" class="label">Сообщение</label>
-                        </div>
-                        <div class="modal-policy mb-16">
-                            <p class="p4 text-grey-3 mb-0">Отправляя заявку, я подтверждаю, что ознакомлен и согласен 
-                            с <a class="link orange" href="javascript:;">Политикой конфиденциальности</a> данного сайта</p>
-                        </div>
-                        <div class="mb-16">
-                            <button type="button" class="btn default w-100"><span class="p4">Отправить</span></button>
-                        </div>
-                        <div class="">
-                            <button type="button" class="btn contour w-100"><span class="p4">Заказать обратный звонок</span></button>
-                        </div>
+                        <Form
+                            :title="'Связаться с менеджером'"
+                            :policy="false"
+                            :id="'product-page'"
+                        />
                     </div>
                 </div>
             </div>
@@ -195,6 +158,8 @@ import Preloader from '@/components/Preloader/Preloader'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
 import ProductsItem from '@/components/Products/ProductsItem'
 
+import Form from '@/components/Form'
+
 import { createNamespacedHelpers } from "vuex";
 const { mapMutations, mapGetters, mapActions } = createNamespacedHelpers("products");
 
@@ -207,7 +172,7 @@ export default {
     name: "ProductsPage",
     props: ["id", "category_id", "product_id"],
     components: {
-        Preloader, SwiperProductCategory, ProductsItem
+        Preloader, SwiperProductCategory, ProductsItem, Form
     },
     data() {
         return {

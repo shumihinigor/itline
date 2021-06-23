@@ -35,29 +35,11 @@
         </div>
         <div class="row justify-content-end" v-else>
             <div class="col-lg-8 col-12">
-                <div class="input-block mb-16">
-                    <input id="name" type="text" required class="input bg-white">
-                    <label for="name" class="label">Ваше имя  (компания)</label>
-                </div>
-                <div class="input-block mb-16">
-                    <input id="phone" type="tel" required class="input bg-white">
-                    <label for="phone" class="label">Телефон</label>
-                </div>
-                <div class="input-block mb-16">
-                    <input id="email" type="text" required class="input bg-white">
-                    <label for="email" class="label">Email</label>
-                </div>
-                <div class="textarea-block mb-16">
-                    <textarea id="message" type="text" required class="textarea bg-white"></textarea>
-                    <label for="message" class="label">Сообщение</label>
-                </div>
-                <div class="modal-policy mb-24">
-                    <p class="p4 text-grey-3 mb-0">Отправляя заявку, я подтверждаю, что ознакомлен и согласен
-                    с <a class="link orange" href="javascript:;">Соглашением о неразглашении</a> данного сайта</p>
-                </div>
-                <div class="mb-16">
-                    <button type="button" class="btn default w-100"><span class="p4">Отправить</span></button>
-                </div>
+                <Form
+                    :policy="false"
+                    :id="'product-category-page'"
+                    :theme-form="'light'"
+                />
             </div>
             <!-- <div class="col">
                 <div class="nothing-found">
@@ -72,11 +54,13 @@
 import ProductsItem from '@/components/Products/ProductsItem'
 import NothingFound from '@/components/NothingFound'
 
+import Form from '@/components/Form'
+
 export default {
     name: "ProductsCategoryPage",
     props: ["id", "category_id", "category", "products", "product", "categories", "categories-products"],
     components: {
-        ProductsItem, NothingFound
+        ProductsItem, NothingFound, Form
     },
     data() {
         return {}

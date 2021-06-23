@@ -48,6 +48,12 @@
             >
             <label class="label" :for="'userEmail_' + id">Email</label>
         </div>
+        <!-- departmentSelect -->
+        <Select
+            :options="departmentOptions"
+            :label="'Тип табло'"
+            @select="department = $event"
+        />
         <!-- userMessageInput -->
         <div class="textarea-block mb-16" v-if="userMessageInput">
             <textarea 
@@ -77,12 +83,14 @@
 </template>
 
 <script>
+import Select from '@/components/Select/Select'
 export default {
+    name: "Form",
     props: {
         id: {
             default: Date.now(),
             type: [ String, Number ]
-        },
+        },// +
         title: {
             default: "",
             type: String
@@ -132,38 +140,61 @@ export default {
             type: String
         }//+
     },
-    name: "Form",
+    components: {
+        Select
+    },
     data() {
         return {
-            userName: "", // — Имя, ФИО и т.п.
-            userCompany: "", // — Название компании
-            userEmail: "", //  — E-mail
-            userPhone: "", // — Телефон
-            userAddress: "", // — Адрес
-            userMessage: "", // — Сообщение
-            userFile: "", // — Файл (один)
+            userName: "", // — Имя, ФИО и т.п. +
+            userCompany: "", // — Название компании +
+            userEmail: "", //  — E-mail +
+            userPhone: "", // — Телефон +
+            userAddress: "", // — Адрес -
+            userMessage: "", // — Сообщение +
+            userFile: "", // — Файл (один) -
 
             action: "", // — Пока у всех "ld"
-            department: "", // — Направление (укажу ниже)
+            department: "", // — Направление (укажу ниже) +
             manager: "", // — Возможен ID менеджера, но пока пустое поле
             theme: "", // — тема формы (например, «заказ табло ТВ-123»)
             formName: "", // — название формы (например, «форма заказа табло»
-            url: "" // — URL страницы, на которой расположена форма
+            url: "", // — URL страницы, на которой расположена форма
+
+            departmentOptions: [
+                "Решения для транспорта",
+                "Дорожные табло",
+                "Табло для остановок",
+                "Табло для вокзалов",
+                "Табло для АЗС",
+                "Табло часы-метеостанции",
+                "Спортивные табло",
+                "Табло курсов валют",
+                "Промышленные табло"
+            ]
         }
-    }
+    },
+    created() {
+        this.url = window.location.href
+    },
 }
 </script>
 
 <style lang="scss">
 .form {
     &.dark {
-        & input, textarea {
+        & input, textarea, .select, .select-wrapper span {
             background-color: $bg;
+        }
+        & .select-wrapper {
+            background-color: $white;
         }
     }
     &.light {
-        & input, textarea {
+        & input, textarea, .select, .select-wrapper span {
             background-color: $white;
+        }
+        & .select-wrapper {
+            background-color: $bg;
         }
     }
 }
