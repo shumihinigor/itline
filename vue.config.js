@@ -25,7 +25,7 @@ module.exports = {
         secure: false
       },
       "/api/": {
-        target: "https://test.it-line.info/",
+        target: "https://portal.it-line.info/api/",
         changeOrigin: true,
         secure: false
       },
