@@ -1,7 +1,7 @@
 <template>
     <div :class="['form', {
-        'dark': themeForm == 'dark',
-        'light': themeForm == 'light'
+        'dark': mode == 'dark',
+        'light': mode == 'light'
     }]">
         <h6 class="h6 text-uppercase mb-24">{{ title }}</h6>
         <!-- userNameInput -->
@@ -53,8 +53,10 @@
         </div>
         <!-- departmentSelect -->
         <Select
+            v-if="departmentSelect"
             :options="departmentOptions"
             :label="'Тип табло'"
+            :selected="department"
             @select="department = $event"
         />
         <!-- userMessageInput -->
@@ -77,6 +79,7 @@
             <button 
                 type="button" 
                 class="btn default w-100"
+                :disabled="!formValid"
                 @click="sendForm"
             >
                 <span class="p4">{{ sendButtonText }}</span>
@@ -126,6 +129,10 @@ export default {
             default: true,
             type: Boolean
         },// +
+        departmentSelect: {
+            default: true,
+            type: Boolean
+        },// +
         userPhoneInput: {
             default: true,
             type: Boolean
@@ -142,8 +149,12 @@ export default {
             default: true,
             type: Boolean
         },
-        themeForm: {
+        mode: {
             default: "dark",
+            type: String
+        },
+        theme: {
+            default: "",
             type: String
         }//+
     },
@@ -163,8 +174,6 @@ export default {
             action: "", // — Пока у всех "ld"
             department: "", // — Направление (укажу ниже) +
             manager: "", // — Возможен ID менеджера, но пока пустое поле
-            theme: "", // — тема формы (например, «заказ табло ТВ-123»)
-            formName: "", // — название формы (например, «форма заказа табло»
             url: window.location.href, // — URL страницы, на которой расположена форма
 
             departmentOptions: {
@@ -185,6 +194,16 @@ export default {
         emailValid() {
             let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
             return regex.test(this.userEmail);
+        },
+        phonelValid() {
+            return this.userPhone.length == 18
+        },
+        formValid() {
+            return  this.emailValid && 
+                    this.phonelValid && 
+                    this.userName && 
+                    this.userCompany && 
+                    this.userMessage
         }
     },
     methods: {
@@ -196,12 +215,19 @@ export default {
             }
         },
         blurPhone(event) {
-            console.log();
             if (this.userPhone.length < 18 && this.userPhone.length) {
                 event.target.classList.add('error')
             } else {
                 event.target.classList.remove('error')
             }
+        },
+        clearForm() {
+            this.userName = "", // — Имя, ФИО и т.п. +
+            this.userCompany = "", // — Название компании +
+            this.userEmail = "", //  — E-mail +
+            this.userPhone = "", // — Телефон +
+            this.userMessage = "", // — Сообщение +
+            this.department = "" // — Направление (укажу ниже) +
         },
         async sendForm() {
             await this.axios
@@ -218,13 +244,16 @@ export default {
                     'department': this.department,
                     'manager': this.manager,
                     'theme': this.theme,
-                    'form-name': this.formName,
+                    'form-name': this.id,
                     'url': this.url
                 })
                 .then(response => {
                     console.log(response);
                 }).catch(error => {
                     // router.push({ name: 'PageNotFound' });
+                })
+                .finally(() => {
+                    this.clearForm();
                 });
         }
     },

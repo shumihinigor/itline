@@ -38,7 +38,7 @@
                 <Form
                     :policy="false"
                     :id="'product-category-page'"
-                    :theme-form="'light'"
+                    :mode="'light'"
                 />
             </div>
             <!-- <div class="col">

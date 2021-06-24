@@ -4,9 +4,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-12">
                     <Form
+                        :theme="'Техподдержка'"
                         :title="'Написать специалисту itline'"
                         :policy="false"
-                        :id="'contacts'"
+                        :id="'support'"
                         :description="'* При появлении технических вопросов специалисты компании ITLINE оперативно осуществляют консультрование по вопросам установки и эксплуатации светодиодных табло'"
                     />
                 </div>

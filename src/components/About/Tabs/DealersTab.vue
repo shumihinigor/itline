@@ -5,7 +5,7 @@
                 <Form
                     :title="'Хочу узнать условия и стать дилером!'"
                     :policy="false"
-                    :theme-form="'light'"
+                    :mode="'light'"
                     :id="'dealers'"
                 />
             </div>

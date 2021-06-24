@@ -76,6 +76,8 @@
                 <div class="col-lg-4 col-12 mb-32">
                     <div class="product-page__stock">
                         <Form
+                            :department-select="false"
+                            :theme="productPage.title"
                             :title="'Связаться с менеджером'"
                             :policy="false"
                             :id="'product-page'"

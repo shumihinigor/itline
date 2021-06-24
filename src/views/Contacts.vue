@@ -79,6 +79,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-12">
                             <Form
+                                :theme="'Контакты'"
                                 :title="'Напишите нам'"
                                 :policy="false"
                                 :id="'contacts'"
