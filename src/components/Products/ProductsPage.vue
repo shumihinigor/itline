@@ -15,9 +15,25 @@
                 </div>
             </div>
             <div class="row mb-24">
-                <!-- IMAGE -->
-                <div class="col-lg-4 col-12 mb-32" v-if="productPage.image">
+                <!-- IMAGES -->
+                <div class="col-lg-4 col-12 mb-32">
+                    <div v-if="productPage.images.length">
+                        <swiper class="swiper images" ref="swiperImages" :options="swiperOptions">
+                            <swiper-slide v-for="(image, idx) in productPage.images" :key="idx">
+                                <img    
+                                    width="100%"
+                                    :src="image"
+                                >
+                                <!-- <div 
+                                    class="product-page__image" 
+                                    v-lazy:background-image="image"
+                                ></div> -->
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                        </swiper> 
+                    </div>
                     <div 
+                        v-else
                         class="product-page__image" 
                         v-lazy:background-image="productPage.image.url"
                     ></div>
@@ -76,7 +92,7 @@
             <template>
                 <div v-if="Object.keys(productPageOptionsTabs).length">
                     <!-- TABS -->
-                    <div class="row">
+                    <div class="row" v-if="Object.keys(productPageOptionsTabs).length > 1">
                         <div class="col">
                             <tabs @changed="tabChanged" :options="{ useUrlFragment: false }">
                                 <tab v-for="(tab, name) in productPageOptionsTabs" :key="name" :id="name" :name="name"></tab>
@@ -154,6 +170,12 @@
 
 
 <script>
+// swiper
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+SwiperCore.use([Navigation, Pagination]);
+import 'swiper/swiper-bundle.css';
+
 import Preloader from '@/components/Preloader/Preloader'
 import SwiperProductCategory from '@/components/Swipers/SwiperProductCategory'
 import ProductsItem from '@/components/Products/ProductsItem'
@@ -172,12 +194,31 @@ export default {
     name: "ProductsPage",
     props: ["id", "category_id", "product_id"],
     components: {
-        Preloader, SwiperProductCategory, ProductsItem, Form
+        Preloader, 
+        SwiperProductCategory, 
+        ProductsItem, 
+        Form,
+        // swiper
+        Swiper,
+        Pagination,
+        SwiperSlide
     },
     data() {
         return {
             loading: true,
-            currentTab: ""
+            currentTab: "",
+            // swiper
+            
+            swiperOptions: {
+                loop: true,
+                autoHeight: true, //enable auto height
+                autoUpdate: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.swiper-pagination'
+                }
+            },
         }
     },
     computed: {
@@ -192,6 +233,9 @@ export default {
         ]),
         similarProducts() {
             return this.categoriesProducts.filter(item => item.params.id !== this.productPage.id)
+        },
+        swiper() {
+            return this.$refs.swiperImages.$swiper
         }
     },
     updated() {
@@ -285,6 +329,20 @@ export default {
             & img {
                 width: 32px;
                 height: 32px;
+            }
+        }
+    }
+    .swiper {
+        height: auto;
+        &-wrapper {
+            margin-bottom: 40px;
+        }
+        &-pagination {
+            &-bullet {
+                background: transparentize($color: $orange, $amount: 0.4);
+                &-active {
+                    background: $orange;
+                }
             }
         }
     }
