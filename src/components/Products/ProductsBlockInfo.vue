@@ -452,5 +452,8 @@ export default {
                 flex-direction: column;
             }
         }
+        & .product-image {
+            background-size: cover !important;
+        }
     }
 </style>
