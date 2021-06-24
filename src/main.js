@@ -13,6 +13,10 @@ import store from "@/store/index";
 // axios
 import axios from 'axios';
 
+// mask
+import VueMask from 'v-mask'
+Vue.use(VueMask);
+
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: '/static/image_not_found.png',

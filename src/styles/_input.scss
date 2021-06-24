@@ -45,4 +45,7 @@
         padding-right: 16px;
         text-align: left;
     }
+    &.error {
+        background-color: transparentize($color: $red, $amount: 0.9) !important;
+    }
 }

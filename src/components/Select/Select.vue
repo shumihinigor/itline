@@ -1,6 +1,10 @@
 <template>
     <div class="select-block mb-16">
-        <div :class="['select', {active: selectedItem}, {open: open}]" @click="open = !open">
+        <div 
+            :class="['select', {active: selectedItem}, {open: open}]" 
+            @click="open = !open"
+            v-on-clickaway="away"
+        >
             <div class="select-title">{{ label }}</div>
             <div class="select-value" v-if="selectedItem">{{ selectedItem }}</div>
         </div>
@@ -18,16 +22,22 @@
 </template>
 
 <script>
+import { directive as onClickaway } from 'vue-clickaway';
+
+
 export default {
     props: {
         options: {
-            default: () => [],
-            type: Array
+            default: () => {},
+            type: Object
         },
         label: {
             default: '',
             type: String
         }
+    },
+    directives: {
+        onClickaway: onClickaway,
     },
     data() {
         return {
@@ -40,7 +50,11 @@ export default {
             this.$emit('select', option)
         }  
     },
-
+    methods: {
+        away() {
+            this.open = false;
+        }
+    },
 }
 </script>
 

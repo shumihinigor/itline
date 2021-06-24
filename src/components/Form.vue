@@ -31,9 +31,11 @@
             <input 
                 :id="'userPhone_' + id"
                 v-model="userPhone"
+                v-mask="'+7 (###) ###-##-##'"
                 type="text" 
                 class="input"
                 required
+                @blur="blurPhone"
             >
             <label class="label" :for="'userPhone_' + id">Телефон</label>
         </div>
@@ -43,7 +45,8 @@
                 :id="'userEmail_' + id"
                 v-model="userEmail"
                 type="text" 
-                class="input"
+                :class="['input']"
+                @blur="blurEmail"
                 required
             >
             <label class="label" :for="'userEmail_' + id">Email</label>
@@ -71,7 +74,11 @@
         </div>
         <!-- sendButton -->
         <div class="mb-16">
-            <button type="button" class="btn default w-100">
+            <button 
+                type="button" 
+                class="btn default w-100"
+                @click="sendForm"
+            >
                 <span class="p4">{{ sendButtonText }}</span>
             </button>
         </div>
@@ -151,30 +158,75 @@ export default {
             userPhone: "", // — Телефон +
             userAddress: "", // — Адрес -
             userMessage: "", // — Сообщение +
-            userFile: "", // — Файл (один) -
+            userFile: [], // — Файл (один) -
 
             action: "", // — Пока у всех "ld"
             department: "", // — Направление (укажу ниже) +
             manager: "", // — Возможен ID менеджера, но пока пустое поле
             theme: "", // — тема формы (например, «заказ табло ТВ-123»)
             formName: "", // — название формы (например, «форма заказа табло»
-            url: "", // — URL страницы, на которой расположена форма
+            url: window.location.href, // — URL страницы, на которой расположена форма
 
-            departmentOptions: [
-                "Решения для транспорта",
-                "Дорожные табло",
-                "Табло для остановок",
-                "Табло для вокзалов",
-                "Табло для АЗС",
-                "Табло часы-метеостанции",
-                "Спортивные табло",
-                "Табло курсов валют",
-                "Промышленные табло"
-            ]
+            departmentOptions: {
+                'dir-transport': 'Решения для транспорта', // маршрутные указатели (транспортные табло)
+                'dir-dorozhnyye': 'Дорожные табло', // маршрутные указатели (транспортные табло)
+                'dir-ostanovki': 'Табло для остановок', // табло для остановок
+                'dir-station': 'Табло для вокзалов', // табло для вокзалов
+                'dir-azs': 'Табло для АЗС', // табло для АЗС
+                'dir-meteo': 'Табло часы-метеостанции', // часы-метеостанции
+                'dir-sport': 'Спортивные табло', // спортивное табло
+                'dir-currency': 'Табло курсов валют', // табло валют
+                'dir-prom': 'Промышленные табло', // промышленное табло
+                // 'dir-support': 'Техподдержка', // Техподдержка
+            }
         }
     },
-    created() {
-        this.url = window.location.href
+    computed: {
+        emailValid() {
+            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
+            return regex.test(this.userEmail);
+        }
+    },
+    methods: {
+        blurEmail(event) {
+            if (!this.emailValid && this.userEmail.length) {
+                event.target.classList.add('error')
+            } else {
+                event.target.classList.remove('error')
+            }
+        },
+        blurPhone(event) {
+            console.log();
+            if (this.userPhone.length < 18 && this.userPhone.length) {
+                event.target.classList.add('error')
+            } else {
+                event.target.classList.remove('error')
+            }
+        },
+        async sendForm() {
+            await this.axios
+                .post('/api/leadhandler/webform/v1', {
+                    'user-name': this.userName,
+                    'user-company': this.userCompany,
+                    'user-email': this.userEmail,
+                    'user-phone': this.userPhone,
+                    'user-address': this.userAddress,
+                    'user-message': this.userMessage,
+                    'user-file': this.userFile,
+
+                    'action': this.action,
+                    'department': this.department,
+                    'manager': this.manager,
+                    'theme': this.theme,
+                    'form-name': this.formName,
+                    'url': this.url
+                })
+                .then(response => {
+                    console.log(response);
+                }).catch(error => {
+                    // router.push({ name: 'PageNotFound' });
+                });
+        }
     },
 }
 </script>

@@ -24,10 +24,6 @@
                                     width="100%"
                                     :src="image"
                                 >
-                                <!-- <div 
-                                    class="product-page__image" 
-                                    v-lazy:background-image="image"
-                                ></div> -->
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                         </swiper> 
@@ -207,8 +203,8 @@ export default {
         return {
             loading: true,
             currentTab: "",
+
             // swiper
-            
             swiperOptions: {
                 loop: true,
                 autoHeight: true, //enable auto height

@@ -69,7 +69,7 @@
                                     <a href="tel:88002002815" class="tel h5">8 800 200-28-15</a>
                                 </div>
                             </div>
-                            <router-link class="btn contour" tag="button" :to="{ name: 'Support' }">
+                            <router-link class="btn contour" tag="button" :to="{ name: 'Support', params: { tab: '#contactsTab' } }">
                                 <span class="p4 text-uppercase text-orange">Обратиться в техподдержку</span>
                             </router-link>
                         </div>
