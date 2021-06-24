@@ -1,7 +1,7 @@
 /rest/*  https://test.it-line.info/rest/:splat  200
 /rest/*  https://test.it-line.info/rest/:splat  304
-/api/*  https://test.it-line.info/api/:splat  200
-/api/*  https://test.it-line.info/api/:splat  304
+/api/*  https://portal.it-line.info/api/:splat  200
+/api/*  https://portal.it-line.info/api/:splat  304
 /images/*  https://test.it-line.info/images/:splat  200
 /images/*  https://test.it-line.info/images/:splat  304
 /assets/*  https://test.it-line.info/assets/:splat  200
