@@ -201,9 +201,7 @@ export default {
         formValid() {
             return  this.emailValid && 
                     this.phonelValid && 
-                    this.userName && 
-                    this.userCompany && 
-                    this.userMessage
+                    this.userName
         }
     },
     methods: {
