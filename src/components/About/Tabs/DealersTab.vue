@@ -4,6 +4,7 @@
         <div class="row" v-else>
             <div class="col-lg-5 col-12">
                 <Form
+                    :theme="'Дилеры'"
                     :title="'Хочу узнать условия и стать дилером!'"
                     :policy="false"
                     :mode="'light'"
@@ -97,6 +98,9 @@ export default {
     .ymap {
         width: 100%;
         min-height: 400px;
+        @media (max-width: 991px) {
+            margin-top: 32px;
+        }
         &-container {
             height: 100%;
             & div {

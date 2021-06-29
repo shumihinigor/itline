@@ -79,10 +79,21 @@
             <button 
                 type="button" 
                 class="btn default w-100"
-                :disabled="!formValid"
+                :disabled="!formValid || loading"
                 @click="sendForm"
             >
-                <span class="p4">{{ sendButtonText }}</span>
+                <span 
+                    v-if="!loading" 
+                    class="p4"
+                >{{ sendButtonText }}</span>
+                <div 
+                    v-else 
+                    class="pswp__preloader__icn"
+                >
+                    <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                    </div>
+                </div>
             </button>
         </div>
         <!-- description -->
@@ -93,6 +104,7 @@
 </template>
 
 <script>
+import Preloader from '@/components/Preloader/Preloader'
 import Select from '@/components/Select/Select'
 export default {
     name: "Form",
@@ -129,6 +141,10 @@ export default {
             default: true,
             type: Boolean
         },// +
+        departmentOption: {
+            default: "",
+            type: String
+        },//+
         departmentSelect: {
             default: true,
             type: Boolean
@@ -159,7 +175,7 @@ export default {
         }//+
     },
     components: {
-        Select
+        Select, Preloader
     },
     data() {
         return {
@@ -171,14 +187,14 @@ export default {
             userMessage: "", // — Сообщение +
             userFile: [], // — Файл (один) -
 
-            action: "", // — Пока у всех "ld"
+            action: "ld", // — Пока у всех "ld"
             department: "", // — Направление (укажу ниже) +
             manager: "", // — Возможен ID менеджера, но пока пустое поле
             url: window.location.href, // — URL страницы, на которой расположена форма
 
             departmentOptions: {
                 'dir-transport': 'Решения для транспорта', // маршрутные указатели (транспортные табло)
-                'dir-dorozhnyye': 'Дорожные табло', // маршрутные указатели (транспортные табло)
+                'dir-road': 'Дорожные табло', // маршрутные указатели (транспортные табло)
                 'dir-ostanovki': 'Табло для остановок', // табло для остановок
                 'dir-station': 'Табло для вокзалов', // табло для вокзалов
                 'dir-azs': 'Табло для АЗС', // табло для АЗС
@@ -187,7 +203,9 @@ export default {
                 'dir-currency': 'Табло курсов валют', // табло валют
                 'dir-prom': 'Промышленные табло', // промышленное табло
                 // 'dir-support': 'Техподдержка', // Техподдержка
-            }
+            },
+
+            loading: false
         }
     },
     computed: {
@@ -228,8 +246,9 @@ export default {
             this.department = "" // — Направление (укажу ниже) +
         },
         async sendForm() {
+            this.loading = true;
             await this.axios
-                .post('/api/leadhandler/webform/v1', {
+                .post('https://portal.it-line.info/api/leadhandler/webform/v1', {
                     'user-name': this.userName,
                     'user-company': this.userCompany,
                     'user-email': this.userEmail,
@@ -239,7 +258,7 @@ export default {
                     'user-file': this.userFile,
 
                     'action': this.action,
-                    'department': this.department,
+                    'department': this.departmentOption.length ? this.departmentOption : this.department,
                     'manager': this.manager,
                     'theme': this.theme,
                     'form-name': this.id,
@@ -248,10 +267,12 @@ export default {
                 .then(response => {
                     console.log(response);
                 }).catch(error => {
+                    console.log(error);
                     // router.push({ name: 'PageNotFound' });
                 })
                 .finally(() => {
                     this.clearForm();
+                    this.loading = false;
                 });
         }
     },
@@ -277,4 +298,65 @@ export default {
         }
     }
 }
+
+
+// loader
+.pswp__preloader__icn {
+    //   opacity: 0.75;
+    width: 16px;
+    height: 16px;
+    margin: 4px auto;
+    -webkit-animation: clockwise 500ms linear infinite;
+    animation: clockwise 500ms linear infinite;
+}
+.pswp__preloader__cut {
+    position: relative;
+    width: 8px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pswp__preloader__donut {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $white;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    margin:0;
+    -webkit-animation: donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+    animation: donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+
+}
+
+
+@-webkit-keyframes clockwise {
+    0% { -webkit-transform: rotate(0deg) }
+    100% { -webkit-transform: rotate(360deg) }
+}
+@keyframes clockwise {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+@-webkit-keyframes donut-rotate {
+    0% { -webkit-transform: rotate(0) }
+    50% { -webkit-transform: rotate(-140deg) }
+    100% { -webkit-transform: rotate(0) }
+}
+@keyframes donut-rotate {
+    0% { transform: rotate(0) }
+    50% { transform: rotate(-140deg) }
+    100% { transform: rotate(0) }
+}
+
 </style>

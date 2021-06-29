@@ -17,6 +17,7 @@
                                     :title="'Напишите нам'"
                                     :policy="false"
                                     :id="'modal-contacts'"
+                                    :theme="'Модальное окно \'Связаться с нами\''"
                                 />
                                 <div class="mb-80"></div>
                             </div>

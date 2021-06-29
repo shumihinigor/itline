@@ -9,6 +9,8 @@
                         :policy="false"
                         :id="'support'"
                         :description="'* При появлении технических вопросов специалисты компании ITLINE оперативно осуществляют консультрование по вопросам установки и эксплуатации светодиодных табло'"
+                        :department-select="false"
+                        :department-option="'dir-support'"
                     />
                 </div>
             </div>

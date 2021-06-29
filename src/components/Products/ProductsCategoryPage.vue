@@ -36,16 +36,14 @@
         <div class="row justify-content-end" v-else>
             <div class="col-lg-8 col-12">
                 <Form
+                    :department-select="false"
+                    :department-option="category.department"
                     :policy="false"
                     :id="'product-category-page'"
                     :mode="'light'"
+                    :theme="category.title"
                 />
             </div>
-            <!-- <div class="col">
-                <div class="nothing-found">
-                    <h1 class="nothing-found__title">Ничего не найдено</h1>
-                </div>
-            </div> -->
         </div>
     </div>
 </template>

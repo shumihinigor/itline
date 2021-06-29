@@ -32,6 +32,9 @@
         display: flex;
         align-items: center;
     }
+    &-value {
+        text-align: left;
+    }
     &-title {
         position: absolute;
         top: 15px;
@@ -48,6 +51,7 @@
         overflow: hidden;
         width: 100%;
         padding-right: 16px;
+        text-align: left;
     }
     &-wrapper {
         position: absolute;
@@ -69,6 +73,7 @@
             margin-bottom: 4px;
             border-radius: 5px;
             cursor: pointer;
+            text-align: left;
             &:last-child {
                 margin-bottom: 0;
             }

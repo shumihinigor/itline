@@ -77,6 +77,7 @@
                     <div class="product-page__stock">
                         <Form
                             :department-select="false"
+                            :department-option="productPage.department"
                             :theme="productPage.title"
                             :title="'Связаться с менеджером'"
                             :policy="false"
