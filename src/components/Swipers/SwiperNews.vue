@@ -2,12 +2,10 @@
     <div>
         <swiper class="swiper news" ref="swiperNews" :options="swiperOptions">
             <swiper-slide v-for="(item, index) in images" :key="item.id">
-                <div 
+                <!-- <div 
                     class="news-swiper__item"
                     :style="{'background-image': 'url(' + require('../../assets/images/news/' + item) + ')'}"
-                >
-                    
-                </div>
+                ></div> -->
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>

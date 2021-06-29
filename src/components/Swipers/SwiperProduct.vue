@@ -5,11 +5,11 @@
                 <div class="product-swiper__item">
                     <div class="row h-100">
                         <div class="col-lg-5 col-12 position-relative">
-                            <div 
+                            <!-- <div 
                                 v-if="item.image"
                                 class="product-swiper__item-image mr-16" 
                                 :style="{'background-image': 'url(' + require('../../assets/images/products/' + item.image) + ')'}"
-                            ></div>
+                            ></div> -->
                         </div>
                         <div class="col-lg-7 col-12 d-flex flex-column align-items-start product-swiper__item-block">
                             <h1 class="h1 mb-16">{{ item.title }}</h1>
