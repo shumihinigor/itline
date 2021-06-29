@@ -18,7 +18,7 @@
                     :ymap-class="'ymap'"
                 >
                     <ymap-marker 
-                        v-for="dealer in dealers[0]" 
+                        v-for="dealer in dealers" 
                         :key="dealer.MIGX_id"
                         :marker-id="dealer.MIGX_id"
                         :icon="{
