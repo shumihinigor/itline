@@ -59,9 +59,9 @@
                             <div class="header-phone d-lg-block d-none">
                                 <a class="p4" href="tel:88005557777">8 (800) 555-77-77</a>
                             </div>
-                            <div class="header-search">
+                            <!-- <div class="header-search">
                                 <img svg-inline src="../assets/images/search.svg" alt="search">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,6 @@ export default {
             }
         }
         &-phone {
-            margin-right: 16px;
             white-space: nowrap;
             & a {
                 color: $white;
@@ -229,6 +228,7 @@ export default {
             }
         }
         &-search {
+            margin-left: 16px;
             cursor: pointer;
             @media (max-width: 991px) {
                 & svg {
